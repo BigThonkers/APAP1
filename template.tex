@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage[german]{babel}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
+
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage{booktabs}
+\usepackage[colorlinks]{hyperref}
+
+\begin{document}
+
+{
+\centering 
+\large 
+Physiklabor für Anfänger*innen \\
+Ferienpraktikum im Sommersemester 2018 \\[4mm]
+\textbf{\LARGE 
+Versuch 04: Dichte und Oberflächenspannung
+} \\[3mm]
+(durchgeführt am 07.09.2018 bei Daniel Bartle) \\
+Andréz Gockel, Patrick Münnich\\
+\today \\[10mm]
+}
+
+\section{Ziel des Versuchs}
+
+Das Ziel dieser versuche ist vorerst die 
+Der erste teil des experiments lässt ein das Archimedische Prinzip veranschaulichen, und ermöglicht es die wissenschaftliche Vorgehensweise in praxis zu erleben. 
+Der zweite teil dieses experiments ermöglicht uns die Oberflächenspannung von diversen Flüssigkeiten zu bestimmen mit einem torqueometer und einem Draht.
+
+%%%%% Auswertung und Fehleranalyse
+
+\section{Auswertung und Fehleranalyse}
+
+
+\subsection{Teil A - Dichte}
+Wir nehmen die Messwerte und stecken sie irgendwo hin. 
+
+\subsection{Teil B - Oberflächenspannung}
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod \dots
+
+\subsection{Dritter Versuchsteil}
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod \dots
+
+\subsubsection{Einzelmessung}
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod \dots
+
+\subsubsection{Mehrfachmessung}
+\label{mehrfachmessung}
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod \dots
+
+
+%%%%% Diskussion der Ergebnisse
+
+\section{Diskussion der Ergebnisse}
+\label{diskussion}
+
+Angabe der Ergebnisse in der Form Bestwert $\pm$ Unsicherheit: 
+\[ 
+ x = (123{,}45 \pm 0{,}02)\,\text{Einheit}
+\]
+
+Angabe der relativen Unsicherheit: 
+\[
+ \left| \frac{u_x}{x_0} \right| = 0{,}00016 = 1{,}6\times 10^{-4} = 0{,}016\%
+\]
+
+Eine kurze Formel $y=x^2$ im Lauftext. 
+
+Eine große abgesetzte Formel mit automatischer Nummerierung: 
+\begin{equation}
+ \langle y \rangle = \sum_{j=1}^{n}{ \left( \frac{1}{\sqrt{2\pi}} \cdot \int_{-\infty}^{j}{ \sin{\phi} \,\text{d}\phi} \right)^2 } 
+\label{formel}
+\end{equation}
+Mithilfe des Labels kann später auf diese Formel verwiesen werden \eqref{formel}.
+
+Eine Auflistung kann so aussehen: 
+\begin{itemize}
+	\item erster Punkt
+	\item zweiter Punkt
+	\item \dots
+\end{itemize}
+	 
+Eine nummerierte Auflistung so: 
+\begin{enumerate}
+	\item erster Punkt
+	\item zweiter Punkt
+	\item \dots
+\end{enumerate}
+	 
+	
+%%%%% Anhang
+
+\section{Anhang: Tabellen und Diagramme}
+
+Tabelle \ref{tabelle} wurde mit der Umgebung "`tabular"' erzeugt
+und mit der Umgebung "`table"' eingebunden.  
+
+\begin{table}[p]
+\centering
+\begin{tabular*}{0.99\textwidth}{@{\extracolsep{\fill}}cccccc}
+\toprule
+ $x$ & $u_x$ &  $y$  &  $u_y$ &  $y^2$  &  $2 y u_y$  \\
+ m & m &  s & s &  s$^2$ & s$^2$  \\
+\midrule
+  0,16 & 0,01 & 0,686 & 0,029 & 0,47 & 0,040 \\
+  0,33 & 0,01 & 1,046 & 0,031 & 1,09 & 0,065  \\
+  0,52 & 0,01 & 1,381 & 0,026 & 1,91 & 0,072  \\
+  0,69 & 0,01 & 1,607 & 0,021 & 2,58 & 0,067  \\
+  0,85 & 0,01 & 1,785 & 0,022 & 3,19 & 0,079  \\	
+\bottomrule
+\end{tabular*}
+\caption{Eine Tabellenunterschrift.}
+\label{tabelle}
+\end{table}
+
+
+%\begin{figure}[p]
+%\centering
+%\includegraphics[width=0.8\textwidth]{bild.png}
+%\caption{Eine Bildunterschrift.}
+%\label{abbildung}
+%\end{figure}
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

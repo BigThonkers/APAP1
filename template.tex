@@ -1,39 +1,40 @@
 \documentclass[11pt,a4paper]{article}
 
-\usepackage[utf8]{inputenc} 
-\usepackage[T1]{fontenc} 
-\usepackage{lmodern}
-\usepackage[margin=2cm]{geometry}
-\usepackage[german]{babel}
+%\usepackage[utf8]{inputenc} 
+%\usepackage[T1]{fontenc} 
+%\usepackage{lmodern}
+%\usepackage[margin=2cm]{geometry}
+%\usepackage[german]{babel}
+%\usepackage[table]{xcolor}
+\usepackage{nicefrac}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
 
 \usepackage{amsmath} 
-\usepackage{graphicx} 
-\usepackage{booktabs}
-\usepackage[colorlinks]{hyperref}
+
+%\usepackage{graphicx} 
+%\usepackage{booktabs}
+%\usepackage[colorlinks]{hyperref}
 
 \begin{document}
 
 {
 \centering 
 \large 
-Physiklabor für Anfänger*innen \\
+Physiklabor für Anf\"anger*innen \\
 Ferienpraktikum im Sommersemester 2018 \\[4mm]
 \textbf{\LARGE 
 Versuch 04: Dichte und Oberflächenspannung
 } \\[3mm]
-(durchgeführt am 07.09.2018 bei Daniel Bartle) \\
-Andréz Gockel, Patrick Münnich\\
+(durchgef\"uhrt am 07.09.2018 bei Daniel Bartle) \\
+Andréz Gockel, Patrick M\"unnich\\
 \today \\[10mm]
 }
 
 \section{Ziel des Versuchs}
 
-Das Ziel dieser versuche ist vorerst die 
-Der erste teil des experiments lässt ein das Archimedische Prinzip veranschaulichen, und ermöglicht es die wissenschaftliche Vorgehensweise in praxis zu erleben. 
-Der zweite teil dieses experiments ermöglicht uns die Oberflächenspannung von diversen Flüssigkeiten zu bestimmen mit einem torqueometer und einem Draht.
+Der Versuch ist in zwei Teile geteilt, welche dazu dienen, grundlegende Eigenschaften von Fl\"ussigkeiten experimentell zu bestimmen. Im Teil A bestimmt man die Dichte von Wasser und einer unbekannten Fl\"ussigkeit mithilfe einer Jollyschen Federwaage. Im Teil B bestimmt man die Oberfl\"achen\-spannung von Wasser durch Messen der Abrisskraft mithilfe eines Torsionskraftmessers.
 
 %%%%% Auswertung und Fehleranalyse
 
@@ -41,9 +42,61 @@ Der zweite teil dieses experiments ermöglicht uns die Oberflächenspannung von 
 
 
 \subsection{Teil A - Dichte}
-Wir nehmen die Messwerte und stecken sie irgendwo hin. 
 
-\subsection{Teil B - Oberflächenspannung}
+\subsubsection{Aufgabenstellung}
+Mit Hilfe der Jollyschen Federwaage sind zu bestimmen
+\begin{enumerate}
+\item{die Dichte eines geometrisch einfach gestalteten K\"orpers, wobei ein Vergleich mit den aus den
+geometrischen Abmessungen und dem Gewicht des K\"orpers gewonnenem Wert durchzuf\"uhren
+ist,}
+\item{die Dichte einer unbekannten Fl\"ussigkeit.}
+\end{enumerate}
+
+\subsubsection{Auswertung}
+
+Zur ersten Aufgabe:\\
+Die Messungen wurden mit einer Metallkugel durchgef\"uhrt mit einem Durch\-messer von $d=(1.2\pm0.03)$cm und einer Masse von $m=(7.03\pm0.005)$g. Mit der Formel f\"ur das Volumen, $V=\frac{\pi}{6}d^3$, und f\"ur die Dichte, $\rho=\frac{m}{V}$, ergibt sich ein Wert von $(7810\pm550)\nicefrac{\textrm{kg}}{\textrm{m}^3}$. Hierbei wurde der Fehler \"uber die Potenzformel des Gau\ss 'schen Fehlerfortpflanzungsgesetzes bei Vernachl\"assigung des Fehlers der Masse bestimmt.\\
+
+%$$
+% \begin{array}{ll}
+% 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
+% \end{array}
+%\rowcolors{2}{gray!10}{white}
+%\noindent%
+%\begin{tabular}{|l | ccccc|}
+%\hline
+%Messung & 1 & 2 & 3 & 4 & 5\\
+%\hline
+%Ruhelage & 441 & 479 & 473 & 463 & 468\\
+%Nicht eingetaucht & 414 & 453 & 447 & 436 & 440\\
+%Eingetaucht & 417 & 456 & 450 & 439 & 443\\
+%\hline
+%\end{tabular} \phantom{\begin{array}{ll}
+% 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
+% \end{array}
+%}$$
+
+% TABELLE HIER UND $X_1 X_2 X_0$ DEFINIEREN\\
+
+% Mit den Messwerten in \\
+
+INSERT 2.1, 2.2 MIT GROESSENANGABEN
+
+ergibt sich
+\begin{equation}
+\rho=\rho_{Fl}\frac{x_1-x_0}{x_1-x_2}
+\end{equation}
+F\"ur unsere Messwerte aus Tabelle 1 erhalten wir
+
+$$\begin{tabular}{|c|c|c|c|c|}
+\hline
+$8982\pm4260$ & $8649\pm4104$ & $8649\pm4104$ & $8982\pm4260$ & $9314\pm4416$\\
+\hline
+\end{tabular} \textrm{ in } \nicefrac{\textrm{kg}}{\textrm{m}^3}$$
+
+FEHLERDISKUSSION
+
+\subsection{Teil B - Oberfl\"achenspannung}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod \dots
 
 \subsection{Dritter Versuchsteil}
@@ -103,23 +156,23 @@ Eine nummerierte Auflistung so:
 Tabelle \ref{tabelle} wurde mit der Umgebung "`tabular"' erzeugt
 und mit der Umgebung "`table"' eingebunden.  
 
-\begin{table}[p]
-\centering
-\begin{tabular*}{0.99\textwidth}{@{\extracolsep{\fill}}cccccc}
-\toprule
- $x$ & $u_x$ &  $y$  &  $u_y$ &  $y^2$  &  $2 y u_y$  \\
- m & m &  s & s &  s$^2$ & s$^2$  \\
-\midrule
-  0,16 & 0,01 & 0,686 & 0,029 & 0,47 & 0,040 \\
-  0,33 & 0,01 & 1,046 & 0,031 & 1,09 & 0,065  \\
-  0,52 & 0,01 & 1,381 & 0,026 & 1,91 & 0,072  \\
-  0,69 & 0,01 & 1,607 & 0,021 & 2,58 & 0,067  \\
-  0,85 & 0,01 & 1,785 & 0,022 & 3,19 & 0,079  \\	
-\bottomrule
-\end{tabular*}
-\caption{Eine Tabellenunterschrift.}
-\label{tabelle}
-\end{table}
+%\begin{table}[p]
+%\centering
+%\begin{tabular*}{0.99\textwidth}{@{\extracolsep{\fill}}cccccc}
+%\toprule
+% $x$ & $u_x$ &  $y$  &  $u_y$ &  $y^2$  &  $2 y u_y$  \\
+% m & m &  s & s &  s$^2$ & s$^2$  \\
+%\midrule
+%  0,16 & 0,01 & 0,686 & 0,029 & 0,47 & 0,040 \\
+%  0,33 & 0,01 & 1,046 & 0,031 & 1,09 & 0,065  \\
+%  0,52 & 0,01 & 1,381 & 0,026 & 1,91 & 0,072  \\
+%  0,69 & 0,01 & 1,607 & 0,021 & 2,58 & 0,067  \\
+%  0,85 & 0,01 & 1,785 & 0,022 & 3,19 & 0,079  \\	
+%\bottomrule
+%\end{tabular*}
+%\caption{Eine Tabellenunterschrift.}
+%\label{tabelle}
+%\end{table}
 
 
 %\begin{figure}[p]

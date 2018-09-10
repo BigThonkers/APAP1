@@ -242,3 +242,6 @@ TSWLatexianTemp*
 *.spl
 38/.DS_Store
 .DS_Store
+
+# Python
+.ipynb_checkpoints/*

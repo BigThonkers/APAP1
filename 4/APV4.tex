@@ -198,10 +198,12 @@ Die Oberfl\"achenspannung von Wasser und Ethanol wurde mit der Abrei\ss methode 
 \begin{equation}
 \sigma=\frac{F_{s_{max}}}{2l}\label{eqo}
 \end{equation}
-
-Die L\"ange $l$ des Drahts betr\"agt $2.63\pm0.03$ cm. Die Messwerte befinden sich in Tabelle (\ref{tabkw}) f\"ur Wasser und (\ref{tabke}) f\"ur Ethanol. Deren Graphische Darstellungen in den Graphiken (\ref{ab3}) und (\ref{ab4}). Die Sigmoidfunktion $$d\times\frac{1}{1+\exp(-c\times(x-a))}+b$$ wurde mit der curve\_fit Funktion von Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
-
-Messwerte:
+% (\ref{ab3}) und (\ref{ab4})
+Die L\"ange $l$ des Drahts betr\"agt $2.63\pm0.03$ cm. Die Messwerte befinden sichf\"ur Wasser und Ethanol befinden sich im Anhang. Deren Graphische Darstellungen in den Graphiken sind auch im Anhang. Die Sigmoidfunktion 
+\begin{equation}
+d\times\frac{1}{1+\exp(-c\times(x-a))}+b
+\end{equation} 
+wurde mit der curve\_fit Funktion von dem SciPy Paket in Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
 
 $$\begin{tabular}{|c|c|c|}
 \hline
@@ -241,6 +243,8 @@ $\textrm{Oberfl\"achenspannung }[\nicefrac{mN}{cm}]$ & $0.24\pm0.05$ & $0.27\pm0
 \hline
 \end{tabular} $$\label{taome}
 
+
+
 \pagebreak
 
 \section{Anhang: Tabellen und Diagramme}
@@ -275,7 +279,7 @@ $\begin{array}{l}
 \textrm{Fehler Höhe: } \pm 0.03 \textrm{mm}\\
 \textrm{Fehler Kraft: } \pm 0.02 \textrm{mN}
 \end{array}$}
-\caption{Messwerte für Wasser}
+\caption{Messwerte für Wasser beim zweiten Experiment}
 \label{tabmw}
 \end{table}
 
@@ -325,7 +329,7 @@ $\begin{array}{l}
 \textrm{Fehler Höhe: } \pm 0.03 \textrm{mm}\\
 \textrm{Fehler Kraft: } \pm 0.02 \textrm{mN}
 \end{array}$}
-\caption{Messwerte für Ethanol}
+\caption{Messwerte für Ethanol beim zweiten Experiment}
 \label{tabme}
 \end{table}
 

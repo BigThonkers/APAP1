@@ -199,37 +199,61 @@ Die Oberfl\"achenspannung von Wasser und Ethanol wurde mit der Abrei\ss methode 
 \sigma=\frac{F_(s_{max})}{2l}\label{eqo}
 \end{equation}
 
-$$\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-\textrm{H\"ohe }$[mm]$ & 2 & 4 & 5 & 8 & 9 & 10\\
-\hline
-$\textrm{Kraft }[mN]$ & $0.26\pm0.03$ & $0.33\pm0.03$ & $1.25\pm0.03$ & $3.9\pm0.03$ & $4.75\pm0.03$\\
-\hline
-\end{tabular} $$\label{tabow}
+Die L\"ange $l$ des Drahts betr\"agt $2.63\pm0.03$ cm. Die Messwerte befinden sich in Tabelle (\ref{tabkw}) f\"ur Wasser und (\ref{tabke}) f\"ur Ethanol. Deren Graphische Darstellungen in den Graphiken (\ref{ab3}) und (\ref{ab4}). Die Sigmoidfunktion $$d\times\frac{1}{1+\exp(-c\times(x-a))}+b$$ wurde mit der curve\_fit Funktion von Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
 
-Die L\"ange $l$ des Drahts betr\"agt $2.63\pm0.03$ cm. Die Messwerte befinden sich in Tabelle (\ref{tabow}) f\"ur Wasser und (\ref{taboe}) f\"ur Ethanol. Deren Graphische Darstellungen in den Graphiken (\ref{ab3}) und (\ref{ab4}). Die Sigmoidfunktion $$d\times\frac{1}{1+\exp(-c\times(x-a))}+b$$ wurde mit der curve\_fit Funktion von Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
+Messwerte:
+$$\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textrm{H\"ohe }$[mm]$ & 2 & 4 & 5 & 6 & 8 & 9 & 10\\
+\hline
+$\textrm{Kraft }[mN]$ & $0.26\pm0.03$ & $0.33\pm0.03$ & $$ & $1.25\pm0.03$ & $3.9\pm0.03$ & $4.75\pm0.03$ & $$\\
+\hline
+$\textrm{Kraft}\ [mN]$ & $0.23\pm0.03$ & $0.25\pm0.03$ & $0.3\pm0.03$ & $0.83\pm0.03$ & $3.85\pm0.03$ & $4.6\pm0.03$ & $4.7\pm0.03$\\
+\hline
+\end{tabular} $$\label{tabkw}
 
-TABELLE
+$$\begin{tabular}{|c|c|c|}
+\hline
+\textrm{H\"ohe }$[mm]$ & 1 & 2\\
+\hline
+$\textrm{Kraft }[mN]$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
+\hline
+\end{tabular} $$\label{tabke}
+
 %5.16, 4.75, 
 
 Die Fehler wurden durch Streuung der Messpunkte um die angepassten Kurven abgesch\"atzt.
 
 Mit der Formel (\ref{eqo}) ergibt sich f\"ur die Oberfl\"achenspannung 
 
-TABELLE
+$$\begin{tabular}{|c|c|c|c|}
+\hline
+\textrm{Messung }$$ & 1 & 2 & 3\\
+\hline
+$\textrm{Kraft }F_{s_{max}}\ [mN]$ & $1.27\pm0.25$ & $1.42\pm0.28$ & $1.38\pm0.28$\\
+\hline
+\end{tabular} $$\label{tabow}
+
+$$\begin{tabular}{|c|c|c|}
+\hline
+\textrm{Messung} & 1 & 2\\
+\hline
+$\textrm{Kraft }F_{s_{max}}\ [mN]$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
+\hline
+\end{tabular} $$\label{taboe}
 
 MITTELWERT
 
 \begin{figure}[p]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{/home/a/Documents/uni/AP1/git/Praktikum-A1/4/Wasser.png}\label{ab3}}
+\fbox{\includegraphics[width=0.8\textwidth]{/home/a/Documents/uni/AP1/git/Praktikum-A1/4/Graph_1.png}\label{ab3}}
 \caption{Verlauf der Kraft $F$ als Funktion der Position $x$ beim Herausziehen des B\"ugels aus der Fl\"ussigkeit.}
 \label{abbildung}
 \end{figure}
 
 \begin{figure}[p]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{/home/a/Documents/uni/AP1/git/Praktikum-A1/4/Fluessigkeit.png}\label{ab4}}
+\fbox{\includegraphics[width=0.8\textwidth]{/home/a/Documents/uni/AP1/git/Praktikum-A1/4/Graph_2.png}\label{ab4}}
 \caption{Verlauf der Kraft $F$ als Funktion der Position $x$ beim Herausziehen des B\"ugels aus der Fl\"ussigkeit.}
 \label{abbildung}
 \end{figure}

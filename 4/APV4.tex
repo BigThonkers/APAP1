@@ -196,7 +196,7 @@ Bei der Messreihe mit der unbekannten Fl\"ussigkeit gibt es einen systematischen
 Die Oberfl\"achenspannung von Wasser und Ethanol wurde mit der Abrei\ss methode gemessen. F\"ur diese gilt:
 
 \begin{equation}
-\sigma=\frac{F_(s_{max})}{2l}\label{eqo}
+\sigma=\frac{F_{s_{max}}}{2l}\label{eqo}
 \end{equation}
 
 Die L\"ange $l$ des Drahts betr\"agt $2.63\pm0.03$ cm. Die Messwerte befinden sich in Tabelle (\ref{tabkw}) f\"ur Wasser und (\ref{tabke}) f\"ur Ethanol. Deren Graphische Darstellungen in den Graphiken (\ref{ab3}) und (\ref{ab4}). Die Sigmoidfunktion $$d\times\frac{1}{1+\exp(-c\times(x-a))}+b$$ wurde mit der curve\_fit Funktion von Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
@@ -212,19 +212,24 @@ $\textrm{Kraft}\ [mN]$ & $0.23\pm0.03$ & $0.25\pm0.03$ & $0.3\pm0.03$ & $0.83\pm
 \hline
 \end{tabular} $$\label{tabkw}
 
-$$\begin{tabular}{|c|c|c|}
-\hline
-\textrm{H\"ohe }$[mm]$ & 1 & 2\\
-\hline
-$\textrm{Kraft }[mN]$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
-\hline
-\end{tabular} $$\label{tabke}
+%$$\begin{tabular}{|c|c|c|}
+%\hline
+%\textrm{H\"ohe }$[mm]$ & 1 & 2\\
+%\hline
+%$\textrm{Kraft }[mN]$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
+%\hline
+%\end{tabular} $$\label{tabke}
 
 %5.16, 4.75, 
 
-Die Fehler wurden durch Streuung der Messpunkte um die angepassten Kurven abgesch\"atzt.
-
-Mit der Formel (\ref{eqo}) ergibt sich f\"ur die Oberfl\"achenspannung 
+$F_{s_{max}}$:
+$$\begin{tabular}{|c|c|c|}
+\hline
+\textrm{Messung} & 1 & 2\\
+\hline
+$\textrm{Kraft }F_{s_{max}}\ [mN]$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
+\hline
+\end{tabular} $$\label{tabfmw}
 
 $$\begin{tabular}{|c|c|c|c|}
 \hline
@@ -232,15 +237,30 @@ $$\begin{tabular}{|c|c|c|c|}
 \hline
 $\textrm{Kraft }F_{s_{max}}\ [mN]$ & $1.27\pm0.25$ & $1.42\pm0.28$ & $1.38\pm0.28$\\
 \hline
-\end{tabular} $$\label{tabow}
+\end{tabular} $$\label{tabfme}
+
+
+Die Fehler wurden durch Streuung der Messpunkte um die angepassten Kurven abgesch\"atzt.
+
+Mit der Formel (\ref{eqo}) ergibt sich f\"ur die Oberfl\"achenspannung 
+
 
 $$\begin{tabular}{|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2\\
 \hline
-$\textrm{Kraft }F_{s_{max}}\ [mN]$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
+$\textrm{Oberfl\"achenspannung }[\nicefrac{mN}{cm}]$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
 \hline
-\end{tabular} $$\label{taboe}
+\end{tabular} $$\label{tabow}
+
+$$\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textrm{Messung }$$ & 1 & 2 & 3 & Mittelwert\\
+\hline
+$\textrm{Oberfl\"achenspannung }[\nicefrac{mN}{cm}]$ & $0.24\pm0.05$ & $0.27\pm0.05$ & $0.26\pm0.05$ & $0.26\pm0.03$\\
+\hline
+\end{tabular} $$\label{taome}
+
 
 MITTELWERT
 

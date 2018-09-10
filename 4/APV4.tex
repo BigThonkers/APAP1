@@ -14,6 +14,7 @@
 \usepackage{booktabs}
 \usepackage[colorlinks]{hyperref}
 \usepackage{nicefrac}
+\usepackage[table]{xcolor}
 
 \begin{document}
 
@@ -57,20 +58,20 @@ Die Messungen wurden mit einer Metallkugel durchgef\"uhrt mit einem Durch\-messe
 
 $$
  \begin{array}{ll}
- 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
+ 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
  \end{array}
-%\rowcolors{2}{gray!10}{white}
+\rowcolors{2}{gray!10}{white}
 \noindent%
-\begin{tabular}{|l | ccccc|}
+\begin{tabular}{|l r| ccccc|}
 \hline
-Messung & 1 & 2 & 3 & 4 & 5\\
+Messung && 1 & 2 & 3 & 4 & 5\\
 \hline
-Ruhelage $x_0$ & 441 & 479 & 473 & 463 & 468\\
-Nicht eingetaucht $x_1$ & 414 & 453 & 447 & 436 & 440\\
-Eingetaucht $x_2$ & 417 & 456 & 450 & 439 & 443\\
+Ruhelage & $x_0$ & 441 & 479 & 473 & 463 & 468\\
+Nicht eingetaucht & $x_1$ & 414 & 453 & 447 & 436 & 440\\
+Eingetaucht & $x_2$ & 417 & 456 & 450 & 439 & 443\\
 \hline
 \end{tabular} \phantom{\begin{array}{ll}
- 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
+ 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
  \end{array}
 }$$
 
@@ -105,7 +106,6 @@ Daraus ergibt sich f\"ur die Dichte mit den Auslenkungen $x_1$ Objekt in Luft un
 \end{equation}
 F\"ur unsere Messwerte aus Tabelle 1 erhalten wir
 
-%NICEFRAC
 $$\begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2 & 3 & 4 & 5\\
@@ -136,20 +136,20 @@ F\"ur die unbekannte Fl\"ussigkeit wurde gemessen:
 
 $$
  \begin{array}{ll}
- 	 \textrm{In Fl\"ussigkeit}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
+ 	 \textrm{In Fl\"ussigkeit}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
  \end{array}
-%\rowcolors{2}{gray!10}{white}
+\rowcolors{2}{gray!10}{white}
 \noindent%
-\begin{tabular}{|l | cccc|}
+\begin{tabular}{|l r| cccc|}
 \hline
-Messung & 1 & 2 & 3 & 4\\
+Messung && 1 & 2 & 3 & 4\\
 \hline
-Ruhelage $x_0$ & 449 & 466 & 440 & 482\\
-Nicht eingetaucht $x_1$ & 424 & 438 & 414 & 455\\
-Eingetaucht $x_2$ & 427 & 441 & 417 & 458\\
+Ruhelage &$x_0$ & 449 & 466 & 440 & 482\\
+Nicht eingetaucht &$x_1$ & 424 & 438 & 414 & 455\\
+Eingetaucht &$x_2$ & 427 & 441 & 417 & 458\\
 \hline
 \end{tabular} \phantom{\begin{array}{ll}
- 	 \textrm{In Fl\"ussigkeit}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
+ 	 \textrm{In Fl\"ussigkeit}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
  \end{array}
 }$$
 
@@ -202,30 +202,7 @@ Die Oberfl\"achenspannung von Wasser und Ethanol wurde mit der Abrei\ss methode 
 Die L\"ange $l$ des Drahts betr\"agt $2.63\pm0.03$ cm. Die Messwerte befinden sich in Tabelle (\ref{tabkw}) f\"ur Wasser und (\ref{tabke}) f\"ur Ethanol. Deren Graphische Darstellungen in den Graphiken (\ref{ab3}) und (\ref{ab4}). Die Sigmoidfunktion $$d\times\frac{1}{1+\exp(-c\times(x-a))}+b$$ wurde mit der curve\_fit Funktion von Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
 
 Messwerte:
-$$\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textrm{H\"ohe }$[mm]$ & 2 & 4 & 5 & 6 & 8 & 9 & 10\\
-\hline
-$\textrm{Kraft }[mN]$ & $0.26\pm0.03$ & $0.33\pm0.03$ & $$ & $1.25\pm0.03$ & $3.9\pm0.03$ & $4.75\pm0.03$ & $$\\
-\hline
-$\textrm{Kraft}\ [mN]$ & $0.23\pm0.03$ & $0.25\pm0.03$ & $0.3\pm0.03$ & $0.83\pm0.03$ & $3.85\pm0.03$ & $4.6\pm0.03$ & $4.7\pm0.03$\\
-\hline
-\end{tabular} $$\label{tabkw}
 
-$$\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textrm{H\"ohe }$[mm]$ \\ 0 \\ 1 \\ 3.5 \\ 3.75 \\ 4  \\ 4.5 \\ 5 \\ 5.5 \\ 6 \\ 6.2 \\ 6.4 \\ 6.5 \\ 6.6 \\ 7 \\ 8&
-\vline
-$\textrm{Kraft }[mN]$ \\ -0.35 \\ -0.2 \\ \\ 0 \\ \\ \\ 0.67 \\ \\ \\ \\ \\ \\ \\ \\ 1.25 \\ 1.25&
-\vline
-$\textrm{Kraft}\ [mN]$ \\ -0.35 \\ \\ \\ 0 \\ \\ 0.85 \\ 1.1 \\ 1.3 \\ \\ \\ 1.35&
-$\textrm{Kraft}\ [mN]$ \\ \\ \\ 0 \\ \\ 0.15 \\ 0.46 \\ 1.1 \\ 1.25 \\ 1.4 \\ 1.43 \\ 1.4 \\ \\ 1.3&
-\vline
-\end{tabular} $$\label{tabkw}
-
-%5.16, 4.75, 
-
-$F_{s_{max}}$:
 $$\begin{tabular}{|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2\\
@@ -264,6 +241,94 @@ $\textrm{Oberfl\"achenspannung }[\nicefrac{mN}{cm}]$ & $0.24\pm0.05$ & $0.27\pm0
 \hline
 \end{tabular} $$\label{taome}
 
+\pagebreak
+
+\section{Anhang: Tabellen und Diagramme}
+
+\begin{table}[h]
+\centering
+$\begin{array}{l}
+\textrm{Fehler Höhe: } \pm 0.03 \textrm{mm}\\
+\textrm{Fehler Kraft: } \pm 0.02 \textrm{mN}
+\end{array}$
+\begin{tabular}{|c|c|c|}
+\hline
+\textrm{H\"ohe}& \textrm{Kraft} & \textrm{Kraft} \\
+\textrm{[mm]} & \textrm{[mN]}& \textrm{[mN]}\\
+\hline 
+2 & 0.26 & 0.23\\
+\hline
+4 & 0.33 & 0.25\\
+\hline 
+5 & & 0.3\\
+\hline 
+6 & 1.25 & 0.83\\
+\hline 
+8 & 3.9 & 0.83\\ 
+\hline
+9 & 4.75 & 4.6\\ 
+\hline
+10 & 4.7 &\\ 
+\hline
+\end{tabular}
+\phantom{$\begin{array}{l}
+\textrm{Fehler Höhe: } \pm 0.03 \textrm{mm}\\
+\textrm{Fehler Kraft: } \pm 0.02 \textrm{mN}
+\end{array}$}
+\caption{Messwerte für Wasser}
+\label{tabmw}
+\end{table}
+
+\begin{table}[h]
+\centering
+$\begin{array}{l}
+\textrm{Fehler Höhe: } \pm 0.03 \textrm{mm}\\
+\textrm{Fehler Kraft: } \pm 0.02 \textrm{mN}
+\end{array}$
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textrm{H\"ohe}& \textrm{Kraft} & \textrm{Kraft} & \textrm{Kraft} \\
+\textrm{[mm]} & \textrm{[mN]}& \textrm{[mN]}& \textrm{[mN]} \\
+\hline 
+0 & -0.35 & -0.35 & \\
+\hline
+1 & -0.2 & & \\
+\hline 
+3.5 & & & 0\\
+\hline 
+3.75 & 0 & 0 & \\
+\hline 
+4 & & & 0.15\\ 
+\hline
+4.5 & & & 4.6\\ 
+\hline
+5 & 0.67 & 0.85 & 1.1\\ 
+\hline
+5.5 & & 1.1 & 1.25\\ 
+\hline
+6 & & 1.3 & 1.4\\ 
+\hline 
+6.2 & & & 1.43\\ 
+\hline
+6.4 & & & 1.4\\ 
+\hline
+6.5 & & 1.35 & \\ 
+\hline
+6.6 & & & 1.3\\ 
+\hline
+7 & 1.25 & & \\ 
+\hline
+8 & 1.25 & &\\
+\hline
+\end{tabular}
+\phantom{$\begin{array}{l}
+\textrm{Fehler Höhe: } \pm 0.03 \textrm{mm}\\
+\textrm{Fehler Kraft: } \pm 0.02 \textrm{mN}
+\end{array}$}
+\caption{Messwerte für Ethanol}
+\label{tabme}
+\end{table}
+
 \begin{figure}[p]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{Graph_1.png}\label{ab3}}
@@ -278,37 +343,4 @@ $\textrm{Oberfl\"achenspannung }[\nicefrac{mN}{cm}]$ & $0.24\pm0.05$ & $0.27\pm0
 \label{abbildung}
 \end{figure}
 
-%%%%% Anhang
-
-\section{Anhang: Tabellen und Diagramme}
-
-%\begin{table}[p]
-%\centering
-%\begin{tabular*}{0.99\textwidth}{@{\extracolsep{\fill}}cccccc}
-%\toprule
-% $x$ & $u_x$ &  $y$  &  $u_y$ &  $y^2$  &  $2 y u_y$  \\
-% m & m &  s & s &  s$^2$ & s$^2$  \\
-%\midrule
-%  0,16 & 0,01 & 0,686 & 0,029 & 0,47 & 0,040 \\
-%  0,33 & 0,01 & 1,046 & 0,031 & 1,09 & 0,065  \\
-%  0,52 & 0,01 & 1,381 & 0,026 & 1,91 & 0,072  \\
-%  0,69 & 0,01 & 1,607 & 0,021 & 2,58 & 0,067  \\
-%  0,85 & 0,01 & 1,785 & 0,022 & 3,19 & 0,079  \\	
-%\bottomrule
-%\end{tabular*}
-%\caption{Eine Tabellenunterschrift.}
-%\label{tabelle}
-%\end{table}
-
-
-%\begin{figure}[p]
-%\centering
-%\includegraphics[width=0.8\textwidth]{bild.png}
-%\caption{Eine Bildunterschrift.}
-%\label{abbildung}
-%\end{figure}
-
-
-
 \end{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

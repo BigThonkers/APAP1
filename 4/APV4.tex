@@ -35,8 +35,6 @@ Andréz Gockel, Patrick M\"unnich\\
 
 Der Versuch ist in zwei Teile geteilt, welche dazu dienen, grundlegende Eigenschaften von Fl\"ussigkeiten experimentell zu bestimmen. Im Teil A bestimmt man die Dichte von Wasser und einer unbekannten Fl\"ussigkeit mithilfe einer Jollyschen Federwaage. Im Teil B bestimmt man die Oberfl\"achen\-spannung von Wasser durch Messen der Abrisskraft mithilfe eines Torsionskraftmessers.
 
-%%%%% Auswertung und Fehleranalyse
-
 \section{Auswertung und Fehleranalyse}
 
 
@@ -44,12 +42,24 @@ Der Versuch ist in zwei Teile geteilt, welche dazu dienen, grundlegende Eigensch
 
 \subsubsection{Aufgabenstellung}
 Mit Hilfe der Jollyschen Federwaage sind zu bestimmen
+\begin{figure}[h]
+\begin{minipage}{.5\textwidth}
 \begin{enumerate}
 \item{die Dichte eines geometrisch einfach gestalteten K\"orpers, wobei ein Vergleich mit den aus den
 geometrischen Abmessungen und dem Gewicht des K\"orpers gewonnenem Wert durchzuf\"uhren
 ist,}
 \item{die Dichte einer unbekannten Fl\"ussigkeit.}
 \end{enumerate}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\centering
+\fbox{\includegraphics[width=0.4\textwidth]{JollySketch.PNG}}
+   \renewcommand\thefigure{B1}
+\caption{Jollysche Federwaage}
+\label{JS1}
+
+\end{minipage}
+\end{figure}
 
 \subsubsection{Auswertung}
 
@@ -118,9 +128,10 @@ Der Mittelwert unserer Messung betr\"agt also $\rho=(8900\pm1800)\mathrm{\frac{k
 
 \begin{figure}[p]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{Rechnung_1.PNG}\label{ab1}}
+\fbox{\includegraphics[width=0.8\textwidth]{Rechnung_1.PNG}}
+   \renewcommand\thefigure{A1}
 \caption{Rechnungen mit Python und $uncertainties$ Paket.}
-\label{abbildung}
+\label{ab1}
 \end{figure}
 
 Der Fehler der Messung mit der Jollyschen Waage ist aufgrund des gro\ss en Dichteunterschieds zwischen dem Metall und der Fl\"ussigkeit so gro\ss. Dadurch ist die Auftriebskraft im Vergleich zur Gewichtskraft der Kugel klein und man erh\"alt im Nenner von (\ref{eq1}) die Differenz zweier nahezu gleichen Messwerte, deren Fehler dann gro\ss\ ist.\\
@@ -155,7 +166,6 @@ Eingetaucht &$x_2$ & 427 & 441 & 417 & 458\\
 
 Mit (\ref{eq4}) ergibt sich dann:
 
-%NICEFRAC
 $$\begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2 & 3 & 4\\
@@ -168,9 +178,10 @@ Hier ist der Mittelwert dann $\rho_{Fl}=(1010\pm300)\mathrm{\frac{kg}{m^3}}$. Di
 
 \begin{figure}[p]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{Rechnung_2.PNG}\label{ab2}}
+\fbox{\includegraphics[width=0.8\textwidth]{Rechnung_2.PNG}}
+   \renewcommand\thefigure{A2}
 \caption{Rechnungen mit Python und $uncertainties$ Paket.}
-\label{abbildung}
+\label{ab2}
 \end{figure}
 
 \subsubsection{Unsicherheitsvergleich mit Streuung}
@@ -190,9 +201,18 @@ s_{\overline{\rho_{Fl}}}=(505\pm25)\nicefrac{kg}{m^3}
 \]
 
 Bei der Messreihe mit der unbekannten Fl\"ussigkeit gibt es einen systematischen Fehler aufgrund der verwendeten gemessenen Dichte des K\"orpers, die unter umst\"anden zu gro\ss\ oder zu klein gesch\"atzt wurde und als Referenz dient.
-
+\pagebreak
 \subsection{Teil B - Oberfl\"achenspannung}
+\subsubsection{Aufgabenstellung}
 
+\begin{figure}[h] 
+\centering
+\fbox{\includegraphics[width=0.2\textwidth]{NewtSketch.PNG}}
+   \renewcommand\thefigure{B2}
+\caption{Kraft Waage}
+\label{NS1}
+\end{figure}
+\subsubsection{Auswertung}
 Die Oberfl\"achenspannung von Wasser und Ethanol wurde mit der Abrei\ss methode gemessen. F\"ur diese gilt:
 
 \begin{equation}
@@ -344,5 +364,15 @@ $\begin{array}{l}
 \caption{Verlauf der Kraft $F$ als Funktion der Position $x$ beim Herausziehen des B\"ugels aus der Fl\"ussigkeit.}
 \label{abbildung}
 \end{figure}
+
+%\begin{thebibliography}{9}
+
+%\bibitem{Versuchsanleitungen}
+%  Uni Freiburg,
+%  \textit{Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1},\\
+%  Sommersemester 2018\\
+%  08/2018.
+%
+%\end{thebibliography}
 
 \end{document}

@@ -5,7 +5,7 @@
 \usepackage{lmodern}
 \usepackage[margin=2cm]{geometry}
 \usepackage[german]{babel}
-
+%\usepackage{mathpazo}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
 
@@ -15,11 +15,22 @@
 \usepackage[colorlinks]{hyperref}
 \usepackage{nicefrac}
 \usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{.4pt}
+\setlength{\headheight}{14pt} 
 
+\lhead{\textit{VERSUCH} 4}
+%\lfoot{andrez.gockel@pluto.uni-freiburg.de\\ patrick.munnich@vivaldi.net}
+\rfoot{}
+
+\definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
 \hbadness=99999
 
-\begin{document}
+\newcommand{\refpy}[1]{Siehe Anhang: \textit{Rechnungen in Python} (\texttt{{\color{incolor}In [{\color{incolor}#1}]}})}
 
+\begin{document}
+\thispagestyle{empty}
 {
 \centering 
 \large 
@@ -66,7 +77,7 @@ ist,}
 \subsubsection{Auswertung}
 
 Zur ersten Aufgabe:\\
-Die Messungen wurden mit einer Metallkugel durchgef\"uhrt mit einem Durch\-messer von $d=(1.2\pm0.03)$cm und einer Masse von $m=(7.03\pm0.005)$g. Mit der Formel f\"ur das Volumen, $V=\frac{\pi}{6}d^3$, und f\"ur die Dichte, $\rho=\frac{m}{V}$, ergibt sich ein Wert von $(7810\pm550)\mathrm{\frac{kg}{m^3}}$. Hierbei wurde der Fehler \"uber die Potenz\-formel des Gau\ss 'schen Fehlerfortpflanzungsgesetzes ($\delta V=\frac{\Delta V}{V},\ \delta V=3\delta d$) bei Vernachl\"assigung des Fehlers der Masse bestimmt.\\
+Die Messungen wurden mit einer Metallkugel durchgef\"uhrt mit einem Durch\-messer von $d=(1.2\pm0.03)$cm und einer Masse von $m=(7.03\pm0.005)$g. Mit der Formel f\"ur das Volumen, $V=\frac{\pi}{6}d^3$, und f\"ur die Dichte, $\rho=\frac{m}{V}$, ergibt sich ein Wert von $(7810\pm550)\mathrm{\nicefrac{\textrm{kg}}{m^3}}$. Hierbei wurde der Fehler \"uber die Potenz\-formel des Gau\ss 'schen Fehlerfortpflanzungsgesetzes ($\delta V=\frac{\Delta V}{V},\ \delta V=3\delta d$) bei Vernachl\"assigung des Fehlers der Masse bestimmt.\\
 
 $$
  \begin{array}{ll}
@@ -126,15 +137,24 @@ $\textrm{Dichte }\rho\left[\nicefrac{\textrm{kg}}{\textrm{m}^3}\right]$ & $8982\
 \hline
 \end{tabular} $$
 
-Der Mittelwert unserer Messung betr\"agt also $\rho=(8900\pm1800)\mathrm{\nicefrac{\textrm{kg}}{m^3}}$. Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. Siehe Abbildung (\ref{ab1}).
+Der Mittelwert unserer Messung betr\"agt also $\rho=(8900\pm1800)\mathrm{\nicefrac{\textrm{kg}}{m^3}}$. Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. \refpy{1}. \cite{Uncertainties}
 
-\begin{figure}[p]
-\centering
-\fbox{\includegraphics[width=0.8\textwidth]{Rechnung_1.PNG}}
-   \renewcommand\thefigure{A1}
-\caption{Rechnungen mit Python und $uncertainties$ Paket.}
-\label{ab1}
-\end{figure}
+%\begin{figure}[p]
+%\centering
+%\fbox{\includegraphics[width=1\textwidth]{Rechnung_1.PNG}}
+%   \renewcommand\thefigure{A1}
+%\caption{Rechnungen mit Python und $uncertainties$ Paket.}
+%\label{ab1}
+%\end{figure}
+
+%\begin{figure}[p]
+%\centering
+%\includegraphics[width=0.6\textwidth]{Rechnung_3.PNG}
+%   \renewcommand\thefigure{A3}
+%\caption{Rechnungen mit Python und $uncertainties$ Paket.}
+%\label{ab5}
+%\end{figure}
+
 
 Der Fehler der Messung mit der Jollyschen Waage ist aufgrund des gro\ss en Dichteunterschieds zwischen dem Metall und der Fl\"ussigkeit so gro\ss. Dadurch ist die Auftriebskraft im Vergleich zur Gewichtskraft der Kugel klein und man erh\"alt im Nenner von (\ref{eq1}) die Differenz zweier nahezu gleichen Messwerte, deren Fehler dann gro\ss\ ist.\\
 
@@ -176,21 +196,21 @@ $\textrm{Dichte }\rho\left[\nicefrac{\textrm{kg}}{\textrm{m}^3}\right]$ & $1068\
 \hline
 \end{tabular} $$
 
-Hier ist der Mittelwert dann $\rho_{Fl}=(1010\pm300)\mathrm{\frac{kg}{m^3}}$. Die Rechnungen wurden hier wieder mit dem $uncertainties$ Paket in Python durchgef\"uhrt. Siehe Abbildung (\ref{ab2}).
+Hier ist der Mittelwert dann $\rho_{Fl}=(1010\pm300)\mathrm{\nicefrac{\textrm{kg}}{m^3}}$. Die Rechnungen wurden hier wieder mit dem $uncertainties$ Paket in Python durchgef\"uhrt. \refpy{2}. 
 
-\begin{figure}[p]
-\centering
-\fbox{\includegraphics[width=0.8\textwidth]{Rechnung_2.PNG}}
-   \renewcommand\thefigure{A2}
-\caption{Rechnungen mit Python und $uncertainties$ Paket.}
-\label{ab2}
-\end{figure}
+%\begin{figure}[p]
+%\centering
+%\fbox{\includegraphics[width=0.8\textwidth]{Rechnung_2.PNG}}
+%   \renewcommand\thefigure{A2}
+%\caption{Rechnungen mit Python und $uncertainties$ Paket.}
+%\label{ab2}
+%\end{figure}
 
 \subsubsection{Unsicherheitsvergleich mit Streuung}
 
 Aus den 5 bzw. 4 Einzelwerten der beiden Messungen ergeben sich folgende Streuungen:\\
 
-$$s_\rho=279,\ \mathrm{\nicefrac{kg}{m^3}},\ s_{\rho_{Fl}}=49.1,\ \mathrm{\nicefrac{kg}{m^3}}$$
+$$s_\rho=279\, \mathrm{\nicefrac{\textrm{kg}}{m^3}},\quad s_{\rho_{Fl}}=49.1\, \mathrm{\nicefrac{\textrm{kg}}{m^3}}$$
 
 Diese Werte sind erheblich kleiner als erwartet. Der Grund daf\"ur k\"onnte bei einer zu groben Absch\"atzung der Messungenauigkeit oder aufgrund der geringen Anzahl an Einzelmessungen (5 bzw. 4) liegen.\\
 
@@ -198,8 +218,8 @@ Geht man von einer halb so gro\ss en Messungenauigkeit aus, so erh\"alt man Fehl
 
 Aus den Unsicherheiten der Einzelmessungen ergeben sich Standardabweichungen des Mittelwerts von:\\
 \[
-s_{\overline{\rho}}=(3987\pm125)\nicefrac{kg}{m^3},\ 
-s_{\overline{\rho_{Fl}}}=(505\pm25)\nicefrac{kg}{m^3}
+s_{\overline{\rho}}=(3987\pm125)\nicefrac{\textrm{kg}}{m^3},\quad
+s_{\overline{\rho_{Fl}}}=(505\pm25)\nicefrac{\textrm{kg}}{m^3}
 \]
 
 Bei der Messreihe mit der unbekannten Fl\"ussigkeit gibt es einen systematischen Fehler aufgrund der verwendeten gemessenen Dichte des K\"orpers, die unter umst\"anden zu gro\ss\ oder zu klein gesch\"atzt wurde und als Referenz dient.
@@ -371,14 +391,8 @@ $\begin{array}{l}
 \label{ab4}
 \end{figure}
 
-%\begin{thebibliography}{9}
-
-%\bibitem{Versuchsanleitungen}
-%  Uni Freiburg,
-%  \textit{Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1},\\
-%  Sommersemester 2018\\
-%  08/2018.
-%
-%\end{thebibliography}
+\begin{thebibliography}{9}
+\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+\end{thebibliography}
 
 \end{document}

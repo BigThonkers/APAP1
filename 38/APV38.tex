@@ -62,34 +62,13 @@ $$
 
 \subsubsection{Aufgabenstellung}
 
-Mit Hilfe dem Sch\"urholz Apparat ist die W\"armekapazit\"at von Wasser zu bestimmen. Dies wird getan, indem man ein Nylonfaden \"uber ein mit $50$ ml Wasser gef\"ullten Kaloritmeter windet, ein Thermometer dranschraubt und am Ende des Nylonfadens eine $5$ kg Masse dranh\"angt. Das Kalorimeter wird gedreht, sodass die Feder vom Sch\"urholz Apparat entspannt ist, also die Reibkraft $F_R$ die Gewichtskraft $F_G$ ausgleicht. Die Temperatur wird beim Drehen gemessen und notiert.
+Mit Hilfe von dem Sch\"urholz Apparat ist die W\"armekapazit\"at von Wasser zu bestimmen. Dies wird getan, indem man ein Nylonfaden \"uber ein mit $50$ ml Wasser gef\"ullten Kaloritmeter windet, ein Thermometer dranschraubt und am Ende des Nylonfadens eine $5$ kg Masse dranh\"angt. Das Kalorimeter wird gedreht, sodass die Feder vom Sch\"urholz Apparat entspannt ist, also die Reibkraft $F_R$ die Gewichtskraft $F_G$ ausgleicht. Die Temperatur wird beim Drehen gemessen und notiert.
 
 %Picture from book
 
 \subsubsection{Auswertung}
 
-Die Messung wurde zweimal durchgef\"uhrt. Bei der ersten Durchf\"uhrung wurde die Temperatur\"anderung \"uber 50 Drehungen jeweils im Abstand von 10 Drehungen gemessen. Die zweite Durchf\"uhrung wurde mit 100 Drehungen durchgef\"uhrt und die Temperatur alle 5 Drehungen notiert.
-
-%Table with values
-
-$$
- \begin{array}{ll}
- 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
- \end{array}
-%\rowcolors{2}{gray!10}{white}
-\noindent%
-\begin{tabular}{|l | ccccc|}
-\hline
-Messung & 1 & 2 & 3 & 4 & 5\\
-\hline
-Ruhelage $x_0$ & 441 & 479 & 473 & 463 & 468\\
-Nicht eingetaucht $x_1$ & 414 & 453 & 447 & 436 & 440\\
-Eingetaucht $x_2$ & 417 & 456 & 450 & 439 & 443\\
-\hline
-\end{tabular} \phantom{\begin{array}{ll}
- 	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Unsicherheit: $\pm 0.1$mm}
- \end{array}
-}$$
+Die Messung wurde zweimal durchgef\"uhrt. Bei der ersten Durchf\"uhrung wurde die Temperatur\"anderung \"uber 50 Drehungen jeweils im Abstand von 10 Drehungen gemessen. Die zweite Durchf\"uhrung wurde mit 100 Drehungen durchgef\"uhrt und die Temperatur alle 5 Drehungen notiert. Die genauen Messwerte befinden sich im Anhang.
 
 F\"ur die W\"armekapazit\"at gilt:\\
 
@@ -122,66 +101,34 @@ $$\begin{tabular}{|c|c|c|c|}
 \hline
 \end{tabular}$$
 
-Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. Siehe Abbildung (\ref{ab1}).\\
+Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. Diese Rechnungen k\"onnen im Anhang gefunden werden..\\
 
-Der Fehler der Messung mit dem Sch\"urholz Apparat ist aufgrund der gro\ss en Ungenauigkeit der Temperatur und der Anzahl Drehungen sehr gro\ss. Au\ss erdem ist es recht wahrscheinlich, dass $F_{R}$ und $F_{G}$ sich nicht st\"andig ganz ausgleichen, also dadurch auch eine Unsicherheit entsteht. Der Literaturwert hierzu ist $4185.5$ $\mathrm{\nicefrac{\mathrm{J}}{K}}$. Der Unterschied ist aufgrund der Messungenauigkeiten und niedrigen Anzahl Messungen sehr gro\ss.
-
-
-\subsubsection{Unsicherheitsvergleich mit Streuung}
-
-Aus den 5 bzw. 4 Einzelwerten der beiden Messungen ergeben sich folgende Streuungen:\\
-
-$$s_\rho=279,\ \mathrm{\nicefrac{kg}{m^3}},\ s_{\rho_{Fl}}=49.1,\ \mathrm{\nicefrac{kg}{m^3}}$$
-
-Diese Werte sind erheblich kleiner als erwartet. Der Grund daf\"ur k\"onnte bei einer zu groben Absch\"atzung der Messungenauigkeit oder aufgrund der geringen Anzahl an Einzelmessungen (5 bzw. 4) liegen.\\
-
-Geht man von einer halb so gro\ss en Messungenauigkeit aus, so erh\"alt man Fehlerabsch\"atzungen von etwa 2000 $\mathrm{\nicefrac{kg}{m^3}}$, was immer noch nicht konsistent mit der Absch\"atzung mittels $s_\rho$ ist. Daher m\"ussen wir davon ausgehen, dass die kleinen Werte von $s_\rho\textrm{ und}\ s_{\rho_{Fl}}$ durch die geringe Anzahl an Einzelmessungen zustande gekommen sind.\\
-
-Aus den Unsicherheiten der Einzelmessungen ergeben sich Standardabweichungen des Mittelwerts von:\\
-\[
-s_{\overline{\rho}}=(3987\pm125)\nicefrac{kg}{m^3},\ 
-s_{\overline{\rho_{Fl}}}=(505\pm25)\nicefrac{kg}{m^3}
-\]
-
-Bei der Messreihe mit der unbekannten Fl\"ussigkeit gibt es einen systematischen Fehler aufgrund der verwendeten gemessenen Dichte des K\"orpers, die unter umst\"anden zu gro\ss\ oder zu klein gesch\"atzt wurde und als Referenz dient.
-
-\subsection{Teil B - Oberfl\"achenspannung}
-
-Die Oberfl\"achenspannung von Wasser und Ethanol wurde mit der Abrei\ss methode gemessen. F\"ur diese gilt:
-
-\begin{equation}
-\sigma=\frac{F_(s_{max})}{2l}\label{eqo}
-\end{equation}
-
-$$\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-\textrm{H\"ohe }$[mm]$ & 2 & 4 & 5 & 8 & 9 & 10\\
-\hline
-$\textrm{Kraft }[mN]$ & $0.26\pm0.03$ & $0.33\pm0.03$ & $1.25\pm0.03$ & $3.9\pm0.03$ & $4.75\pm0.03$\\
-\hline
-\end{tabular} $$\ref{tabow}
-
-Die L\"ange $l$ des Drahts betr\"agt WERT EINHEIT. Die Messwerte befinden sich in Tabelle (\ref{tabow}) f\"ur Wasser und (\ref{taboe}) f\"ur Ethanol. Deren Graphische Darstellungen in den Graphiken (\ref{ab3}) und (\ref{ab4}). Die Sigmoidfunktion $$d\times\frac{1}{1+\exp(-c\times(x-a))}+b$$ wurde mit der curve\_fit Funktion von Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
-
-TABELLE
-%5.16, 4.75, 
-
-Die Fehler wurden durch Streuung der Messpunkte um die angepassten Kurven abgesch\"atzt.
-
-Mit der Formel (\ref{eqo}) ergibt sich f\"ur die Oberfl\"achenspannung 
-
-TABELLE
-
-MITTELWERT
+Der Fehler der Messung mit dem Sch\"urholz Apparat ist aufgrund der gro\ss en Ungenauigkeit der Temperatur und der Anzahl Drehungen sehr gro\ss. Au\ss erdem ist es recht wahrscheinlich, dass $F_{R}$ und $F_{G}$ sich nicht st\"andig ganz ausgleichen, also dadurch auch eine Unsicherheit entsteht. Dies ist einflussreich, da die W\"arme, $Q$, von $F_R$ via $W_R=\int F_Rds$ abh\"angig ist. Da $F_R$ \"uber $F_G$ bestimmt wird und dies bei nicht korrekter Ausgleichung der Beiden nicht akkurat ist, ist also auch $Q$ und dadurch $c_w$ ungenau. Der Literaturwert hierzu ist $4185.5$ $\mathrm{\nicefrac{\mathrm{J}}{K}}$. Der Unterschied ist aufgrund der Messungenauigkeiten und niedrigen Anzahl Messungen sehr gro\ss.
 
 
-% Anhang
+\subsection{Teil B - Umwandlung von elektrischer Arbeit in Wärme}
 
-\section{Anhang: Tabellen und Diagramme}
+\subsubsection{Aufgabenstellung}
 
-Tabelle  wurde mit der Umgebung "`tabular"' erzeugt
-und mit der Umgebung "`table"' eingebunden.  
+Zur Bestimmung der W\"armekapazit\"at durch Umwandlung von elektrischer Arbeit in W\"arme nutzt man ein Kalorimeter mit einem Widerstand und Thermometer. Zum Aufw\"armen des Wassers wird der Widerstand an eine Spannungsquelle angeschlo\ss en. Die Temperatur\"anderung wird dann bis zu einem beliebigen Punkt abschnittsweise gemessen. Danach wird gemessen, ab welchem Zeitpunkt die Temperatur wieder abf\"allt.
 
+\subsubsection{Auswertung}
+
+Es wurden zwei Messungen durchgef\"uhrt mit jeweils $116.94\,$g und $113.42\,$g Wasser. Die Wassermenge wurde so gew\"ahlt, damit der Widerstand und das Thermometer das Wasser ber\"uhren. Die Dauern der Messungen waren 38 und 20 Minuten. Diese wurden so gew\"ahlt, dass sie m\"oglichst kurz ausfallen sollten. Temperatur\"anderungen wurden im Abstand von 60 Sekunden gemessen, da diese sonst nicht auff\"allig genug w\"aren, um etwas zu erkennen. Die Messwerte hierzu sind aufgrund ihrer L\"ange im Anhang.
+
+
+
+%Extrapolation
+
+
+
+%Systematische und statistische Fehler.
+
+
+
+
+
+%\section{Anhang}
 
 
 \end{document}

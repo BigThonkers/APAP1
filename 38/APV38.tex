@@ -14,6 +14,7 @@
 \usepackage{booktabs}
 \usepackage[colorlinks]{hyperref}
 \usepackage{nicefrac}
+\usepackage{gensymb}
 
 \begin{document}
 
@@ -33,8 +34,6 @@ Andréz Gockel, Patrick M\"unnich\\
 \section{Ziel des Versuchs}
 
 Der Versuch ist in zwei Teile geteilt, welche dazu dienen, die Wärmekapazität von Wasser zu bestimmen. Im Teil A bestimmt man die Temperatur Differenz von Wasser während der Umwandlung von mechanischer Energie zu thermischer Energie durch Reibkräfte mit Hilfe des Schürholz-Apparates. Im Teil B verwendet man einen elektrischen Widerstand um elektrische Leistung über ein bestimmten Zeitraum in thermische Energie zu wandeln.
-
-% Auswertung und Fehleranalyse
 
 \section{Auswertung und Fehleranalyse}
 
@@ -62,18 +61,16 @@ $$
 
 
 \subsubsection{Aufgabenstellung}
-Mit Hilfe der Jollyschen Federwaage sind zu bestimmen
-\begin{enumerate}
-\item{die Dichte eines geometrisch einfach gestalteten K\"orpers, wobei ein Vergleich mit den aus den
-geometrischen Abmessungen und dem Gewicht des K\"orpers gewonnenem Wert durchzuf\"uhren
-ist,}
-\item{die Dichte einer unbekannten Fl\"ussigkeit.}
-\end{enumerate}
+
+Mit Hilfe dem Sch\"urholz Apparat ist die W\"armekapazit\"at von Wasser zu bestimmen. Dies wird getan, indem man ein Nylonfaden \"uber ein mit $50$ ml Wasser gef\"ullten Kaloritmeter windet, ein Thermometer dranschraubt und am Ende des Nylonfadens eine $5$ kg Masse dranh\"angt. Das Kalorimeter wird gedreht, sodass die Feder vom Sch\"urholz Apparat entspannt ist, also die Reibkraft $F_R$ die Gewichtskraft $F_G$ ausgleicht. Die Temperatur wird beim Drehen gemessen und notiert.
+
+%Picture from book
 
 \subsubsection{Auswertung}
 
-Zur ersten Aufgabe:\\
-Die Messungen wurden mit einer Metallkugel durchgef\"uhrt mit einem Durch\-messer von $d=(1.2\pm0.03)$cm und einer Masse von $m=(7.03\pm0.005)$g. Mit der Formel f\"ur das Volumen, $V=\frac{\pi}{6}d^3$, und f\"ur die Dichte, $\rho=\frac{m}{V}$, ergibt sich ein Wert von $(7810\pm550)\mathrm{\frac{kg}{m^3}}$. Hierbei wurde der Fehler \"uber die Potenz\-formel des Gau\ss 'schen Fehlerfortpflanzungsgesetzes ($\delta V=\frac{\Delta V}{V},\ \delta V=3\delta d$) bei Vernachl\"assigung des Fehlers der Masse bestimmt.\\
+Die Messung wurde zweimal durchgef\"uhrt. Bei der ersten Durchf\"uhrung wurde die Temperatur\"anderung \"uber 50 Drehungen jeweils im Abstand von 10 Drehungen gemessen. Die zweite Durchf\"uhrung wurde mit 100 Drehungen durchgef\"uhrt und die Temperatur alle 5 Drehungen notiert.
+
+%Table with values
 
 $$
  \begin{array}{ll}
@@ -94,51 +91,42 @@ Eingetaucht $x_2$ & 417 & 456 & 450 & 439 & 443\\
  \end{array}
 }$$
 
-F\"ur das Dichteverh\"altniss gilt:\\
+F\"ur die W\"armekapazit\"at gilt:\\
 
 \begin{equation}
-\frac{\rho}{\rho_{Fl}} = \frac{F_G}{F_G - F_{G'}}\label{eq2}
+C=C_{Kal}+C_T+m_wc_w,\label{eq1}
+\end{equation}
+
+was umgestellt werden kann zu:
+
+\begin{equation}
+c_w=\frac{C-C_{Kal}-C_T}{m_w}.\label{eq2}
+\end{equation}
+
+$C$ wird hier mittels der folgenden Gleichungen bestimmt:
+
+\begin{equation}
+C=\frac{Q}{\Delta T}
 \end{equation}
 
 \begin{equation}
-F = -k(x-x_0)\mathrm{,}\label{eq3}
+W_R=mgn\pi d=Q
 \end{equation}
 
-wobei die Gr\"o\ss en in (\ref{eq2})
-\begin{itemize}
-  \item $\rho$ und $\rho_{Fl}$ jeweils die Dichten von dem K\"orper und der Fl\"ussigkeit.
-  \item $F_G$ die Gewichtskraft des K\"orpers in Luft.
-  \item $F_{G'}$ die Gewichtskraft des K\"orpers in einer Fl\"ussigkeit.
-\end{itemize}
-
-und in (\ref{eq3})
-\begin{itemize}
-  \item $F$ die Federkraft
-  \item $k$ die Federkonstante
-  \item $x_0$ die Ruhelage der Waage
-  \item $x$ die Auslenkung der Waage sind.
-\end{itemize}
-
-Daraus ergibt sich f\"ur die Dichte mit den Auslenkungen $x_1$ Objekt in Luft und $x_2$ Objekt in Fl\"ussigkeit:
-\begin{equation}
-\rho=\rho_{Fl}\frac{x_1-x_0}{x_1-x_2}.\label{eq1}
-\end{equation}
-F\"ur unsere Messwerte aus Tabelle 1 erhalten wir
-
-%NICEFRAC
-$$\begin{tabular}{|c|c|c|c|c|c|}
+Mit unseren Messwerten und dem $uncertainties$ Paket in Python berechnen wir damit:\\
+$$\begin{tabular}{|c|c|c|c|}
 \hline
-\textrm{Messung} & 1 & 2 & 3 & 4 & 5\\
+\textrm{Messung} & 1 & 2 & \textrm{Mittelwert}\\
 \hline
-$\textrm{Dichte }\rho\left[\nicefrac{\textrm{kg}}{\textrm{m}^3}\right]$ & $8982\pm4260$ & $8649\pm4104$ & $8649\pm4104$ & $8982\pm4260$ & $9314\pm4416$\\
+\textrm{W\"armekapazit\"at} $\left[\mathrm{\nicefrac{\mathrm{J}}{K}}\right]$ & $8300\pm1400$ & $3500\pm600$ & $5900\pm800$\\
 \hline
-\end{tabular} $$
+\end{tabular}$$
 
-Der Mittelwert unserer Messung betr\"agt also $\rho=(8900\pm1800)\mathrm{\frac{kg}{m^3}}$. Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. Siehe Abbildung (\ref{ab1}).
+Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. Siehe Abbildung (\ref{ab1}).\\
 
+Der Fehler der Messung mit dem Sch\"urholz Apparat ist aufgrund der gro\ss en Ungenauigkeit der Temperatur und der Anzahl Drehungen sehr gro\ss. Au\ss erdem ist es recht wahrscheinlich, dass $F_{R}$ und $F_{G}$ sich nicht st\"andig ganz ausgleichen, also dadurch auch eine Unsicherheit entsteht. Der Literaturwert hierzu ist $4185.5$ $\mathrm{\nicefrac{\mathrm{J}}{K}}$. Der Unterschied ist aufgrund der Messungenauigkeiten und niedrigen Anzahl Messungen sehr gro\ss. 
 
-
-Der Fehler der Messung mit der Jollyschen Waage ist aufgrund des gro\ss en Dichteunterschieds zwischen dem Metall und der Fl\"ussigkeit so gro\ss. Dadurch ist die Auftriebskraft im Vergleich zur Gewichtskraft der Kugel klein und man erh\"alt im Nenner von (\ref{eq1}) die Differenz zweier nahezu gleichen Messwerte, deren Fehler dann gro\ss\ ist.\\
+des gro\ss en Dichteunterschieds zwischen dem Metall und der Fl\"ussigkeit so gro\ss. Dadurch ist die Auftriebskraft im Vergleich zur Gewichtskraft der Kugel klein und man erh\"alt im Nenner von (\ref{eq1}) die Differenz zweier nahezu gleichen Messwerte, deren Fehler dann gro\ss\ ist.\\
 
 Zur zweiten Aufgabe:\\
 Die Rechnungen wurden mit den Messwerten aus dem ersten Aufgabenteil durchgef\"uhrt und es wurde die gleiche Apparatur verwendet. Als Wert f\"ur die Dichte des K\"orpers wurde der Mittelwert auf dem ersten Aufgabenteil genutzt. Die Formel (\ref{eq1}) wurde zu

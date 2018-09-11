@@ -17,7 +17,7 @@
     \usepackage[T1]{fontenc}
     % Nicer default font (+ math font) than Computer Modern for most use cases
     \usepackage{mathpazo}
-    \usepackage{savetrees}
+    %\usepackage{savetrees}
 
     % Basic figure setup, for now with no caption control since it's done
     % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
@@ -142,7 +142,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{Python}
+    \title{\vspace{-2cm}Auswertung und Fehleranalyse mit Python\vspace{-1cm}}
     
     
     
@@ -269,13 +269,13 @@
       }
     % Slightly bigger margins than the latex defaults
     
-    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
-    
+    \geometry{verbose,margin=2cm}
+
     
 
     \begin{document}
     
-    
+    \date{}
     \maketitle
     
     
@@ -286,9 +286,12 @@
         \PY{k+kn}{from} \PY{n+nn}{uncertainties} \PY{k}{import} \PY{n}{ufloat}
         
         \PY{c+c1}{\PYZsh{}Messwerte}
-        \PY{n}{x\PYZus{}0}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{441}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{479}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{473}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{463}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{468}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{)}
-        \PY{n}{x\PYZus{}1}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{414}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{453}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{447}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{436}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{440}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{)}
-        \PY{n}{x\PYZus{}2}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{417}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{456}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{450}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{439}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{443}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+        \PY{n}{x\PYZus{}0}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{441}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{479}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{473}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\\
+        	\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{463}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{468}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+        \PY{n}{x\PYZus{}1}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{414}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{453}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{447}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\\
+        	\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{436}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{440}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+        \PY{n}{x\PYZus{}2}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{417}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{456}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{450}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\\
+        	\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{439}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mi}{443}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{}Dichte von Wasser bei 20 Grad Celsius}
         \PY{n}{rho\PYZus{}o2}\PY{o}{=}\PY{l+m+mi}{998}

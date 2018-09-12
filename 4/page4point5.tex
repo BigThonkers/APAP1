@@ -1,0 +1,53 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage[german]{babel}
+%\usepackage{mathpazo}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
+
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage{booktabs}
+\usepackage[colorlinks]{hyperref}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{.4pt}
+\setlength{\headheight}{14pt} 
+
+\lhead{\textit{VERSUCH} \textsl{4}}
+\rhead{\textsl{2} \textit{AUSWERTUNG UND FEHLERANALYSE}}
+%\lfoot{andrez.gockel@pluto.uni-freiburg.de\\ patrick.munnich@vivaldi.net}
+\cfoot{4.5}
+
+\definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+\hbadness=99999
+
+\newcommand{\refpy}[1]{Siehe Anhang: \textit{Rechnungen in Python} (\texttt{{\color{incolor}In [{\color{incolor}#1}]}})}
+
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{2}
+\subsubsection{Diskussion}
+
+An dieser Stelle ist noch zu beachten, dass das Finden von $F_{s_{max}}$ via Absch\"tzung nach einer selbst gezeichneten Kurve ein systematischer Fehler ist. Es ist auch nicht optimal, dass nur zwei bzw. drei Kurven verwendet wurden. W\"urde man also mehr Messungen machen, also \"ofter Messen bei den einzelnen Messreihen und mehr Messreihen durchf\"uhren, so w\"are das Ergebnisse besser.\\
+
+Der Literaturwert von Wasser bei $25\celsius$ ist $71.99\pm 0.05\,\nicefrac{\mathrm{mN}}{\mathrm{m}}$. \cite{Wasser} Unser Mittelwert, der $94\pm 13\,\nicefrac{\mathrm{mN}}{\mathrm{m}}$ betr\"agt, beinhaltet mit dem Fehler einberechnet nicht den Literaturwert.\\
+
+Ethanol hat bei $25\celsius$ einen Literaturwert von $22.39\,\nicefrac{\mathrm{mN}}{\mathrm{m}}$. \cite{Ethenol} Der hier berechnete Mittelwert, $26\pm 3\,\nicefrac{\mathrm{mN}}{\mathrm{m}}$, beinhaltet den Literaturwert auch nicht, ist aber schon wesentlich n\"aher dran. Vermutlich sind also die Messungen dei Ethanol besser verlaufen als die bei Wasser. Ein m\"oglicher Grund des gr\"o\ss eren Unterschieds bei Wasser als bei Ethanol kann auf die wenigeren Messwerte und Mangel an Erfahrung beim Durchf\"uhren des Versuchs zur\"uckgef\"uhrt werden.
+
+\vfill
+
+\begin{thebibliography}{9}
+\bibitem{Wasser} \url{https://en.wikipedia.org/wiki/Surface-tension_values#cite_note-one-2}
+\bibitem{Ethenol} \url{https://en.wikipedia.org/wiki/Surface_tension}
+\end{thebibliography}
+
+\end{document}

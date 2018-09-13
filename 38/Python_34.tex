@@ -38,6 +38,7 @@
     \DeclareCaptionLabelFormat{nolabel}{}
     \captionsetup{labelformat=nolabel}
 
+\usepackage{savetrees}
     \usepackage{adjustbox} % Used to constrain images to a maximum size 
     \usepackage{xcolor} % Allow colors to be defined
     \usepackage{enumerate} % Needed for markdown enumerations to work
@@ -141,7 +142,8 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{Python\_34}
+    \title{Rechnungen mit Python}
+    \date{}
     
     
     
@@ -294,7 +296,7 @@
         \PY{n}{n1}\PY{o}{=}\PY{n}{unp}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{,}\PY{l+m+mi}{40}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{n}{un}\PY{p}{]}\PY{p}{)}
         \PY{n}{T1}\PY{o}{=}\PY{n}{unp}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{n}{ut}\PY{p}{]}\PY{p}{)}
         \PY{n}{n2}\PY{o}{=}\PY{n}{unp}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{25}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{,}\PY{l+m+mi}{35}\PY{p}{,}\PY{l+m+mi}{40}\PY{p}{,}\PY{l+m+mi}{45}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{,}\PY{l+m+mi}{55}\PY{p}{,}\PY{l+m+mi}{60}\PY{p}{,}\PY{l+m+mi}{65}\PY{p}{,}\PY{l+m+mi}{70}\PY{p}{,}\PY{l+m+mi}{75}\PY{p}{,}\PY{l+m+mi}{80}\PY{p}{,}\PY{l+m+mi}{85}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{95}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{n}{un}\PY{p}{]}\PY{p}{)}
-        \PY{n}{T2}\PY{o}{=}\PY{n}{unp}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{n}{ut}\PY{p}{]}\PY{p}{)}
+  \PY{n}{T2}\PY{o}{=}\PY{n}{unp}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{n}{ut}\PY{p}{]}\PY{p}{)}
         \PY{n}{c\PYZus{}Cu}\PY{o}{=}\PY{l+m+mi}{380}
         \PY{n}{m\PYZus{}Kal}\PY{o}{=}\PY{l+m+mf}{0.098}
         \PY{n}{C\PYZus{}Kal}\PY{o}{=}\PY{n}{m\PYZus{}Kal}\PY{o}{*}\PY{n}{c\PYZus{}Cu}
@@ -342,7 +344,7 @@
         \PY{k}{def} \PY{n+nf}{tstd}\PY{p}{(}\PY{n}{x\PYZus{}0}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{u}\PY{p}{)}\PY{p}{:}
             \PY{k}{return} \PY{n+nb}{abs}\PY{p}{(}\PY{n}{x\PYZus{}0}\PY{o}{\PYZhy{}}\PY{n}{y}\PY{p}{)}\PY{o}{/}\PY{n}{u}
         
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Abweichung des gewichteten Mittelwerts vom Literaturwert =}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{tstd}\PY{p}{(}\PY{l+m+mi}{4187}\PY{p}{,}\PY{l+m+mi}{4182}\PY{p}{,}\PY{l+m+mi}{554}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Abweichung des gewichteten Mittelwerts vom Literaturwert =}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{tstd}\PY{p}{(}\PY{l+m+mi}{4187}\PY{p}{,}\PY{l+m+mi}{4182}\PY{p}{,}\PY{l+m+mi}{554}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -359,11 +361,6 @@ Abweichung des gewichteten Mittelwerts vom Literaturwert = 0.009025270758122744 
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}9}]:} \PY{c+c1}{\PYZsh{}Zweiter Aufgabenteil}
-        
-        \PY{c+c1}{\PYZsh{}Pakete importieren}
-        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        \PY{k+kn}{from} \PY{n+nn}{uncertainties} \PY{k}{import} \PY{n}{ufloat}
-        \PY{k+kn}{from} \PY{n+nn}{uncertainties} \PY{k}{import} \PY{n}{unumpy} \PY{k}{as} \PY{n}{unp}
         
         \PY{c+c1}{\PYZsh{}Werte}
         \PY{n}{U}\PY{o}{=}\PY{n}{ufloat}\PY{p}{(}\PY{l+m+mf}{14.9}\PY{p}{,}\PY{l+m+mf}{0.02}\PY{p}{)}
@@ -408,7 +405,7 @@ Abweichung des gewichteten Mittelwerts vom Literaturwert = 0.009025270758122744 
         \PY{k}{def} \PY{n+nf}{tstd}\PY{p}{(}\PY{n}{x\PYZus{}0}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{u}\PY{p}{)}\PY{p}{:}
             \PY{k}{return} \PY{n+nb}{abs}\PY{p}{(}\PY{n}{x\PYZus{}0}\PY{o}{\PYZhy{}}\PY{n}{y}\PY{p}{)}\PY{o}{/}\PY{n}{u}
         
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Abweichung des gewichteten Mittelwerts vom Literaturwert =}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{tstd}\PY{p}{(}\PY{l+m+mi}{7904}\PY{p}{,}\PY{l+m+mi}{4182}\PY{p}{,}\PY{l+m+mf}{0.15}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+ \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Abweichung des gewichteten Mittelwerts vom Literaturwert =}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{tstd}\PY{p}{(}\PY{l+m+mi}{7904}\PY{p}{,}\PY{l+m+mi}{4182}\PY{p}{,}\PY{l+m+mf}{0.15}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 

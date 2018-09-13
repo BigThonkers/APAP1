@@ -29,7 +29,7 @@ Ferienpraktikum im Sommersemester 2018 \\[4mm]
 \textbf{\LARGE 
 Versuch 38: Wärmekapazität
 } \\[3mm]
-(durchgef\"uhrt am 07.09.2018 bei Nico Strauß) \\
+(durchgef\"uhrt am 10.09.2018 bei Nico Strauß) \\
 Andréz Gockel, Patrick M\"unnich\\
 \today \\[10mm]
 }
@@ -115,7 +115,27 @@ $$\begin{tabular}{|c|c|c|c|c|}
 
 Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. Diese Rechnungen k\"onnen im Anhang gefunden werden..\\
 
-Der Fehler der Messung mit dem Sch\"urholz Apparat ist aufgrund der gro\ss en Ungenauigkeit der Temperatur und der Anzahl Drehungen sehr gro\ss. Au\ss erdem ist es recht wahrscheinlich, dass $F_{R}$ und $F_{G}$ sich nicht st\"andig ganz ausgleichen, also dadurch auch eine Unsicherheit entsteht. Dies ist einflussreich, da die W\"arme, $Q$, von $F_R$ via $W_R=\int F_Rds$ abh\"angig ist. Da $F_R$ \"uber $F_G$ bestimmt wird und dies bei nicht korrekter Ausgleichung der Beiden nicht akkurat ist, ist also auch $Q$ und dadurch $c_w$ ungenau. Der Literaturwert hierzu ist $4182$ $\mathrm{\nicefrac{\mathrm{J}}{kg K}}$. Der Unterschied ist aufgrund der Messungenauigkeiten und niedrigen Anzahl Messungen sehr gro\ss.
+Der Fehler der Messung mit dem Sch\"urholz Apparat ist aufgrund der gro\ss en Ungenauigkeit der Temperatur und der Anzahl Drehungen sehr gro\ss. Au\ss erdem ist es recht wahrscheinlich, dass $F_{R}$ und $F_{G}$ sich nicht st\"andig ganz ausgleichen, also dadurch auch eine Unsicherheit entsteht. Dies ist einflussreich, da die W\"arme, $Q$, von $F_R$ via $W_R=\int F_Rds$ abh\"angig ist. Da $F_R$ \"uber $F_G$ bestimmt wird und dies bei nicht korrekter Ausgleichung der Beiden nicht akkurat ist, ist also auch $Q$ und dadurch $c_w$ ungenau. Der Literaturwert hierzu ist $4182$ $\mathrm{\nicefrac{\mathrm{J}}{kg K}}$. Der Unterschied beim normalen Mittelwert ist aufgrund der Messungenauigkeiten und niedrigen Anzahl Messungen sehr gro\ss.\\
+
+Der gewichtete arithmetische Mittelwert ist jedoch sehr nahe an dem Literaturwert. Dies der Fall, da die zweite Messung wesentlich n\"aher dran ist und der Fehler dort wesentlich kleiner ist. Aufgrund der Formel f\"ur den gewichteten arithmetischn Mittelwert,
+
+\begin{equation}
+\overline{x}_g=\frac{\sum_ig_ix_i}{\sum_ig_i},
+\end{equation}
+
+mit den Gewichtsfaktoren
+
+\begin{equation}
+g_i=u_i^{-2},
+\end{equation}
+
+wird hier also der zweite Wert st\"arker gewichtet und wir bekommen einen Mittelwert, der um $0.009\sigma$ vom Literaturwert abweicht. Dies wurde mit 
+
+\begin{equation}
+t=\frac{|x_0-y|}{u_x}
+\end{equation}
+
+berechnet.
 
 \pagebreak
 
@@ -149,6 +169,9 @@ Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da 
 	\caption{Wertetablle für die extrapolation}
 	\label{Ext}
 \end{table}
+
+
+
 
 
 

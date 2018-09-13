@@ -104,7 +104,7 @@ C=\frac{Q}{\Delta T}
 W_R=mgn\pi d=Q
 \end{equation}
 
-Mit unseren Messwerten und dem $uncertainties$ Paket \cite{Uncertainties} in Python berechnen wir damit:\\
+Mit unseren Messwerten und dem $uncertainties$ Paket in Python berechnen wir damit:\\
 $$\begin{tabular}{|c|c|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2 & \textrm{Mittelwert} & \textrm{Gewichtet} \\ 
@@ -149,7 +149,7 @@ Zur Bestimmung der W\"armekapazit\"at durch Umwandlung von elektrischer Arbeit i
 
 Es wurden zwei Messungen durchgef\"uhrt mit jeweils $116.94\,$g und $113.42\,$g Wasser. Die Wassermenge wurde so gew\"ahlt, damit der Widerstand und das Thermometer in dem Wasser eingetaucht sind. Die Dauern der Messungen waren 38 und 20 Minuten. Diese wurden so gew\"ahlt, dass sie m\"oglichst kurz ausfallen sollten. Temperatur\"anderungen wurden im Abstand von 60 Sekunden gemessen, da diese sonst nicht auff\"allig genug w\"aren, um etwas zu erkennen. Die Messwerte hierzu sind aufgrund ihrer L\"ange im Anhang.
 
-Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da der Temperaturabfall erst nach 30 begann. Für die 2. Messreihe ergibt das extrapolationsverfahren $T_{max} = 41.45\celsius$ \ref{Dia:1}, \ref{Dia:2}, \ref{Ext}
+Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da der Temperaturabfall erst nach 30 begann. Für die 2. Messreihe ergibt das extrapolationsverfahren $T_{max} = 41.45\celsius$ \ref{Dia:1}, \ref{Ext}
 
 \begin{table}[h!]
 	\centering
@@ -198,13 +198,13 @@ Unser $m_w$, die Masse des Wassers, ist wie oben erw\"ahnt bei der ersten Messre
 \begin{table}[h!]
 	\centering
 	\rowcolors{2}{gray!10}{white}
-	\begin{tabular}{|c|cccc|}
+	\begin{tabular}{|c|ccccc|}
 		\noalign{\global\arrayrulewidth=0.4mm}
 		\hline
 		\noalign{\global\arrayrulewidth=0.2mm}
-		\textrm{Messung} & $1$ & $2$  & Mittelwert & Gewichtet\\
+		\textrm{Messung} & $1$ & $2$ & b & Mittelwert & Gewichtet\\
 		\hline
-	\textrm{W\"armekapazit\"at} $\left[\mathrm{\nicefrac{\mathrm{J}}{kg K}}\right]$ & $7330\pm0.15$ & $8790\pm0.18$ & $8060\pm0.17$ & $7930\pm0.12$ \\
+	\textrm{W\"armekapazit\"at} $\left[\mathrm{\nicefrac{\mathrm{J}}{kg K}}\right]$ & $7330\pm0.09$ & $8790\pm0.11$ & $8060\pm0.10$ & $7931\pm0.07$ \\
 		\hline
 	\end{tabular}
 	\renewcommand\thetable{T3}
@@ -212,17 +212,12 @@ Unser $m_w$, die Masse des Wassers, ist wie oben erw\"ahnt bei der ersten Messre
 	\label{Ext}
 \end{table}
 
-Der gewichtete arithmetische Mittelwert wurde gleich wie beim ersten Teil berechnet. Mit der Formel f\"ur die Abweichung aus Teil A, (\ref{abw}), sind wir hier $24813\,\sigma$ von dem Literaturwert entfernt.\\
+Der gewichtete arithmetische Mittelwert wurde gleich wie beim ersten Teil berechnet. Mit der Formel f\"ur die Abweichung aus Teil A, (\ref{abw}), sind wir hier $53543\,\sigma$ von dem Literaturwert entfernt.\\
 
 Der gro\ss e Unterschied zwischen den Abweichungen liegt vermutlich dabei, dass beim zweiten Versuch man wesentlich ungenauer ablesen musste. Dieses Problem ist durch die kurze Erw\"armungsphase vergr\"o\ss ert wordene. H\"atte man zu einer h\"oheren Temperatur erw\"armt, so w\"urde es sich auch schneller abk\"uhlen und man k\"onnte einen gr\"o\ss eren Temperaturabstand als Indikator f\"ur das Senken der Temperatur w\"ahlen.\\
 
 Au\ss erdem haben wir noch einen systematischen Fehler aufgrund des R\"uhrens des Wassers, was zur Mischung dient, aber wodurch kinetische Energie hinzugef\"ugt wird, welches das Wasser auch aufw\"armt. Dazu kann man noch erw\"ahnen, dass die Au\ss entemperatur steigt, wodurch das Wasser nicht immer gleich abk\"uhlt. Dies ist jedoch aufgrund der kurzen Dauer der Messung nicht sehr einflussreich.
 
-\vfill
-
-\begin{thebibliography}{9}
- \bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
- \end{thebibliography}
 %Systematische und statistische Fehler.
 
 \pagebreak
@@ -230,23 +225,16 @@ Au\ss erdem haben wir noch einen systematischen Fehler aufgrund des R\"uhrens de
 
 \section{Anhang}
 
-\begin{figure}[h]
+\begin{figure}[p]
 \centering
-\fbox{\includegraphics[width=0.7\textwidth]{extrapDiab}}
+\fbox{\includegraphics[width=0.7\textwidth]{extrapDia}}
    \renewcommand\thefigure{A1}
-\caption{Extrapolation 1. Messreihe}
+\caption{Extrapolation 2. Messreihe}
 \label{Dia:1}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\fbox{\includegraphics[width=0.7\textwidth]{extrapDia}}
-   \renewcommand\thefigure{A2}
-\caption{Extrapolation 2. Messreihe}
-\label{Dia:2}
-\end{figure}
 
-\begin{table}[h]
+\begin{table}[p]
 	\centering
 	\rowcolors{2}{gray!10}{white}
 	\begin{tabular}{|r|l|}
@@ -269,7 +257,7 @@ Au\ss erdem haben wir noch einen systematischen Fehler aufgrund des R\"uhrens de
 	\label{table:m1}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[p]
 	\centering
 	\rowcolors{2}{gray!10}{white}
 	\begin{tabular}{|r|l|}
@@ -307,7 +295,7 @@ Au\ss erdem haben wir noch einen systematischen Fehler aufgrund des R\"uhrens de
 	\label{table:m2}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[p]
 \centering
 $\begin{array}{rl}
 \multicolumn{2}{c}{\textrm{\underline{Unsicherheiten:}}}\\
@@ -346,7 +334,7 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
 \label{tab:B1}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[p]
 \centering
 $\begin{array}{rl}
 \multicolumn{2}{l}{\textrm{\underline{Unsicherheiten:}}}\\

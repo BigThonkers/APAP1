@@ -80,7 +80,7 @@ $$
 
 Die Messung wurde zweimal durchgef\"uhrt. Bei der ersten Durchf\"uhrung wurde die Temperatur\"anderung \"uber 50 Drehungen jeweils im Abstand von 10 Drehungen gemessen. Die zweite Durchf\"uhrung wurde mit 100 Drehungen durchgef\"uhrt und die Temperatur alle 5 Drehungen notiert. Die genauen Messwerte befinden sich im Anhang. \ref{table:m1}, \ref{table:m2}.
 
-Die restlichen Messungen ergaben: $$m_W = 79.18(3)\textrm{g}, \quad m_{kal} = 98.05(3)\textrm{g}, \quad d = 4.765(3)\textrm{cm}$$
+Die restlichen Messungen ergaben: $$m_W = 79.18(3)\,\textrm{g}, \quad m_{kal} = 98.05(3)\,\textrm{g}, \quad d = 4.765(3)\,\textrm{cm}$$
 
 F\"ur die W\"armekapazit\"at gilt:\\
 
@@ -115,7 +115,7 @@ $$\begin{tabular}{|c|c|c|c|c|}
 
 Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. Diese Rechnungen k\"onnen im Anhang gefunden werden..\\
 
-Der Fehler der Messung mit dem Sch\"urholz Apparat ist aufgrund der gro\ss en Ungenauigkeit der Temperatur und der Anzahl Drehungen sehr gro\ss. Au\ss erdem ist es recht wahrscheinlich, dass $F_{R}$ und $F_{G}$ sich nicht st\"andig ganz ausgleichen, also dadurch auch eine Unsicherheit entsteht. Dies ist einflussreich, da die W\"arme, $Q$, von $F_R$ via $W_R=\int F_Rds$ abh\"angig ist. Da $F_R$ \"uber $F_G$ bestimmt wird und dies bei nicht korrekter Ausgleichung der Beiden nicht akkurat ist, ist also auch $Q$ und dadurch $c_w$ ungenau. Der Literaturwert hierzu ist $4182$ $\mathrm{\nicefrac{\mathrm{J}}{kg K}}$. Der Unterschied beim normalen Mittelwert ist aufgrund der Messungenauigkeiten und niedrigen Anzahl Messungen sehr gro\ss.\\
+Der Fehler der Messung mit dem Sch\"urholz Apparat ist aufgrund der gro\ss en Ungenauigkeit der Temperatur und der Anzahl Drehungen sehr gro\ss. Au\ss erdem ist es recht wahrscheinlich, dass $F_{R}$ und $F_{G}$ sich nicht st\"andig ganz ausgleichen, also dadurch auch eine Unsicherheit entsteht. Dies ist einflussreich, da die W\"arme, $Q$, von $F_R$ via $W_R=\int F_Rds$ abh\"angig ist. Da $F_R$ \"uber $F_G$ bestimmt wird und dies bei nicht korrekter Ausgleichung der Beiden nicht akkurat ist, ist also auch $Q$ und dadurch $c_w$ ungenau. Als systematischer Fehler kommt noch die Ungenauigkeit der Masse von 5\,kg hinzu. Der Literaturwert hierzu ist $4182$ $\mathrm{\nicefrac{\mathrm{J}}{kg K}}$. Der Unterschied beim normalen Mittelwert ist aufgrund der Messungenauigkeiten und niedrigen Anzahl Messungen sehr gro\ss.\\
 
 Der gewichtete arithmetische Mittelwert ist jedoch sehr nahe an dem Literaturwert. Dies der Fall, da die zweite Messung wesentlich n\"aher dran ist und der Fehler dort wesentlich kleiner ist. Aufgrund der Formel f\"ur den gewichteten arithmetischn Mittelwert,
 
@@ -129,10 +129,10 @@ mit den Gewichtsfaktoren
 g_i=u_i^{-2},
 \end{equation}
 
-wird hier also der zweite Wert st\"arker gewichtet und wir bekommen einen Mittelwert, der um $0.009\sigma$ vom Literaturwert abweicht. Dies wurde mit 
+wird hier also der zweite Wert st\"arker gewichtet und wir bekommen einen Mittelwert, der um $0.009\,\sigma$ vom Literaturwert abweicht. Dies wurde mit 
 
 \begin{equation}
-t=\frac{|x_0-y|}{u_x}
+t=\frac{|x_0-y|}{u_x}\label{abw}
 \end{equation}
 
 berechnet.
@@ -166,18 +166,61 @@ Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da 
 		\hline
 	\end{tabular}
 	\renewcommand\thetable{T3}
-	\caption{Wertetablle für die extrapolation}
+	\caption{Wertetabelle für die extrapolation}
 	\label{Ext}
 \end{table}
 
+Uns ist bekannt, dass $W_{el}$ vollst\"andig in W\"armeenergie, $Q$, umgewandelt wird. Folgende Formeln gelten:
 
+\begin{equation}
+Q=(C_{Kal}+m_wc_w)\Delta T\label{Q_el}
+\end{equation}
+\begin{equation}
+W_{el}=\int P\mathrm{d}t=\int UI\mathrm{d}t.
+\end{equation}
 
+Da $P$ konstant ist, kann man hier einfach mit
 
+\begin{equation}
+W_{el}=UI\Delta t\label{W_el}
+\end{equation}
 
+rechnen. Bei unserer Messreihe waren die werte f\"ur $U$ und $I$ jeweils 14.9\,V und 1.5\,A.\\
+
+Stellen wir (\ref{Q_el}) nach $c_w$ um und setzen (\ref{W_el}) ein, so bekommen wir als Formel:
+
+\begin{equation}
+c_w=\frac{UI\frac{\Delta t}{\Delta T}-C_{Kal}}{m_w}.
+\end{equation}
+
+Unser $m_w$, die Masse des Wassers, ist wie oben erw\"ahnt bei der ersten Messreiehe $116.94(3)\,$g und bei der zweiten $113.42(3)\,$g. Somit ergeben unsere Werte f\"ur $c_w$:
+
+\begin{table}[h!]
+	\centering
+	\rowcolors{2}{gray!10}{white}
+	\begin{tabular}{|c|ccccc|}
+		\noalign{\global\arrayrulewidth=0.4mm}
+		\hline
+		\noalign{\global\arrayrulewidth=0.2mm}
+		\textrm{Messung} & $1$ & $2$ & b & Mittelwert & Gewichtet\\
+		\hline
+	\textrm{W\"armekapazit\"at} $\left[\mathrm{\nicefrac{\mathrm{J}}{kg K}}\right]$ & $7330\pm0.15$ & $8790\pm0.18$ & $8060\pm0.17$ & $7930\pm0.12$ \\
+		\hline
+	\end{tabular}
+	\renewcommand\thetable{T3}
+	\caption{Wertetabelle W\"armekapazit\"at}
+	\label{Ext}
+\end{table}
+
+Der gewichtete arithmetische Mittelwert wurde gleich wie beim ersten Teil berechnet. Mit der Formel f\"ur die Abweichung aus Teil A, (\ref{abw}), sind wir hier $24813\,\sigma$ von dem Literaturwert entfernt.\\
+
+Der gro\ss e Unterschied zwischen den Abweichungen liegt vermutlich dabei, dass beim zweiten Versuch man wesentlich ungenauer ablesen musste. Dieses Problem ist durch die kurze Erw\"armungsphase vergr\"o\ss ert wordene. H\"atte man zu einer h\"oheren Temperatur erw\"armt, so w\"urde es sich auch schneller abk\"uhlen und man k\"onnte einen gr\"o\ss eren Temperaturabstand als Indikator f\"ur das Senken der Temperatur w\"ahlen.\\
+
+Au\ss erdem haben wir noch einen systematischen Fehler aufgrund des R\"uhrens des Wassers, was zur Mischung dient, aber wodurch kinetische Energie hinzugef\"ugt wird, welches das Wasser auch aufw\"armt. Dazu kann man noch erw\"ahnen, dass die Au\ss entemperatur steigt, wodurch das Wasser nicht immer gleich abk\"uhlt. Dies ist jedoch aufgrund der kurzen Dauer der Messung nicht sehr einflussreich.
 
 %Systematische und statistische Fehler.
 
-
+\pagebreak
 
 
 \section{Anhang}
@@ -210,7 +253,7 @@ Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da 
 		\hline
 	\end{tabular}
 	\renewcommand\thetable{T1}
-	\caption{Messreihe 1 für den ersten Versuchsteil}
+	\caption{Messreihe 1 für Teil A}
 	\label{table:m1}
 \end{table}
 
@@ -248,7 +291,7 @@ Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da 
 		\hline
 	\end{tabular}
 	\renewcommand\thetable{T2}
-	\caption{Messreihe 2 für den ersten Versuchsteil}
+	\caption{Messreihe 2 für Teil A}
 	\label{table:m2}
 \end{table}
 

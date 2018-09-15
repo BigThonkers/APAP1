@@ -16,6 +16,7 @@
 \usepackage{gensymb}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{tcolorbox}
+\usepackage[section]{placeins}
 
 \hbadness=99999
 
@@ -48,6 +49,14 @@ Der Versuch ist in zwei Teile geteilt, welche dazu dienen, mit Hilfe einer geeig
 
 Das Messprogramm, LabVIEW, soll vervollst\"andigt werden und der Messf\"uhler kalibriert.
 
+\begin{figure}[ht!]
+	\centering
+	\fbox{\includegraphics[width=0.7\textwidth]{Aufbaoo}}
+  	\renewcommand\thefigure{B1}
+	\caption{Der Aufbau}
+	\label{Bild:1}
+\end{figure}
+
 \subsubsection{Ergebnisse}
 
 Zur kalibrierung haben wir die Temperatur von Eiswasser und kochendem Wasser gemessen.
@@ -60,31 +69,46 @@ Nach der vervollst\"andigung des Programms wurden die Temperaturen von kochendem
 
 Mithilfe der Mischungsmethode ist die W\"armekapazit\"at des Kalorimeters zu bestimmen. In diesem experiment wurden die Zeiten, Temperaturen und Massen gemessen.
 
+
+%\subsubsection{Auswertung}
+%\begin{table}
+%\centering
+%$\begin{array}{lr}
+%	\multicolumn{2}{l}{\textrm{Messwerte zur Bestimmung von }C_{kal}}\\
+%	\hline
+%	\textrm{Wasser Masse} & 0\,\textrm{g} \\
+%	\textrm{Temperatur Wasser 1} & 0\,\celsius \\
+%	\textrm{Temperatur Wasser 2} & 100\,\celsius \\
+%	\textrm{Temperatur nach Mischen} & 50\,\celsius\\
+%	\hline
+%\end{array}$
+%\renewcommand\thetable{T1}
+%\caption{Messwerte für Teil A}
+%\label{tab:1}
+%\end{table}
+
+Zur bestimmung von $C_{kal}$ benutzen wir die Extrapolationsfunktionen und bestimmen daraus die Mischtemperatur. Die Funktion für das heiße Wasser wird mit $f_H$ bezeichnet, das kalte Wasser mit $f_K$ und für die Temperaturänderung während der Mischung mit $f_M$: 
+$$f_H = -0.1305 t + 79.1561, \quad f_M = 4.049 + 20.866e^{-0.192t}, \quad f_K = -0.01288 t + 47.0561$$
+Die Schnittstelle von $f_H$ und $f_M$ ist $x_1 = -2.7630$. Die Schnittstelle von $f_M$ und $f_K$ ist $x_2 = 10.3248$.
+$$\int\displaylimits_{D}^{x_2} f_M\ \mathrm{d}t - \int\displaylimits_{D}^{x_2} f_K\ \mathrm{d}t = \int\displaylimits_{x_1}^{D} f_H\ \mathrm{d}t - \int\displaylimits_{x_1}^{D} f_M\ \mathrm{d}t$$ 
+Aus dieser Gleichung bestimmen wir den wert $D$ und setzen ihn in $f_M$ ein. Wir bekommen den wert $D = 36.8598$ (\ref{Bild:3}) 
+$$4.049 + 20.866e^{-0.192\times 36.8598} = 44.07$$
+
 \begin{figure}[h]
 	\centering
-	\fbox{\includegraphics[width=0.7\textwidth]{Aufbaoo}}
-  	\renewcommand\thefigure{B1}
-	\caption{Der Aufbau}
-	\label{Bild:1}
+	\fbox{\includegraphics[width=0.5\textwidth]{Gmix}}
+  	\renewcommand\thefigure{B2}
+	\caption{Extrapolation}
+	\label{Bild:2}
 \end{figure}
 
-
-\subsubsection{Auswertung}
-\begin{table}
-\centering
-$\begin{array}{lr}
-	\multicolumn{2}{l}{\textrm{Messwerte zur Bestimmung von }C_{kal}}\\
-	\hline
-	\textrm{Wasser Masse} & 0\,\textrm{g} \\
-	\textrm{Temperatur Wasser 1} & 0\,\celsius \\
-	\textrm{Temperatur Wasser 2} & 100\,\celsius \\
-	\textrm{Temperatur nach Mischen} & 50\,\celsius\\
-	\hline
-\end{array}$
-\renewcommand\thetable{T1}
-\caption{Messwerte für Teil A}
-\label{tab:1}
-\end{table}
+\begin{figure}[p]
+	\centering
+	\fbox{\includegraphics[width=0.7\textwidth]{RechKal}}
+  	\renewcommand\thefigure{B3}
+	\caption{Rechnung mit Mathematica}
+	\label{Bild:3}
+\end{figure}
 
 \begin{supbox}
 Es wurden zwei Messungen durchgef\"uhrt mit jeweils $116.94\,$g und $113.42\,$g Wasser. Die Wassermenge wurde so gew\"ahlt, damit der Widerstand und das Thermometer in dem Wasser eingetaucht sind. Die Dauern der Messungen waren 38 und 20 Minuten. Diese wurden so gew\"ahlt, dass sie m\"oglichst kurz ausfallen sollten. Temperatur\"anderungen wurden im Abstand von 60 Sekunden gemessen, da diese sonst nicht auff\"allig genug w\"aren, um etwas zu erkennen. Die Messwerte hierzu sind aufgrund ihrer L\"ange im Anhang.

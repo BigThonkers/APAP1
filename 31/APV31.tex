@@ -93,6 +93,16 @@ Die Schnittstelle von $f_H$ und $f_M$ ist $t_1 = -2.7630$. Die Schnittstelle von
 $$\int\displaylimits_{t_{ges}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{ges}}^{t_2} f_K\ \mathrm{d}t = \int\displaylimits_{t_1}^{t_{ges}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{ges}} f_M\ \mathrm{d}t$$ 
 Aus dieser Gleichung wird die gesuchte Zeit $t_{ges}$ bestimmt und in $f_M$ eingesetzt. Der berechnete wert ist $t_{ges} = 36.8598$ (\ref{Bild:3}) 
 $$4.049 + 20.866e^{-0.192\times 36.8598} = 44.07$$
+Dieser wert wird als die Mischtemperatur $T_M$ verwendet. Für die spezifische Wärmekapazität von Wasser verwenden wir $c_W = 4.182$\,$\nicefrac{\mathrm{kJ}}{\textrm{kgK}}$. Mit der Formel 
+\begin{equation}\label{E:1}
+  C_{kal} = c_W(m_k\beta - m_h), \quad \beta = \frac{T_M - T_K}{T_H - T_M}
+\end{equation}
+
+Wobei die masse des kalten Wassers $m_k = 50.44(5)$\,g ist und die Masse des heißen Wassers $m_h = 103.59(5)$\,g ist.
+Mit diesen Werten ergibt die Formel \ref{E:1} den wert $C_{kal} = $ für die Wärmekapazität des Kalorimeters.
+
+
+
 
 \begin{figure}[h]
 	\centering

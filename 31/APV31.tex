@@ -87,11 +87,11 @@ Mithilfe der Mischungsmethode ist die W\"armekapazit\"at des Kalorimeters zu bes
 %\label{tab:1}
 %\end{table}
 
-Zur bestimmung von $C_{kal}$ benutzen wir die Extrapolationsfunktionen und bestimmen daraus die Mischtemperatur. Die Funktion für das heiße Wasser wird mit $f_H$ bezeichnet, das kalte Wasser mit $f_K$ und für die Temperaturänderung während der Mischung mit $f_M$: 
+Zur bestimmung von $C_{kal}$ benutzen wir die Extrapolationsfunktionen (\ref{Bild:2}) und bestimmen daraus die Mischtemperatur. Die Funktion für das heiße Wasser wird mit $f_H$ bezeichnet, das kalte Wasser mit $f_K$ und für die Temperaturänderung während der Mischung mit $f_M$: 
 $$f_H = -0.1305 t + 79.1561, \quad f_M = 4.049 + 20.866e^{-0.192t}, \quad f_K = -0.01288 t + 47.0561$$
-Die Schnittstelle von $f_H$ und $f_M$ ist $x_1 = -2.7630$. Die Schnittstelle von $f_M$ und $f_K$ ist $x_2 = 10.3248$.
-$$\int\displaylimits_{D}^{x_2} f_M\ \mathrm{d}t - \int\displaylimits_{D}^{x_2} f_K\ \mathrm{d}t = \int\displaylimits_{x_1}^{D} f_H\ \mathrm{d}t - \int\displaylimits_{x_1}^{D} f_M\ \mathrm{d}t$$ 
-Aus dieser Gleichung bestimmen wir den wert $D$ und setzen ihn in $f_M$ ein. Wir bekommen den wert $D = 36.8598$ (\ref{Bild:3}) 
+Die Schnittstelle von $f_H$ und $f_M$ ist $t_1 = -2.7630$. Die Schnittstelle von $f_M$ und $f_K$ ist $t_2 = 10.3248$.
+$$\int\displaylimits_{t_{ges}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{ges}}^{t_2} f_K\ \mathrm{d}t = \int\displaylimits_{t_1}^{t_{ges}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{ges}} f_M\ \mathrm{d}t$$ 
+Aus dieser Gleichung wird die gesuchte Zeit $t_{ges}$ bestimmt und in $f_M$ eingesetzt. Der berechnete wert ist $t_{ges} = 36.8598$ (\ref{Bild:3}) 
 $$4.049 + 20.866e^{-0.192\times 36.8598} = 44.07$$
 
 \begin{figure}[h]

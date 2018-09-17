@@ -36,18 +36,18 @@ Andréz Gockel, Patrick M\"unnich\\
 \today \\[10mm]
 }
 
+\tableofcontents
+
+\pagebreak
+
 \section{Ziel des Versuchs}
 
 
-Der Versuch ist in zwei Teile geteilt, welche dazu dienen, mit Hilfe einer geeigneten Wärmeenergiebilanz die Wärmekapazität zu bestimmen. Im Teil A kalibriert man das Messgerät und bestimmt mittels extrapolationsverfahren die Wärmekapazität des Kalorimeters. Für die Messungen wurde ein Temperaturmessfühler, der durch einen DAQ zu einem Komputer verbunden wurde verwendet, dadurch konnten die Messdaten mittels dem Programm LabVIEW gespeichert werden. Im Teil B wurde die Wärmekapazität von zwei Festkörpern bestimmt. 
+Der Versuch ist in drei Teile geteilt, welche dazu dienen, mit Hilfe einer geeigneten Wärmeenergiebilanz die Wärmekapazität zu bestimmen. Im Teil A kalibriert man das Messgerät und stellt das Programm, LabVIEW, ein. Im Teil B bestimmt mittels extrapolationsverfahren die Wärmekapazität des Kalorimeters. Für die Messungen wurde ein Temperaturmessfühler, der durch einen DAQ zu einem Komputer verbunden wurde verwendet, dadurch konnten die Messdaten mittels dem Programm LabVIEW gespeichert werden. Im Teil C wurde die Wärmekapazität von zwei Festkörpern bestimmt. 
 
-\section{Auswertung und Fehleranalyse}
+\section{Aufbau}
 
-\subsection{Teil A - Kalibrierung des Messf\"uhlers}
-
-\subsubsection{Aufgabenstellung}
-
-Das Messprogramm, LabVIEW, soll vervollst\"andigt werden und der Messf\"uhler kalibriert.
+Der Messf\"uhler ist per Kabel an den PC gebunden, an dem LabVIEW l\"auft. Zwei mit Wasser gef\"ullte Beh\"alter sind vorhanden. Eins davon ist auf einer Heizplatte, das andere besteht aus Eiswasser.
 
 \begin{figure}[ht!]
 	\centering
@@ -57,18 +57,84 @@ Das Messprogramm, LabVIEW, soll vervollst\"andigt werden und der Messf\"uhler ka
 	\label{Bild:1}
 \end{figure}
 
+
+\section{Auswertung und Fehleranalyse}
+
+\subsection{Teil A - Kalibrierung des Messf\"uhlers}
+
+\subsubsection{Durchf\"uhrung}
+
+Zuerst vervollst\"andigt man LabVIEW, sodass die Temperatur und die Zeit nach der MEssung in eine Datei abgespeichert wird.
+
+Zur Kalibrierung wird das Ende des Messf\"uhlers, an dem gemessen wird, in das behitzte Wasserbad gesteckt und die Temperatur in LabVIEW an 100\celsius angepasst. Ist dies geschehen, so steckt man den Messf\"uhler in das Eiswasser und stellt dies auf 0\celsius ein.
+
 \subsubsection{Ergebnisse}
 
-Zur kalibrierung haben wir die Temperatur von Eiswasser und kochendem Wasser gemessen.
+Bei der Kalibrierung wurden Schwankungen festgestellt. Bei dem kochenden Wasser lagen diese bei etwa 0.5\celsius, bei dem Eiswasser jedoch circa 2\celsius.
 
-Nach der vervollst\"andigung des Programms wurden die Temperaturen von kochendem Wasser und Eiswasser gemessen. Diese wurden so angepasst, dass sie jeweils circa $100\celsius$ und $0\celsius$ waren. Gro\ss e Schwankungen waren jedoch auff\"allig. Bei dem kochenden Wasser waren diese eher klein, bei etwa $0.5\celsius$. Bei dem Eiswasser waren Schwankungen von $2\celsius$ zu beobachten, vermutlich aufgrund dem Aufw\"armen des Wassers. Man sollte also bei den folgenden Messungen die Temperaturen kurz vor dem Mischen messen, da diese sich leicht \"andern k\"onnen.
+REASONING AND SHIT
+
+%Zur kalibrierung haben wir die Temperatur von Eiswasser und kochendem Wasser gemessen.
+%
+%Nach der vervollst\"andigung des Programms wurden die Temperaturen von kochendem Wasser und Eiswasser gemessen. Diese wurden so angepasst, dass sie jeweils circa $100\celsius$ und $0\celsius$ waren. Gro\ss e Schwankungen waren jedoch auff\"allig. Bei dem kochenden Wasser waren diese eher klein, bei etwa $0.5\celsius$. Bei dem Eiswasser waren Schwankungen von $2\celsius$ zu beobachten, vermutlich aufgrund dem Aufw\"armen des Wassers. Man sollte also bei den folgenden Messungen die Temperaturen kurz vor dem Mischen messen, da diese sich leicht \"andern k\"onnen.
 
 \subsection{Teil B - Bestimmung von der Wärmekapazität des Kalorimeters: $C_{kal}$}
 
-\subsubsection{Aufgabenstellung}
+\subsubsection{Durchf\"uhrung}
 
-Mithilfe der Mischungsmethode ist die W\"armekapazit\"at des Kalorimeters zu bestimmen. In diesem experiment wurden die Zeiten, Temperaturen und Massen gemessen.
+Da genug Eiswasser nicht vorhanden ist, muss hier lauwarmes Wasser verwendet werden. Zuerst misst man die Temperaturen der beiden Wassermengen und wiegt sie, dann werden sie nacheinander in das Kalorimeter gef\"ullt und der Temperaturverlauf wird gemessen. Dies notiert man dann in ein Diagramm und eine Ausgleichskurve wird erstellt, mit der man die ware Mischtemperatur berechnet.
 
+\subsubsection{Theorie}
+
+Da das Kalorimeter und das Mischverfahren nicht vollkommen adiabatisch sind, also zur gleichen Zeit auch ein zus\"atzlicher Energieaustausch stattfindet und das Kalorimeter auch W\"arme aufnimmt, ist die Temperatur, die am Ende gemessen wird, nicht die wahre Mischtemperatur.\\
+Zum Finden der wahren Mischtemperatur sucht man den Punkt, an dem man eine vertikale Gerade ziehen k\"onnte, welche die Fl\"achen zwischen der Kurve und den Geraden von jeweils der warmen und der kalten Wassermenge in zwei gleich gro\ss e Fl\"achen teilt.\\
+Da unsere Werte einer $e$-Funktion \"ahneln, aber die Temperatur\"anderung linear verlaufen sollte, teilen wir unsere Ausgleichskurve in zwei Geraden auf, welche linear verlaufen.
+Zum Berechnen dieses Punktes wird die folgende Gleichung genutzt:
+
+\begin{equation}
+\int\displaylimits_{t_{0}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{0}}^{t_2} f_K\ \mathrm{d}t + f_{Add}= \int\displaylimits_{t_1}^{t_{0}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{0}} f_M\ \mathrm{d}t.\label{bigint1}
+\end{equation}
+
+$f_K$ steht f\"ur die Gerade der Temperatur des kalten Wassers, $f_H$ f\"ur die Gerade der Temperatur des hei\ss en Wassers, $f_M$ f\"ur die Gerade der Mischung, welche $f_H$ schneidet, und $f_Add$ ist das Integral von der unteren Ausgleichsgerade der Mischung, welche $f_K$ schneidet. Die Integralgrenzen sind Zeiten, $t_0$ die gesuchte halbierende Zeit, $t_1$ der Schnittpunkt von $f_M$ mit $f_H$ und $t_2$ der Schnittpunkt von $f_M$ mit $f_K$. Da $f_{Add}$ wesentlich kleiner ist als die rechte Seite, wenn $f_{Add}$ bei $t_0$ w\"are, nehmen wir $f_{Add}$ als konstant an. Dies erleichtet uns sp\"ater das Aufl\"osen des Integrals. Alle Geraden sind in Form eines Polynoms ersten Grades:
+%\begin{equation}
+%f_M=a_Mx^2+b_Mx+c_M
+%\end{equation}
+
+\begin{equation}
+f_{}=a_{}x+b_{}
+\end{equation}
+
+$f_{Add}$ sieht folgenderma\ss en aus:
+
+\begin{equation}
+f_{Add}=\int\displaylimits_{t_{3}}^{t_4}f_A\mathrm{d}t-\int\displaylimits_{t_{3}}^{t_4}f_K\mathrm{d}t,
+\end{equation}
+
+wobei $t_3$ und $t_4$ in diesem Fall 5\,s und 10\,s sind.
+
+Integrieren wir und bringen die Gleichung in Form einer quadratischen Gleichung bez\"uglich dem gesuchten $t_0$, so k\"onnen wir folgenderma\ss en nach $t_0$ aufl\"osen:
+
+\begin{equation}
+t_{0_{1/2}}=\frac{-B\pm\sqrt{B^2-4AC}}{2A},\label{abc1}
+\end{equation}
+
+Hier sind unsere Variablen
+
+\[
+A=\frac{a_K}{2}-\frac{a_H}{2}
+\]
+
+\[
+B=\frac{b_K}{2}-\frac{b_H}{2}
+\]
+
+\[
+C=a_M\frac{t_1^2}{2}+b_Mt_1-a_K\frac{t_1^2}{2}-b_Kt_1+f_{Add}+a_H\frac{t_0^2}{2}+b_Ht_0-\frac{a_m}{2}t_0^2-b_mt_0.
+\]
+
+\subsubsection{Auswertung}
+
+%Mithilfe der Mischungsmethode ist die W\"armekapazit\"at des Kalorimeters zu bestimmen. In diesem experiment wurden die Zeiten, Temperaturen und Massen gemessen.
 
 %\subsubsection{Auswertung}
 %\begin{table}
@@ -87,74 +153,83 @@ Mithilfe der Mischungsmethode ist die W\"armekapazit\"at des Kalorimeters zu bes
 %\label{tab:1}
 %\end{table}
 
-Zur bestimmung von $C_{kal}$ benutzen wir die Extrapolationsfunktionen (\ref{Bild:2}) und bestimmen daraus die Mischtemperatur. Die Funktion für das heiße Wasser wird mit $f_H$ bezeichnet, das kalte Wasser mit $f_K$ und für die Temperaturänderung während der Mischung mit $f_M$: 
-$$f_H = -0.1305 t + 79.1561, \quad f_M = 4.049 + 20.866e^{-0.192t}, \quad f_K = -0.01288 t + 47.0561$$
-Die Schnittstelle von $f_H$ und $f_M$ ist $t_1 = -2.7630$. Die Schnittstelle von $f_M$ und $f_K$ ist $t_2 = 10.3248$.
-$$\int\displaylimits_{t_{ges}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{ges}}^{t_2} f_K\ \mathrm{d}t = \int\displaylimits_{t_1}^{t_{ges}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{ges}} f_M\ \mathrm{d}t$$ 
-Aus dieser Gleichung wird die gesuchte Zeit $t_{ges}$ bestimmt und in $f_M$ eingesetzt. Der berechnete wert ist $t_{ges} = 36.8598$ (\ref{Bild:3}) 
-$$4.049 + 20.866e^{-0.192\times 36.8598} = 44.07$$
-Dieser wert wird als die Mischtemperatur $T_M$ verwendet. Für die spezifische Wärmekapazität von Wasser verwenden wir $c_W = 4.182$\,$\nicefrac{\mathrm{kJ}}{\textrm{kgK}}$. Mit der Formel 
-\begin{equation}\label{E:1}
-  C_{kal} = c_W(m_k\beta - m_h), \quad \beta = \frac{T_M - T_K}{T_H - T_M}
-\end{equation}
+%Zur bestimmung von $C_{kal}$ benutzen wir die Extrapolationsfunktionen (\ref{Bild:2}) und bestimmen daraus die Mischtemperatur. Die Funktion für das heiße Wasser wird mit $f_H$ bezeichnet, das kalte Wasser mit $f_K$ und für die Temperaturänderung während der Mischung mit $f_M$: 
+%$$f_H = -0.1305 t + 79.1561, \quad f_M = 4.049 + 20.866e^{-0.192t}, \quad f_K = -0.01288 t + 47.0561$$
+%Die Schnittstelle von $f_H$ und $f_M$ ist $t_1 = -2.7630$. Die Schnittstelle von $f_M$ und $f_K$ ist $t_2 = 10.3248$.
+%$$\int\displaylimits_{t_{ges}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{ges}}^{t_2} f_K\ \mathrm{d}t = \int\displaylimits_{t_1}^{t_{ges}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{ges}} f_M\ \mathrm{d}t$$ 
+%Aus dieser Gleichung wird die gesuchte Zeit $t_{ges}$ bestimmt und in $f_M$ eingesetzt. Der berechnete wert ist $t_{ges} = 36.8598$ (\ref{Bild:3}) 
+%$$4.049 + 20.866e^{-0.192\times 36.8598} = 44.07$$
+%Dieser wert wird als die Mischtemperatur $T_M$ verwendet. Für die spezifische Wärmekapazität von Wasser verwenden wir $c_W = 4.182$\,$\nicefrac{\mathrm{kJ}}{\textrm{kgK}}$. Mit der Formel 
+%\begin{equation}\label{E:1}
+%  C_{kal} = c_W(m_k\beta - m_h), \quad \beta = \frac{T_M - T_K}{T_H - T_M}
+%\end{equation}
+%
+%Wobei die masse des kalten Wassers $m_k = 50.44(5)$\,g ist und die Masse des heißen Wassers $m_h = 103.59(5)$\,g ist.
+%Mit diesen Werten ergibt die Formel \ref{E:1} den wert $C_{kal} = $ für die Wärmekapazität des Kalorimeters.
+%
+%
+%\begin{figure}[h]
+%	\centering
+%	\fbox{\includegraphics[width=0.5\textwidth]{Gmix}}
+%  	\renewcommand\thefigure{B2}
+%	\caption{Extrapolation}
+%	\label{Bild:2}
+%\end{figure}
+%
+%\begin{figure}[p]
+%	\centering
+%	\fbox{\includegraphics[width=0.7\textwidth]{RechKal}}
+%  	\renewcommand\thefigure{B3}
+%	\caption{Rechnung mit Mathematica}
+%	\label{Bild:3}
+%\end{figure}
+%
+%\begin{supbox}
+%Es wurden zwei Messungen durchgef\"uhrt mit jeweils $116.94\,$g und $113.42\,$g Wasser. Die Wassermenge wurde so gew\"ahlt, damit der Widerstand und das Thermometer in dem Wasser eingetaucht sind. Die Dauern der Messungen waren 38 und 20 Minuten. Diese wurden so gew\"ahlt, dass sie m\"oglichst kurz ausfallen sollten. Temperatur\"anderungen wurden im Abstand von 60 Sekunden gemessen, da diese sonst nicht auff\"allig genug w\"aren, um etwas zu erkennen. Die Messwerte hierzu sind aufgrund ihrer L\"ange im Anhang.
+%
+%Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da der Temperaturabfall erst nach 30 begann. Für die 2. Messreihe ergibt das extrapolationsverfahren $T_{max} = 41.45\celsius$ \ref{Dia:1}, \ref{Ext}
+%\end{supbox}
+%\begin{table}[h!]
+%	\centering
+%	\rowcolors{2}{gray!10}{white}
+%	\begin{tabular}{|c|cccc|}
+%		\multicolumn{5}{c}{\textrm{Extrapolationverfahren}} \\
+%		\noalign{\global\arrayrulewidth=0.4mm}
+%		\hline
+%		\noalign{\global\arrayrulewidth=0.2mm}
+%		\textrm{Messreihe} & $a$ in \celsius & $u_a$ in \celsius & b in $\nicefrac{\celsius}{\textrm{s}}$ & $u_b$ in $\nicefrac{\celsius}{\textrm{s}}$ \\
+%		\hline
+%	1 & 26.5 & 0.037 &  -33.579 & 2.105 $\times 10^{-5}$ \\
+%	2 & 42.65 & 1.605 & -0.0025 & 0.001443 \\
+%		\hline
+%	\end{tabular}
+%	\renewcommand\thetable{T3}
+%	\caption{Wertetablle für die extrapolation}
+%	\label{Ext}
+%\end{table}
 
-Wobei die masse des kalten Wassers $m_k = 50.44(5)$\,g ist und die Masse des heißen Wassers $m_h = 103.59(5)$\,g ist.
-Mit diesen Werten ergibt die Formel \ref{E:1} den wert $C_{kal} = $ für die Wärmekapazität des Kalorimeters.
 
 
-\begin{figure}[h]
-	\centering
-	\fbox{\includegraphics[width=0.5\textwidth]{Gmix}}
-  	\renewcommand\thefigure{B2}
-	\caption{Extrapolation}
-	\label{Bild:2}
-\end{figure}
-
-\begin{figure}[p]
-	\centering
-	\fbox{\includegraphics[width=0.7\textwidth]{RechKal}}
-  	\renewcommand\thefigure{B3}
-	\caption{Rechnung mit Mathematica}
-	\label{Bild:3}
-\end{figure}
-
-\begin{supbox}
-Es wurden zwei Messungen durchgef\"uhrt mit jeweils $116.94\,$g und $113.42\,$g Wasser. Die Wassermenge wurde so gew\"ahlt, damit der Widerstand und das Thermometer in dem Wasser eingetaucht sind. Die Dauern der Messungen waren 38 und 20 Minuten. Diese wurden so gew\"ahlt, dass sie m\"oglichst kurz ausfallen sollten. Temperatur\"anderungen wurden im Abstand von 60 Sekunden gemessen, da diese sonst nicht auff\"allig genug w\"aren, um etwas zu erkennen. Die Messwerte hierzu sind aufgrund ihrer L\"ange im Anhang.
-
-Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da der Temperaturabfall erst nach 30 begann. Für die 2. Messreihe ergibt das extrapolationsverfahren $T_{max} = 41.45\celsius$ \ref{Dia:1}, \ref{Ext}
-\end{supbox}
-\begin{table}[h!]
-	\centering
-	\rowcolors{2}{gray!10}{white}
-	\begin{tabular}{|c|cccc|}
-		\multicolumn{5}{c}{\textrm{Extrapolationverfahren}} \\
-		\noalign{\global\arrayrulewidth=0.4mm}
-		\hline
-		\noalign{\global\arrayrulewidth=0.2mm}
-		\textrm{Messreihe} & $a$ in \celsius & $u_a$ in \celsius & b in $\nicefrac{\celsius}{\textrm{s}}$ & $u_b$ in $\nicefrac{\celsius}{\textrm{s}}$ \\
-		\hline
-	1 & 26.5 & 0.037 &  -33.579 & 2.105 $\times 10^{-5}$ \\
-	2 & 42.65 & 1.605 & -0.0025 & 0.001443 \\
-		\hline
-	\end{tabular}
-	\renewcommand\thetable{T3}
-	\caption{Wertetablle für die extrapolation}
-	\label{Ext}
-\end{table}
-
-
-
+\subsubsection{Diskussion}
 
 %Systematische und statistische Fehler.
 
 
 \subsection{Teil C - Bestimmung von der Spezifischen W\"armekapazit\"at von Festk\"orpern}
 
-\subsubsection{Aufgabenstellung}
+\subsubsection{Durchf\"uhrung}
 
-Ein Festk\"orper soll in einem Wasserbad erhitzt und anschlie\ss end in eine Fl\"ussigkeit im Kalorimeter gesteckt werden. Hierbei sollen die Massen, Temperaturen und Zeiten festgehalten werden, damit die W\"armekapazit\"at berechnet werden kann. Nach erfolgreicher Messung und Auswertung soll das Ergebniss mit dem Dulong-Petit-Gesetz verglichen werden.
+Ein Festk\"orper wird im Wasserbad erhitzt, die Temperatur gemessen, und dann ins mit kalten Wasser gef\"ulltes Kalorimeter gef\"ullt. Dort wird wieder die Temperatur gemessen. Wie beim vorherigen Versuch wird hier wieder ein Diagram aufgezeichnet und mit einer Ausgleichskurve die Mischtemperatur gefunden. 
+
+\subsubsection{Theorie}
+
+Die Theorie hier gleicht der des vorherigen teils. Jedoch ist es hier aufgrund der Form der Messwerte im Diagram m\"oglich, in der Gleichung (\label{bigint1}) den Term $f_{Add}$ wegzulassen. Dadurch ist in $C$ in (\ref{abc1}) nicht mehr n\"otig, den $f_{Add}$ Term hinzu zu addieren.
 
 \subsubsection{Auswertung}
+
+
+
+\subsubsection{Diskussion}
 
 
 \section{Anhang}

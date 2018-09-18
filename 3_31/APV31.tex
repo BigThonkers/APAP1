@@ -99,25 +99,19 @@ $f_K$ steht f\"ur die Gerade der Temperatur des kalten Wassers, $f_H$ f\"ur die 
 %\begin{equation}
 %f_M=a_Mx^2+b_Mx+c_M
 %\end{equation}
-
 \begin{equation}
 f_{}=a_{}x+b_{}
 \end{equation}
-
 $f_{Add}$ sieht folgenderma\ss en aus:
-
 \begin{equation}
 f_{Add}=\int\displaylimits_{t_{3}}^{t_4}f_A\mathrm{d}t-\int\displaylimits_{t_{3}}^{t_4}f_K\mathrm{d}t,
 \end{equation}
-
 wobei $t_3$ und $t_4$ in diesem Fall 5\,s und 10\,s sind.
 
 Integrieren wir und bringen die Gleichung in Form einer quadratischen Gleichung bez\"uglich dem gesuchten $t_0$, so k\"onnen wir folgenderma\ss en nach $t_0$ aufl\"osen:
-
 \begin{equation}
 t_{0_{1/2}}=\frac{-B\pm\sqrt{B^2-4AC}}{2A},\label{abc1}
 \end{equation}
-
 Hier sind unsere Variablen
 
 \[
@@ -125,14 +119,52 @@ A=\frac{a_K}{2}-\frac{a_H}{2}
 \]
 
 \[
-B=\frac{b_K}{2}-\frac{b_H}{2}
+B=b_K-b_H
 \]
 
 \[
-C=a_M\frac{t_1^2}{2}+b_Mt_1-a_K\frac{t_1^2}{2}-b_Kt_1+f_{Add}+a_H\frac{t_0^2}{2}+b_Ht_0-\frac{a_m}{2}t_0^2-b_mt_0.
+C=a_M\frac{t_2^2}{2}+b_Mt_2-a_K\frac{t_2^2}{2}-b_Kt_2+f_{Add}+a_H\frac{t_1^2}{2}+b_Ht_1-\frac{a_m}{2}t_1^2-b_mt_1.
 \]
 
+Die wahre Mischungstemperatur $T_M$ kann dann einfach von den Werten von $f_M$ abgelesen werden.
+
+Um hieraus die W\"armekapazit\"at $C_{Kal}$ des Kalorimeters zu bestimmen wird
+\begin{equation}
+C_{Kal}=c_w(m_K\beta-m_H)\label{ck1}
+\end{equation}
+
+mit 
+\[
+\beta=\frac{T_M-T_K}{T_H-T_M}
+\]
+verwendet. Die Variablen stehen f\"ur folgende Werte:
+\begin{itemize}
+\item{$c_w$ die W\"armekapazit\"at von Wasser}
+\item{$m_K$ die Masse des kalten Wassers}
+\item{$m_H$ die Masse des warmen Wassers}
+\item{$T_M$ die Mischungstemperatur}
+\item{$T_K$ die Temperatur des kalten Wassers}
+\item{$T_H$ die Temperatur des warmen Wassers}
+\end{itemize}
+
+
+
 \subsubsection{Auswertung}
+
+Aufgrund eines Messfehlers, aufgrund dessen die Messung zwischen der Temperaturmessung des warmen Wassers und des Kalorimeters unterbrochen wurde, wurde angenommen, dass ein 15\,s Zeit zwischen den Messungen stattfand.
+
+Mithilfe von (\ref{abc1}) bekommen wir zwei Ergebnisse f\"ur $t_0$. Das gr\"o\ss ere Ergebnisse ist klar das sinnvollere, da REASONING.
+
+Unser $T_M$ liegt also bei ($59\pm2$)\celsius.
+
+Die Temperatur des kalten Wassers vor dem Eintauchen betrag $(22\pm1)$\celsius \ und die des warmen Wassers $(80\pm1)$\celsius. Die Masse des warmen Wassers war $(339.84\pm0.05)$\,g und die des kalten Wassers $(221.80\pm0.05)$\,g. Mit (\ref{ck1}) bekommen wir als Wert f\"ur $C_{Kal}$ $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$.
+
+Die Berechnung des Fehlers wird durchgef\"uhrt mit:
+
+\begin{equation}
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{uncertainty1}
+\end{equation}
+
 
 %Mithilfe der Mischungsmethode ist die W\"armekapazit\"at des Kalorimeters zu bestimmen. In diesem experiment wurden die Zeiten, Temperaturen und Massen gemessen.
 
@@ -224,6 +256,18 @@ Ein Festk\"orper wird im Wasserbad erhitzt, die Temperatur gemessen, und dann in
 \subsubsection{Theorie}
 
 Die Theorie hier gleicht der des vorherigen teils. Jedoch ist es hier aufgrund der Form der Messwerte im Diagram m\"oglich, in der Gleichung (\label{bigint1}) den Term $f_{Add}$ wegzulassen. Dadurch ist in $C$ in (\ref{abc1}) nicht mehr n\"otig, den $f_{Add}$ Term hinzu zu addieren.
+
+Um aus der Mischtemperatur die W\"armekapazit\"at des Kalorimeters zu bestimmen, wird die Formel (\ref{ck2}) verwendet.
+
+\begin{equation}
+c_K=\frac{m_Fc_F+C_{Kal}}{m_K}\beta\label{ck2}
+\end{equation}
+
+Hier ist $\beta$ definiert als:
+\[
+\beta=\frac{T_M-T_F}{T_K-T_M}
+\]
+Mit $T_M$ die Mischungstemperatur, $T_F$ die Temperatur der Fl\"ussigkeit und $T_K$ die Temperatur des Festk\"orpers.
 
 \subsubsection{Auswertung}
 

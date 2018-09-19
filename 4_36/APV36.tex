@@ -18,7 +18,7 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{multirow}
 \usepackage{tikz}
-\usepackage{chemfig}
+%\usepackage{chemfig}
 
 \hbadness=99999
 
@@ -63,13 +63,27 @@ Andréz Gockel, Patrick M\"unnich, (Gruppe 14)\\
 
 \section{Ziel des Versuchs}
 
-Das Ziel dieses Versuchs ist es den Adiabatenexponenten von Luft und Argon zu bestimmen \footnote{Kohlenstoffdioxid war original teil des Experiments, wurde aber ausgelassen da nicht genügend Druck vorhanden war, um eine Schwingung zu erzeugen.}. Hierfür wird ein Versuchsaufbau nach Rüchardt-Flammerfeld \ref{JS1} verwendet. Um dies zu ermöglichen leitet man die Formel \ref{F:0} her, die den Adiabatenexponent in Abhängigkeit der Schwingungsdauer des Schwingkörpers bringt.
+Das Ziel dieses Versuchs ist es den Adiabatenexponenten von Luft und Argon zu bestimmen \footnote{Kohlenstoffdioxid war original teil des Experiments, wurde aber ausgelassen da nicht genügend Druck vorhanden war, um eine Schwingung zu erzeugen.}. Zuerst bestimmen wir aus den Strukturformeln von Stickstoff und Argon deren Molekularen freiheitsgraden. Welche verwendet werden um den theoretischen Wert des Adiabatenexponentes herzuleiten. Um den Wert experimentell zu bestimmen wird ein Versuchsaufbau nach Rüchardt-Flammerfeld \ref{JS1} verwendet, womit die Schwingungsdauer des Schwingkörpers gemißt wird. Leitet man die Formel \ref{F:0} her, die den Adiabatenexponent in Abhängigkeit der Schwingungsdauer bringt kann man den dessen Wert bestimmen.
 
-\section{Aufbau}
 
-\section{Theorie}
+\section{Theoretische Bestimmung des Adiabatenexponenten}
 
-\section{Auswertung und Fehleranalyse}
+Die strukturformel für Stickstoff ist %\chemfig{\lewis{4, N}~\lewis{0, N}} 
+und für Argon ist %\chemfig{\lewis{0246, Ar}} \ N$\equiv$N
+Um den theoretischen Wert zu bestimmen verwenden wir diese Näherung für die freiheitsgraden: $f = 3N-b$ \cite{Anleitung} die bei diesen Gasen bei Raumtemperatur gilt. Wobei $N$ die Anzahl der Atome ist und $b$ die Anzahl der Bindungen.
+
+Der Adiabatenexponent $\kappa$ ist definiert als $\kappa = \frac{c_p}{c_V}$, wobei $c_p$ die isobare Wärmekapazität ist und $c_V$ die isochore Wärmekapazität, welche durch Betrachtung der inneren Energie des gases verallgemeinert werden können womit wir $\kappa = \frac{f+2}{f}$ bekommen. Mit der Näherung haben wir $\kappa = \frac{3N-b+2}{3N-b}$ Für Stickstoff haben wir zwei Atome mit 3 Bindungen:
+$$\kappa = \frac{6-3+2}{6-3} = \frac{5}{3}$$
+und für Argon mit einem Atom und null Bindungen bekommen wir ebenfalls:
+$$\kappa = \frac{3-0+2}{3-0} = \frac{5}{3}$$
+
+
+\section{Experimentelle Bestimmung des Adiabatenexponenten}
+\subsection{Aufbau}
+
+\subsection{Theorie}
+
+\subsection{Auswertung und Fehleranalyse}
 
 \subsection{Teil A - Umwandlung von mechanischer Arbeit in Wärme }
 $$
@@ -103,7 +117,6 @@ $$
 \label{JS1}
 \end{figure}
 
-Die strukturformel für Stickstoff ist \chemfig{\lewis{4, N}~\lewis{0, N}} und für Argon ist \chemfig{\lewis{0246, Ar}} \ N$\equiv$N
 
 \subsubsection{Auswertung}
 
@@ -253,6 +266,7 @@ Au\ss erdem haben wir noch einen systematischen Fehler aufgrund des R\"uhrens de
 
 \begin{thebibliography}{9}
  \bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+ \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
  \end{thebibliography}
 %Systematische und statistische Fehler.
 

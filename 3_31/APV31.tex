@@ -63,16 +63,12 @@ Der Messf\"uhler ist per Kabel an den PC gebunden, an dem LabVIEW l\"auft. Zwei 
 \subsection{Teil A - Kalibrierung des Messf\"uhlers}
 
 \subsubsection{Durchf\"uhrung}
-
-Zuerst vervollst\"andigt man LabVIEW, sodass die Temperatur und die Zeit nach der MEssung in eine Datei abgespeichert wird.
-
+Zuerst vervollst\"andigt man LabVIEW, sodass die Temperatur und die Zeit nach der Messung in eine Datei abgespeichert wird.\\
 Zur Kalibrierung wird das Ende des Messf\"uhlers, an dem gemessen wird, in das behitzte Wasserbad gesteckt und die Temperatur in LabVIEW an 100\celsius angepasst. Ist dies geschehen, so steckt man den Messf\"uhler in das Eiswasser und stellt dies auf 0\celsius ein.
-
+\pagebreak
 \subsubsection{Ergebnisse}
-
-Bei der Kalibrierung wurden Schwankungen festgestellt. Bei dem kochenden Wasser lagen diese bei etwa 0.5\celsius, bei dem Eiswasser jedoch circa 2\celsius.
-
-REASONING AND SHIT
+Bei der Kalibrierung wurden Schwankungen festgestellt. Bei dem kochenden Wasser lagen diese bei etwa 0.5\celsius, bei dem Eiswasser jedoch circa 2\celsius.\\
+Dies liegt vermutlich aufgrund der kleinen Menge an Eiswasser, welche genutzt wurde, sowie auch daran, dass der Messf\"uhler nicht st\"andig im Wasser bzw. am Eis war, dar beides vorhanden ist. Ansonsten sind leichte Schwankungen nicht erstaunlich.
 
 %Zur kalibrierung haben wir die Temperatur von Eiswasser und kochendem Wasser gemessen.
 %
@@ -207,13 +203,23 @@ mit $T_M$ die Mischungstemperatur, $T_F$ die Temperatur der Fl\"ussigkeit und $T
 
 \subsubsection{Auswertung}
 
-Die W\"armekapazit\"at unseres Kalorimeters haben wir im ersten Teil berechnet, also ist sie $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Die Masse der sich im Kalorimeter befindende Fl\"ussigkeit betr\"agt $(337.07\pm0.05)$\,g. Ihre spezifische W\"armekapazit\"at des Wassers betr\"agt $4.182\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Die Temperatur des kalten Wassers innerhalb des Kalorimeters liegt bei $(20\pm0.4)$\celsius und die des Festk\"orpers vor dem Mischen $71.97\pm0.4$\celsius.
+Die W\"armekapazit\"at unseres Kalorimeters haben wir im ersten Teil berechnet, also ist sie $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Die Masse der sich im Kalorimeter befindende Fl\"ussigkeit betr\"agt $(219.3\pm0.05)$\,g. Die spezifische W\"armekapazit\"at des Wassers betr\"agt $4182\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Die Temperatur des kalten Wassers innerhalb des Kalorimeters liegt bei $(20\pm0.4)$\celsius\ und die des Festk\"orpers vor dem Mischen $(71.97\pm0.4)$\celsius.
 
 Laut unser aus (\ref{bigint2}) berechnetes $t_m$, welches bei $(28\pm0.5)$\,s liegt, ist unsere wahre Mischtemperatur $(45.0\pm0.4)$\celsius. Der hierzu geh\"orige Graph befindet sich wieder im Anhang.
 
-Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(21\pm1.4)\times10^3\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Unser Fehler wurde hier wieder mit (\ref{uncertainty1}) berechnet.
+Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.40\pm0.13)\times10^4\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Unser Fehler wurde hier wieder mit (\ref{uncertainty1}) berechnet.
 
 \subsubsection{Diskussion}
+
+Bei diesem Teil war die Messproblematik des vorherigen Versuchsteils nicht mehr vorhanden. Jedoch gibt es immer noch einen Einfluss dessen aufgrund der Inklusion von $C_{Kal}$ in (\ref{ck2}).
+
+Der Literaturwert der spezifischen W\"armekapazit\"at von METAL ist VALUE. Mit der Formel
+
+\begin{equation}
+t=\frac{|x_0-y|}{u_x}\label{abw}
+\end{equation}
+
+berechnen wir eine Abweichung von $t=ECKSDEE$ mit unserem gemessenen Wert. Dies liegt im Bereich von $t<2$, was Vertr\"aglichkeit der Werte impliziert. Es ist also wahrscheinlich, dass unser Festk\"orper aus METAL besteht.
 
 
 

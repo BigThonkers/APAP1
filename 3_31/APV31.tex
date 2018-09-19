@@ -91,7 +91,7 @@ Zum Finden der wahren Mischtemperatur sucht man den Punkt, an dem man eine verti
 Da unsere Werte einer $e$-Funktion \"ahneln, aber die Temperatur\"anderung linear verlaufen sollte, teilen wir unsere Ausgleichskurve in zwei Geraden auf, welche linear verlaufen.
 Zum Berechnen dieses Punktes wird die folgende Gleichung genutzt:
 
-\begin{equation}
+\begin{equation}\tag{1}
 \int\displaylimits_{t_{0}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{0}}^{t_2} f_K\ \mathrm{d}t + f_{Add}= \int\displaylimits_{t_1}^{t_{0}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{0}} f_M\ \mathrm{d}t.\label{bigint1}
 \end{equation}
 
@@ -151,11 +151,11 @@ verwendet. Die Variablen stehen f\"ur folgende Werte:
 
 \subsubsection{Auswertung}
 
-Aufgrund eines Messfehlers, aufgrund dessen die Messung zwischen der Temperaturmessung des warmen Wassers und des Kalorimeters unterbrochen wurde, wurde angenommen, dass ein 15\,s Zeit zwischen den Messungen stattfand.
+Aufgrund eines Messfehlers, aufgrund dessen die Messung zwischen der Temperaturmessung des warmen Wassers und des Kalorimeters unterbrochen wurde, wurde angenommen, dass ein 15\,s Zeitraum zwischen den Messungen lag.
 
-Mithilfe von (\ref{abc1}) bekommen wir zwei Ergebnisse f\"ur $t_0$. Das gr\"o\ss ere Ergebnisse ist klar das sinnvollere, da REASONING.
+Mithilfe von (\ref{abc1}) bekommen wir zwei Ergebnisse f\"ur $t_0$. Das gr\"o\ss ere Ergebnisse ist klar das sinnvollere, da das kleinere keine gleich gro\ss en Fl\"achen liefert.
 
-Unser $T_M$ liegt also bei ($59\pm2$)\celsius.
+Unser $T_M$ liegt also bei ($59\pm2$)\celsius. Der Graph hierzu ist im Anhang zu finden.
 
 Die Temperatur des kalten Wassers vor dem Eintauchen betrag $(22\pm1)$\celsius \ und die des warmen Wassers $(80\pm1)$\celsius. Die Masse des warmen Wassers war $(339.84\pm0.05)$\,g und die des kalten Wassers $(221.80\pm0.05)$\,g. Mit (\ref{ck1}) bekommen wir als Wert f\"ur $C_{Kal}$ $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$.
 
@@ -166,86 +166,16 @@ s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{uncertainty1}
 \end{equation}
 
 
-%Mithilfe der Mischungsmethode ist die W\"armekapazit\"at des Kalorimeters zu bestimmen. In diesem experiment wurden die Zeiten, Temperaturen und Massen gemessen.
-
-%\subsubsection{Auswertung}
-%\begin{table}
-%\centering
-%$\begin{array}{lr}
-%	\multicolumn{2}{l}{\textrm{Messwerte zur Bestimmung von }C_{kal}}\\
-%	\hline
-%	\textrm{Wasser Masse} & 0\,\textrm{g} \\
-%	\textrm{Temperatur Wasser 1} & 0\,\celsius \\
-%	\textrm{Temperatur Wasser 2} & 100\,\celsius \\
-%	\textrm{Temperatur nach Mischen} & 50\,\celsius\\
-%	\hline
-%\end{array}$
-%\renewcommand\thetable{T1}
-%\caption{Messwerte für Teil A}
-%\label{tab:1}
-%\end{table}
-
-%Zur bestimmung von $C_{kal}$ benutzen wir die Extrapolationsfunktionen (\ref{Bild:2}) und bestimmen daraus die Mischtemperatur. Die Funktion für das heiße Wasser wird mit $f_H$ bezeichnet, das kalte Wasser mit $f_K$ und für die Temperaturänderung während der Mischung mit $f_M$: 
-%$$f_H = -0.1305 t + 79.1561, \quad f_M = 4.049 + 20.866e^{-0.192t}, \quad f_K = -0.01288 t + 47.0561$$
-%Die Schnittstelle von $f_H$ und $f_M$ ist $t_1 = -2.7630$. Die Schnittstelle von $f_M$ und $f_K$ ist $t_2 = 10.3248$.
-%$$\int\displaylimits_{t_{ges}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{ges}}^{t_2} f_K\ \mathrm{d}t = \int\displaylimits_{t_1}^{t_{ges}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{ges}} f_M\ \mathrm{d}t$$ 
-%Aus dieser Gleichung wird die gesuchte Zeit $t_{ges}$ bestimmt und in $f_M$ eingesetzt. Der berechnete wert ist $t_{ges} = 36.8598$ (\ref{Bild:3}) 
-%$$4.049 + 20.866e^{-0.192\times 36.8598} = 44.07$$
-%Dieser wert wird als die Mischtemperatur $T_M$ verwendet. Für die spezifische Wärmekapazität von Wasser verwenden wir $c_W = 4.182$\,$\nicefrac{\mathrm{kJ}}{\textrm{kgK}}$. Mit der Formel 
-%\begin{equation}\label{E:1}
-%  C_{kal} = c_W(m_k\beta - m_h), \quad \beta = \frac{T_M - T_K}{T_H - T_M}
-%\end{equation}
-%
-%Wobei die masse des kalten Wassers $m_k = 50.44(5)$\,g ist und die Masse des heißen Wassers $m_h = 103.59(5)$\,g ist.
-%Mit diesen Werten ergibt die Formel \ref{E:1} den wert $C_{kal} = $ für die Wärmekapazität des Kalorimeters.
-%
-%
-%\begin{figure}[h]
-%	\centering
-%	\fbox{\includegraphics[width=0.5\textwidth]{Gmix}}
-%  	\renewcommand\thefigure{B2}
-%	\caption{Extrapolation}
-%	\label{Bild:2}
-%\end{figure}
-%
-%\begin{figure}[p]
-%	\centering
-%	\fbox{\includegraphics[width=0.7\textwidth]{RechKal}}
-%  	\renewcommand\thefigure{B3}
-%	\caption{Rechnung mit Mathematica}
-%	\label{Bild:3}
-%\end{figure}
-%
-%\begin{supbox}
-%Es wurden zwei Messungen durchgef\"uhrt mit jeweils $116.94\,$g und $113.42\,$g Wasser. Die Wassermenge wurde so gew\"ahlt, damit der Widerstand und das Thermometer in dem Wasser eingetaucht sind. Die Dauern der Messungen waren 38 und 20 Minuten. Diese wurden so gew\"ahlt, dass sie m\"oglichst kurz ausfallen sollten. Temperatur\"anderungen wurden im Abstand von 60 Sekunden gemessen, da diese sonst nicht auff\"allig genug w\"aren, um etwas zu erkennen. Die Messwerte hierzu sind aufgrund ihrer L\"ange im Anhang.
-%
-%Das extrapolationsverfahren der 1. Messreihe ergibt $T_{max} = 26.5\celsius$ da der Temperaturabfall erst nach 30 begann. Für die 2. Messreihe ergibt das extrapolationsverfahren $T_{max} = 41.45\celsius$ \ref{Dia:1}, \ref{Ext}
-%\end{supbox}
-%\begin{table}[h!]
-%	\centering
-%	\rowcolors{2}{gray!10}{white}
-%	\begin{tabular}{|c|cccc|}
-%		\multicolumn{5}{c}{\textrm{Extrapolationverfahren}} \\
-%		\noalign{\global\arrayrulewidth=0.4mm}
-%		\hline
-%		\noalign{\global\arrayrulewidth=0.2mm}
-%		\textrm{Messreihe} & $a$ in \celsius & $u_a$ in \celsius & b in $\nicefrac{\celsius}{\textrm{s}}$ & $u_b$ in $\nicefrac{\celsius}{\textrm{s}}$ \\
-%		\hline
-%	1 & 26.5 & 0.037 &  -33.579 & 2.105 $\times 10^{-5}$ \\
-%	2 & 42.65 & 1.605 & -0.0025 & 0.001443 \\
-%		\hline
-%	\end{tabular}
-%	\renewcommand\thetable{T3}
-%	\caption{Wertetablle für die extrapolation}
-%	\label{Ext}
-%\end{table}
 
 
 
 \subsubsection{Diskussion}
 
-%Systematische und statistische Fehler.
+Aufgrund des in der Auswertung angesprochenen Messfehlers ist die Temperatur des warmen Wassers geraten, was die wahre Mischtemperatur stark beeinflusst. Ist der Zeitraum zu gro\ss z\"ugig angenommen, so liegt die wahre Mischtemperatur h\"oher, andersrum wenn der Zeitraum zu klein angenommen ist. Der Grund f\"ur den starken Einfluss ist, dass in (\ref{abc1}) der Wert f\"ur $t_1$ sich dadurch \"andert, welcher in $C$ enthalten ist. Schaut man sich das Integral (\ref{bigint1}) an, so ist offensichtlich, dass $t_2$ als Integralgrenze bei beiden Integralen auf der linken Seite einen gro\ss en Einfluss hat.
 
+Systematische Fehler hier sind, dass UNCERTAINTIES
+
+\pagebreak
 
 \subsection{Teil C - Bestimmung von der Spezifischen W\"armekapazit\"at von Festk\"orpern}
 
@@ -255,26 +185,39 @@ Ein Festk\"orper wird im Wasserbad erhitzt, die Temperatur gemessen, und dann in
 
 \subsubsection{Theorie}
 
-Die Theorie hier gleicht der des vorherigen teils. Jedoch ist es hier aufgrund der Form der Messwerte im Diagram m\"oglich, in der Gleichung (\label{bigint1}) den Term $f_{Add}$ wegzulassen. Dadurch ist in $C$ in (\ref{abc1}) nicht mehr n\"otig, den $f_{Add}$ Term hinzu zu addieren.
+Die Theorie hier gleicht der des vorherigen teils. Jedoch ist es hier aufgrund der Form der Messwerte im Diagram m\"oglich, in der Gleichung (\ref{bigint1}) den Term $f_{Add}$ wegzulassen. Dadurch ist in $C$ in (\ref{abc1}) nicht mehr n\"otig, den $f_{Add}$ Term hinzu zu addieren.
 
-Um aus der Mischtemperatur die W\"armekapazit\"at des Kalorimeters zu bestimmen, wird die Formel (\ref{ck2}) verwendet.
+Zur Bestimmung der Mischtemperatur wird hier einfach folgende Gleichung nach $t_m$ aufgel\"ost und dann die Temperatur daraus abgelesen:
+
+\begin{equation}
+\int_{t_H}^{t_m}f_H\mathrm{d}t-\int_{t_H}^{t_m}f_M\mathrm{d}t=\int_{t_m}^{t_K}f_M\mathrm{d}t-\int_{t_m}^{t_K}f_K\mathrm{d}t\label{bigint2}
+\end{equation}
+
+Um aus der Mischtemperatur die spezifische W\"armekapazit\"at des K\"orpers zu bestimmen, wird die Formel (\ref{ck2}) verwendet.
 
 \begin{equation}
 c_K=\frac{m_Fc_F+C_{Kal}}{m_K}\beta\label{ck2}
 \end{equation}
 
-Hier ist $\beta$ definiert als:
+Hier ist $\beta$ definiert als
 \[
 \beta=\frac{T_M-T_F}{T_K-T_M}
 \]
-Mit $T_M$ die Mischungstemperatur, $T_F$ die Temperatur der Fl\"ussigkeit und $T_K$ die Temperatur des Festk\"orpers.
+mit $T_M$ die Mischungstemperatur, $T_F$ die Temperatur der Fl\"ussigkeit und $T_K$ die Temperatur des Festk\"orpers. $m_F$ ist die Masse der Fl\"ussigkeit, $c_F$ die W\"armekapazit\"at der Fl\"ussigkeit, $C_{Kal}$ die W\"armekapazit\"at des Kalorimeters und $m_K$ die Masse des K\"orpers.
 
 \subsubsection{Auswertung}
 
+Die W\"armekapazit\"at unseres Kalorimeters haben wir im ersten Teil berechnet, also ist sie $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Die Masse der sich im Kalorimeter befindende Fl\"ussigkeit betr\"agt $(337.07\pm0.05)$\,g. Ihre spezifische W\"armekapazit\"at des Wassers betr\"agt $4.182\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Die Temperatur des kalten Wassers innerhalb des Kalorimeters liegt bei $(20\pm0.4)$\celsius und die des Festk\"orpers vor dem Mischen $71.97\pm0.4$\celsius.
 
+Laut unser aus (\ref{bigint2}) berechnetes $t_m$, welches bei $(28\pm0.5)$\,s liegt, ist unsere wahre Mischtemperatur $(45.0\pm0.4)$\celsius. Der hierzu geh\"orige Graph befindet sich wieder im Anhang.
+
+Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(21\pm1.4)\times10^3\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Unser Fehler wurde hier wieder mit (\ref{uncertainty1}) berechnet.
 
 \subsubsection{Diskussion}
 
+
+
+\pagebreak
 
 \section{Anhang}
 

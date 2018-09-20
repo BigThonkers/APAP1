@@ -96,7 +96,7 @@ $f_K$ steht f\"ur die Gerade der Temperatur des kalten Wassers, $f_H$ f\"ur die 
 %f_M=a_Mx^2+b_Mx+c_M
 %\end{equation}
 \begin{equation}
-f_{}=a_{}x+b_{}
+f_{}=a_{}x+b_{}\label{poly1deg}
 \end{equation}
 $f_{Add}$ sieht folgenderma\ss en aus:
 \begin{equation}
@@ -181,12 +181,18 @@ Ein Festk\"orper wird im Wasserbad erhitzt, die Temperatur gemessen, und dann in
 
 \subsubsection{Theorie}
 
-Die Theorie hier gleicht der des vorherigen teils. Jedoch ist es hier aufgrund der Form der Messwerte im Diagram m\"oglich, in der Gleichung (\ref{bigint1}) den Term $f_{Add}$ wegzulassen. Dadurch ist in $C$ in (\ref{abc1}) nicht mehr n\"otig, den $f_{Add}$ Term hinzu zu addieren.
+In diesem Teil ist es aufgrund der unterschiedlichen verwendeten Stoffe nicht mehr n\"otig, vollkommen linear das Problem anzugehen.
 
-Zur Bestimmung der Mischtemperatur wird hier einfach folgende Gleichung nach $t_m$ aufgel\"ost und dann die Temperatur daraus abgelesen:
+Zur Bestimmung der Mischtemperatur wird dadurch einfach folgende Gleichung nach $t_m$ aufgel\"ost und dann die Temperatur daraus abgelesen:
 
 \begin{equation}
 \int_{t_H}^{t_m}f_H\mathrm{d}t-\int_{t_H}^{t_m}f_M\mathrm{d}t=\int_{t_m}^{t_K}f_M\mathrm{d}t-\int_{t_m}^{t_K}f_K\mathrm{d}t\label{bigint2}
+\end{equation}
+
+Gleich wie im vorherigen Teil sind $f_H$ und $f_K$ wieder einfach lineare Funktionen (\ref{poly1deg}). Der Unterschied liegt bei $f_M$, welches an eine exponentielle Funktion gefittet wird:
+
+\begin{equation}
+f_M=a_M+b_M\exp({-c_Mt})+d_Mt\label{efunc1}
 \end{equation}
 
 Um aus der Mischtemperatur die spezifische W\"armekapazit\"at des K\"orpers zu bestimmen, wird die Formel (\ref{ck2}) verwendet.

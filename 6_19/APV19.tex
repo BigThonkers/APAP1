@@ -18,6 +18,7 @@
 \usepackage{nicefrac}
 \usepackage[table]{xcolor}
 \usepackage{tocloft}
+\usepackage{multirow}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
@@ -37,9 +38,6 @@
 
 \begin{document}
 
-% name of experiment
-% date of experiment
-% name of assistant
 {
 \centering 
 \large 
@@ -72,13 +70,13 @@ XXXX
 
 \subsection{Aufbau}
 
-% describe set up
-% insert pic name, designation, toc caption, caption, label
-\halftime{5}{5}{In diesem Versuch haben wir zwei pendel mit zusatzkörper und einer feder die beide pendel koppelt. Vor beginn der messungen ist zu beachten:
+\halftime{5}{5}{In diesem Versuch haben wir zwei Pendel mit die aus einer festen Stange und einem Zusatzkörper bestehen. Eine Feder die beide Pendel koppelt hängt mit der verstellbaren Länge $l$ von dem Aufhängepunkt des Pendels. Vor beginn der Messungen ist zu beachten:
 \begin{itemize}
-	\item das alles eben ist
-	\item das beide pendel mit gleicher perioden dauer schwingen
+	\item das der Aufbau komplett eben ist
+	\item das beide Pendel mit gleicher Periodendauer schwingen
 \end{itemize}
+Unsere Kalibriermessung ergab $18.70(5)$\,s für 10 Schwingungen beider Pendel. % maybe formulate gooder
+Die länge der Pendel von Aufhängepunkt zu der Masse ist jeweils $L = 95.0(5)$\,cm.
 }{\fbox{\includegraphics[width=0.9\textwidth]{ndp}}
    \renewcommand\thefigure{B1}
 \caption[Gekoppeltes Pendel]{Gekoppeltes Pendel \cite{Anleitung}}
@@ -86,7 +84,6 @@ XXXX
 
 \subsection{Durchführung}
 
-% describe exp.
 Wir haben zuerst 20 Schwingungsperioden einer :
 \begin{itemize}
 	\item Glei
@@ -111,23 +108,22 @@ $\begin{array}{l}
 \textrm{Unsicherheiten:}\\
 \textrm{XXXX: } \pm XX \textrm{XX}\\
 \end{array}$
-\begin{tabular}{ccc}
+\begin{tabular}{cccc}
+\textrm{Gleichsinnig} & \textrm{Entgegen} & \textrm{Schwebung} & \textrm{Abstand}\\
 \toprule
-\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
+\textrm{20 Perioden}/\textrm{s} & \textrm{20 Perioden}/\textrm{s} & \textrm{2 Schwebungen}/\textrm{s} & \textrm{Koppelungsfeder}/\textrm{m}\\
 \midrule 
-2 & 0.26 & 0.23\\
-\hline
-4 & 0.33 & 0.25\\
+2 & 0.26 & 0.23 & \multirow{2}{*}{m}\\
+4 & 0.33 & 0.25 &\\
 \hline 
-5 & & 0.3\\
+5 & & 0.3 & \multirow{2}{*}{m}\\
+6 & 1.25 & 0.83 &\\
 \hline 
-6 & 1.25 & 0.83\\
-\hline 
-8 & 3.9 & 0.83\\ 
+8 & 3.9 & 0.83 & \multirow{2}{*}{m}\\ 
+9 & 4.75 & 4.6 &\\ 
 \hline
-9 & 4.75 & 4.6\\ 
-\hline
-10 & 4.7 &\\ 
+10 & 4.7 & & \multirow{2}{*}{m}\\
+10 & 4.7 & &\\ 
 \bottomrule
 \end{tabular}
 \phantom{$\begin{array}{l}

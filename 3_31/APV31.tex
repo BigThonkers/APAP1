@@ -17,6 +17,8 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{tcolorbox}
 \usepackage[section]{placeins}
+\usepackage{rotating}
+\usepackage{tikz}
 
 \hbadness=99999
 
@@ -261,26 +263,32 @@ berechnen wir eine Abweichung von $t=ECKSDEE$ mit unserem gemessenen Wert. Dies 
 
 Die Fehler und Verbesserungsvorschl\"age sind hier sehr \"ahnlich zu denen vom ersten Teil. Hier gilt auch beim Festk\"orper, dass er wahrscheinlich nicht vollst\"andig aus dem gleichen Material besteht. Beim Messen der Temperatur des Festk\"orpers beim Eintauchen in das Kalorimeter wird er abgek\"uhlt. Da Metalle niedrigere W\"armekapazit\"aten besitzen als Wasser, wird dies in diesem Fall einen gr\"o\ss eren Einfluss haben. Die Messung w\"urde auch von mehreren Messapparaturen profitieren, da  gleichzeitig das Wasser in dem Kalorimeter und der Festk\"orper gemessen werden k\"onnten.
 
-\pagebreak
 
+\vspace{55pt}
 \section{Anhang}
+\vspace{22pt}
+%\listoffigures
 
 
-\begin{figure}[p]
+\begin{sidewaysfigure}[h]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{Kalimix}}
+\includegraphics[width=1\textwidth]{Kalimix}
 \renewcommand\thefigure{B2}
-\caption[graph1]{Extrapolation und wahre Mischtemperatur f\"ur den ersten Versuchsteil}
+%\vspace{-22pt}
+\caption{Extrapolation und wahre Mischtemperatur f\"ur den ersten Versuchsteil}
 \label{Abb:2}
-\end{figure}
+\end{sidewaysfigure}
 
-\begin{figure}[p]
+\begin{sidewaysfigure}[h]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{Objmix}}
-\renewcommand\thefigure{B3}
-\caption[graph2]{Extrapolation und wahre Mischtemperatur f\"ur den zweiten Versuchsteil}
+\includegraphics[width=1\textwidth]{Glob}
+\renewcommand\thefigure{B3} 
+\vspace{-22pt}
+\caption{Extrapolation und wahre Mischtemperatur f\"ur den zweiten Versuchsteil}
 \label{Abb:3}
-\end{figure}
+\end{sidewaysfigure} 
+
+
 
 %\begin{figure}[p]
 %\centering

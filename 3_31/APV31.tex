@@ -155,7 +155,26 @@ Unser $T_M$ liegt also bei ($59\pm2$)\celsius. Der Graph hierzu ist im Anhang zu
 
 Die Temperatur des kalten Wassers vor dem Eintauchen betrag $(22\pm1)$\celsius \ und die des warmen Wassers $(80\pm1)$\celsius. Die Masse des warmen Wassers war $(339.84\pm0.05)$\,g und die des kalten Wassers $(221.80\pm0.05)$\,g. Mit (\ref{ck1}) bekommen wir als Wert f\"ur $C_{Kal}$ $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$.
 
-Die Berechnung des Fehlers wird durchgef\"uhrt mit:
+Zur Berechnung des Fehlers von $C_{Kal}$ nutzen wir die Gau\ss 'sche Fehlerfortpflanzung auf (\ref{ck1}) aus.
+
+Unsere Einzelnen Ableitungen sehen dann folgenderma\ss en aus:
+
+\begin{itemize}
+\item $ \frac{\partial C_{Kal}}{\partial m_K} = c_W\frac{T_M-T_K}{T_H-T_M}$
+\item $ \frac{\partial C_{Kal}}{\partial m_H} = c_W$
+\item $ \frac{\partial C_{Kal}}{\partial T_H} = -c_W m_K \frac{T_M - T_K}{(T_K-T_M)^2} $
+\item $ \frac{\partial C_{Kal}}{\partial T_K} = \frac{-c_W m_K}{T_K-T_M} $
+\item $ \frac{\partial C_{Kal}}{\partial T_M} = c_W m_K \frac{T_H-T_K}{(T_M-T_K)^2} $
+\end{itemize}
+
+Da  $\frac{\partial C_{Kal}}{\partial T_M} \Delta T_M$, $\frac{\partial C_{Kal}}{\partial T_H} 
+\Delta T_H$ und $\frac{\partial C_{Kal}}{\partial T_K} \Delta T_K$ wesentlich gr\"o\ss er sind als der Rest, k\"onnen wir uns auf diese Beschr\"anken:
+\begin{equation}\Delta C_\textrm{Kal} = \sqrt{\left({\frac{\partial f}{\partial T_M} \Delta T_M}\right)^2+\left({\frac{\partial f}{\partial T_H} \Delta T_H}\right)^2+\left({\frac{\partial f}{\partial T_K} \Delta T_K}\right)^2 }
+\end{equation}
+
+
+
+Die Berechnung des Fehlers des Mittelwerts wird durchgef\"uhrt mit:
 
 \begin{equation}
 s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{uncertainty1}
@@ -169,7 +188,11 @@ s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{uncertainty1}
 
 Aufgrund des in der Auswertung angesprochenen Messfehlers ist die Temperatur des warmen Wassers geraten, was die wahre Mischtemperatur stark beeinflusst. Ist der Zeitraum zu gro\ss z\"ugig angenommen, so liegt die wahre Mischtemperatur h\"oher, andersrum wenn der Zeitraum zu klein angenommen ist. Der Grund f\"ur den starken Einfluss ist, dass in (\ref{abc1}) der Wert f\"ur $t_1$ sich dadurch \"andert, welcher in $C$ enthalten ist. Schaut man sich das Integral (\ref{bigint1}) an, so ist offensichtlich, dass $t_2$ als Integralgrenze bei beiden Integralen auf der linken Seite einen gro\ss en Einfluss hat.
 
-Systematische Fehler hier sind, dass UNCERTAINTIES
+Durch das Eingie\ss en des Wassers passt sich dieses an die Au\ss entemperatur an. Dies k\"uhlt das Wasser ab bzw. w\"armt es auf. Au\ss erdem wird bei diesem Vorgang die Isolierung des Kalorimeters unterbrochen. Dies sind beides statistische Fehler.
+
+Da unser $C_{Kal}$ mit $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$ einen sehr gro\ss en Fehler von 47\% hat, ist unser Wert offensichtlich nicht sehr genau. Es ist kein Literaturwert zum Vergleich vorhanden. Man muss also mit diesem offensichtlich ungenauen Wert weiterrechnen.
+
+Zur Verbesserung der Werte k\"onnte man au\ss erhalb von besserem Messen destilliertes Wasser verwenden, was genauere Siede- und Schmelztemperaturen aufweisen w\"urde. Dazu k\"onnte man auch zwei Messapparate verwenden und ein extra Kalorimeter, damit man das dann isolierte Eiswasser sowie auch das warme Wasser messen k\"onnte.
 
 \pagebreak
 
@@ -219,7 +242,7 @@ Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.40\pm0.12)\time
 
 Bei diesem Teil war die Messproblematik des vorherigen Versuchsteils nicht mehr vorhanden. Jedoch gibt es immer noch einen Einfluss dessen aufgrund der Inklusion von $C_{Kal}$ in (\ref{ck2}).
 
-Der Literaturwert der spezifischen W\"armekapazit\"at von METAL ist VALUE. Mit der Formel
+Der Literaturwert der spezifischen W\"armekapazit\"at von dem n\"achsten Metal an unserem Wert, METAL ist VALUE. Mit der Formel
 
 \begin{equation}
 t=\frac{|x_0-y|}{u_x}\label{abw}
@@ -227,7 +250,7 @@ t=\frac{|x_0-y|}{u_x}\label{abw}
 
 berechnen wir eine Abweichung von $t=ECKSDEE$ mit unserem gemessenen Wert. Dies liegt im Bereich von $t<2$, was Vertr\"aglichkeit der Werte impliziert. Es ist also wahrscheinlich, dass unser Festk\"orper aus METAL besteht.
 
-
+Die Fehler und Verbesserungsvorschl\"age sind hier sehr \"ahnlich zu denen vom ersten Teil. Hier gilt auch beim Festk\"orper, dass er wahrscheinlich nicht vollst\"andig aus dem gleichen Material besteht. Beim Messen der Temperatur des Festk\"orpers beim Eintauchen in das Kalorimeter wird er abgek\"uhlt. Da Metalle niedrigere W\"armekapazit\"aten besitzen als Wasser, wird dies in diesem Fall einen gr\"o\ss eren Einfluss haben. Die Messung w\"urde auch von mehreren Messapparaturen profitieren, da  gleichzeitig das Wasser in dem Kalorimeter und der Festk\"orper gemessen werden k\"onnten.
 
 \pagebreak
 

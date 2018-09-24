@@ -23,6 +23,9 @@
 \hbadness=99999
 
 \newenvironment{supbox}{\begin{tcolorbox}[colback=white,colframe=black,sharp corners,boxrule=.5pt]}{\end{tcolorbox}}
+
+\newcommand\dif{\mathop{}\!\mathrm{d}}
+
 \begin{document}
 
 {
@@ -81,7 +84,7 @@ Dies liegt vermutlich aufgrund der kleinen Menge an Eiswasser, welche genutzt wu
 
 \subsubsection{Durchf\"uhrung}
 
-Da genug Eiswasser nicht vorhanden ist, muss hier lauwarmes Wasser verwendet werden. Zuerst misst man die Temperaturen der beiden Wassermengen und wiegt sie, dann werden sie nacheinander in das Kalorimeter gef\"ullt und der Temperaturverlauf wird gemessen. Dies notiert man dann in ein Diagramm und eine Ausgleichskurve wird erstellt, mit der man die ware Mischtemperatur berechnet.
+Da genug Eiswasser nicht vorhanden ist, muss hier lauwarmes Wasser verwendet werden. Zuerst misst man die Temperaturen der beiden Wassermengen und wiegt sie, dann werden sie nacheinander in das Kalorimeter gef\"ullt und der Temperaturverlauf wird gemessen. Es ist wichtig, dass das Wasser ständig gerührt wird. Dies notiert man dann in ein Diagramm und eine Ausgleichskurve wird erstellt, mit der man die ware Mischtemperatur berechnet.
 
 \subsubsection{Theorie}
 
@@ -212,7 +215,7 @@ In diesem Teil ist es aufgrund der unterschiedlichen verwendeten Stoffe nicht me
 Zur Bestimmung der Mischtemperatur wird dadurch einfach folgende Gleichung nach $t_m$ aufgel\"ost und dann die Temperatur daraus abgelesen:
 
 \begin{equation}
-\int_{t_H}^{t_m}f_H\mathrm{d}t-\int_{t_H}^{t_m}f_M\mathrm{d}t=\int_{t_m}^{t_K}f_M\mathrm{d}t-\int_{t_m}^{t_K}f_K\mathrm{d}t\label{bigint2}
+\int\displaylimits_{t_H}^{t_m}f_H\dif t-\int\displaylimits_{t_H}^{t_m}f_M\dif t=\int\displaylimits_{t_m}^{t_K}f_M\dif t-\int\displaylimits_{t_m}^{t_K}f_K\dif t\label{bigint2}
 \end{equation}
 
 Gleich wie im vorherigen Teil sind $f_H$ und $f_K$ wieder einfach lineare Funktionen (\ref{poly1deg}). Der Unterschied liegt bei $f_M$, welches an eine exponentielle Funktion gefittet wird:
@@ -241,14 +244,10 @@ Laut unser aus (\ref{bigint2}) berechnetes $t_m$, welches bei $(29\pm0.5)$\,s li
 
 Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.37\pm0.12)\times10^4\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Der Fehler hier wird wieder mit dem Gau\ss 'schen Fortpflanzungsgesetz durchgef\"uhrt:
 
-\color{purple}
-
 \begin{align*}
  	u_{c_K} = &\sqrt{\bigg(\frac{c_F}{m_K} \beta \Delta m_F\bigg)^2 + \bigg( \frac{m_F}{m_K} \beta \Delta c_F\bigg)^2 + \bigg( \frac{1}{m_K} \beta \Delta C_{kal}\bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K} \beta \Delta m_k\bigg)^2}\\
  	& + \overline{\bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta T_M \bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta m_k\bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta T_K \bigg)^2}
 \end{align*}
-
-\color{black}
 
 \subsubsection{Diskussion}
 
@@ -256,7 +255,7 @@ Bei diesem Teil war die Messproblematik des vorherigen Versuchsteils nicht mehr 
 
 %Der Literaturwert der spezifischen W\"armekapazit\"at von dem n\"achsten Metal an unserem Wert, METAL ist VALUE. Mit der Formel
 
-Die Literaturwerte der spezifischen W\"armekapazit\"atet von Metallen liegen tendenziell zwischen $100\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$ und $1000\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Betrachten wir Aluminium, welches eine gro\ss e W\"armekapazit\"at, $921\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$, besitzt, und auch im Vergleich zu anderen Metallen eine kleine Dichte hat, so bekommen wir mit der Gleichung
+Die Literaturwerte der spezifischen W\"armekapazit\"atet von Metallen liegen tendenziell zwischen $100\frac{\mathrm{J}}{\mathrm{kgK}}$ und $1000\,\frac{\mathrm{J}}{\mathrm{kgK}}$. Betrachten wir Aluminium, welches eine gro\ss e W\"armekapazit\"at, $921\,\frac{\mathrm{J}}{\mathrm{kgK}}$, besitzt, und auch im Vergleich zu anderen Metallen eine kleine Dichte hat, so bekommen wir mit der Gleichung
 
 \begin{equation}
 t=\frac{|x_0-y|}{u_x}\label{abw}
@@ -273,6 +272,7 @@ Die Fehler und Verbesserungsvorschl\"age sind hier sehr \"ahnlich zu denen vom e
 
 \vspace{55pt}
 \section{Anhang}
+Link zum herunterladen der Messdaten: \url{https://files.catbox.moe/p05mhv.zip}
 \vspace{22pt}
 %\listoffigures
 

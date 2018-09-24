@@ -49,7 +49,8 @@ Der Versuch ist in drei Teile geteilt, welche dazu dienen, mit Hilfe einer geeig
 
 \section{Aufbau}
 
-Der Messf\"uhler ist per Kabel an den PC gebunden, an dem LabVIEW l\"auft. Zwei mit Wasser gef\"ullte Beh\"alter sind vorhanden. Eins davon ist auf einer Heizplatte, das andere besteht aus Eiswasser.
+Der Messf\"uhler ist per Kabel an den PC gebunden, an dem LabVIEW l\"auft. Zwei mit Wasser gef\"ullte Beh\"alter sind vorhanden. Eins davon ist auf einer Heizplatte, das andere ist gef\"ullt mit Eiswasser. Im zweiten und dritten Teil f\"ullt man das zweite Gef\"a\ss\ mit Leitungswasser, da nicht genug Eiswasser vorhanden ist.\\
+F\"ur den dritten Teil ist ein metallischer Festk\"orper zur Verf\"ugung gestellt, welcher oben eine Halterung hat, damit man mit einem Haken den Festk\"orper leicht in und aus dem Wasser bzw. dem Kalorimeter nehmen kann.
 
 \begin{figure}[ht!]
 	\centering
@@ -66,7 +67,7 @@ Der Messf\"uhler ist per Kabel an den PC gebunden, an dem LabVIEW l\"auft. Zwei 
 
 \subsubsection{Durchf\"uhrung}
 Zuerst vervollst\"andigt man LabVIEW, sodass die Temperatur und die Zeit nach der Messung in eine Datei abgespeichert wird.\\
-Zur Kalibrierung wird das Ende des Messf\"uhlers, an dem gemessen wird, in das behitzte Wasserbad gesteckt und die Temperatur in LabVIEW an 100\celsius angepasst. Ist dies geschehen, so steckt man den Messf\"uhler in das Eiswasser und stellt dies auf 0\celsius ein.
+Zur Kalibrierung wird das Ende des Messf\"uhlers, an dem gemessen wird, in das behitzte Wasserbad gesteckt und die Temperatur in LabVIEW an 100\celsius\ angepasst. Ist dies geschehen, so steckt man den Messf\"uhler in das Eiswasser und stellt dies auf 0\celsius\ ein.
 \pagebreak
 \subsubsection{Ergebnisse}
 Bei der Kalibrierung wurden Schwankungen festgestellt. Bei dem kochenden Wasser lagen diese bei etwa 0.5\celsius, bei dem Eiswasser jedoch circa 2\celsius.\\
@@ -176,11 +177,11 @@ Da  $\frac{\partial C_{Kal}}{\partial T_M} \Delta T_M$, $\frac{\partial C_{Kal}}
 
 
 
-Die Berechnung des Fehlers des Mittelwerts wird durchgef\"uhrt mit:
-
-\begin{equation}
-s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{uncertainty1}
-\end{equation}
+%Die Berechnung des Fehlers des Mittelwerts wird durchgef\"uhrt mit:
+%
+%\begin{equation}
+%s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{uncertainty1}
+%\end{equation}
 
 %UPDATE THIS
 
@@ -238,7 +239,7 @@ Die W\"armekapazit\"at unseres Kalorimeters haben wir im ersten Teil berechnet, 
 
 Laut unser aus (\ref{bigint2}) berechnetes $t_m$, welches bei $(29\pm0.5)$\,s liegt, ist unsere wahre Mischtemperatur $(44.4\pm0.4)$\celsius. Der hierzu geh\"orige Graph befindet sich wieder im Anhang.
 
-Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.40\pm0.12)\times10^4\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Der Fehler hier wird wieder mit dem Gau\ss 'schen Fortpflanzungsgesetz durchgef\"uhrt:
+Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.37\pm0.12)\times10^4\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Der Fehler hier wird wieder mit dem Gau\ss 'schen Fortpflanzungsgesetz durchgef\"uhrt:
 
 \color{purple}
 
@@ -253,13 +254,19 @@ Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.40\pm0.12)\time
 
 Bei diesem Teil war die Messproblematik des vorherigen Versuchsteils nicht mehr vorhanden. Jedoch gibt es immer noch einen Einfluss dessen aufgrund der Inklusion von $C_{Kal}$ in (\ref{ck2}).
 
-Der Literaturwert der spezifischen W\"armekapazit\"at von dem n\"achsten Metal an unserem Wert, METAL ist VALUE. Mit der Formel
+%Der Literaturwert der spezifischen W\"armekapazit\"at von dem n\"achsten Metal an unserem Wert, METAL ist VALUE. Mit der Formel
+
+Die Literaturwerte der spezifischen W\"armekapazit\"atet von Metallen liegen tendenziell zwischen $100\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$ und $1000\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Betrachten wir Aluminium, welches eine gro\ss e W\"armekapazit\"at, $921\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$, besitzt, und auch im Vergleich zu anderen Metallen eine kleine Dichte hat, so bekommen wir mit der Gleichung
 
 \begin{equation}
 t=\frac{|x_0-y|}{u_x}\label{abw}
 \end{equation}
 
-berechnen wir eine Abweichung von $t=ECKSDEE$ mit unserem gemessenen Wert. Dies liegt im Bereich von $t<2$, was Vertr\"aglichkeit der Werte impliziert. Es ist also wahrscheinlich, dass unser Festk\"orper aus METAL besteht.
+eine Abweichung von $t=10.4$ mit unserem gemessenen Wert. Dies liegt deutlich au\ss erhalb von dem Bereich von $t<2$, was Unvertr\"aglichkeit der Werte impliziert. Unser berechneter Wert stimmt also klar nicht mit dem Litaturwert \"ueberein. Dies impliziert, dass unser Festk\"orper nicht aus Aluminium besteht. Da f\"ur andere Metalle \"ahnliche Werte entstehen, scheint es erstmals, als w\"are unser Festk\"orper nicht aus Metall.
+
+Die Oberfl\"ache des Festk\"orpers w\"urde jedoch darauf hinweisen, dass es aus Metall besteht.
+
+Nehmen wir an, ein Fehler bei der Rechnung verzehnfacht das Ergebnis, und versuchen wir dies zu beheben, so erhalten wir immer noch ein $t$ von 3.68. Dies liegt immer noch au\ss erhalb des $t<2$ Bereichs. Auch mit einem anderen leichten Metall mit einer hohen W\"armekapazit\"at, Magnesium, welches eine spezifische W\"armekapazit\"at von $1047\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$ besitzt, l\"agen wir mit der Annahme, dass unser Wert eigentlich ein Zehnfaches zu gro\ss\ ist, immer noch mit $t=2.65$ au\ss erhalb des gew\"unschten $t<2$ Bereichs.  Es ist also sinnvoll anzunehmen, dass diese Werte ganz falsch liegen.
 
 Die Fehler und Verbesserungsvorschl\"age sind hier sehr \"ahnlich zu denen vom ersten Teil. Hier gilt auch beim Festk\"orper, dass er wahrscheinlich nicht vollst\"andig aus dem gleichen Material besteht. Beim Messen der Temperatur des Festk\"orpers beim Eintauchen in das Kalorimeter wird er abgek\"uhlt. Da Metalle niedrigere W\"armekapazit\"aten besitzen als Wasser, wird dies in diesem Fall einen gr\"o\ss eren Einfluss haben. Die Messung w\"urde auch von mehreren Messapparaturen profitieren, da  gleichzeitig das Wasser in dem Kalorimeter und der Festk\"orper gemessen werden k\"onnten.
 
@@ -409,32 +416,10 @@ Die Fehler und Verbesserungsvorschl\"age sind hier sehr \"ahnlich zu denen vom e
 %\textrm{Spannung: } & \pm 0.02 \textrm{V}
 %\end{array}$
 %\rowcolors{2}{gray!10}{white}
-%\begin{tabular}{|c|c|c|c|}
-%\multicolumn{4}{l}{Wasser 113.42(3)\,g}\\
-%\hline
-%$t$ in s & $T$ in $^\circ\textrm{C}$ & $I$ in A & $U$ in V \\
+%\begin{tabular}{|c|c|}
+%\multicolumn{2}{l}{Wasser 113.42(3)\,g}\\
 %\hline 
-%0   & 22 & 1.5 & 14.9\\
-%60  & 22 & 1.5 & 14.9\\
-%120 & 23 & 1.5 & 14.9\\
-%180 & 24 & 1.5 & 14.9\\
-%240 & 26 & 1.5 & 14.9\\ 
-%300 & 27 & 1.5 & 14.9\\ 
-%360 & 28 & 1.5 & 14.9\\ 
-%420 & 29.2 & 1.5 & 14.9\\ 
-%480 & 30.3 & 1.5 & 14.9\\ 
-%540 & 31.9 & 1.5 & 14.9\\ 
-%600 & 33 & 1.5 & 14.9\\ 
-%660 & 33.7 & 1.5 & 14.9\\ 
-%720 & 35 & 1.5 & 14.9\\ 
-%780 & 35 & 1.5 & 14.9\\ 
-%840 & 36 & 1.5 &14.9\\
-%900 & 37 & 1.5 & 14.9\\
-%960 & 38.2 & 0 & 0\\
-%1020 & 39.5 & 0 & 0\\
-%1080 & 40 & 0 & 0\\
-%1140 & 40 & 0 & 0\\
-%1200 & 39.5 & 0 & 0\\
+%9229.720 & 74.184\\ 9230.720 & 74.074\\ 9231.721 & 73.598\\ 9232.721 & 73.818\\ 9233.720 & 73.744\\ 9234.720 & 73.231\\ 9235.720 & 72.974\\ 9236.720 & 73.084\\ 9237.720 & 72.241\\ 9238.720 & 72.388\\ 9239.720 & 72.278\\ 9240.721 & 72.314\\ 9241.721 & 70.371\\ 9242.721 & 66.850\\ 9243.721 & 63.729\\ 9244.721 & 59.871\\ 9245.721 & 58.068\\ 9246.722 & 56.043\\ 9247.723 & 54.347\\ 9248.723 & 52.871\\ 9249.724 & 51.801\\ 9250.725 & 50.101\\ 9251.724 & 49.731\\ 9252.724 & 48.103\\ 9253.725 & 46.732\\ 9254.725 & 46.213\\ 9255.726 & 45.286\\ 9256.727 & 43.987\\ 9257.728 & 43.615\\ 9258.728 & 43.020\\ 9259.728 & 42.388\\ 9260.729 & 42.054\\ 9261.729 & 41.011\\ 9262.730 & 40.639\\ 9263.730 & 39.894\\ 9264.731 & 39.223\\ 9265.732 & 38.775\\ 9266.733 & 38.626\\ 9267.733 & 38.178\\ 9268.732 & 37.319\\ 9269.732 & 37.357\\ 9270.733 & 36.460\\ 9271.733 & 36.310\\ 9272.734 & 36.534\\ 9273.735 & 35.562\\ 9274.735 & 35.450\\ 9275.736 & 35.075\\ 9276.737 & 34.626\\ 9277.737 & 34.327\\ 9278.737 & 33.914\\ 9279.737 & 34.027\\ 9280.738 & 33.502\\ 9281.739 & 33.764\\ 9282.740 & 33.315\\ 9283.740 & 33.127\\ 9284.740 & 32.752\\ 9285.739 & 33.090\\ 9286.739 & 32.377\\ 9287.740 & 32.264\\ 9288.740 & 31.701\\ 9289.741 & 32.414\\ 9290.741 & 31.814\\ 9291.742 & 31.588\\ 9292.743 & 31.401\\ 9293.744 & 31.025\\ 9294.745 & 30.875\\ 9295.746 & 30.987\\ 9296.746 & 30.724\\ 9297.747 & 31.062\\ 9298.747 & 30.611\\ 9299.749 & 30.348\\ 9300.749 & 30.123\\ 9301.750 & 29.859\\ 9302.750 & 29.897\\ 9303.749 & 30.461\\ 9304.750 & 30.085\\ 9305.751 & 29.709\\ 9306.751 & 30.386\\ 9307.751 & 29.596\\ 9308.751 & 29.483\\ 9309.752 & 29.483\\ 9310.753 & 29.446\\ 9311.754 & 29.446\\ 9312.755 & 30.198\\ 9313.756 & 28.994\\ 9314.757 & 28.617\\ 9315.758 & 28.843\\ 9316.760 & 28.806\\ 9317.760 & 28.467\\ 9318.760 & 28.730\\ 9319.761 & 28.429\\ 9320.760 & 28.504\\ 9321.760 & 28.316\\ 9322.761 & 28.354\\ 9323.762 & 28.354\\ 9324.762 & 28.919\\ 9325.762 & 28.128\\ 9326.763 & 28.580\\ 9327.763 & 28.203\\ 9328.764 & 28.429\\ 9329.765 & 28.203\\ 9330.765 & 27.901\\ 9331.765 & 28.014\\ 9332.766 & 28.128\\ 9333.767 & 28.391\\ 9334.768 & 27.600\\ 9335.768 & 28.128\\ 9336.768 & 27.939\\ 9337.767 & 27.977\\ 9338.768 & 27.864\\ 9339.768 & 27.826\\ 9340.768 & 27.826\\ 9341.768 & 27.524\\ 9342.769 & 27.562\\ 9343.769 & 27.977\\ 9344.769 & 27.298\\ 9345.769 & 27.826\\ 9346.770 & 27.939\\ 9347.770 & 27.751\\ 9348.770 & 27.901\\ 9349.770 & 27.638\\ 9350.770 & 27.147\\ 9351.772 & 27.034\\ 9352.772 & 28.241\\ 9353.772 & 27.600\\ 9354.772 & 27.524\\ 9355.771 & 27.374\\ 9356.772 & 27.901\\ 9357.773 & 27.072\\ 9358.774 & 28.128\\ 9359.774 & 27.600\\ 9360.774 & 27.336\\ 9361.774 & 27.788\\ 9362.774 & 26.959\\ 9363.774 & 27.751\\ 9364.774 & 27.298\\ 9365.775 & 27.147\\ 9366.776 & 26.997\\ 9367.777 & 27.524\\ 9368.778 & 27.223\\ 9369.778 & 27.449\\ 9370.778 & 27.374\\ 9371.778 & 27.600\\ 9372.777 & 26.921\\ 9373.777 & 27.110\\ 9374.777 & 27.261\\ 9375.778 & 27.185\\ 9376.778 & 27.185\\ 9377.778 & 27.411\\ 9378.779 & 27.713\\ 9379.779 & 27.411\\ 9380.780 & 27.939\\ 9381.780 & 26.959\\ 9382.781 & 27.449\\ 9383.781 & 26.732\\ 9384.782 & 27.034\\ 
 %\hline
 %\end{tabular}
 %\phantom{$\begin{array}{rl}

@@ -22,6 +22,7 @@
 
 \hbadness=99999
 
+\newcommand\dif{\mathop{}\!\mathrm{d}}
 \newenvironment{supbox}{\begin{tcolorbox}[colback=white,colframe=black,sharp corners,boxrule=.5pt]}{\end{tcolorbox}}
 \begin{document}
 
@@ -211,7 +212,7 @@ In diesem Teil ist es aufgrund der unterschiedlichen verwendeten Stoffe nicht me
 Zur Bestimmung der Mischtemperatur wird dadurch einfach folgende Gleichung nach $t_m$ aufgel\"ost und dann die Temperatur daraus abgelesen:
 
 \begin{equation}
-\int_{t_H}^{t_m}f_H\mathrm{d}t-\int_{t_H}^{t_m}f_M\mathrm{d}t=\int_{t_m}^{t_K}f_M\mathrm{d}t-\int_{t_m}^{t_K}f_K\mathrm{d}t\label{bigint2}
+\int\displaylimits_{t_H}^{t_m}f_H\dif t-\int\displaylimits_{t_H}^{t_m}f_M\dif t=\int\displaylimits_{t_m}^{t_K}f_M\dif t-\int\displaylimits_{t_m}^{t_K}f_K\dif t\label{bigint2}
 \end{equation}
 
 Gleich wie im vorherigen Teil sind $f_H$ und $f_K$ wieder einfach lineare Funktionen (\ref{poly1deg}). Der Unterschied liegt bei $f_M$, welches an eine exponentielle Funktion gefittet wird:
@@ -240,14 +241,12 @@ Laut unser aus (\ref{bigint2}) berechnetes $t_m$, welches bei $(29\pm0.5)$\,s li
 
 Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.37\pm0.12)\times10^4\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Der Fehler hier wird wieder mit dem Gau\ss 'schen Fortpflanzungsgesetz durchgef\"uhrt:
 
-\color{purple}
 
 \begin{align*}
  	u_{c_K} = &\sqrt{\bigg(\frac{c_F}{m_K} \beta \Delta m_F\bigg)^2 + \bigg( \frac{m_F}{m_K} \beta \Delta c_F\bigg)^2 + \bigg( \frac{1}{m_K} \beta \Delta C_{kal}\bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K} \beta \Delta m_k\bigg)^2}\\
  	& + \overline{\bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta T_M \bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta m_k\bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta T_K \bigg)^2}
 \end{align*}
 
-\color{black}
 
 \subsubsection{Diskussion}
 
@@ -255,7 +254,7 @@ Bei diesem Teil war die Messproblematik des vorherigen Versuchsteils nicht mehr 
 
 %Der Literaturwert der spezifischen W\"armekapazit\"at von dem n\"achsten Metal an unserem Wert, METAL ist VALUE. Mit der Formel
 
-Die Literaturwerte der spezifischen W\"armekapazit\"atet von Metallen liegen tendenziell zwischen $100\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$ und $1000\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Betrachten wir Aluminium, welches eine gro\ss e W\"armekapazit\"at, $921\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$, besitzt, und auch im Vergleich zu anderen Metallen eine kleine Dichte hat, so bekommen wir mit der Gleichung
+Die Literaturwerte der spezifischen W\"armekapazit\"atet von Metallen liegen tendenziell zwischen $100\frac{\mathrm{J}}{\mathrm{kgK}}$ und $1000\,\frac{\mathrm{J}}{\mathrm{kgK}}$. Betrachten wir Aluminium, welches eine gro\ss e W\"armekapazit\"at, $921\,\frac{\mathrm{J}}{\mathrm{kgK}}$, besitzt, und auch im Vergleich zu anderen Metallen eine kleine Dichte hat, so bekommen wir mit der Gleichung
 
 \begin{equation}
 t=\frac{|x_0-y|}{u_x}\label{abw}
@@ -265,7 +264,7 @@ eine Abweichung von $t=10.4$ mit unserem gemessenen Wert. Dies liegt deutlich au
 
 Die Oberfl\"ache des Festk\"orpers w\"urde jedoch darauf hinweisen, dass es aus Metall besteht.
 
-Nehmen wir an, ein Fehler bei der Rechnung verzehnfacht das Ergebnis, und versuchen wir dies zu beheben, so erhalten wir immer noch ein $t$ von 3.68. Dies liegt immer noch au\ss erhalb des $t<2$ Bereichs. Auch mit einem anderen leichten Metall mit einer hohen W\"armekapazit\"at, Magnesium, welches eine spezifische W\"armekapazit\"at von $1047\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$ besitzt, l\"agen wir mit der Annahme, dass unser Wert eigentlich ein Zehnfaches zu gro\ss\ ist, immer noch mit $t=2.65$ au\ss erhalb des gew\"unschten $t<2$ Bereichs.  Es ist also sinnvoll anzunehmen, dass diese Werte ganz falsch liegen.
+Nehmen wir an, ein Fehler bei der Rechnung verzehnfacht das Ergebnis, und versuchen wir dies zu beheben, so erhalten wir immer noch ein $t$ von 3.68. Dies liegt immer noch au\ss erhalb des $t<2$ Bereichs. Auch mit einem anderen leichten Metall mit einer hohen W\"armekapazit\"at, Magnesium, welches eine spezifische W\"armekapazit\"at von $1047\,\frac{\mathrm{J}}{\mathrm{kgK}}$ besitzt, l\"agen wir mit der Annahme, dass unser Wert eigentlich ein Zehnfaches zu gro\ss\ ist, immer noch mit $t=2.65$ au\ss erhalb des gew\"unschten $t<2$ Bereichs.  Es ist also sinnvoll anzunehmen, dass diese Werte ganz falsch liegen.
 
 Die Fehler und Verbesserungsvorschl\"age sind hier sehr \"ahnlich zu denen vom ersten Teil. Hier gilt auch beim Festk\"orper, dass er wahrscheinlich nicht vollst\"andig aus dem gleichen Material besteht. Beim Messen der Temperatur des Festk\"orpers beim Eintauchen in das Kalorimeter wird er abgek\"uhlt. Da Metalle niedrigere W\"armekapazit\"aten besitzen als Wasser, wird dies in diesem Fall einen gr\"o\ss eren Einfluss haben. Die Messung w\"urde auch von mehreren Messapparaturen profitieren, da  gleichzeitig das Wasser in dem Kalorimeter und der Festk\"orper gemessen werden k\"onnten.
 

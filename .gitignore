@@ -245,3 +245,7 @@ TSWLatexianTemp*
 
 # Python
 .ipynb_checkpoints/*
+
+# fuck you idk what this shit is
+*.csv
+*.zip

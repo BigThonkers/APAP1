@@ -48,7 +48,7 @@
 Physiklabor für Anf\"anger*innen \\
 Ferienpraktikum im Sommersemester 2018 \\[4mm]
 \textbf{\LARGE 
-Versuch 22: Kreisel
+Versuch 22: Kreiselpr\"azession
 } \\[3mm]
 (durchgef\"uhrt am 21.09.2018 bei Adrian Hauber) \\
 Andréz Gockel, Patrick M\"unnich\\
@@ -157,21 +157,109 @@ F\"ur die rechte Seite der Gleichung ist alles gemessen. Wir k\"onnen dies in ei
 
 Nutzen wir f\"ur als lineare Gleichung f\"ur eine Ausgleichsgrade von dne Messpunkten
 \[
-y=ax+b,
+y=a+bx,
 \]
-so k\"onnen wir unser $x_0$ als $-\frac{b}{a}$ festlegen.
+so k\"onnen wir unser $x_0$ als $-\frac{a}{b}$ festlegen.
 
-THIS ISN'T DONE
+Um unser $a$ und $b$ zu finden, sowie auch die Standardunsicherheiten von $y$, $a$ und $b$, nehmen wir folgende Formeln zunutze:
 
+\begin{equation}
+a=\frac{\sum x_i^2\sum y_i-\sum x_i\sum x_iy_i}{n\sum x_i^2-(\sum x_i)^2}
+\end{equation}
+\begin{equation}
+b=\frac{n\sum x_iy_i-\sum x_i\sum y_i}{n\sum x_i^2-(\sum x_i)^2}
+\end{equation}
+\begin{equation}
+s=\sqrt{\frac{1}{n-2}\sum^n_{i=1}[y_i-(a+bx_i)]^2}
+\end{equation}
+\begin{equation}
+\Delta a=s\sqrt{\frac{\sum x_i^2}{n\sum x_i^2-(\sum x_i)^2}}
+\end{equation}
+\begin{equation}
+\Delta b=s\sqrt{\frac{n}{n\sum x_i^2-(\sum x_i)^2}}
+\end{equation}
+Unsere letzte Messreihe hat eine zu gro\ss e Abweichung, was zu einer ungenaueren Geraden f\"uhrt. Erl\"auterung des Grundes dessen ist in der Diskussion zu finden. Die resultierende Graphik ist im Anhang. Wir nutzen also die letzte Messreihe nicht aus.
+Um dann unseren Offset $x_0$ und seine Standardunsicherheit zu finden, rechnen wir also
+\[
+x_0=\frac{-a}{b}
+\]
+\[
+\Delta x_o=x_0\times\sqrt{\left(\frac{\Delta a}{a}\right)^2+\left(\frac{\Delta b}{b}\right)^2}
+\]
+Aus unseren Messwerten, welche in Tabelle (\ref{Tab:X}) im Anhang gefunden werden kann, folgern wir also:
+\begin{itemize}
+\item Offset $x_0=4.70$
+\item Unsicherheit Offset $\Delta x_0=0.20$
+\item $\nicefrac{\Delta x_0}{x_0}=0.04=4\%$
+\end{itemize}
 
+Um das gesuchte $I_A$ zu berechnen, nutzen wir Gleichung (\ref{eqIA}). Damit bekommen wir als Mittelwert
+\[
+I_A=(14.5\pm0.6)\,\mathrm{kgcm}^2
+\]
+
+Den Fehler des Mittelwerts berechnen wir \"uber die allgemeine Formel:
+
+\begin{equation}
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}.\label{uncertainty1}
+\end{equation}
 
 \section{Diskussion}
 
-XXXX
+%Y U NO LAST MEASUREMENT
+
+Da $I_A$ eine Konstante ist, k\"onnen wir aus der Gleichung f\"ur $I_A$ schlussfolgern, dass
+\[\frac{\omega_F\omega_P}{G}\]
+linear verlaufen muss. Tragen wir dies mit allen Messwerten auf, so bekommen wir den Graph, der im Anhang als Abbildung (\ref{Abb:2}) gefunden werden kann.
+
+Dies sieht zwar relativ linear aus, jedoch k\"onnen wir ohne dem letzten Punkt einen klar lineareren Verlauf feststellen. Dies l\"asst sich dadurch erkl\"aren, dass die letzte Messreihe bei $x=10$ durchgef\"uhrt wurde und unser Offset $x_0=4.70$ ist. Da 10 im Vergleich zu den anderen Messwerten schon weit entfernt ist von 4.70, ist klar, dass dessen Werte nicht besonders gut sein wird.
+
+Unser Ergebnis (zur Wiederholung: $I_A=(14.5\pm0.6)\,\mathrm{kgcm}^2$) verf\"ugt \"uber keinen Literaturwert, mit dem wir das vergleichen k\"onnen. Da unser Fehler bei 4\% liegt deutet dies darauf, dass er genau sein sollte.
+
+Es ist jedoch ein systematischer Fehler vorhanden, unzwar, dass die Reibung des Kreisels die Drehgeschwindigkeit verlangsamt. Wie stark dessen Einfluss ist kann man rausfinden, indem man die Periodendauer \"uber einen Zeitraum mehrmals misst. 
+Bei einem Zeitraum von 10\,s wurde bei dem hier verwendeten Kreisel gemessen, dass sich die Periodendauer von 10 Umdrehungen von 6.3\,s bzw. 5.6\,s auf 7.1\,s bzw. 6.1\,s gesinkt ist. Dies entspricht jeweils 13\% bzw. 9\%. Es ist also durchaus m\"oglich, dass die Reibung den Wert beeinflusst. Betrachten wir die Gleichung zum Berechnen von $I_A$,
+\[
+I_A=\frac{rG}{\omega_F\omega_P},
+\]
+so k\"onnen wir klar sehen, dass $I_A$ von zwei von $T$ abh\"angigen Werten, $r$, $\omega_F$ und $\omega_P$ abh\"angt. Setzen wir $T$ zu dem 1.10-Fachen, so erhalten wir mit der gleichen Rechnung wie zuvor $(17.5\pm0.7)$\,kgcm$^{2}$.
+
+Dieser Wert ist das $(1.20\pm0.05)$-Fache von unserem vorher berechneten Wert.
+
+Vergleichen wir diese Werte mit der folgenden Formel:
+\begin{equation}
+t=\frac{\vert x_0-y_0\vert}{\sqrt{u_x^2+u_y^2}},\label{abw}
+\end{equation}
+so erhalten wir $t=4.13$. Dies ist au\ss erhalb des erw\"unschten $t<2$ Bereichs. Diese beiden Werte sind also unvertr\"aglich. Zwar ist keines der beide ein Literaturwert, jedoch k\"onnen wir dadurch deutlich erkennen, dass der durch die Reibung entstehende Fehler einen gro\ss en Einfluss hat.
+
+
+
+%Dies wurde in diesem Fall gemessen, und es wurde festgestellt, dass diese Reibung \"ueber einen Zeitraum von 10\,s die Drehung um circa 10\% verlangsamt. Dies k\"onnte also einen Einfluss haben.
+
+
+
+
+
+
 
 \pagebreak
 
 \section{Anhang: Tabellen und Diagramme}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{discluding_10.png}}
+\renewcommand\thefigure{1}
+\caption[Graphik Messpunkte mit Ausgleichsgerade]{Ausgleichsgerade}
+\label{Abb:1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{including_10.png}}
+\renewcommand\thefigure{2}
+\caption[Vergleichsgraphik]{Vergleichsgraphik}
+\label{Abb:2}
+\end{figure}
 
 \begin{table}[h]
 \centering

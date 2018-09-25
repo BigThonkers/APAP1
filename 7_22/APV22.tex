@@ -19,6 +19,7 @@
 \usepackage[table]{xcolor}
 \usepackage{tocloft}
 \usepackage{array}
+\usepackage{placeins}
 
 \newcolumntype{L}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
@@ -239,7 +240,11 @@ so erhalten wir $t=4.13$. Dies ist au\ss erhalb des erw\"unschten $t<2$ Bereichs
 
 
 
-
+\vfill
+\begin{thebibliography}{9}
+\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
+\end{thebibliography}
 
 \pagebreak
 
@@ -247,19 +252,24 @@ so erhalten wir $t=4.13$. Dies ist au\ss erhalb des erw\"unschten $t<2$ Bereichs
 
 \begin{figure}[h]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{discluding_10.png}}
-\renewcommand\thefigure{1}
+\includegraphics[width=0.7\textwidth]{discluding_10.png}
+\renewcommand\thefigure{1} \vspace{-20pt} 
 \caption[Graphik Messpunkte mit Ausgleichsgerade]{Ausgleichsgerade}
 \label{Abb:1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\fbox{\includegraphics[width=0.8\textwidth]{including_10.png}}
-\renewcommand\thefigure{2}
+\includegraphics[width=.7\textwidth]{including_10.png}
+\renewcommand\thefigure{2} \vspace{-20pt} 
 \caption[Vergleichsgraphik]{Vergleichsgraphik}
 \label{Abb:2}
 \end{figure}
+
+\FloatBarrier
+
+\pagebreak
+
 
 \begin{table}[h]
 \centering
@@ -319,9 +329,5 @@ $l$\textrm{ in cm} & \textrm{Präzession umlaufdauer\textrm{ in s}} & \textrm{10
 %\label{Abb:X}
 %\end{figure}
 
-\begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
-\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
-\end{thebibliography}
 
 \end{document}

@@ -75,8 +75,6 @@ Gruppe 14: Andréz Gockel, Patrick M\"unnich\\
 \listoftables
 \pagebreak
 
-
-
 \section{Ziel des Versuchs}
 
 Dieser Versuch hat zwei Teile. Im ersten Teil wird mit Hilfe von einer hergeleiteten Formel (\ref{}), die den Trägheitsmoment mit der Periodendauer in Zusammenhang bringt, das Trägheitsmoment eines starren Körpers berechnet. Dieses wird verglichen mit dem experimentell bestimmten Wert. Man bestimmt das Trägheitsmoment einer zylindrischen Stange, die nicht im Schwerpunkt aufgehängt wird und die per Hand in Schwingung versetzt wird, indem die Schwingungsdauer gemessen wird und der Wert mit der hergeleiteten Formel berechnet wird. In dem zweiten Teil wird von einem Drehpendel zur Untersuchung des Zusammenhangs von der Schwingungsdauer und dem Abstand von einer Zusatzmasse zum Mittelpunkt verwendet, um hiermit den Steinerschen Satz experimentell zu verifizieren. 
@@ -86,7 +84,7 @@ Dieser Versuch hat zwei Teile. Im ersten Teil wird mit Hilfe von einer hergeleit
 
 Der unterschied von einem mathematischen Pendel und einem physikalischen Pendels ist, dass es sich beim Physikalischen nicht um eine punktförmige Masse handelt, sondern der Schwerpunkt von einem starren Körper zur Rechnung verwendet wird, wobei das Trägheitsmoment berücksichtigt werden muss. Mit der rücktreibenden Kraft $F_r = mg\sin\varphi$ und dem Abstand vom Aufhängepunkt zu Schwerpunkt $d$ können wir das Drehmoment ausdrücken als:
 $$\vec{M} = \vec{F_r} \times \vec{d} = dm\vec{g}\sin(\varphi)$$
-mit der Kleinwinkeläherung: $\sin\varphi \approx \varphi$:
+mit der kleinwinkelnäherung: $\sin\varphi \approx \varphi$:
 $$\vec{M} = dm\vec{g}\varphi$$
 Dies wird gleichgesetzt mit:
 $$\vec{M} = \vec{\dot L} = - I \cdot \vec{\dot\omega} = - I \cdot \ddot \varphi$$
@@ -94,17 +92,22 @@ $$\Rightarrow - I \cdot \ddot \varphi = dm\vec{g}\varphi \quad \Rightarrow \ddot
 Mit $T = 2\pi \frac{1}{\vec{\omega}}$ bekommt man: $T = 2\pi \sqrt{\frac{I}{dm\vec{g}}}$.
 
 Zunächst wird das Trägheitsmoment eines starren Körpers, in diesem fall von einem Stab (Vollzylinder) berechnet. Allgemein für das Trägheitsmoment bezüglich der Drehachse gilt:
-$$I = \int \vec{r}^2 \dif m$$
-mit $m = \rho V$ und der Annahme, der Zylinder ist homogen, bekommt man: $\displaystyle{I_{\textrm{stab}} = \rho \int_V \vec{r}^2 \dif V}$
+$$I = \int \vec{r}_\perp^2 \dif m$$
+mit $\dif m = \rho \dif V$und der Annahme, der Zylinder ist homogen, bekommt man: $$\displaystyle{I_{\textrm{Stab}} = \rho \int_V \vec{r}_\perp^2 \dif V}$$
+Da nur der senkrechte Anteil zu der Drehachse des Ortsvektors einen Beitrag hat bekommen wir in Zylinderkoordinaten, mit $r$ als Radius und $l$ als länge:
+$$I_{\textrm{Stab}} = \rho \int\displaylimits_{0}^{2\pi} \int\displaylimits_{0}^{l}\int\displaylimits_{0}^{r} r^3 \sin^2 \phi +z^2\dif\phi \dif z \dif r$$ 
+und 
+$$I_{\textrm{Scheibe}} = \rho \int\displaylimits_{0}^{2\pi} \int\displaylimits_{0}^{l}\int\displaylimits_{0}^{r} r \dif\phi \dif z \dif r$$
+für die Scheibe da die Drehachse durch den Mittelpunkt geht und parallel zur $y$-Achse ist.
+aus diesen Gleichungen bekommt man:
+$$I_{\textrm{Stab}} = \frac{1}{4} m r^2 + \frac{1}{3} m l^2 \qquad I_{\textrm{Scheibe}} = \frac{1}{2}mr^2$$
 
-In Zylinderkoordinaten: $\vec{r}^2 = $
-$$I = \rho \int\displaylimits_{0}^{2\pi} \int\displaylimits_{0}^{l}\int\displaylimits_{0}^{r}\dif\phi \dif z \dif r$$ 
-wobei 
+
 \subsection{Aufbau}
 
-\halftime{5}{5}{Zur Verf\"ugung steht in zylindrischer Stab, der an ein Stativ gehängt werden kann. Zusätzlich werden ein Bandmass, Messschieber und eine Stoppuhr für die Messungen benötigt. }{
+\halftime{5}{5}{Um diesen Versuchsteil zu durchzuführen wird ein zylindrischer Stab der an einem Stativ gehängt werden kann verwendet. Zusätzlich werden ein Bandmass, Messschieber und eine Stoppuhr für die Messungen benötigt. }{
 \centering
-\fbox{\includegraphics[width=0.5\textwidth]{Spend}}
+\fbox{\includegraphics[width=0.8\textwidth]{Spend}}
    \renewcommand\thefigure{B1}
 \caption{Versuchsaufbau 1}
 \label{JS1}
@@ -113,7 +116,7 @@ wobei
 \FloatBarrier
 \subsection{Durchführung}
 
-Zuerst wurde die Länge des Stabes mittels Bandmass gemessen. Daraufhin wurde mit dem Messschieber der Durchmesser des Stabs gemessen. Dann wurde der Stab an das Stativ gehängt und per Hand zum Pendeln gebracht. Es wurde mit der Stoppuhr 30 mal eine Periode zeitlich gemessen. Danach wurde einmal 30 Perioden gemessen, um zu schauen, welches Verfahren einen kleineren Fehler hat. Dies ergab sich als das Zweite verfahren. 
+Zuerst wurde die Länge des Stabes mittels Bandmass gemessen. Daraufhin wurde mit dem Messschieber den Durchmesser des Stabes gemessen. Dann wurde der Stab an das Stativ gehängt und per hand zum Pendeln gebracht. Es wurde mit der Stoppuhr 30 mal eine Periode zeitlich gemessen. Danach wurde einmal 30 Perioden gemessen, um zu schauen welches verfahren ein kleineren Fehler hat. Der Fehler war etwas kleiner bei dem einmal messen von 30 Perioden.
 
 \subsubsection{Auswertung}
 
@@ -130,6 +133,8 @@ $$
 $$
 \end{table}
 
+Zuerst wird mit den obigen Herleitungen der theoretische Wert bestimmt. Mit $T = 2\pi \sqrt{\frac{I}{dm\vec{g}}}$, und dem Einsetzen von $I_{\textrm{Stab}}$ bekommt man:
+$$T = 2\pi \sqrt{\frac{\frac{1}{4} m r^2 + \frac{1}{3} m l^2}{dm\vec{g}}} = 2\pi \sqrt{\frac{\frac{1}{4} r^2 + \frac{1}{3} l^2}{d\vec{g}}}$$
 
 \pagebreak
 

@@ -109,7 +109,7 @@ Zur experimentellen Bestimmung des Adiabatenexponentens benutzen wir
 T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{mV}{q^2p\kappa}}\label{eqT1}
 \end{equation}
 
-mit $m$ als die Masse und $V$ das Volumen des Gases. $q$ ist die Fl\"ache, $p$ der Au\ss endruck und $\kappa$ ist der gesuchte Adiabatenexponent. Au\ss erdem ist $\omega$ hier die Frequenz und $T$ die Periodendauer. Diese Formel wird dann zu
+mit $m$ als die Masse und $V$ das Volumen des Gases. $q$ ist die Fl\"ache des Glasrohrs, $p$ der Druck und $\kappa$ ist der gesuchte Adiabatenexponent. Au\ss erdem ist $\omega$ hier die Frequenz und $T$ die Periodendauer. Diese Formel wird dann zu
 
 \begin{equation}
 \kappa=4\pi^2\frac{mV}{q^2pT}\label{eqT2}
@@ -148,7 +148,7 @@ f\"ur $n$ Schwingungen und
 s_T=\frac{1}{\sqrt{n}}\overline{T}\label{equt}
 \end{equation}
 
-F\"ur die Periodendauer $T$ mit $n$ Schwingungen durchgef\"uhrt.
+f\"ur die Periodendauer $T$ mit $n$ Schwingungen durchgef\"uhrt.
 
 \subsection{Auswertung und Fehleranalyse}
 
@@ -160,13 +160,27 @@ Zur Berechnung der Fehler nehmen wir folgende Formel f\"ur Produkte  und Quotien
 \begin{equation}
 \left\vert\frac{\Delta z}{z_0}\right\vert = \sqrt{\left({a\frac{\Delta x}{x_0}}\right)^2+\left({b\frac{\Delta y}{y_0}}\right)^2} \ \ \textrm{f\"ur } z=x^a y^b. 
 \end{equation}
+
+Damit berechnen wir unseren Fehler f\"ur die Fl\"ache q
+\[
+\left\vert\frac{\Delta q}{q}\right\vert=2\frac{\Delta\nicefrac{D}{2}}{\nicefrac{D}{2}}
+\]
+mit Durchmesser $D=(13.5\pm0.3)\,$mm$^2$.
 %und deshalb ist
 %$$ A = (1,517 \pm 0,001) \cdot 10^{-4} \textrm{m}^3$$
 %Für $p$ wurden zuerst die Unsicherheiten von $p_S$ mit der obigen Formel berechnet und danach mit der Formel für Summen berechnet, nämlich:
-F\"ur Summen gilt au\ss erdem noch:
+Um unser $p$ zu berechnen nutzen wir erstmals die gleiche Formel f\"ur unser $p_S=\nicefrac{F}{q}$ und erhalten
+\[
+\left\vert\frac{\Delta p_S}{p_S}\right\vert=\sqrt{\left(\frac{\Delta F}{F}\right)^2+\left(-1\frac{\Delta q}{q}\right)^2}
+\]
+Da der Druck f\"ur die Rechnung aus der Summe vom Au\ss endruck und dem Innendruck besteht brauchen wir noch die Formel f\"ur Summen:
 \begin{equation}
-\Delta z = \sqrt{(a\Delta x)^2 + (b \Delta y)^2+\ldots} \textrm{  f\"ur } z = ax+by+\ldots
+\Delta z = \sqrt{(a\Delta x)^2 + (b \Delta y)^2+\ldots} \textrm{  f\"ur } z = ax+by+\ldots.
 \end{equation}
+Hiermit erhalten wir:
+\[
+\left\vert\frac{\Delta p}{p}\right\vert=\sqrt{\Delta p_S+\Delta p_A}
+\]
 
 %Und endlich können die Unsicherheiten für $\kappa$ mit der Formel (2) berechnet werden. Aber da die Beträge von $\frac{\Delta V}{V}$ und $\frac{\Delta T_S}{T_S}$ überwiegend größer waren als die Beträge der anderen Terme, wurden nur diese zwei Terme berücksichtigt. 
 
@@ -178,7 +192,7 @@ Die gemessen Werte der Variablen au\ss erhalb von der Anzahl Schwingungen und de
 \begin{itemize}
 \item $m=(5.7\pm0.3)\,$g
 \item $V=(2.225\pm0.005)\,$cm$^3$
-\item $A=(1.35\pm0.03)\,$cm$^2$
+\item $q=(14.3\pm0.06)\,$cm$^2$
 \item $p_a=(988\pm1)$\,mbar
 \end{itemize}
 
@@ -193,15 +207,17 @@ Mit unseren Messwerten, welche im Anhang gefunden werden k\"onnen, und (\ref{eqT
 \toprule
 Messreihe & $\kappa$ Luft &  $\kappa$ Argon\\
 \midrule
-1 & 1.8(4) & 2.1(5)\\
-2 & 1.8(4) & 2.1(4)\\
-3 & 1.8(4) & 2.1(5)\\
-4 & 1.8(4) & 2.1(5)\\
-5 & 1.7(4) & 2.1(4)\\
+1 & 1.6(4) & 1.9(4)\\
+2 & 1.6(4) & 1.9(4)\\
+3 & 1.6(4) & 1.9(4)\\
+4 & 1.6(4) & 1.9(4)\\
+5 & 1.5(4) & 1.9(4)\\
 \bottomrule 
 \end{tabular}
 \label{tab:B1}
 \end{table}
+
+\pagebreak
 
 F\"ur 1000 Schwingungen sehen die Werte folgenderma\ss en aus:
 
@@ -214,14 +230,12 @@ F\"ur 1000 Schwingungen sehen die Werte folgenderma\ss en aus:
 \toprule
 Messreihe & $\kappa$ Luft &  $\kappa$ Argon\\
 \midrule
-1 & 1.8(1) & 2.0(1)\\
-2 & 1.8(1) & 2.1(1)\\
+1 & 1.6(2) & 1.8(2)\\
+2 & 1.6(2) & 1.9(2)\\
 \bottomrule 
 \end{tabular}
 \label{tab:B1}
 \end{table}
-
-\pagebreak
 
 \subsection{Diskussion}
 
@@ -231,7 +245,7 @@ Um unsere Ergebnisse leicht zu vergleichen, bilden wir erstmal die Mittelwerte f
 s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}.\label{uncertainty1}
 \end{equation}
 
-Somit erhalten wir als Mittelwerte f\"ur den gemessenen Adiabatenexponent von Luft $1.74\pm0.013$ und f\"ur Argon $2.09\pm0.015$.
+Somit erhalten wir als Mittelwerte f\"ur den gemessenen Adiabatenexponent von Luft $1.59\pm0.1$ und f\"ur Argon $1.87\pm0.1$.
 
 Mithilfe der Formel
 
@@ -239,7 +253,7 @@ Mithilfe der Formel
 t=\frac{|x_0-y|}{u_x}\label{abw}
 \end{equation}
 
-und den Werten von der theoretischen Berechnung und der Messung bekommen wir $t=5.89$ f\"ur Luft und $t=28.10$ f\"ur Argon. Beide dieser Werte liegen deutlich au\ss erhalb des erw\"unschten $t<2$ Bereichs. Dies bedeutet, dass diese Werte als unvertr\"aglich gelten.
+und den Werten von der theoretischen Berechnung und der Messung bekommen wir $t=0.63$ f\"ur Luft und $t=1.53$ f\"ur Argon. Beide dieser Werte liegen innerhalb des erw\"unschten $t<2$ Bereichs. Dies bedeutet, dass diese Werte als vertr\"aglich gelten.
 
 Zum Verbessern der Versuchsdurchf\"uhrung h\"atte man nach \"Anderung des Gases lange aussp\"ullen k\"onnen. Zwar wurde f\"ur f\"unf Minuten gesp\"ul, indem man das Gas durch den ge\"offneten Kolben laufen lie\ss , jedoch ist es durchaus m\"oglich, dass der Kolben trotzdem nicht vollkommen Durchgesp\"ult wurde. Zudem kommt, dass das Gas innerhalb der Gasflasche eventuell auch andere Gase beinhaltet.
 

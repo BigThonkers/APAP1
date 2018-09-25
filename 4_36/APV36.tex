@@ -158,7 +158,7 @@ F\"ur die Periodendauer $T$ mit $n$ Schwingungen durchgef\"uhrt.
 
 Zur Berechnung der Fehler nehmen wir folgende Formel f\"ur Produkte  und Quotienten zunutze:
 \begin{equation}
-\vert\frac{\Delta z}{z_0}\vert = \sqrt{\left({a\frac{\Delta x}{x_0}}\right)^2+\left({b\frac{\Delta y}{y_0}}\right)^2} \ \ \textrm{f\"ur } z=x^a y^b. 
+\left\vert\frac{\Delta z}{z_0}\right\vert = \sqrt{\left({a\frac{\Delta x}{x_0}}\right)^2+\left({b\frac{\Delta y}{y_0}}\right)^2} \ \ \textrm{f\"ur } z=x^a y^b. 
 \end{equation}
 %und deshalb ist
 %$$ A = (1,517 \pm 0,001) \cdot 10^{-4} \textrm{m}^3$$
@@ -225,12 +225,30 @@ Messreihe & $\kappa$ Luft &  $\kappa$ Argon\\
 
 \subsection{Diskussion}
 
-DISCUSS ME DADDY
+Um unsere Ergebnisse leicht zu vergleichen, bilden wir erstmal die Mittelwerte f\"ur $\kappa$. Die Formel f\"ur die Fehlerberechnung des Mittelwerts lautet:
+
+\begin{equation}
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}.\label{uncertainty1}
+\end{equation}
+
+Somit erhalten wir als Mittelwerte f\"ur den gemessenen Adiabatenexponent von Luft $1.74\pm0.013$ und f\"ur Argon $2.09\pm0.015$.
+
+Mithilfe der Formel
+
+\begin{equation}
+t=\frac{|x_0-y|}{u_x}\label{abw}
+\end{equation}
+
+und den Werten von der theoretischen Berechnung und der Messung bekommen wir $t=5.89$ f\"ur Luft und $t=28.10$ f\"ur Argon. Beide dieser Werte liegen deutlich au\ss erhalb des erw\"unschten $t<2$ Bereichs. Dies bedeutet, dass diese Werte als unvertr\"aglich gelten.
+
+Zum Verbessern der Versuchsdurchf\"uhrung h\"atte man nach \"Anderung des Gases lange aussp\"ullen k\"onnen. Zwar wurde f\"ur f\"unf Minuten gesp\"ul, indem man das Gas durch den ge\"offneten Kolben laufen lie\ss , jedoch ist es durchaus m\"oglich, dass der Kolben trotzdem nicht vollkommen Durchgesp\"ult wurde. Zudem kommt, dass das Gas innerhalb der Gasflasche eventuell auch andere Gase beinhaltet.
+
+Dazu kommt, dass sich der Au\ss endruck leicht \"andern kann, da der Raum nicht abgeschlo\ss en war. Ge\"offnete T\"uren und Fenster k\"onnen eventuell den Druck \"andern. Dies ist jedoch nicht sehr Einflussreich, da der Au\ss endruck sich nicht sehr stark ge\"andert haben wird.
 
 \vfill
 
 \begin{thebibliography}{9}
- \bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+% \bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
  \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
  \end{thebibliography}
 %Systematische und statistische Fehler.

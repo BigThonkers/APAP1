@@ -30,7 +30,8 @@
 \hbadness=99999
 
 \newcommand{\refpy}[1]{Siehe Anhang: \textit{Rechnungen in Python} (\texttt{{\color{incolor}In [{\color{incolor}#1}]}})}
-\newcommand\dif{\mathop{}\!\mathrm{d}}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand{\vphi}{\varphi}
 \newcommand{\halftime}[4]{\begin{figure}[h]
 \begin{minipage}{.#1\textwidth}#3\end{minipage}\begin{minipage}{.#2\textwidth}
 \centering
@@ -63,13 +64,70 @@ Andréz Gockel, Patrick M\"unnich\\
 \pagebreak
 
 \section{Ziel des Versuchs}
-XXXX
 
-\section{Teil XX}
+Dieser Versuch dient dazu, freie Rotation eines Systems mit von au\ss en wirkender Drehmomente darzustellen. Insbesondere wird hier auf Pr\"azession eingegangen. Dazu Nutzt man einen Kreisel, an dem Pr\"azession und Rotation betrachtet werden.
+
+\section{Versuch}
 
 \subsection{Theorie}
 
-XXXX
+Starre K\"orper haben Tr\"agheitsmomente in Form eines Tensors. Bestimmte Achsen sind jedoch vielsagend. Diese formen einen Tr\"agheitsellipsoid mit den Hauptachsen $I_A$, $I_B$ und $I_C$. Bei symmetrischen Kreisel, wie hier vorhanden, sind $I_B$ und $I_C$ gleich. $I_A$ ist das Tr\"agheitsmoment bez\"uglich der Figurenachse. Bei Kreiseln ist dieses gleichzeitig unsere gr\"o\ss te Komponente beim Tr\"agheitsellipsoid.
+
+Tr\"agheitsmomente sind allgemein mit der Drehgeschwindigkeit $\vec{\omega}$ und dem Drehimpuls $\vec{L}$ verbunden:
+
+\begin{equation}
+\vec{L}=I\vec{\omega}
+\end{equation}
+
+Sto\ss t man einen an der Figurenachse gebundenen Kreisel an, so wirkt ein Drehmoment:
+
+\begin{equation}
+\vec{M}=\vec{r}\times\vec{G}=\frac{\dif\vec{L}}{\dif t}\label{m=rg}
+\end{equation}
+
+$\vec{r}$ bezeichnet hier den Vektor vom Unterst\"utzungspunkt zum Schwerpunkt ud $\vec{G}$ die Gewichtskraft im Schwerpunkt.
+
+Da dies sich nur in der senkrechten Komponente \"andert, \"andert sich der Betrag des Drehimpulses nicht. Die einzige \"Anderung ist die Richtung, welche zu einer Drehbewegung in der Senkrechte f\"uhrt. Diese Bewegung wird als Pr\"azession bezeichnet, mit der Winkelgeschwindigkeit $\vec{\omega}_P$. Zusammen mit der Drehgeschwindigkeit $\vec{\omega}_F$ um die Figurenachse ergibt sich die momentane Drehgeschwindigkeit $\vec{\omega}$.
+
+Bei einem pr\"azedierenden Kreisel gibt es also eine Kreisbewegung mit Radius $L\sin\phi$ mit $\phi$ als Winkel zwischen $\vec{L}$ und der vertikalen Achse. Die Rotationsgeschwindigkeit hat einen Betrag von $\omega_P=\nicefrac{\dif\vphi}{\dif t}$, wobei $\vphi$ der azimutale Winkel ist. Die \"Aenderung des Drehimpulses ist also eine Richtungs\"anderung $\dif\vphi=\frac{\dif L}{L\sin\phi}$. Mit diesem Wissen kommen wir also zu
+
+\[
+\omega_P=\frac{\dif\phi}{\dif t}=\frac{\dif L}{\dif tL\sin\phi}
+\]
+
+Dies k\"onnen wir umschreiben zu
+
+\begin{equation}
+\frac{\dif\vec{L}}{\dif t}=\vec{\omega}_P\times\vec{L}.
+\end{equation}
+
+Mit (\ref{m=rg}) kommen wir zu der Gleichung
+
+\begin{equation}
+\vec{r}\times\vec{G}=\vec{\omega}_P\times\vec{L}\label{rgisoml}
+\end{equation}
+
+Da wir in diesem Versuch mit einem schnell rotierenden Kreisel arbeiten, also $\omega_F>>\omega_P$ gilt n\"aherungsweise $\sin(\vec{r},\vec{G})=\sin(\vec{\omega}_P,\vec{L})$. Als n\"achstes schreiben wir (\ref{rgisoml}) f\"ur die Betr\"age der Vektoren um:
+
+\begin{equation}
+rG\sin(\vec{r},\vec{G})=\omega_PL\sin(\vec{\omega}_P,\vec{L}).
+\end{equation}
+
+Nutzen wir unsere N\"aherung aus, so k\"onnen wir schreiben
+
+\begin{equation}
+rG\approx\omega_AL\approx\omega_FL.
+\end{equation}
+
+Hier ist $\omega_A$ die Drehgeschwindigkeitskomponente, die mit $\omega_B$ entlang zweier Haupttr\"agheitsachsen des Kreisels verl\"auft und sich mit $I_A$ und $I_B$ zusammen zu $\vec{L}$ vektoriell addieren lassen. 
+
+Mit $L\approx I\omega_A\approx I\omega_F$ k\"onnen wir sagen, dass $L\approx\omega_P\omega_AI\approx I\omega_P\omega_F$. Damit kommen wir auf unsere gesuchte Gleichung
+
+\begin{equation}
+I_A=\frac{rG}{\omega_F\omega_P},\label{eqIA}
+\end{equation} 
+
+welche wir f\"ur unsere Rechnungen ben\"otigen.
 
 \subsection{Aufbau}
 
@@ -86,7 +144,26 @@ Zuerst wurde Masse des Kreisels gemessen. Zunächst wurde die Kreiselachse einge
 
 \subsection{Auswertung}
 
-XXXX
+Erstmals ist es wichtig zu wissen, dass unser gesuchtes $I_A$ eine Konstante ist. Wollen wir diese mit (\ref{eqIA}) finden, so brauchen wir $r$, $m$, $g$, $\omega_F$ und $\omega_P$. Die Masse $m$ k\"onnen wir leicht messen und wir bekommmen als Ergebnis $(4.52\pm0.020$)\,kg. F\"ur $g$ verwenden wir einfach $9.81\,\nicefrac{\mathrm{m}}{\mathrm{s}^2}$. $\omega_F$ und $\omega_P$ k\"onnen wir \"uber die Periodendauer T berechnen: 
+\[
+\omega=\frac{2\pi}{T}.
+\]
+
+Uns fehlt also nur noch $r$. Da $I_A$ eine Konstante ist, k\"onnen wir aus der Gleichung (\ref{eqIA}) schlie\ss en:
+\begin{equation}
+r=\frac{\omega_F\omega_P}{G}\label{eqgraph}
+\end{equation}
+F\"ur die rechte Seite der Gleichung ist alles gemessen. Wir k\"onnen dies in eine Graphik auftragen, in der wir dann einen linearen Zusammenhang sehen werden. Wir folgern, dass $r$ wohl aus unserem eingestellten Abstand $x$ summiert mit einem Offset $x_0$ besteht.
+
+Nutzen wir f\"ur als lineare Gleichung f\"ur eine Ausgleichsgrade von dne Messpunkten
+\[
+y=ax+b,
+\]
+so k\"onnen wir unser $x_0$ als $-\frac{b}{a}$ festlegen.
+
+THIS ISN'T DONE
+
+
 
 \section{Diskussion}
 

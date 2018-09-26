@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage[german]{babel}
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=red,
+    filecolor=black,
+    linkcolor=black!20!blue!90!,
+    urlcolor=black} 
+\usepackage{nicefrac}
+\usepackage[table]{xcolor}
+\usepackage{tocloft}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
+
+\definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+
+\hbadness=99999
+
+\newcommand{\refpy}[1]{Siehe Anhang: \textit{Rechnungen in Python} (\texttt{{\color{incolor}In [{\color{incolor}#1}]}})}
+\newcommand\dif{\mathop{}\!\mathrm{d}}
+\newcommand{\halftime}[4]{\begin{figure}[h]
+\begin{minipage}{.#1\textwidth}#3\end{minipage}\begin{minipage}{.#2\textwidth}
+\centering
+#4\end{minipage}
+\end{figure}}
+\renewcommand{\vec}{\boldsymbol}
+
+\begin{document}
+
+% name of experiment
+% date of experiment
+% name of assistant
+{
+\centering 
+\large 
+Physiklabor für Anf\"anger*innen \\
+Ferienpraktikum im Sommersemester 2018 \\[4mm]
+\textbf{\LARGE 
+Versuch 8: Viskosit\"at aus dem Durchstr\"omen einer Kapillare
+} \\[3mm]
+(durchgef\"uhrt am 26.09.2018 bei Pascal Wunderlin) \\
+Andréz Gockel, Patrick M\"unnich\\
+\today \\[10mm]
+}
+
+\vspace{50pt}
+\tableofcontents
+\vspace{22pt}
+\listoftables
+\vspace{22pt}
+\listoffigures
+\pagebreak
+
+\section{Ziel des Versuchs}
+
+Das Ziel des Versuchs ist es, den Zusammenhang zwischen Str\"omungsgeschwindigkeit, Viskosit\"at, Druckdifferenz und geometrischen Parametern darzustellen. Hierzu wird erstmal das Hagen-Poiseuille Gesetz durch Messung der Volumenstromst\"arke durch verschiedene Kapillare \"uberpr\"uft, und dann die Viskosit\"at von Wasser bestimmt.
+
+\section{Teil 1}
+
+\subsection{Theorie}
+
+Ist eine laminare Str\"omung vorhanden, so gilt f\"ur die Volumenstromst\"arke $I_V$ das Hagen-Poiseuille Gesetz:
+
+\begin{equation}
+I_V=\frac{V}{t}=\frac{\pi R^4\Delta p}{8\eta l}\label{hagen}
+\end{equation}
+
+Zur Herleitung dessen wird die Definition der Viskosit\"at genutzt:
+
+\begin{equation}
+F=\eta A\frac{\dif v}{\dif x}
+\end{equation}
+
+
+
+\subsection{Aufbau}
+
+% describe set up
+% insert pic name, designation, toc caption, caption, label
+%\halftime{5}{5}{TEXT}{\fbox{\includegraphics[width=0.5\textwidth]{NAME}}
+%   \renewcommand\thefigure{BX}
+%\caption[XXXX]{XXXX \cite{Anleitung}}
+%\label{Pic:X}}
+
+\subsection{Durchführung}
+
+% describe exp.
+XXXX
+
+\subsection{Auswertung}
+
+XXXX
+
+\section{Diskussion}
+
+XXXX
+
+\pagebreak
+
+\section{Anhang: Tabellen und Diagramme}
+
+\begin{table}[h]
+\centering
+\caption{XXXX} \vspace{11pt}
+$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{XXXX: } \pm XX \textrm{XX}\\
+\end{array}$
+\begin{tabular}{ccc}
+\toprule
+\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
+\midrule 
+2 & 0.26 & 0.23\\
+\hline
+4 & 0.33 & 0.25\\
+\hline 
+5 & & 0.3\\
+\hline 
+6 & 1.25 & 0.83\\
+\hline 
+8 & 3.9 & 0.83\\ 
+\hline
+9 & 4.75 & 4.6\\ 
+\hline
+10 & 4.7 &\\ 
+\bottomrule
+\end{tabular}
+\phantom{$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{XXXX: } \pm XX \textrm{XX}\\
+\end{array}$}
+\label{Tab:X}
+\end{table}
+
+%\begin{figure}[p]
+%\centering
+%\fbox{\includegraphics[width=0.8\textwidth]{NAME}}
+%\renewcommand\thefigure{BX}
+%\caption[XXXX]{XXXX}
+%\label{Abb:X}
+%\end{figure}
+
+\begin{thebibliography}{9}
+\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
+\end{thebibliography}
+
+\end{document}

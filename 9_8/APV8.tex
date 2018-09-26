@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc} 
 \usepackage{lmodern}
-\usepackage[margin=2cm]{geometry}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage[german]{babel}
 \usepackage{amsmath} 
 \usepackage{graphicx} 
@@ -13,11 +13,12 @@
     colorlinks,
     citecolor=red,
     filecolor=black,
-    linkcolor=black!20!blue!90!,
+    linkcolor=black!60!blue!90!,
     urlcolor=black} 
 \usepackage{nicefrac}
 \usepackage[table]{xcolor}
 \usepackage{tocloft}
+\usepackage{wrapfig}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
@@ -37,9 +38,6 @@
 
 \begin{document}
 
-% name of experiment
-% date of experiment
-% name of assistant
 {
 \centering 
 \large 
@@ -88,15 +86,23 @@ Wobei $V$ das Volumen des Wassers im Steigrohr mit $A$ die Querfläche des Steig
 Mit $p = \frac{(F2-F1)}{A}$ und $F_1 = 0$, da der Aussendruck durch das Loch ausgeglichen wird, bekommt man für $\Delta p$:
 $$\Delta p = \frac{\rho_w Ahg}{A} = \rho_w h \vec{g}$$
 
+\pagebreak
 
 \subsection{Aufbau}
 
-% describe set up
-% insert pic name, designation, toc caption, caption, label
-%\halftime{5}{5}{TEXT}{\fbox{\includegraphics[width=0.5\textwidth]{NAME}}
-%   \renewcommand\thefigure{BX}
-%\caption[XXXX]{XXXX \cite{Anleitung}}
-%\label{Pic:X}}
+\begin{figure}[ht]
+\centering
+\fbox{\includegraphics[width=0.5\textwidth]{Meowow}}
+   \renewcommand\thefigure{B1}
+\caption[Aufbau]{Aufbau \cite{Anleitung}}
+\label{Pic:1}
+\end{figure}
+
+Für diesen Versuch wurde ein Wasservorratsgefäß, mit einem offenem Rohr das durch den Deckel geht verwendet. Dieses Rohr bestimmt die höhe des Wassers im Steigrohr und somit die Druckdifferenz, hierfür muss genug Wasser vorhanden sein damit die Wasserhöhe über dem Rohr bleibt. Das Wasservorratsgefäß ist mit einem Hahn an dem Steigrohr verbunden. Das Steigrohr hat eine Millimeterskala womit die Steighöhe des Wassers bestimmt wird. Hier ist zu beachten das der Nullpunkt der Skala nicht ganz unten anfängt. Dieser offset wurde auf das Rohr geschrieben und mit einem Maßband bestätigt. 
+
+Es stehen fünf verschiedene Kapillare zu verfügung, diese sind aus Glas und deren Länge und Durchmesser wurden in Millimeter dran geklebt. Diese Kapillare können mittels Normschliff mit dem Steigrohr verbunden werden. Zusätzlich wird ein Messzylinder und eine Stoppuhr benötigt, um den Wasservolumen pro Zeit zu messen. Ein Thermometer wird ebenfalls benötigt um die Temperatur des Wassers zu messen da die Viskosität stark von der Temperatur abhängig ist.
+
+\pagebreak
 
 \subsection{Durchführung}
 

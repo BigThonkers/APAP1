@@ -105,7 +105,89 @@ XXXX
 
 \subsection{Auswertung}
 
-XXXX
+In der Formel $I_V=\frac{V}{t}$ haben sowohl $V$ und $t$ Fehler. Wir verwenden hier also die verallgemeinerte Formel f\"ur Quotienten:
+$$
+\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots
+$$
+Hier also:
+$$
+\left\vert\frac{\Delta I_V}{I_V}\right\vert=\sqrt{\left(\frac{\Delta V}{V}\right)^2+\left(-1\frac{\Delta t}{t}\right)^2}
+$$
+Da $\frac{d^4}{l}$ aus Werten ohne vorhandenem Fehler bestehen, berechnen wir daf\"ur keinen Fehler.
+
+Um unseren Mittelwert zu berechnen, rechnen wir ganz leicht mit 
+$$
+\frac{\sum_{i=1}^n I_{V_i}}{n}
+$$
+den Nominalwert, und mit
+$$
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}
+$$
+die Standardunsichertheit dessen.
+
+Unsere Mittelwerte der $I_V$ f\"ur jede Position werden dann gegen $\nicefrac{d^4}{l}$ aufgetragen, siehe Abbildung (\ref{Abb1}).
+
+Da wir jedoch klar erkennen k\"onnen, dass $I_{V_4}$ mit der linearen Steigung der anderen Werte nicht \"ubereinstimmt, lassen wir diesen Wert weg und erhalten die Gerade, welche in Abbildung (\ref{Abb2}) gefunden werden kann.
+
+In der Formel $I_V=\frac{V}{t}$ haben sowohl $V$ und $t$ Fehler. Wir verwenden hier also die verallgemeinerte Formel f\"ur Quotienten:
+$$
+\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots
+$$
+Hier also:
+$$
+\left\vert\frac{\Delta I_V}{I_V}\right\vert=\sqrt{\left(\frac{\Delta V}{V}\right)^2+\left(-1\frac{\Delta t}{t}\right)^2}
+$$
+Da $\frac{d^4}{l}$ aus Werten ohne vorhandenem Fehler bestehen, berechnen wir daf\"ur keinen Fehler.
+
+Um unseren Mittelwert zu berechnen, rechnen wir ganz leicht mit 
+$$
+\frac{\sum_{i=1}^n I_{V_i}}{n}
+$$
+den Nominalwert, und mit
+$$
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}
+$$
+die Standardunsichertheit dessen.
+
+Unsere Mittelwerte der $I_V$ f\"ur jede Position werden dann gegen $\nicefrac{d^4}{l}$ aufgetragen, siehe Abbildung (\ref{Abb1}).
+
+Da wir jedoch klar erkennen k\"onnen, dass $I_{V_4}$ mit der linearen Steigung der anderen Werte nicht \"ubereinstimmt, lassen wir diesen Wert weg und erhalten die Gerade, welche in Abbildung (\ref{Abb2}) gefunden werden kann.
+
+Wir erhalten als Ergebnis daraus f\"ur unser $a$ einen Wert von $(0.014\pm0.011)\,\mathrm{mm}^3$
+
+Um aus unseren Werten $\Delta p$ zu berechnen, verwenden wir
+$$
+\Delta p=\rho_w hg
+$$
+
+Da der einzige Wert mit einem Fehler $h$ ist, rechnen wir einfach mit
+$$
+\Delta z=\left|{\dif f}{\dif x}\right|\Delta x\textrm{ f\"ur }z=f(x)
+$$
+unseren Fehler aus.
+Mit $\rho_w=1000\,\frac{\mathrm{kg}}{\mathrm{m}^3}$, $g=9.81\,\frac{\mathrm{m}}{\mathrm{s}^2}$ und $h=(135\pm3)\,\mathrm{mm}$ erhalten wir als Wert $\Delta p=(132\pm29)\,$bar.
+
+Da wir als Endergebnis $\eta$ wollen, m\"ussen wir erstmal die Gleichung (\ref{hagen}) umstellen und wir erhalten:
+$$
+\eta=\frac{\pi R^4\Delta p}{8I_V l}.
+$$
+Hier haben $\Delta p$ und $I_V$ Fehler. Wir wenden also wieder die Gleichung f\"ur Produkte an und erhalten:
+$$
+\left\vert\frac{\Delta\eta}{\eta}\right\vert=\sqrt{\left(\frac{\Delta\Delta p}{\Delta p}\right)^2+\left(-1\frac{\Delta I_V}{I_V}\right)^2}
+$$
+
+Als Ergebnis f\"ur $\eta$ erhalten wir f\"ur unsere vier verwendeten Messreihen:
+\begin{itemize}
+\item $(0.076\pm0.017)\,\mathrm{\frac{kg}{ms}}$
+\item $(0.118\pm0.027)\,\mathrm{\frac{kg}{ms}}$
+\item $(0.088\pm0.020)\,\mathrm{\frac{kg}{ms}}$
+\item $(0.091\pm0.020)\,\mathrm{\frac{kg}{ms}}$
+\end{itemize}
+
+
+Als n\"achstes betrachten wir den durchschnittlichen Fehler der Messungen und die Streuung:
+
+Wir erhalten als durchschnittlichen Fehler $0.006\,$A und als Streuung $0.570\,$A.
 
 \section{Diskussion}
 

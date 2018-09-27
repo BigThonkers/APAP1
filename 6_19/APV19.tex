@@ -9,6 +9,7 @@
 \usepackage{graphicx} 
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{breqn}
 \hypersetup{
     colorlinks,
     citecolor=red,
@@ -29,6 +30,7 @@
 
 \newcommand{\refpy}[1]{Siehe Anhang: \textit{Rechnungen in Python} (\texttt{{\color{incolor}In [{\color{incolor}#1}]}})}
 \newcommand\dif{\mathop{}\!\mathrm{d}}
+\newcommand\vphi{\varphi}
 \newcommand{\halftime}[4]{\begin{figure}[h]
 \begin{minipage}{.#1\textwidth}#3\end{minipage}\begin{minipage}{.#2\textwidth}
 \centering
@@ -67,7 +69,44 @@ Das Ziel dieses Versuchs ist einen gekoppelten Oszillator durch einen gekoppelte
 \subsection{Theorie}
 
 Um den Koppelungsgrad zu bestimmen wird zunächst die Differentialgleichung des gekoppelten Pendels hergeleitet.
-Das 
+
+Wir beginnen dazu mit dem r\"ucktreibenden Moment infolge der Schwerkraft bei kleinen Auslenkungen $\vphi$:
+\begin{equation}
+M=-mgl\vphi=D_g\vphi\label{M1}
+\end{equation}
+Dazu gibt es bei jedem Pendel ein Kopplungsmoment $D_f(\vphi_2-\vphi_1)$. Es existiert noch ein weiteres Moment, welches von der Vorspannung der Feder her r\"uhrt. Dieses gibt es, da die Feder schon wenn die Pendel in paralleler Lage stehen eine gewisse Spannung besitzt. Beide Pendel weisen in der Ruhelage einen Ausschlag $\alpha$ bzw. $-\alpha$ in Bezug auf die Vertikallage auf. Wenn man aber die Auslenkungen $\vphi_1$ und $\vphi_2$ von der Gleichgeweichtslage aus rechnet, so f\"allt dieses Moment aus der Rechnung raus, da es durch ein Moment $mgl\pm\alpha$ kompensiert wird. Wir erhalten also als Momentengleichungen:
+\begin{dmath}
+{M_1=-D_g\vphi_1+D_f(\vphi_2-\vphi_1)}\\
+{M_2=-D_g\vphi_2-D_f(\vphi_2-\vphi_1)}
+\end{dmath}
+Setzen wir diese in die Bewegungsgleichung eines physikalischen Pendels 
+\[
+I\ddot{\vphi}=M=-mgl\sin\vphi
+\]
+ein, so erhalten wir 
+\begin{dmath}
+{I\frac{\dif^2\vphi_1}{\dif t^2}=-D_g\vphi_1+D_f(\vphi_2-\vphi_1)}\\
+{I\frac{\dif^2\vphi_2}{\dif t^2}=-D_g\vphi_2-D_f(\vphi_2-\vphi_1).}
+\end{dmath}
+Addieren bzw. subtrahiert man die Differentialgleichungen f\"ur die Winkelsumme $(\vphi_2+\vphi_1)$ bzw. die Winkeldifferenz $(\vphi_2-\vphi_1)$, so liefert dies:
+\begin{dmath}
+{I\frac{\dif^2(\vphi_2+\vphi_1)}{\dif t^2}=-D_g(\vphi_2+\vphi_1)}\\
+{I\frac{\dif^2(\vphi_2-\vphi_1)}{\dif t^2}=-(D_g+2D_f)(\vphi_2-\vphi_1)}
+\end{dmath}
+Nutzt man hierauf den L\"osungsansatz
+\begin{dmath}
+{(\vphi_2+\vphi_1)=2A\cos(\omega t+\delta)}\\
+{(\vphi_2-\vphi_1)=2B\cos(\Omega t+\Delta),}
+\end{dmath}
+so erh\"alt man die Kreisfrequenzen
+\begin{equation}
+\omega=\sqrt{\frac{D_g}{I}}\textrm{   und   }\Omega=\sqrt{\frac{D_g+2D_f}{I}}
+\end{equation}
+Mit $I=mr^2$, hier ist $r$ der Abstand $L$ zwischen Masse und Rotationsachse, und (\ref{M1}) kommen wir also auf:
+\begin{equation}
+\omega=\sqrt{\frac{g}{L}}\textrm{   und   }\Omega=\sqrt{\frac{g}{L}-\frac{2D_fl^2}{mL^2}}
+\end{equation}
+Dies sind die Kreisfrequenzen f\"ur gleich- und gegensinnige Schwingung.
 
 \subsection{Aufbau}
 

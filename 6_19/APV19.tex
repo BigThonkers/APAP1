@@ -31,6 +31,13 @@
 \newcommand{\refpy}[1]{Siehe Anhang: \textit{Rechnungen in Python} (\texttt{{\color{incolor}In [{\color{incolor}#1}]}})}
 \newcommand\dif{\mathop{}\!\mathrm{d}}
 \newcommand\vphi{\varphi}
+\newcommand\mean{\begin{equation}
+\frac{\sum_{i=1}^n I_{V_i}}{n}\label{mean}
+\end{equation}}
+\newcommand\meanstd{\begin{equation}
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{meanstd}
+\end{equation}}
+\newcommand\prodquo{\begin{equation}\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots\end{equation}}
 \newcommand{\halftime}[4]{\begin{figure}[h]
 \begin{minipage}{.#1\textwidth}#3\end{minipage}\begin{minipage}{.#2\textwidth}
 \centering
@@ -108,6 +115,11 @@ Mit $I=mr^2$, hier ist $r$ der Abstand $L$ zwischen Masse und Rotationsachse, un
 \end{equation}
 Dies sind die Kreisfrequenzen f\"ur gleich- und gegensinnige Schwingung.
 
+Wichtig ist f\"ur diesen Versuch noch die Gleichung f\"ur den Kopplungsgrad,
+\begin{equation}
+	K=\frac{T_B^2-T_A^2}{T_B^2+T_A^2}
+\end{equation}
+
 \subsection{Aufbau}
 
 \halftime{5}{5}{In diesem Versuch haben wir zwei Pendel mit die aus einer festen Stange und einem Zusatzkörper bestehen. Eine Feder die beide Pendel koppelt hängt mit der verstellbaren Länge $l$ von dem Aufhängepunkt des Pendels. Vor beginn der Messungen ist zu beachten:
@@ -131,11 +143,81 @@ Wir haben zuerst 20 Schwingungsperioden einer :
 
 \subsection{Auswertung}
 
-XXXX
+Wir beginnen damit, dass wir von unseren Messwerten die Mittelwerte von den Periodendauern f\"ur jeweils gleichsinnige, gegensinnige, und schwebende Schwingungen berechnen. Die Rechnung hierf\"ur folgt \"uber die allgemeinen Formeln f\"ur die Berechnung von Mittelwerten und dessen Fehler:
+\mean
+\meanstd
+Diese Werte werden dann f\"ur die Berechnung unseres Kopplungsgrades genutzt. Die Formel f\"ur den Kopplungsgrad ist von $T_A$, der Periodendauer f\"ur entgegengesetzte Schwingung, und $T_B$, der Periodendauer f\"ur gleichsinnige Schwingung, abh\"angig, welche beide einen Fehler beinhalten. Wir nutzen also die verallgemeinerte Formel f\"ur Produkte und Quotienten:
+\prodquo
+Wir leiten also einmal partiell nach $T_A$ und einmal nach $T_B$ ab:
+\[
+	\frac{\partial K}{\partial T_A}=-\frac{4T_AT_B^2}{(T_A^2+T_B^2)^2}
+\]
+\[
+	\frac{\partial K}{\partial T_B}=\frac{4T_A^2T_B}{(T_B^2+T_B^2)^2}
+\]
+Daraus erhalten wir als Unsicherheiten von K:
+\begin{equation}
+	\Delta K=\sqrt{\left(\Delta T_A\frac{\partial K}{\partial T_A}\right)^2+\left(\Delta T_B\frac{\partial K}{\partial T_B}\right)^2}
+\end{equation}
+
+Um die Periodendauer der Schwebung zu berechnen nutzen wir die folgende Funktion:
+\begin{equation}
+	T_S=2\frac{T_AT_B}{T_B-T_A}
+\end{equation}
+Wir k\"onnen wieder gleich wie zuvor die Formel f\"ur Quotienten verwenden und erhalten als Ableitungen:
+\[
+	\frac{\partial T_S}{\partial T_A}=2\frac{T_B^2}{(T_A-T_B)^2}
+\]
+\[
+	\frac{\partial T_S}{\partial T_B}=-2\frac{T_A^2}{(T_B-T_A)^2}
+\]
+Die Unsicherheit von $T_S$ setzt sich dann auch wie zuvor folgenderma\ss en zusammen:
+\begin{equation}
+	\Delta T_S=\sqrt{\left(\Delta T_A\frac{\partial T_S}{\partial T_A}\right)^2+\left(\Delta T_A\frac{\partial T_S}{\partial T_A}\right)^2}
+\end{equation}
+
+Wir erhalten aus diesen Rechnungen f\"ur $K$:
+\begin{itemize}
+	\item $0.112\pm0.008$
+	\item $0.160\pm0.010$
+	\item $0.036\pm0.008$
+	\item $0.229\pm0.009$
+\end{itemize}
+
+F\"ur $T_S$ dann:
+\begin{itemize}
+	\item $31\pm2.4$
+	\item $21\pm1.3$
+	\item $100\pm23$
+	\item $15.9\pm0.4$
+\end{itemize}
+
+Berechnete Werte f\"ur $T_S$ lauten:
+\begin{itemize}
+	\item $30.9\pm0.4$
+	\item $20.6\pm0.4$
+	\item $98.0\pm0.4$
+	\item $15.9\pm0.4$
+\end{itemize}
+
 
 \section{Diskussion}
 
-XXXX
+Betrachten wir erstmal unsere berechneten und gemessenen Werte f\"ur die Periodendauer von Schwebung:\\
+Beim ersten Blick auf die Werte f\"allt klar auf, dass die dritte Periodendauer einen sehr gro\ss en Fehler besitzt. Dies stammt daraus, dass die Differenz der Frequenzen von der gleich- und gegensinnigen Schwingungen sehr klein sind. Betrachten wir wieder unsere Formel f\"ur $T_S$, so sehen wir, dass der Fehler sehr gro\ss\ sein muss, wenn $T_B-T_A$ klein ist. In diesem Fall ist dies geschehen, also ist es vollkommen verst\"andlich, dass der Fehler so gro\ss\ geraten ist.\\
+Auff\"allig ist auch, dass die Werte von der letzten Messung nicht ganz synchron sind. Dies ist zwar bedenklich, jedoch k\"onnen wir die Fehler betrachten und erkennen, dass sie immer noch im $2-\sigma$ bereich von einander entfernt sind.\\
+Insgesamt ist jedoch klar, dass die Werte der berechneten und gemessen $T_S$ sind \"ubereinzustimmen scheinen.\\
+W\"urden wir noch bessere Werte bekommen wollen, so k\"onnten wir beispielsweise ein Ger\"at verwenden, welches die Schwingungen und Schwebungen automatisch misst. Erst recht bei Schwebungen w\"urde dies wahrscheinlich helfen, da ein genauer Anfang bzw.\ ein genaues Ende der Periode recht schwer zu erkennen sein kann.\\
+Au\ss erdem k\"onnte man mehr und l\"angere Messungen durchf\"uhren. Dies w\"urde die Fehler der Periodendauern klar senken.\\
+Klar ist bei dieser Messung die gr\"o\ss te Fehlerquelle das Messen mit blo\ss em Auge. Reaktionszeit und die Schwierigkeit, die Periode der Schwebung genau zu definieren, sind beides Fehler, welche deswegen auftreten. Auch bei den hier verwendeten Messwerten ist dies leicht zu erkennen, da die Messung bei Schwebungen nur f\"ur eine halbe Periodendauer lief, nicht f\"ur eine ganze.\\
+Die Feder selbst stellt auch noch einen systematischen Fehler da. Es ist klar, dass wir keine ideale Feder vorhanden haben, also dass
+\[
+	F=-Ds
+\]
+zwar verwendet wird, aber nicht ganz der Fall ist.\\
+Es k\"onnte durchaus auch m\"oglich sein, dass die Feder nicht perfekt horizontal zwischen den Pendeln sitzt. Zwar wurde dies vor jeder Messreihe \"uberpr\"uft, jedoch ist selbstverst\"andlich auch ein Fehler auf unserem Messger\"at und wir k\"onnen nicht vollkommen sicher sein.\\
+\"Ahnlicherweise stellt auch das loslassen der Pendel einen systematischen Fehler da, da wir nicht ganz sicher sein k\"onnen, dass die verwendete Apparatur beide Pendel gleichzeitig losgelassen hat. Die Funktionsweise des Ger\"ats war, dass man einen Stab mit drei Befestigungen, welche nach au\ss en zeigten und verschoben werden konnten. Da diese sowohl in die horizontale als auch in die vertikale Ebene verschoben werden konnten, ist es durchaus m\"oglich, dass eine h\"oher als die andere war, also ein Pendel fr\"uher losgelassen werden konnte. Au\ss erdem kann es auch sein, dass sie nicht die gleiche Auslenkung eingestellt hatten. Zwar wurde dies auch gemessen, jedoch ist wie zuvor das Messger\"at auch nicht ganz perfekt.\\
+Ein anderer Fehler, welcher zwar \"uberpr\"uft wurde, aber nicht ganz klar ist, ist, dass die Pendel eventuell nicht die gleichen Gewichte haben. Dies wurde anfangs \"uberpr\"uft, indem die Periodendauern beider Pendel ungekoppelt gemessen wurden und verglichen wurden. Stimmen diese nicht ganz \"uberein, so ist klar, dass dies einen Einfluss haben w\"urde.
 
 \pagebreak
 

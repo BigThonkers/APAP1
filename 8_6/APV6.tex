@@ -9,6 +9,7 @@
 \usepackage{graphicx} 
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{mathtools}
 \hypersetup{
     colorlinks,
     citecolor=red,
@@ -57,25 +58,59 @@ Andréz Gockel, Patrick M\"unnich\\
 \vspace{22pt}
 \listoffigures
 \pagebreak
-\phantom{lol}
-\pagebreak
+%\phantom{lol}
+%\pagebreak
+\newpage
 
 \section{Ziel des Versuchs}
-XXXX
+
+Das Ziel des Versuchs ist es, den Elastizit\"atsmodul von drei unterschiedlichen isotropen Festk\"orpern mittels Biegung zu ermitteln. Au\ss erdem soll die Abh\"angigkeit der Biegung eines Stabes mit rechteckigen Querschnitt vom Material, der Ausrichtung und der L\"ange untersucht werden.
+
 \section{Teil XX}
 
 \subsection{Theorie}
 
-XXXX
+Wird eine (nicht all zu gro\ss e) Kraft $F$ auf einen elastischen Festk\"orper ausge\"ubt, so f\"uhrt dies zu einer L\"angen\"anderung $\Delta l$. F\"ur hinreichend kleiner Kr\"afte ist die L\"angen\"anderung proportional zur angreifenden Kraft. Den Kehrwert dieser Proportionalit\"atskonstante wird als Elastizit\"atsmodul $E$ bezeichnet (\textit{Hooke}'sches Gesetz):
+
+\begin{equation}
+\frac{\Delta l}{l}=\frac{F}{EA}=\frac{\sigma}{E}\label{eq:elast}
+\end{equation}
+
+Wie in Abbildung \ref{Abb:1} zu erkennen, f\"uhrt die Biegung eines Balkens zu Stauchung und Streckung oberhalb und unterhalb der sog. \textit{neutralen Faser}.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{neutraleFaser.pdf}}
+\renewcommand\thefigure{1}
+\caption[Biegung eines Stabes unter Einfluss einer Kraft $F_0$ mit neutraler Faser]{Biegung eines Stabes unter Einfluss einer Kraft $F_0$ mit neutraler Faser \cite{Demtr\"oder}}
+\label{Abb:1}
+\end{figure}
+
+\pagebreak
+
+Nach dem \textit{Hooke}'schen Gesetz ist diese Biegung/Stauchung f\"ur kleine Gewichte proportional zur angreifenden Kraft. F\"ur einen Balken, der an beiden Enden unterst\"utzt wird (Abbildung \ref{Abb:2}), ergibt sich
+
+\begin{equation}
+s\mathrel{:\mkern-0.25mu=} z(x=\nicefrac{l}{2})=\frac{1}{E}\frac{l^3}{4h^3b}F\label{eq:biegp}
+\end{equation}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{versuchsaufbau.pdf}}
+\renewcommand\thefigure{2}
+\caption[Versuchsaufbau]{Versuchsaufbau \cite{Demtr\"oder}}
+\label{Abb:2}
+\end{figure}
+
 
 \subsection{Aufbau}
 
 % describe set up
 % insert pic name, designation, toc caption, caption, label
-\halftime{5}{5}{TEXT}{\fbox{\includegraphics[width=0.5\textwidth]{NAME}}
-   \renewcommand\thefigure{BX}
-\caption[XXXX]{XXXX \cite{Anleitung}}
-\label{Pic:X}}
+%\halftime{5}{5}{TEXT}{\fbox{\includegraphics[width=0.8\textwidth]{versuchsaufbau.pdf}}
+%   \renewcommand\thefigure{BX}
+%\caption[XXXX]{XXXX \cite{Anleitung}}
+%\label{Pic:X}}
 
 \subsection{Durchführung}
 
@@ -127,17 +162,18 @@ $\begin{array}{l}
 \label{Tab:X}
 \end{table}
 
-\begin{figure}[p]
-\centering
-\fbox{\includegraphics[width=0.8\textwidth]{NAME}}
-\renewcommand\thefigure{BX}
-\caption[XXXX]{XXXX}
-\label{Abb:X}
-\end{figure}
+%\begin{figure}[p]
+%\centering
+%\fbox{\includegraphics[width=0.8\textwidth]{NAME}}
+%\renewcommand\thefigure{BX}
+%\caption[XXXX]{XXXX}
+%\label{Abb:X}
+%\end{figure}
 
 \begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
 \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
+\bibitem{Demtr\"oder} Demtr\"oder, Experimentalphysik 1, \url{https://www.springer.com/us/book/9783662464151}, Kapitel 6.2.4
 \end{thebibliography}
 
 \end{document}

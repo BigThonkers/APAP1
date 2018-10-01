@@ -29,6 +29,13 @@
 
 \newcommand{\refpy}[1]{Siehe Anhang: \textit{Rechnungen in Python} (\texttt{{\color{incolor}In [{\color{incolor}#1}]}})}
 \newcommand\dif{\mathop{}\!\mathrm{d}}
+\newcommand\mean{\begin{equation}
+\frac{\sum_{i=1}^n I_{V_i}}{n}\label{mean}
+\end{equation}}
+\newcommand\meanstd{\begin{equation}
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{meanstd}
+\end{equation}}
+\newcommand\prodquo{\begin{equation}\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots\end{equation}}
 \newcommand{\halftime}[4]{\begin{figure}[h]
 \begin{minipage}{.#1\textwidth}#3\end{minipage}\begin{minipage}{.#2\textwidth}
 \centering
@@ -65,7 +72,7 @@ Andréz Gockel, Patrick M\"unnich\\
 
 Das Ziel des Versuchs ist es, den Elastizit\"atsmodul von drei unterschiedlichen isotropen Festk\"orpern mittels Biegung zu ermitteln. Au\ss erdem soll die Abh\"angigkeit der Biegung eines Stabes mit rechteckigen Querschnitt vom Material, der Ausrichtung und der L\"ange untersucht werden.
 
-\section{Teil XX}
+\section{Versuch}
 
 \subsection{Theorie}
 
@@ -115,11 +122,114 @@ s\mathrel{:\mkern-0.25mu=} z(x=\nicefrac{l}{2})=\frac{1}{E}\frac{l^3}{4h^3b}F\la
 % describe exp.
 XXXX
 
+\pagebreak
+
 \subsection{Auswertung}
 
+Um die Messwerte anst\"andig darzustellen, k\"onnen wir eine einfache Lineare Regression durchf\"uhren. Da die Werte schon von allein sehr linear verlaufen, werden die Grenzgeraden weggelassen. Dies sind dann wesentlich \"asthetischer aus.
 
+Die f\"ur die lineare Regression ben\"otigten Formeln sind bekannterweise:
 
+\begin{equation}
+a=\frac{\sum x_i^2\sum y_i-\sum x_i\sum x_iy_i}{n\sum x_i^2-(\sum x_i)^2}
+\end{equation}
+\begin{equation}
+b=\frac{n\sum x_iy_i-\sum x_i\sum y_i}{n\sum x_i^2-(\sum x_i)^2}
+\end{equation}
+\begin{equation}
+s=\sqrt{\frac{1}{n-2}\sum^n_{i=1}[y_i-(a+bx_i)]^2}
+\end{equation}
+\begin{equation}
+\Delta a=s\sqrt{\frac{\sum x_i^2}{n\sum x_i^2-(\sum x_i)^2}}
+\end{equation}
+\begin{equation}
+\Delta b=s\sqrt{\frac{n}{n\sum x_i^2-(\sum x_i)^2}}
+\end{equation}
 
+Der Graph f\"ur den Vergleich der Materialien sieht dann folgenderma\ss en aus:
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{material.png}}
+\renewcommand\thefigure{1}
+\caption[Vergleich der Biegung von Aluminium, Stahl und Messing]{Vergleich der Biegung von Aluminium, Stahl und Messing}
+\label{Abb:X}
+\end{figure}
+
+Dies wurde bei einem Abstand von $40.5\pm0.5$\,cm zwischen den beiden Auflegepunkten f\"ur den Stab durchgef\"uhrt.
+
+\pagebreak
+
+Wieder beim selben Abstand wurde dann auch der Einfluss der \"Anderung der Ausrichtung bei Aluminium \"uberpr\"uft:
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{ausrichtung.png}}
+\renewcommand\thefigure{1}
+\caption[Vergleich von Biegung von Aluminium bei verschiedenen Ausrichtungen]{Vergleich von Biegung von Aluminium bei verschiedenen Ausrichtungen}
+\label{Abb:X}
+\end{figure}
+\pagebreak
+
+Als letztes der Vergleich von verschiedenen L\"angen:
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{length.png}}
+\renewcommand\thefigure{1}
+\caption[Vergleich von Biegung von Aluminium bei verschiedenen L\"angen]{Vergleich von Biegung von Aluminium bei verschiedenen L\"angen}
+\label{Abb:X}
+\end{figure}
+
+Um von hier auf unser Ziel, der Elastizit\"atsmodul, zu kommen, nutzen wir die Formel (\ref{eq:elast}) aus der Theorie. Diese m\"ussen wir jedoch erstmal nach $E$ umstellen. Da wir ja in Abh\"angigkeit von $m$ arbeiten, dr\"ucken wir zuerst unser $F$ als $mg$ aus und lassen dieses $m$ alleine auf der rechten Seite stehen:
+\[
+E=\frac{l^3g}{s4h^4b}m
+\]
+
+Wir ben\"otigen also die L\"ange, Breite und H\"ohe des verwendeten Stabteils, sowie dessen Durchbiegung bei verschiedenen Massen. Wir betrachten erstmal die Formel f\"ur Fehlerrechnung bei Produkten und Quotienten:
+\prodquo
+Mit unserer Formel dann:
+\begin{equation}
+\left\vert\frac{\Delta E}{E}\right\vert=\sqrt{\left(3\frac{\Delta l}{l}\right)^2+\left(-\frac{\Delta s}{s}\right)^2+\left(-4\frac{\Delta h}{h}\right)^2+\left(-\frac{\Delta b}{b}\right)^2}
+\end{equation}
+
+Da die Unsicherheit der Steigung klein ist und nur das 1-Fache dessen in die Unsicherheit von $E$ eingeht, ist diese zu vernachl\"assigen. Die Unsicherheit von $b$ k\"onnen wir auch vernachl\"assigen.
+
+FUCK YOUR DERIVATIVES
+
+\pagebreak
+
+Wir nutzen also unsere Steigung aus der linearen Regression als $s$ und rechnen hiermit als Werte f\"ur $E$:
+
+\begin{table}[h]
+\centering
+\caption{Berechnete Werte f\"ur $E$} \vspace{11pt}
+$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{L\"ange: } \pm 0.005\,\textrm{cm}\\
+\end{array}$
+\begin{tabular}{ccc}
+\toprule
+\textrm{Messreihe} & \textrm{L\"ange}\,[\textrm{cm}] & \textrm{Elastizit\"atsmodul}\,$\left[\nicefrac{\mathrm{N}}{\mathrm{m^2}}\right]$ \\
+\midrule 
+\textrm{Aluminium} & 40.5 & $(6.75\pm0.025)\times10^{10}$ \\
+\textrm{Stahl} & 40.5 & $(2.137\pm0.008)\times10^{11}$ \\
+\textrm{Messing} & 40.5 & $(9.49\pm0.035)\times10^{10}$ \\
+\hline
+\textrm{Alu umgedreht} & 40.5 & $(6.46\pm0.024)\times10^{10}$ \\
+\textrm{Aluminium} & 55.0 & $(6.78\pm0.018)\times10^{10}$ \\ 
+\textrm{Aluminium} & 33.5 & $(5.74\pm0.026)\times10^{10}$ \\ 
+\textrm{Alu 10 Messungen} & 40.5 & $(6.76\pm0.025)\times10^{10}$ \\ 
+\bottomrule
+\end{tabular}
+\phantom{$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{XXXX: } \pm XX \textrm{XX}\\
+\end{array}$}
+\label{Tab:1}
+\end{table}
+
+Die genauen Werte f\"ur die Breite und H\"ohe der St\"abe sind im Anhang zu finden. Wir verwenden als Wert f\"ur $g$ $9.81\,\nicefrac{\mathrm{m}}{\mathrm{s}^2}$.
 
 \section{Diskussion}
 

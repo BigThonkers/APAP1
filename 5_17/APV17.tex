@@ -100,7 +100,7 @@ und
 $$I_{\textrm{Scheibe}} = \rho \int\displaylimits_{0}^{2\pi} \int\displaylimits_{0}^{l}\int\displaylimits_{0}^{r} r \dif\phi \dif z \dif r$$
 für die Scheibe da die Drehachse durch den Mittelpunkt geht und parallel zur $y$-Achse ist.
 aus diesen Gleichungen bekommt man:
-$$I_{\textrm{Stab}} = \frac{1}{4} m r^2 + \frac{1}{3} m l^2 \qquad I_{\textrm{Scheibe}} = \frac{1}{2}mr^2$$
+\begin{equation}\label{pop}I_{\textrm{Stab}} = \frac{1}{4} m r^2 + \frac{1}{3} m l^2 \qquad I_{\textrm{Scheibe}} = \frac{1}{2}mr^2\end{equation}
 
 
 \subsection{Aufbau}
@@ -136,6 +136,11 @@ $$
 Zuerst wird mit den obigen Herleitungen der theoretische Wert bestimmt. Mit $T = 2\pi \sqrt{\frac{I}{dm\vec{g}}}$, und dem Einsetzen von $I_{\textrm{Stab}}$ bekommt man:
 $$T = 2\pi \sqrt{\frac{\frac{1}{4} m r^2 + \frac{1}{3} m l^2}{dm\vec{g}}} = 2\pi \sqrt{\frac{\frac{1}{4} r^2 + \frac{1}{3} l^2}{d\vec{g}}}$$
 
+mit $|g|=9.802\dots$\,$\nicefrac{\textrm{m}}{\textrm{s}^2}$\footnote{Dieser Wert wurde in einem anderen Versuch (Einleitungsversuch) bestimmt.} und $d = \frac{l}{2}$ ist der theoretische Wert $T = 1.6021(25)$\,s wobei die Unsicherheit $\Delta T = 0.0025$\,s mit der Gauß'schen Fehlerfortpflanzung gefunden wurde:
+$$\Delta T = $$
+Der experimentell bestimmte Mittelwert für 30 einzelne Perioden ist $1.59$\,s mit der Standardabweichung $s_T = 0.05$\,s.
+Der expreimentell bestimmte Wert für eine Messung von 30 Perioden ist $1.594\,$s mit der Unsicherheit $\frac{s_T}{\sqrt{n}} = 0.001$ 
+
 \pagebreak
 
 \section{Teil 2 - Steinersche Satz}
@@ -168,46 +173,60 @@ $$
 	\bottomrule \\
 	\multicolumn{2}{l}{\textrm{Bekannte Werte}} \\
 	\toprule
-	\textrm{Abstände} & a = 15.0\,\textrm{mm}\\
+	\textrm{Abstände} & a = 15.0\,\textrm{mm}\cite{Anleitung}\\
 	\bottomrule 
 \end{array}
 $$
 \end{table}
-
-
+Der theoretische Wert für das Trägheitsmoment der Drehscheibe ist mit der Formel \ref{pop}:
+$$I_{\textrm{Scheibe}} = 0.001960(9)\textrm{kg}\,\textrm{m}^2$$
+Die Unsicherheit wurde mit $\Delta I = \frac{I}{2}\sqrt{\bigg(\frac{\Delta m}{m}\bigg)^2 + \bigg(2\frac{\Delta r}{r}\bigg)^2}$ berechnet. 
+Das Trägheitsmoment ohne Zusatzmasse ist:
+$$T = 2\pi \sqrt{\frac{I}{dm\vec{g}}} \Rightarrow I = T^2 (2\pi)^2 \frac{I}{dm\vec{g}}$$
+Der Satz von Steiner lautet:
+$$I_0 = I_a + ma^2$$
+Eine lineare regression wurde in \ref{t17} mit Mathematica durchgeführt. Die Steigung dieser Funktion ist: $1.9966 + 0.00682 x$ 
 
 \vfill
 
 \begin{thebibliography}{9}
- \bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+ %\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
  \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
  \end{thebibliography}
- 
-%Systematische und statistische Fehler.
 
 \pagebreak
 
+\section{Diskussion}
+
+Diese Werte sind nicht schlecht also cool.
 
 \section{Anhang}
 
 \begin{table}[h]
 \caption{Messwerte (Teil 2)}
 $$
-\begin{array}{ccc}	
+\begin{array}{cccc}	
 	\toprule 
-	\textrm{Abstand/mm} & \textrm{10 Perioden/s} & \textrm{30 Perioden/s}\\
+	\textrm{Abstand/mm} & \textrm{10 Perioden/s} & \textrm{30 Perioden/s} & \textrm{Mittelwert/s}\\ 
 	\midrule
-	\multicolumn{1}{l}{\textrm{Ohne Zusatzmasse}} & 18.1 & 54.6\\
-	\phantom{zz.}0 & 20.6 & 60.3\\
-	15.0 & 20.8 & 63.0\\
-	30.0 & 21.8 & 63.2\\
-	45.0 & 22.9 & 68.9\\
-	60.0 & 24.9 & 72.0\\
+	\multicolumn{1}{l}{\textrm{Ohne Zusatzmasse}} & 18.1 & 54.6 & 1.82(1)\\
+	\phantom{zz.}0 & 20.6 & 60.3 & 2.04(4)\\
+	15.0 & 20.8 & 63.0 & 2.09(1)\\
+	30.0 & 21.8 & 63.2 & 2.14(5)\\
+	45.0 & 22.9 & 68.9 & 2.29(1)\\
+	60.0 & 24.9 & 72.0 & 2.45(6)\\
 	\bottomrule 
 \end{array}
 $$
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{trick17}
+\renewcommand\thefigure{B3}
+\caption{Mittelwerte}
+\label{t17}
+\end{figure}
 
 
 \end{document}

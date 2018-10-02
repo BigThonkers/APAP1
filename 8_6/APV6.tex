@@ -36,6 +36,9 @@
 s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{meanstd}
 \end{equation}}
 \newcommand\prodquo{\begin{equation}\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots\end{equation}}
+\newcommand\tfnc{\begin{equation}
+\frac{\vert x-y_0\vert}{u_x}
+\end{equation}}
 \newcommand{\halftime}[4]{\begin{figure}[h]
 \begin{minipage}{.#1\textwidth}#3\end{minipage}\begin{minipage}{.#2\textwidth}
 \centering
@@ -233,7 +236,63 @@ Die genauen Werte f\"ur die Breite und H\"ohe der St\"abe sind im Anhang zu find
 
 \section{Diskussion}
 
-Es wirken noch zus\"atzliche Kr\"afte, welche durch das Eigengewicht der St\"abe, das Gewicht der Halterung und der Andruckkraft des Messger\"ats ausge\"ubt werden. Da dieser Versuch sich aber im Proportionalit\"atsbereich aufh\"alt, m\"ussen diese Kr\"afte nicht ber\"ucksichtigt werden, da sie nur den Nullpunkt des Messger\"ats verschieben.
+Die entsprechenden Literaturwerte lauten:
+
+\begin{itemize}
+\item Aluminium :$E=(69\ldots72.5)\times10^3\,\nicefrac{\mathrm{N}}{\mathrm{mm^2}}$
+\item Stahl: $E=(195\ldots210)\times10^3\,\nicefrac{\mathrm{N}}{\mathrm{mm^2}}$
+\item Messing: $E=(90\ldots95)\times10^3\,\nicefrac{\mathrm{N}}{\mathrm{mm^2}}$
+\end{itemize}
+
+Um die Vertr\"aglichkeit unserer Werte zu \"uberpr\"ufen betrachten wir die $2-\sigma$ Bereiche unserer gemessenen Werte:
+
+\begin{table}[h]
+\centering
+\caption{Berechnete Werte f\"ur $E$} \vspace{11pt}
+$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{L\"ange: } \pm 0.005\,\textrm{cm}\\
+\end{array}$
+\begin{tabular}{ccc}
+\toprule
+\textrm{Messreihe} & \textrm{L\"ange}\,[\textrm{cm}] & \textrm{2-}$\sigma$\textrm{ Bereich von }$E$\,$\left[\nicefrac{\mathrm{N}}{\mathrm{m^2}}\right]$ \\
+\midrule 
+\textrm{Aluminium} & 40.5 & $(6.75\pm0.050)\times10^{10}$ \\
+\textrm{Stahl} & 40.5 & $(2.137\pm0.016)\times10^{11}$ \\
+\textrm{Messing} & 40.5 & $(9.49\pm0.070)\times10^{10}$ \\
+\hline
+\textrm{Alu umgedreht} & 40.5 & $(6.46\pm0.048)\times10^{10}$ \\
+\textrm{Aluminium} & 55.0 & $(6.78\pm0.036)\times10^{10}$ \\ 
+\textrm{Aluminium} & 33.5 & $(5.74\pm0.052)\times10^{10}$ \\ 
+\textrm{Alu 10 Messungen} & 40.5 & $(6.76\pm0.050)\times10^{10}$ \\ 
+\bottomrule
+\end{tabular}
+\phantom{$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{XXXX: } \pm XX \textrm{XX}\\
+\end{array}$}
+\label{Tab:1}
+\end{table}
+
+Wir k\"onnen klar erkennen, dass f\"ur Aluminium keine Messung im 2-$\sigma$ Bereich mit den Literaturwerten \"ubereinstimmt. Alle liegen unterhalb des Wertebereichs. Am auff\"alligsten ist hier die Messung bei einer L\"ange von 33.5\,cm, da dieser deutlich am weitesten entfernt ist.
+
+Unsere Messungen f\"ur Stahl und Messing stimmen jedoch \"uberein. Interessant ist hier aber, dass beide an der oberen Grenze des Bereichs vom Literaturwert liegen.
+
+Die Ursache hiervon ist vermutlich ein zu fein gesch\"atzter Fehler des f\"ur die L\"angenmessung genutzten Bandma\ss es. Verdoppeln wir diesen Fehler, so verdoppeln sich auch die Fehler unserer Endergebnisse. Vergleichen wir die Werte nach dieser Verdopplung, so liegt nur noch die Messung von Aluminium bei 33.5\,cm au\ss erhalb des 2-$\sigma$ Bereichs. In diesem Fall w\"aren alle anderen Messwerte mit den Literaturwerten vertr\"aglich.
+
+Jedoch muss man sich immer noch fragen, weshalb die Werte von Messing und Stahl an der oberen und die von Aluminium an der unteren Grenze des Wertebereichs liegen. Offensichtlich haben andere Fehler noch einen Einfluss.
+
+Erstmal klar ist, dass noch zus\"atzliche Kr\"afte wirken, welche durch das Eigengewicht der St\"abe, das Gewicht der Halterung und der Andruckkraft des Messger\"ats ausge\"ubt werden. Da dieser Versuch sich aber im Proportionalit\"atsbereich aufh\"alt, m\"ussen diese Kr\"afte nicht ber\"ucksichtigt werden, da sie nur den Nullpunkt des Messger\"ats verschieben. Dies ist also vermutlich nicht die Ursache.
+
+Suchen wir nach anderen Fehlern, so muss zuerst die Form der Literaturwerte klarifiziert werden; Stahl-, Aluminium- und Messingst\"abe werden je nach Werkstoffzusammensetzung andere Elastizit\"atsmodule haben. Wir k\"onnen also davon ausgehen, dass die St\"abe in diesen Wertebereichen ihre Elastizit\"atsmodule haben und nicht aufgrund von unreiner Zusammensetzung als systematischer Fehler gelten k\"onnen.
+
+Die n\"achste Fehlerquelle, die wie betrachten werden, ist die, dass die Halterungen der St\"abe m\"oglicherweise Bewegungsanf\"allig waren, wodurch die L\"angen noch ungenauer werden w\"urden. Gleicherma\ss en k\"onnten die St\"abe auch nicht gerade auf den Halterungen stehen. H\"atte das Ger\"at bessere Halterungen, bei denen die St\"abe immer zentriert w\"aren und keine Bewegung m\"oglich ist, so w\"aren eventuell bessere Ergebnisse m\"oglich.
+
+Betrachten wir nochmal unsere Gleichung f\"ur $E$:
+\[
+E=\frac{l^3g}{s4h^4b}m
+\]
+Klar ist, dass $g$ keinen gr\"o\ss eren Einfluss hat und auch schon relativ genau gew\"ahlt wurde. Au\ss erdem wurden die Massen der einzelnen Gewichte vor der Messung alle gemessen und Markierungen gesetzt, wodurch wir ein Problem mit den Massen ausschlie\ss en k\"onnen. Uns bleiben also noch Fehler auf $s$, $h$ und $b$. Da f\"ur die Messung der Breite und H\"ohe eine Messschraube genutzt wurde, ist ein Problem hier eher unwahrscheinlich. Vermutlich k\"onnte also unser Fehler auch bei dem digitalen Messger\"at liegen.
 
 \pagebreak
 

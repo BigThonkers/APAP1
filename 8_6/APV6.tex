@@ -69,7 +69,9 @@ Andréz Gockel, Patrick M\"unnich\\
 \listoffigures
 \pagebreak
 \phantom{lol}
+\thispagestyle{empty}
 \pagebreak
+
 
 \section{Ziel des Versuchs}
 
@@ -120,16 +122,30 @@ s\mathrel{:\mkern-0.25mu=} z(x=\nicefrac{l}{2})=\frac{1}{E}\frac{l^3}{4h^3b}F\la
 %\caption[XXXX]{XXXX \cite{Anleitung}}
 %\label{Pic:X}}
 
+Vorhanden waren drei St\"abe, jeweils aus Stahl, Aluminium und Messing, welche auf eine optische Bank mit zwei Schneiden platziert werden konnte. An der optischen Bank montiert war ein digitales Messger\"at, welches die Halterung der Gewichte oben ber\"uhrt hat. Um die Ma\ss st\"abe und Gewichte zu messen, waren ein Bandma\ss , eine Messschraube und eine Waage vorhanden. Wie die St\"abe beim Beugen auf den Schneiden lagen kann in Abbildung \ref{Abb:2} betrachtet werden.
+
 \subsection{Durchführung}
 
 % describe exp.
-XXXX
+Zu Beginn werden die St\"abe in L\"ange, Breite und H\"ohe gemessen. Da die Messschraube f\"ur die L\"ange zu klein ist, wird sie nur f\"ur Messung der Breite und H\"ohe genutzt. F\"ur die L\"ange muss das Ma\ss band verwendet werden. Am Besten werden alle Messungen mehrmals an verschiedenen Stellen durchgef\"uhrt.
+
+Nachdem alle drei St\"abe ausreichend gemessen wurden, k\"onnen die Gewichte mit der Waage gewogen werden. Um sp\"ater genauer das Gewicht bestimmen zu k\"onnen, kann man jedes Gewicht einzeln messen und mit einem Stift oder Post-its Markierungen setzen, damit das drangewogene Gewicht genauer bestimmt werden kann.
+
+Um die Messung der Biegung durchf\"uhren zu k\"onnen, wird dann ein Stab auf die Schneiden platziert. Man misst zudem noch den Abstand der Auflagefl\"achen. Dies ist sp\"ater die L\"ange, mit der gerechnet wird.
+
+Von dort aus muss zuerst die Linearit\"at \"uberpr\"uft werden. Hierzu werden nacheinander Gewichte drangelegt, sodass man insgesamt f\"ur zehn verschiedenen Gewichten die Biegung hat. Die Biegung wird nach jeder neu drangeh\"angten Masse gemessen und notiert. Hat man die zehn Gewichte drauf, so wird der Vorgang r\"uckw\"arts wiederholt. Diese Messung wird insgesamt zweimal durchgef\"uhrt.
+
+Ist dieser Teil erledigt worden, so misst man als letztes die Durchbiegung gleicherma\ss en f\"ur drei verschiedene Materialien und f\"ur jeweils ein Material zwei verschiedene Ausrichtungen und L\"angen. Hierbei kann man weniger Gewichte insgesamt dranh\"angen. 
 
 \pagebreak
 
 \subsection{Auswertung}
 
 Um die Messwerte anst\"andig darzustellen, k\"onnen wir eine einfache Lineare Regression durchf\"uhren. Da die Werte schon von allein sehr linear verlaufen, werden die Grenzgeraden weggelassen. Dies sind dann wesentlich \"asthetischer aus.
+
+Aufgrund der mehreren Messwerte f\"ur jede Biegung berechnen wir hier mit Mittelwerten. Diese werden mit den folgenden Funktionen berechnet:
+\mean
+\meanstd
 
 Die f\"ur die lineare Regression ben\"otigten Formeln sind bekannterweise:
 
@@ -148,7 +164,7 @@ s=\sqrt{\frac{1}{n-2}\sum^n_{i=1}[y_i-(a+bx_i)]^2}
 \begin{equation}
 \Delta b=s\sqrt{\frac{n}{n\sum x_i^2-(\sum x_i)^2}}
 \end{equation}
-
+\pagebreak
 Der Graph f\"ur den Vergleich der Materialien sieht dann folgenderma\ss en aus:
 
 \begin{figure}[h]
@@ -156,10 +172,10 @@ Der Graph f\"ur den Vergleich der Materialien sieht dann folgenderma\ss en aus:
 \fbox{\includegraphics[width=0.8\textwidth]{material.png}}
 \renewcommand\thefigure{1}
 \caption[Vergleich der Biegung von Aluminium, Stahl und Messing]{Vergleich der Biegung von Aluminium, Stahl und Messing}
-\label{Abb:X}
+\label{Abb:1}
 \end{figure}
 
-Dies wurde bei einem Abstand von $40.5\pm0.5$\,cm zwischen den beiden Auflegepunkten f\"ur den Stab durchgef\"uhrt.
+Dies wurde bei einem Abstand von $(40.5\pm0.5)$\,cm zwischen den beiden Auflegepunkten f\"ur den Stab durchgef\"uhrt.
 
 \pagebreak
 
@@ -168,21 +184,23 @@ Wieder beim selben Abstand wurde dann auch der Einfluss der \"Anderung der Ausri
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{ausrichtung.png}}
-\renewcommand\thefigure{1}
+\renewcommand\thefigure{2}
 \caption[Vergleich von Biegung von Aluminium bei verschiedenen Ausrichtungen]{Vergleich von Biegung von Aluminium bei verschiedenen Ausrichtungen}
-\label{Abb:X}
+\label{Abb:2}
 \end{figure}
+
 \pagebreak
 
 Als letztes der Vergleich von verschiedenen L\"angen:
-
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{length.png}}
-\renewcommand\thefigure{1}
+\renewcommand\thefigure{3}
 \caption[Vergleich von Biegung von Aluminium bei verschiedenen L\"angen]{Vergleich von Biegung von Aluminium bei verschiedenen L\"angen}
-\label{Abb:X}
+\label{Abb:3}
 \end{figure}
+
+\pagebreak
 
 Um von hier auf unser Ziel, der Elastizit\"atsmodul, zu kommen, nutzen wir die Formel (\ref{eq:elast}) aus der Theorie. Diese m\"ussen wir jedoch erstmal nach $E$ umstellen. Da wir ja in Abh\"angigkeit von $m$ arbeiten, dr\"ucken wir zuerst unser $F$ als $mg$ aus und lassen dieses $m$ alleine auf der rechten Seite stehen:
 \[
@@ -198,9 +216,6 @@ Mit unserer Formel dann:
 
 Da die Unsicherheit der Steigung klein ist und nur das 1-Fache dessen in die Unsicherheit von $E$ eingeht, ist diese zu vernachl\"assigen. Die Unsicherheit von $b$ k\"onnen wir auch vernachl\"assigen.
 
-FUCK YOUR DERIVATIVES
-
-\pagebreak
 
 Wir nutzen also unsere Steigung aus der linearen Regression als $s$ und rechnen hiermit als Werte f\"ur $E$:
 
@@ -236,7 +251,7 @@ Die genauen Werte f\"ur die Breite und H\"ohe der St\"abe sind im Anhang zu find
 
 \section{Diskussion}
 
-Die entsprechenden Literaturwerte lauten:
+Die entsprechenden Literaturwerte lauten \cite{Anleitung}:
 
 \begin{itemize}
 \item Aluminium :$E=(69\ldots72.5)\times10^3\,\nicefrac{\mathrm{N}}{\mathrm{mm^2}}$
@@ -296,40 +311,40 @@ Klar ist, dass $g$ keinen gr\"o\ss eren Einfluss hat und auch schon relativ gena
 
 \pagebreak
 
-\section{Anhang: Tabellen und Diagramme}
+\section{Anhang: Messwerte}
 
-\begin{table}[h]
-\centering
-\caption{XXXX} \vspace{11pt}
-$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{XXXX: } \pm XX \textrm{XX}\\
-\end{array}$
-\begin{tabular}{ccc}
-\toprule
-\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
-\midrule 
-2 & 0.26 & 0.23\\
-\hline
-4 & 0.33 & 0.25\\
-\hline 
-5 & & 0.3\\
-\hline 
-6 & 1.25 & 0.83\\
-\hline 
-8 & 3.9 & 0.83\\ 
-\hline
-9 & 4.75 & 4.6\\ 
-\hline
-10 & 4.7 &\\ 
-\bottomrule
-\end{tabular}
-\phantom{$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{XXXX: } \pm XX \textrm{XX}\\
-\end{array}$}
-\label{Tab:X}
-\end{table}
+%\begin{table}[h]
+%\centering
+%\caption{XXXX} \vspace{11pt}
+%$\begin{array}{l}
+%\textrm{Unsicherheiten:}\\
+%\textrm{XXXX: } \pm XX \textrm{XX}\\
+%\end{array}$
+%\begin{tabular}{ccc}
+%\toprule
+%\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
+%\midrule 
+%2 & 0.26 & 0.23\\
+%\hline
+%4 & 0.33 & 0.25\\
+%\hline 
+%5 & & 0.3\\
+%\hline 
+%6 & 1.25 & 0.83\\
+%\hline 
+%8 & 3.9 & 0.83\\ 
+%\hline
+%9 & 4.75 & 4.6\\ 
+%\hline
+%10 & 4.7 &\\ 
+%\bottomrule
+%\end{tabular}
+%\phantom{$\begin{array}{l}
+%\textrm{Unsicherheiten:}\\
+%\textrm{XXXX: } \pm XX \textrm{XX}\\
+%\end{array}$}
+%\label{Tab:X}
+%\end{table}
 
 %\begin{figure}[p]
 %\centering
@@ -340,7 +355,7 @@ $\begin{array}{l}
 %\end{figure}
 
 \begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
+%\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
 \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
 \bibitem{Demtr\"oder} Demtr\"oder, Experimentalphysik 1, \url{https://www.springer.com/us/book/9783662464151}, Kapitel 6.2.4
 \end{thebibliography}

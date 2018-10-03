@@ -1,17 +1,19 @@
 \documentclass{scrartcl}
+\usepackage{lscape}
 \usepackage{tikz}
 
 \begin{document}
-
-\begin{tikzpicture}[scale=0.7, inner sep=0]
+\begin{landscape}
+\centering
+\begin{tikzpicture}[scale=0.3, inner sep=0]
 
 % Optische Achse
-\draw[dashed, thick] (-11,0) -- (11,0);
+\draw[dashed, thick] (-30,0) -- (40,0);
 % Koordinaten Nullpunkt
 \draw (0,-0.2) -- (0,0.2);
 
 % Konkave Linse
-\def\xconv{1.2} % x-Koordinate
+\def\xconv{1} % x-Koordinate
 \draw[thick, fill=yellow!30] 
      ([shift=(190:16cm)]16.5+\xconv,0) arc (190:170:16cm)
      -- ([shift=(10:16cm)] -16.5+\xconv,0)
@@ -19,18 +21,18 @@
      -- ([shift=(190:16cm)]16.5+\xconv,0);
 
 % Konvexe Linse
-\def\xconx{-2.1} % x-Koordinate
+\def\xconx{-1} % x-Koordinate
 \draw[thick, fill=yellow!30] ([shift=(-15:10cm)]-8.5+\xconx,0) arc (-15:15:10cm)
  --([shift=(165:10cm)]10.5+\xconx,0) arc (165:195:10cm)
  --([shift=(-15:10cm)]-8.5+\xconx,0);
 
 % Gegenstand (Pfeil)
-\def\Gx{-9}
+\def\Gx{-24.7}
 \node (G) at (\Gx,2) {};
 \draw[->, ultra thick] (\Gx,0) -- (G);%
 \node (labG) at (\Gx,2.3) {$G$};
 % Bild (arrow)
-\def\Bx{8}
+\def\Bx{34.9}
 \node (B) at (\Bx,-1) {};
 \draw[->, ultra thick] (\Bx,0) -- (B);
 \node (labB) at (\Bx,-1.5) {$B$};
@@ -60,4 +62,5 @@
 % Gebogener Pfeil
 %\draw[->, dashed] (9.5,18) .. controls (4,18) .. (3,11.65);
 \end{tikzpicture}
+\end{landscape}
 \end{document}

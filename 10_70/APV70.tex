@@ -9,6 +9,7 @@
 \usepackage{graphicx} 
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{tikz}
 \hypersetup{
     colorlinks,
     citecolor=red,
@@ -16,7 +17,7 @@
     linkcolor=black!20!blue!90!,
     urlcolor=black} 
 \usepackage{nicefrac}
-\usepackage[table]{xcolor}
+%\usepackage[table]{xcolor}
 \usepackage{tocloft}
 
 \setlength{\parindent}{0pt}
@@ -34,6 +35,16 @@
 #4\end{minipage}
 \end{figure}}
 \renewcommand{\vec}{\boldsymbol}
+\newcommand\mean{\begin{equation}
+\frac{\sum_{i=1}^n x_{i}}{n}\label{mean}
+\end{equation}}
+\newcommand\meanstd{\begin{equation}
+s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{meanstd}
+\end{equation}}
+\newcommand\prodquo{\begin{equation}\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots\end{equation}}
+\newcommand\tfunc{\begin{equation}
+\frac{\vert x-y_0\vert}{u_x}
+\end{equation}}
 
 \begin{document}
 
@@ -90,7 +101,7 @@ In diesem Teil wollen wir einfach $\nicefrac{1}{b}$ gegen $\nicefrac{1}{g}$ auft
 \[
 \frac{g}{f}
 \]
-berechnet wurde und f\"ur die Linsensysteme mit jeweils $f_1=80\,$mm und $f_2=150\,$mm bzw. $f_1=80\,$mm und $f_2=290\,$mm mit
+berechnet wurde und f\"ur die Linsensysteme mit jeweils $f_1=80\,$mm und $f_2=150\,$mm bzw. $f_1=80\,$mm und $f_2=200\,$mm mit
 \[
 \frac{1}{f_1}+\frac{1}{f_2}-\frac{1}{g}
 \]
@@ -119,9 +130,188 @@ XXXX
 
 \subsection{Auswertung}
 
-XXXX
+In diesem Teil wollen wir einfach mit unseren Messwerten und der Formel (\ref{eq:X}) zuerst unsere Werte f\"ur $(s,e)$:
+\begin{itemize}
+\item $e(80\,\mathrm{mm}):  [35.0+/-0.4242640687119285 23.3+/-0.4242640687119285
+ 18.9+/-0.4242640687119285 54.39999999999999+/-0.4242640687119285
+ 44.50000000000001+/-0.4242640687119285]$
+\item $s(80\,\mathrm{mm}):  [55.0+/-0.5196152422706632 44.599999999999994+/-0.5196152422706632
+ 41.2+/-0.5196152422706632 73.2+/-0.5196152422706632
+ 63.8+/-0.5196152422706632]$
+\item $e(80,150\,\mathrm{mm}):  [51.0+/-0.4242640687119285 43.3+/-0.4242640687119285
+ 40.849999999999994+/-0.4242640687119285 46.6+/-0.4242640687119285
+ 54.3+/-0.4242640687119285]$
+\item $s(80,150\,\mathrm{mm}):  [63.8+/-0.5196152422706632 56.5+/-0.5196152422706632
+ 54.2+/-0.5196152422706632 59.599999999999994+/-0.5196152422706632
+ 67.1+/-0.5196152422706632]$
+\item $e(80,-200\,\mathrm{mm}):  [32.400000000000006+/-0.4242640687119285
+ 23.700000000000003+/-0.4242640687119285
+ 26.799999999999997+/-0.4242640687119285
+ 43.49999999999999+/-0.4242640687119285 22.5+/-0.4242640687119285]$
+\item $s(80,-200\,\mathrm{mm}):  [63.8+/-0.5196152422706632 57.3+/-0.5196152422706632
+ 67.5+/-0.5196152422706632 73.3+/-0.5196152422706632
+ 56.3+/-0.5196152422706632]$
+\end{itemize}
+
+Wir k\"onnen hier die Rechnungen per Hand mit Gau\ss scher Fehlerfortpflanzung durchf\"uhren. Hierzu m\"ussen wir unsere Gleichung einfach nach jeweils $e$ und $s$ partiell ableiten:
+
+\[
+\frac{\partial f}{\partial s}=\frac{s^2+e^2}{4s}
+\]
+\[
+\frac{\partial f}{\partial e}=\frac{-e}{2s}
+\]
+
+Dies k\"onnen wir in
+\[
+\Delta f=\sqrt{\left(\frac{\partial f}{\partial s}\Delta s\right)^2+\left(\frac{\partial f}{\partial e}\Delta e\right)^2}
+\]
+einsetzen und berechnen. In diesem Fall sind unsere Ergebnissen jedoch mit dem \textit{uncertainties} Paket in Python berechnet worden. \refpy{12} Dieses Paket hat die F\"ahigkeit, Korrelationen zwischen Variablen zu ber\"ucksichtigen \cite{Uncertainties}.
+
+Da uns hier die Mittelwerte interessieren, nutzen wir noch
+
+\mean
+
+f\"ur die Berechnung des Mittelwerts und
+
+\meanstd
+
+f\"ur der Berechnung der Unsicherheit dessen.
+
+Wir erhalten daraus f\"ur die Linse mit $f=80\,$mm $\bar{f}=82\pm1.7\,$mm, f\"ur das System mit $f_1=80\,$mm und $f_2=150\,$mm $\bar{f}=58\pm1.9\,$mm und f\"ur das Linsensystem mit $f_1=80\,$mm und $f_2=200\,$mm $\bar{f}=123\pm1.4\,$mm.
 
 \section{Teil 3}
+
+\subsection{Theorie}
+
+XXXX
+
+\subsection{Aufbau}
+
+% describe set up
+% insert pic name, designation, toc caption, caption, label
+
+%\halftime{5}{5}{TEXT}{\fbox{\includegraphics[width=0.5\textwidth]{NAME}}
+%   \renewcommand\thefigure{BX}
+%\caption[XXXX]{XXXX \cite{Anleitung}}
+%\label{Pic:X}}
+
+\subsection{Durchführung}
+
+% describe exp.
+XXXX
+
+\subsection{Auswertung}
+
+In diesem Teil wollen wir zuerst mit den Formeln (\ref{eq:beta}), (\ref{eq:g}) und (\ref{eq:b}) $g'$, $b'$, $\beta$ und $\Delta \beta$ bestimmen. Wir erhalten aus unseren Messreihen:
+
+Um dies visuell darzustellen, tragen wir $1+\nicefrac{1}{\beta}$ gegen $g'$ und $1+\beta$ gegen $b'$ dar:
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{g.png}}
+\renewcommand\thefigure{69}
+\caption[$1+\nicefrac{1}{\beta}$ gegen $g'$ dargestellt]{$1+\nicefrac{1}{\beta}$ gegen $g'$ dargestellt}
+\label{Abb:g}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth]{b.png}}
+\renewcommand\thefigure{420}
+\caption[$1+{\beta}$ gegen $b'$ dargestellt]{$1+\beta$ gegen $b'$ dargestellt}
+\label{Abb:b}
+\end{figure}
+
+Aus der linearen Regression k\"onnen wir $f_1$, $f_2$, $h_1$ und $h_2$ bestimmen. Wir erhalten als Werte:
+$f_1 80 200 0.5762491658548258
+h_1 80 200 11.03475419102985
+f_2 80 200 1.9531933609241
+h_2 80 200 11.639603091057374
+f_1 200 80 -3.913845161813182
+h_1 200 80 11.49900273595246
+f_2 200 80 3.2411227934990583
+h_2 200 80 11.930724229182056
+$
+
+Zur Klarifizierung fertigen wir noch eine (au\ss er der Linsen) ma\ss stabsgetreue Skizze an:\\
+\\
+\centering{
+\begin{tikzpicture}[scale=0.6, inner sep=0]
+\def\sx{0.3}
+
+% Optische Achse
+\draw[dashed, thick] (-30*\sx,0) -- (40*\sx,0);
+% Koordinaten Nullpunkt
+\draw (0,-0.2) -- (0,0.2);
+
+% Konkave Linse
+\def\xconv{0.5} % x-Koordinate
+\draw[thick, fill=yellow!30] 
+     ([shift=(190:16cm)]16.5+\xconv,0) arc (190:170:16cm)
+     -- ([shift=(10:16cm)] -16.5+\xconv,0)
+     arc (10:-10:16cm) 
+     -- ([shift=(190:16cm)]16.5+\xconv,0);
+
+% Konvexe Linse
+\def\xconx{-1.5} % x-Koordinate
+\draw[thick, fill=yellow!30] ([shift=(-15:10cm)]-9+\xconx,0) arc (-15:15:10cm)
+ --([shift=(165:10cm)]10+\xconx,0) arc (165:195:10cm)
+ --([shift=(-15:10cm)]-9+\xconx,0);
+
+% Gegenstand (Pfeil)
+\def\Gx{-24.7*\sx}
+\def\Gy{0.7}
+\node (G) at (\Gx,\Gy) {};
+\draw[->, ultra thick] (\Gx,0) -- (G);%
+\node (labG) at (\Gx,\Gy+0.5) {$G$};
+% Bild (arrow)
+\def\Bx{34.9*\sx}
+\def\By{-1.55}
+\node (B) at (\Bx,\By) {};
+\draw[->, ultra thick] (\Bx,0) -- (B);
+\node (labB) at (\Bx,\By-0.5) {$B$};
+
+% Hauptebenen
+\def\Hx{5.5*\sx}
+\draw (\Hx,-4) -- (\Hx,4); % H1
+\node (labH1) at (-\Hx,4.5) {$H_1$};
+\draw (-\Hx,-4) -- (-\Hx,4); % H2
+\node (labH2) at (\Hx,4.5) {$H_2$};
+
+% Strahlen
+% FokusG
+\draw[color=blue] (G) -- (-\Hx,\By);
+\draw[color=blue] (B) -- (-\Hx,\By);
+% FokusB
+\draw[color=blue] (G) -- (\Hx,\Gy);
+\draw[color=blue] (B) -- (\Hx,\Gy);
+%Central
+\draw[color=blue] (G) -- (-\Hx,0) -- (\Hx,0)  -- (B);
+               
+% Label
+%Fokus Punkte
+\node (F1) at (-18*\sx,-0.5) {$F_1$};
+\node (F2) at (14*\sx,0.5) {$F_2$};
+% Koordinaten Nullpunkt
+\def\cy{-5}
+\draw[->] (-30*\sx,\cy) -- (40*\sx,\cy);
+\draw (0,-0.2+\cy) -- (0,0.2+\cy);
+\draw (10*\sx,-0.2+\cy) -- (10*\sx,0.2+\cy);
+\draw (-10*\sx,-0.2+\cy) -- (-10*\sx,0.2+\cy);
+\draw (20*\sx,-0.2+\cy) -- (20*\sx,0.2+\cy);
+\draw (-20*\sx,-0.2+\cy) -- (-20*\sx,0.2+\cy);
+\draw (30*\sx,-0.2+\cy) -- (30*\sx,0.2+\cy);
+\draw (-30*\sx,-0.2+\cy) -- (-30*\sx,0.2+\cy);
+\node (m30) at (-30*\sx,-1+\cy) {\tiny $-30\,\mathrm{cm}$};
+\node (p30) at (30*\sx,-1+\cy) {\tiny $30\,\mathrm{cm}$};
+\node (zero) at (0*\sx,-1+\cy) {\tiny $0\,\mathrm{cm}$};
+
+% Gebogener Pfeil
+%\draw[->, dashed] (9.5,18) .. controls (4,18) .. (3,11.65);
+\end{tikzpicture}}
+
+\section{Teil 4}
 
 \subsection{Theorie}
 
@@ -147,31 +337,6 @@ XXXX
 XXXX
 
 \section{Diskussion}
-
-XXXX
-
-\section{Teil 4}
-
-\subsection{Theorie}
-
-XXXX
-
-\subsection{Aufbau}
-
-% describe set up
-% insert pic name, designation, toc caption, caption, label
-
-%\halftime{5}{5}{TEXT}{\fbox{\includegraphics[width=0.5\textwidth]{NAME}}
-%   \renewcommand\thefigure{BX}
-%\caption[XXXX]{XXXX \cite{Anleitung}}
-%\label{Pic:X}}
-
-\subsection{Durchführung}
-
-% describe exp.
-XXXX
-
-\subsection{Auswertung}
 
 XXXX
 
@@ -221,7 +386,7 @@ $\begin{array}{l}
 %\end{figure}
 
 \begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
 \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
 \end{thebibliography}
 

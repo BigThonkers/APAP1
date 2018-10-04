@@ -178,14 +178,21 @@ $$
 \end{array}
 $$
 \end{table}
+
 Der theoretische Wert für das Trägheitsmoment der Drehscheibe ist mit der Formel \ref{pop}:
 $$I_{\textrm{Scheibe}} = 0.001960(9)\textrm{kg}\,\textrm{m}^2$$
 Die Unsicherheit wurde mit $\Delta I = \frac{I}{2}\sqrt{\bigg(\frac{\Delta m}{m}\bigg)^2 + \bigg(2\frac{\Delta r}{r}\bigg)^2}$ berechnet. 
-Das Trägheitsmoment ohne Zusatzmasse ist:
-$$T = 2\pi \sqrt{\frac{I}{dm\vec{g}}} \Rightarrow I = T^2 (2\pi)^2 \frac{I}{dm\vec{g}}$$
+Um das Trägheitsmoment ohne Zusatzmasse zu berechnen wird mit $\vec M = -D\cdot \varphi$:
+$$T = 2\pi \sqrt{\frac{I}{D}}\quad \Rightarrow \quad I = \frac{T^2}{4\pi^2}D$$
 Der Satz von Steiner lautet:
 $$I_0 = I_a + ma^2$$
-Eine lineare regression wurde in \ref{t17} mit Mathematica durchgeführt. Die Steigung dieser Funktion ist: $1.9966 + 0.00682 x$ 
+Daraus folgt:
+$$\frac{T_0^2}{4\pi^2}D = \frac{T_a^2}{4\pi^2}D + ma^2 \quad \Rightarrow \quad T_0^2 = T_a^2 + 4\pi^2 \frac{m}{D}a^2$$
+Eine lineare regression wurde in \ref{t17} mit Mathematica durchgeführt. Die Steigung dieser Funktion ist: $4.19(4) + 0.00050(2) x$ 
+
+
+
+\section{Diskussion}
 
 \vfill
 
@@ -195,10 +202,6 @@ Eine lineare regression wurde in \ref{t17} mit Mathematica durchgeführt. Die St
  \end{thebibliography}
 
 \pagebreak
-
-\section{Diskussion}
-
-Diese Werte sind nicht schlecht also cool.
 
 \section{Anhang}
 

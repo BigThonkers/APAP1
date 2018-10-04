@@ -18,6 +18,7 @@
 \usepackage{nicefrac}
 \usepackage[table]{xcolor}
 \usepackage{tocloft}
+\usepackage{placeins}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
@@ -61,8 +62,9 @@ Der Versuch ist in zwei Teile geteilt, welche dazu dienen, grundlegende Eigensch
 
 \begin{figure}[h]
 \begin{minipage}{.6\textwidth}
-Für diesen Teil verwenden wir die Jollysche Federwaage (\ref{JS1}) diese hat zwei identische Waagschalen um die Auftriebskraft der Flüssigkeit an der Waagschale auszugleichen. Zuerst verwenden wir eine Metallkugel und ein Wasser gefüllten Becher den wir auf die verschiebbare Platte stellen sodass die zweite Waagschale sich in dem Wasser befindet.
- Wichtig zu beachten ist, dass die schale immer gleich tief ins Wasser getunkt wird und die Kugel darf nur trocken auf die obere Waagschale gesetzt werden.
+Für diesen Teil verwenden wir die Jollysche Federwaage (\ref{JS1}) diese hat zwei identische Waagschalen um die Auftriebskraft der Flüssigkeit an der Waagschale auszugleichen. Zuerst verwenden wir eine Metallkugel und ein Wasser gefüllten Becher den wir auf die verschiebbare Platte stellen sodass die zweite Waagschale sich in dem Wasser befindet. Nachdem die Kugel gemessen wurde wird das Wasser durch die unbekannte Flüssigkeit ersetzt.
+
+ Wichtig zu beachten ist, dass die schale immer gleich tief in die Flüssigkeit getunkt wird und beim auflegen der Kugel darf die Waagschale den Boden des Bechers nicht berühren. Die Kugel darf nur trocken auf die obere Waagschale gesetzt werden, außerdem sollte die Waagschale den Innenrand des Bechers nicht berühren um den Einfluss von Reibkräften zu vermeiden.
 \end{minipage}%
 \begin{minipage}{.4\textwidth}
 \centering
@@ -76,13 +78,17 @@ Für diesen Teil verwenden wir die Jollysche Federwaage (\ref{JS1}) diese hat zw
 
 \subsection{Durchführung}
 
-Anfangs wurde die Kugel mit der oberen Waagschale gewogen 
+Anfangs wurde die Kugel mit der oberen Waagschale gewogen, und dann mit der im Wasser getunkten Waagschale. Zunächst wurde der verschiebbare Tisch auf dem sich der Becher befindet Verstellt und den Aufhängepunkt der Feder so eingestellt, dass die Waagschale wieder gleich tief in dem Wasser ist. Dann wird noch mal gewogen und das ganze für fünf verschiedene Positionen wiederholt. 
 
-\subsubsection{Auswertung}
+Dann wird das Wasser mit der unbekannten Flüssigkeit ersetzt und das Verfahren wurde nochmals fünf mal wiederholt.
+
+\subsection{Auswertung}
 
 Zur ersten Aufgabe:\\
 Die Messungen wurden mit einer Metallkugel durchgef\"uhrt mit einem Durch\-messer von $d=(1.2\pm0.03)$cm und einer Masse von $m=(7.03\pm0.005)$g. Mit der Formel f\"ur das Volumen, $V=\frac{\pi}{6}d^3$, und f\"ur die Dichte, $\rho=\frac{m}{V}$, ergibt sich ein Wert von $(7810\pm550)\mathrm{\nicefrac{\textrm{kg}}{m^3}}$. Hierbei wurde der Fehler \"uber die Potenz\-formel des Gau\ss 'schen Fehlerfortpflanzungsgesetzes ($\delta V=\frac{\Delta V}{V},\ \delta V=3\delta d$) bei Vernachl\"assigung des Fehlers der Masse bestimmt.\\
 
+\begin{table}[h]
+\caption{Messwerte Kugel}
 $$
  \begin{array}{ll}
  	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
@@ -101,6 +107,7 @@ Eingetaucht & $x_2$ & 417 & 456 & 450 & 439 & 443\\
  	 \textrm{In Wasser}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
  \end{array}
 }$$
+\end{table}
 
 F\"ur das Dichteverh\"altniss gilt:\\
 
@@ -133,6 +140,8 @@ Daraus ergibt sich f\"ur die Dichte mit den Auslenkungen $x_1$ Objekt in Luft un
 \end{equation}
 F\"ur unsere Messwerte aus Tabelle 1 erhalten wir
 
+\begin{table}[h]
+\caption{Dichte Kugel}
 $$\begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2 & 3 & 4 & 5\\
@@ -140,6 +149,7 @@ $$\begin{tabular}{|c|c|c|c|c|c|}
 $\textrm{Dichte }\rho\left[\nicefrac{\textrm{kg}}{\textrm{m}^3}\right]$ & $8982\pm4260$ & $8649\pm4104$ & $8649\pm4104$ & $8982\pm4260$ & $9314\pm4416$\\
 \hline
 \end{tabular} $$
+\end{table}
 
 Der Mittelwert unserer Messung betr\"agt also $\rho=(8900\pm1800)\mathrm{\nicefrac{\textrm{kg}}{m^3}}$. Diese Rechnungen wurden mit dem \textit{uncertainties} Paket in Python durchgef\"uhrt. \refpy{1}. \cite{Uncertainties}
 
@@ -171,6 +181,8 @@ umgestellt.
 
 F\"ur die unbekannte Fl\"ussigkeit wurde gemessen:
 
+\begin{table}[h]
+\caption{Messwerte Flüssigkeit}
 $$
  \begin{array}{ll}
  	 \textrm{In Fl\"ussigkeit}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
@@ -189,9 +201,12 @@ Eingetaucht &$x_2$ & 427 & 441 & 417 & 458\\
  	 \textrm{In Fl\"ussigkeit}: \\ \textrm{werte in mm} \\ \textrm{Fehler: $\pm 0.1$mm}
  \end{array}
 }$$
+\end{table}
 
 Mit (\ref{eq4}) ergibt sich dann:
 
+\begin{table}[h]
+\caption{Dichte Flüssigkeit}
 $$\begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2 & 3 & 4\\
@@ -199,6 +214,7 @@ $$\begin{tabular}{|c|c|c|c|c|c|}
 $\textrm{Dichte }\rho\left[\nicefrac{\textrm{kg}}{\textrm{m}^3}\right]$ & $1068\pm523$ & $953\pm469$ & $1026\pm504$ & $989\pm486$\\
 \hline
 \end{tabular} $$
+\end{table}
 
 Hier ist der Mittelwert dann $\rho_{Fl}=(1010\pm300)\mathrm{\nicefrac{\textrm{kg}}{m^3}}$. Die Rechnungen wurden hier wieder mit dem $uncertainties$ Paket in Python durchgef\"uhrt. \refpy{2}. 
 
@@ -228,12 +244,14 @@ s_{\overline{\rho_{Fl}}}=(505\pm25)\nicefrac{\textrm{kg}}{m^3}
 
 Bei der Messreihe mit der unbekannten Fl\"ussigkeit gibt es einen systematischen Fehler aufgrund der verwendeten gemessenen Dichte des K\"orpers, die unter umst\"anden zu gro\ss\ oder zu klein gesch\"atzt wurde und als Referenz dient.
 \pagebreak
-\subsection{Teil B - Oberfl\"achenspannung}
-\subsubsection{Aufgabenstellung}
+
+\section{Teil B - Oberfl\"achenspannung}
+
+\subsection{Aufbau}
 
 \begin{figure}[h]
 \begin{minipage}{.6\textwidth}
-Mit Hilfe der Torsionswaage ist die Oberfl\"achenspannung von\\ destilliertem Wasser und von Ethanol nach der Abrei\ss methode\\ zu bestimmen.
+Für diesen Versuchsteil wird eine Torsionswaage verwendet. Zusätzlich werden zwei gleiche Drahtbügel verwendet. Benötigt wird noch Ethanol, um die Drahtbügel von Fettspuren zu reinigen. Ein kleinen Becher der zuerst mit Wasser und später mit Ethanol gefüllt wird. An den enden der Waage befindet sich jeweils ein Häkchen wo die Drahtbügel angehängt werden. 
 \end{minipage}%
 \begin{minipage}{.4\textwidth}
 \centering
@@ -243,7 +261,12 @@ Mit Hilfe der Torsionswaage ist die Oberfl\"achenspannung von\\ destilliertem Wa
 \label{NS1}
 \end{minipage}
 \end{figure}
-\subsubsection{Auswertung}
+
+\subsection{Durchführung}
+
+Erst wurden die Drahtbügel mit dem Ethanol gewischt, dann gewogen. Die Drahtbügel werden an die Häkchen gehängt und der Wasserbecher wird auf den Messtisch unter dem linken Drahtbügel gestellt. Als nächstes wurde die Waage kalibriert und die Auftriebskraft des Wassers ausgeglichen. Hierzu wird zuerst die Kraftwaage auf null gestellt, um den Gewicht unterschied auszugleichen. Zunächst wird der Drahtbügel in das Wasser getunkt und der Messtisch so eingestellt, dass die an dem Drahtbügel gebildete Lamelle gerade reißt. Die Auftriebskraft wird dann ausgeglichen durch abwechselndes drehen der beiden Knöpfe an der Kraftwaage. Danach wurde der Drahtbügel wieder in das Wasser getunkt und die Lamelle erneut gebildet. Dann wird die Kraft gemessen die an dem Punkt auftritt genau vor die Lamelle reißt. 
+
+\subsection{Auswertung}
 Die Oberfl\"achenspannung von Wasser und Ethanol wurde mit der Abrei\ss methode gemessen. F\"ur diese gilt:
 \begin{equation}
 \sigma=\frac{F_{s_{max}}}{2l}\label{eqo}
@@ -255,6 +278,8 @@ d\times\frac{1}{1+\exp(-c\times(x-a))}+b
 \end{equation} 
 wurde mit der curve\_fit Funktion von dem SciPy Paket in Python an die Messpunkte angepasst. Aus den Graphiken lesen wir folgende Werte f\"ur $F_{s_{max}}$ ab:
 
+\begin{table}[h]
+\caption{Kräfte bei Wasser}
 $$\begin{tabular}{|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2\\
@@ -262,7 +287,10 @@ $$\begin{tabular}{|c|c|c|}
 $\textrm{Kraft }F_{s_{max}}\ \mathrm{[mN]}$ & $5.16\pm1.03$ & $4.75\pm0.95$\\
 \hline
 \end{tabular} $$\label{tabfmw}
+\end{table}
 
+\begin{table}[h]
+\caption{Kräfte bei Ethanol}
 $$\begin{tabular}{|c|c|c|c|}
 \hline
 \textrm{Messung }$$ & 1 & 2 & 3\\
@@ -270,13 +298,15 @@ $$\begin{tabular}{|c|c|c|c|}
 $\textrm{Kraft }F_{s_{max}}\ \mathrm{[mN]}$ & $1.27\pm0.25$ & $1.42\pm0.28$ & $1.38\pm0.28$\\
 \hline
 \end{tabular} $$\label{tabfme}
-
+\end{table}
+\FloatBarrier
 
 Die Fehler wurden durch Streuung der Messpunkte um die angepassten Kurven abgesch\"atzt.
 
 Mit der Formel (\ref{eqo}) ergibt sich f\"ur die Oberfl\"achenspannung 
 
-
+\begin{table}[h]
+\caption{Oberflächenspannung bei Wasser}
 $$\begin{tabular}{|c|c|c|c|}
 \hline
 \textrm{Messung} & 1 & 2 & Mittelwert\\
@@ -284,7 +314,10 @@ $$\begin{tabular}{|c|c|c|c|}
 $\textrm{Oberfl\"achenspannung [\nicefrac{mN}{cm}}]$ & $0.98\pm0.20$ & $0.90\pm0.18$ & $0.94\pm0.13$\\
 \hline
 \end{tabular} $$\label{tabow}
+\end{table}
 
+\begin{table}[h]
+\caption{Oberflächenspannung bei Ethanol}
 $$\begin{tabular}{|c|c|c|c|c|}
 \hline
 \textrm{Messung }$$ & 1 & 2 & 3 & Mittelwert\\
@@ -292,6 +325,16 @@ $$\begin{tabular}{|c|c|c|c|c|}
 $\textrm{Oberfl\"achenspannung [\nicefrac{mN}{cm}}]$ & $0.24\pm0.05$ & $0.27\pm0.05$ & $0.26\pm0.05$ & $0.26\pm0.03$\\
 \hline
 \end{tabular} $$\label{taome}
+\end{table}
+
+\vfill
+
+\begin{thebibliography}{9}
+\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+\bibitem{Wasser} \url{https://en.wikipedia.org/wiki/Surface-tension_values#cite_note-one-2} (\today)
+\bibitem{Ethenol} \url{https://en.wikipedia.org/wiki/Surface_tension} (\today)
+\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
+\end{thebibliography}
 
 \pagebreak
 
@@ -398,12 +441,5 @@ $\begin{array}{l}
 \caption[Kraft/Höhe Diagramm Ethanol]{Verlauf der Kraft $F$ als Funktion der Position $x$ beim Herausziehen des B\"ugels aus der Fl\"ussigkeit.}
 \label{ab4}
 \end{figure}
-
-\begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
-\bibitem{Wasser} \url{https://en.wikipedia.org/wiki/Surface-tension_values#cite_note-one-2} (\today)
-\bibitem{Ethenol} \url{https://en.wikipedia.org/wiki/Surface_tension} (\today)
-\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
-\end{thebibliography}
 
 \end{document}

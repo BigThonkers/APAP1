@@ -82,29 +82,39 @@ Wir beginnen dazu mit dem r\"ucktreibenden Moment infolge der Schwerkraft bei kl
 M=-mgl\vphi=D_g\vphi\label{M1}
 \end{equation}
 Dazu gibt es bei jedem Pendel ein Kopplungsmoment $D_f(\vphi_2-\vphi_1)$. Es existiert noch ein weiteres Moment, welches von der Vorspannung der Feder her r\"uhrt. Dieses gibt es, da die Feder schon wenn die Pendel in paralleler Lage stehen eine gewisse Spannung besitzt. Beide Pendel weisen in der Ruhelage einen Ausschlag $\alpha$ bzw. $-\alpha$ in Bezug auf die Vertikallage auf. Wenn man aber die Auslenkungen $\vphi_1$ und $\vphi_2$ von der Gleichgeweichtslage aus rechnet, so f\"allt dieses Moment aus der Rechnung raus, da es durch ein Moment $mgl\pm\alpha$ kompensiert wird. Wir erhalten also als Momentengleichungen:
-\begin{dmath}
-{M_1=-D_g\vphi_1+D_f(\vphi_2-\vphi_1)}\\
+\begin{align}
+\begin{split}
+{M_1=-D_g\vphi_1+D_f(\vphi_2-\vphi_1)}
+\\
 {M_2=-D_g\vphi_2-D_f(\vphi_2-\vphi_1)}
-\end{dmath}
+\end{split}
+\end{align}
 Setzen wir diese in die Bewegungsgleichung eines physikalischen Pendels 
 \[
 I\ddot{\vphi}=M=-mgl\sin\vphi
 \]
 ein, so erhalten wir 
-\begin{dmath}
-{I\frac{\dif^2\vphi_1}{\dif t^2}=-D_g\vphi_1+D_f(\vphi_2-\vphi_1)}\\
+\begin{align}
+\begin{split}
+{I\frac{\dif^2\vphi_1}{\dif t^2}=-D_g\vphi_1+D_f(\vphi_2-\vphi_1)}
+\\
 {I\frac{\dif^2\vphi_2}{\dif t^2}=-D_g\vphi_2-D_f(\vphi_2-\vphi_1).}
-\end{dmath}
+\end{split}
+\end{align}
 Addieren bzw. subtrahiert man die Differentialgleichungen f\"ur die Winkelsumme $(\vphi_2+\vphi_1)$ bzw. die Winkeldifferenz $(\vphi_2-\vphi_1)$, so liefert dies:
-\begin{dmath}
+\begin{align}
+\begin{split}
 {I\frac{\dif^2(\vphi_2+\vphi_1)}{\dif t^2}=-D_g(\vphi_2+\vphi_1)}\\
 {I\frac{\dif^2(\vphi_2-\vphi_1)}{\dif t^2}=-(D_g+2D_f)(\vphi_2-\vphi_1)}
-\end{dmath}
+\end{split}
+\end{align}
 Nutzt man hierauf den L\"osungsansatz
-\begin{dmath}
+\begin{align}
+\begin{split}
 {(\vphi_2+\vphi_1)=2A\cos(\omega t+\delta)}\\
 {(\vphi_2-\vphi_1)=2B\cos(\Omega t+\Delta),}
-\end{dmath}
+\end{split}
+\end{align}
 so erh\"alt man die Kreisfrequenzen
 \begin{equation}
 \omega=\sqrt{\frac{D_g}{I}}\textrm{   und   }\Omega=\sqrt{\frac{D_g+2D_f}{I}}
@@ -136,18 +146,20 @@ Die länge der Pendel von Aufhängepunkt zu der Masse ist jeweils $L = 95.0(5)$\
 
 \subsection{Durchführung}
 
-Wir haben zuerst 20 Schwingungsperioden einer :
-\begin{itemize}
-	\item Glei
-\end{itemize}
+Zuerst haben wir die Periodendauer f\"ur 20 Schwingungen bei gegen- und gleichsinniger Schwingung gemessen. Daraufhin die Schwingungsdauer f\"ur Schwebung. In unserem Fall wurde nicht beachtet, dass die Schwingungsdauer die doppelte Zeit zwischen zwei Stillst\"anden des gleichen Pendels ist. 
+
+Nachdem diese Werte gemessen wurden, wurde dies mit insgesamt drei anderen Kopplungsst\"arken nochmals durchgef\"uhrt. Hierzu wird die Kopplungsfeder einfach nach oben bzw. nach unten verschoben. Hierbei wichtig war, dass die Kopplung nicht zu stark sein sollte.
+
+Wir erhalten also vier Messreihen, aus denen wir dann unsere Kopplungsgrade berechnen und die gemessenen und berechneten Werte f\"ur die Periodendauer der Schwebung vergleichen.
+
+\pagebreak
 
 \subsection{Auswertung}
 
 Wir beginnen damit, dass wir von unseren Messwerten die Mittelwerte von den Periodendauern f\"ur jeweils gleichsinnige, gegensinnige, und schwebende Schwingungen berechnen. Die Rechnung hierf\"ur folgt \"uber die allgemeinen Formeln f\"ur die Berechnung von Mittelwerten und dessen Fehler:
 \mean
 \meanstd
-Diese Werte werden dann f\"ur die Berechnung unseres Kopplungsgrades genutzt. Die Formel f\"ur den Kopplungsgrad ist von $T_A$, der Periodendauer f\"ur entgegengesetzte Schwingung, und $T_B$, der Periodendauer f\"ur gleichsinnige Schwingung, abh\"angig, welche beide einen Fehler beinhalten. Wir nutzen also die verallgemeinerte Formel f\"ur Produkte und Quotienten:
-\prodquo
+Diese Werte werden dann f\"ur die Berechnung unseres Kopplungsgrades genutzt. Die Formel f\"ur den Kopplungsgrad ist von $T_A$, der Periodendauer f\"ur entgegengesetzte Schwingung, und $T_B$, der Periodendauer f\"ur gleichsinnige Schwingung, abh\"angig, welche beide einen Fehler beinhalten. Zur Fehlerberechnung benutzen wir die Gau\ss sche Fehlerfortpflanzung.
 Wir leiten also einmal partiell nach $T_A$ und einmal nach $T_B$ ab:
 \[
 	\frac{\partial K}{\partial T_A}=-\frac{4T_AT_B^2}{(T_A^2+T_B^2)^2}
@@ -175,6 +187,8 @@ Die Unsicherheit von $T_S$ setzt sich dann auch wie zuvor folgenderma\ss en zusa
 \begin{equation}
 	\Delta T_S=\sqrt{\left(\Delta T_A\frac{\partial T_S}{\partial T_A}\right)^2+\left(\Delta T_A\frac{\partial T_S}{\partial T_A}\right)^2}
 \end{equation}
+
+\pagebreak
 
 Wir erhalten aus diesen Rechnungen f\"ur $K$:
 \begin{itemize}
@@ -253,16 +267,16 @@ $\begin{array}{ll}
 \label{Tab:1}
 \end{table}
 
-\begin{figure}[p]
-\centering
-%\fbox{\includegraphics[width=0.8\textwidth]{NAME}}
-\renewcommand\thefigure{BX}
-\caption[XXXX]{XXXX}
-\label{Abb:X}
-\end{figure}
+%\begin{figure}[p]
+%\centering
+%%\fbox{\includegraphics[width=0.8\textwidth]{NAME}}
+%\renewcommand\thefigure{BX}
+%\caption[XXXX]{XXXX}
+%\label{Abb:X}
+%\end{figure}
 
 \begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+%\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
 \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
 \end{thebibliography}
 

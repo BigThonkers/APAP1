@@ -92,7 +92,7 @@ Wie in Abbildung \ref{Abb:1} zu erkennen, f\"uhrt die Biegung eines Balkens zu S
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{neutraleFaser.pdf}}
-\renewcommand\thefigure{1}
+\renewcommand\thefigure{B1}
 \caption[Biegung eines Stabes unter Einfluss einer Kraft $F_0$ mit neutraler Faser]{Biegung eines Stabes unter Einfluss einer Kraft $F_0$ mit neutraler Faser \cite{Demtr\"oder}}
 \label{Abb:1}
 \end{figure}
@@ -108,7 +108,7 @@ s\mathrel{:\mkern-0.25mu=} z(x=\nicefrac{l}{2})=\frac{1}{E}\frac{l^3}{4h^3b}F\la
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{versuchsaufbau.pdf}}
-\renewcommand\thefigure{2}
+\renewcommand\thefigure{B2}
 \caption[Versuchsaufbau]{Versuchsaufbau \cite{Demtr\"oder}}
 \label{Abb:2}
 \end{figure}
@@ -170,7 +170,7 @@ Der Graph f\"ur den Vergleich der Materialien sieht dann folgenderma\ss en aus:
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{material.png}}
-\renewcommand\thefigure{1}
+\renewcommand\thefigure{D1}
 \caption[Vergleich der Biegung von Aluminium, Stahl und Messing]{Vergleich der Biegung von Aluminium, Stahl und Messing}
 \label{Abb:1}
 \end{figure}
@@ -184,7 +184,7 @@ Wieder beim selben Abstand wurde dann auch der Einfluss der \"Anderung der Ausri
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{ausrichtung.png}}
-\renewcommand\thefigure{2}
+\renewcommand\thefigure{D2}
 \caption[Vergleich von Biegung von Aluminium bei verschiedenen Ausrichtungen]{Vergleich von Biegung von Aluminium bei verschiedenen Ausrichtungen}
 \label{Abb:2}
 \end{figure}
@@ -195,7 +195,7 @@ Als letztes der Vergleich von verschiedenen L\"angen:
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{length.png}}
-\renewcommand\thefigure{3}
+\renewcommand\thefigure{D3}
 \caption[Vergleich von Biegung von Aluminium bei verschiedenen L\"angen]{Vergleich von Biegung von Aluminium bei verschiedenen L\"angen}
 \label{Abb:3}
 \end{figure}
@@ -261,7 +261,7 @@ Die entsprechenden Literaturwerte lauten \cite{Anleitung}:
 \item Messing: $E=(90\ldots95)\times10^3\,\nicefrac{\mathrm{N}}{\mathrm{mm^2}}$
 \end{itemize}
 
-Um die Vertr\"aglichkeit unserer Werte zu \"uberpr\"ufen betrachten wir die $2-\sigma$ Bereiche unserer gemessenen Werte:
+Um die Vertr\"aglichkeit unserer Werte zu \"uberpr\"ufen betrachten wir die 2-$\sigma$ Bereiche unserer gemessenen Werte:
 
 \begin{table}[h]
 \centering
@@ -311,9 +311,17 @@ E=\frac{l^3g}{s4h^4b}m
 \]
 Klar ist, dass $g$ keinen gr\"o\ss eren Einfluss hat und auch schon relativ genau gew\"ahlt wurde. Au\ss erdem wurden die Massen der einzelnen Gewichte vor der Messung alle gemessen und Markierungen gesetzt, wodurch wir ein Problem mit den Massen ausschlie\ss en k\"onnen. Uns bleiben also noch Fehler auf $s$, $h$ und $b$. Da f\"ur die Messung der Breite und H\"ohe eine Messschraube genutzt wurde, ist ein Problem hier eher unwahrscheinlich. Vermutlich k\"onnte also unser Fehler auch bei dem digitalen Messger\"at liegen.
 
-\pagebreak
+\vfill
 
-\section{Anhang: Messwerte}
+\begin{thebibliography}{9}
+%\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
+\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
+\bibitem{Demtr\"oder} Demtr\"oder, Experimentalphysik 1, \url{https://www.springer.com/us/book/9783662464151}, Kapitel 6.2.4
+\end{thebibliography}
+
+%\pagebreak
+
+%\section{Anhang: Messwerte}
 
 %\begin{table}[h]
 %\centering
@@ -355,11 +363,4 @@ Klar ist, dass $g$ keinen gr\"o\ss eren Einfluss hat und auch schon relativ gena
 %\caption[XXXX]{XXXX}
 %\label{Abb:X}
 %\end{figure}
-
-\begin{thebibliography}{9}
-%\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
-\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
-\bibitem{Demtr\"oder} Demtr\"oder, Experimentalphysik 1, \url{https://www.springer.com/us/book/9783662464151}, Kapitel 6.2.4
-\end{thebibliography}
-
 \end{document}

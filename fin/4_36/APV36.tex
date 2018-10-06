@@ -91,7 +91,7 @@ Für dieses experiment haben wir einen Glaskolben den wir mit Luft bzw. Argon ga
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{auuufbauuu}}
    \renewcommand\thefigure{B1}
-\caption{Versuchsaufbau}
+\caption[Versuchsaufbau]{Versuchsaufbau \cite{Anleitung}}
 \label{JS1}
 \end{figure}
 
@@ -273,38 +273,63 @@ Dazu kommt, dass sich der Au\ss endruck leicht \"andern kann, da der Raum nicht 
 \section{Anhang}
 
 
+%\begin{table}[h]
+%\centering
+%\renewcommand\thetable{T1}
+%\caption{Messwerte}
+%\vspace{11pt}
+%\rowcolors{2}{gray!10}{white}
+%\begin{tabular}{|>{\columncolor[gray]{1}}c|r|r|r|}
+%\multicolumn{2}{c}{}&\multicolumn{1}{c}{Luft} & \multicolumn{1}{c}{Argon}\\
+%\hline
+%Messreihe & Periode & Zeit in $s$ & Zeit in $s$\\
+%\hline 
+%&200$\pm14$  & 78.53  &  75.06 \\
+%&400$\pm20$  & 156.89 & 149.50 \\
+%&600$\pm25$  & 235.78 & 223.57 \\
+%&800$\pm28$  & 314.35 & 297.25 \\
+%\multirow{-5}{*}{1}
+%&1000$\pm32$ & 392.34(13) & 371(5) \\ 
+%\hline
+%&200$\pm14$  & 78.44  &  73.03 \\
+%&400$\pm20$  & 156.87 & 145.91 \\
+%&600$\pm25$  & 235.38 & 218.79 \\
+%&800$\pm28$  & 313.95 & 291.47 \\
+%\multirow{-5}{*}{2}
+%&1000$\pm32$ & 392.52(13) & 364(5) \\ 
+%\hline
+%&100$\pm10$ & 39.1(4) & 36.10(4) \\
+%&100$\pm10$ & 39.0(4) & 36.18(4) \\
+%&100$\pm10$ & 39.2(4) & 36.14(4) \\
+%&100$\pm10$ & 39.0(4) & 36.10(4) \\
+%\multirow{-5}{*}{3}
+%&100$\pm10$ & 40.0(4) & 36.16(4) \\ 
+%\hline
+%\end{tabular}
+%\label{tab:B1}
+%\end{table}
+%
+
 \begin{table}[h]
 \centering
 \renewcommand\thetable{T1}
 \caption{Messwerte}
 \vspace{11pt}
 \rowcolors{2}{gray!10}{white}
-\begin{tabular}{|>{\columncolor[gray]{1}}c|r|r|r|}
+\begin{tabular}{crrr}
 \multicolumn{2}{c}{}&\multicolumn{1}{c}{Luft} & \multicolumn{1}{c}{Argon}\\
-\hline
+\toprule
 Messreihe & Periode & Zeit in $s$ & Zeit in $s$\\
-\hline 
-&200$\pm14$  & 78.53  &  75.06 \\
-&400$\pm20$  & 156.89 & 149.50 \\
-&600$\pm25$  & 235.78 & 223.57 \\
-&800$\pm28$  & 314.35 & 297.25 \\
-\multirow{-5}{*}{1}
-&1000$\pm32$ & 392.34(13) & 371(5) \\ 
+\midrule
+1&1000$\pm32$ & 392.34(13) & 371(5) \\ 
+2&1000$\pm32$ & 392.52(13) & 364(5) \\ 
 \hline
-&200$\pm14$  & 78.44  &  73.03 \\
-&400$\pm20$  & 156.87 & 145.91 \\
-&600$\pm25$  & 235.38 & 218.79 \\
-&800$\pm28$  & 313.95 & 291.47 \\
-\multirow{-5}{*}{2}
-&1000$\pm32$ & 392.52(13) & 364(5) \\ 
-\hline
-&100$\pm10$ & 39.1(4) & 36.10(4) \\
-&100$\pm10$ & 39.0(4) & 36.18(4) \\
-&100$\pm10$ & 39.2(4) & 36.14(4) \\
-&100$\pm10$ & 39.0(4) & 36.10(4) \\
-\multirow{-5}{*}{3}
-&100$\pm10$ & 40.0(4) & 36.16(4) \\ 
-\hline
+3&100$\pm10$ & 39.1(4) & 36.10(4) \\
+4&100$\pm10$ & 39.0(4) & 36.18(4) \\
+5&100$\pm10$ & 39.2(4) & 36.14(4) \\
+6&100$\pm10$ & 39.0(4) & 36.10(4) \\
+7&100$\pm10$ & 40.0(4) & 36.16(4) \\ 
+\bottomrule
 \end{tabular}
 \label{tab:B1}
 \end{table}

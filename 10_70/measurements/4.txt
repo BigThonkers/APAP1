@@ -1,4 +1,4 @@
-lense	distance
+lens	distance
 0+80	17.4
 0+150	24.3
 80+150	16.5

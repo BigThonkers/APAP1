@@ -30,6 +30,9 @@
 \centering
 #4\end{minipage}
 \end{figure}}
+\newcommand{\pard}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\bigp}[1]{\bigg(#1\bigg)}
+
 \renewcommand{\vec}{\boldsymbol}
 
 \usepackage{etoolbox}
@@ -88,14 +91,14 @@ In dem dritten Teil wird mit einem Drehpendel der Zusammenhang von der Schwingun
 \section{Teil 1 - Trägheitsmomente}
 \subsection{Herleitung der Schwingungsgelichung}
 
-Der unterschied von einem mathematischen Pendel und einem physikalischen Pendels ist, dass es sich beim Physikalischen nicht um eine punktförmige Masse handelt, sondern der Schwerpunkt von einem starren Körper zur Rechnung verwendet wird, wobei das Trägheitsmoment berücksichtigt werden muss. Mit der rücktreibenden Kraft $F_r = mg\sin\varphi$ und dem Abstand vom Aufhängepunkt zu Schwerpunkt $d$ können wir das Drehmoment ausdrücken als:
-$$\vec{M} = \vec{F_r} \times \vec{d} = dm\vec{g}\sin(\varphi)$$
-mit der kleinwinkelnäherung: $\sin\varphi \approx \varphi$:
+Der unterschied von einem mathematischen Pendel und einem physikalischen Pendels ist, dass es sich beim Physikalischen nicht um eine punktförmige Masse handelt, sondern der Schwerpunkt von einem starren Körper zur Rechnung verwendet wird, wobei das Trägheitsmoment berücksichtigt werden muss. Mit der rücktreibenden Kraft $F_r = -mg\sin\varphi$ und dem Abstand vom Aufhängepunkt zu Schwerpunkt $d$ können wir das Drehmoment ausdrücken als:
+$$\vec{M} = -\vec{F_r} \times \vec{d} = dm\vec{g}\sin(\varphi)$$
+mit der Kleinwinkelnäherung: $\sin\varphi \approx \varphi$:
 $$\vec{M} = dm\vec{g}\varphi$$
 Dies wird gleichgesetzt mit:
-$$\vec{M} = \vec{\dot L} = - I \cdot \vec{\dot\omega} = - I \cdot \ddot \varphi$$
-$$\Rightarrow - I \cdot \ddot \varphi = dm\vec{g}\varphi \quad \Rightarrow \ddot \varphi = - \bigg(\underbrace{\frac{dm\vec{g}}{I}}_{\omega^2}\bigg)\varphi \quad \Rightarrow \ddot \varphi = - \omega^2 \varphi$$
-Mit $T = 2\pi \frac{1}{\vec{\omega}}$ bekommt man: $T = 2\pi \sqrt{\frac{I}{dm\vec{g}}}$.
+$$\vec{M} = \vec{\dot L} = - I \cdot \vec{\dot\omega} = - I \cdot \vec{\ddot\varphi}$$
+$$\Rightarrow - I \cdot \vec{\ddot\varphi} = dm\vec{g}\varphi \quad \Rightarrow \vec{\ddot\varphi} = - \bigg(\underbrace{\frac{dmg}{I}}_{\omega^2}\bigg)\varphi \quad \Rightarrow \vec{\ddot\varphi} = - \vec\omega^2 \varphi$$
+Mit $T = 2\pi \frac{1}{\omega}$ bekommt man: $T = 2\pi \sqrt{\frac{I}{dmg}}$.
 
 Zunächst wird das Trägheitsmoment eines starren Körpers, in diesem fall von einem Stab (Vollzylinder) berechnet. Für das Trägheitsmoment bezüglich der Drehachse an einem Aufhängepunkt am ende des Stabes gilt:
 $$I = \int \vec{r}_\perp^2 \dif m$$
@@ -139,18 +142,25 @@ $$
 	\toprule 
 	\textrm{Stablänge} & l = 96.7(3)\,\textrm{cm} \\
 	\textrm{Radius} & r = 0.50(1)\,\textrm{cm} \\
+	\textrm{Stablänge bis zum Aufhängepunkt} & a = 95.6(3)\,\textrm{cm}\\
+	\textrm{Abstand Aufhängepunkt zu Schwerpunkt} & d = 49.5(5)\,\textrm{cm}\\
 	\bottomrule 
 \end{array}
 $$
 \end{table}
-
-Zuerst wird mit den obigen Herleitungen der theoretische Wert bestimmt. Mit $T = 2\pi \sqrt{\frac{I}{dm\vec{g}}}$, und dem Einsetzen von $I_{\textrm{Stab}}$ bekommt man:
+Wobei $d$ mit $d = \frac{l}{2} - (l - a)$ berechnet wurde.
+Zuerst wird mit den obigen Herleitungen der theoretische Wert bestimmt. Mit $T = 2\pi \sqrt{\frac{I}{dmg}}$, und dem Einsetzen von $I_{\textrm{Stab}}$ bekommt man:
 $$T = 2\pi \sqrt{\frac{\frac{1}{4} m r^2 + \frac{1}{3} m l^2}{dmg}} = 2\pi \sqrt{\frac{\frac{1}{4} r^2 + \frac{1}{3} l^2}{dg}}$$
 
-mit $|g|=9.802\dots$\,$\nicefrac{\textrm{m}}{\textrm{s}^2}$\footnote{Dieser Wert wurde in einem anderen Versuch (Einleitungsversuch) bestimmt.} und $d = \frac{l}{2}$ ist der theoretische Wert $T = 1.6021(25)$\,s wobei die Unsicherheit $\Delta T = 0.0025$\,s mit der Gauß'schen Fehlerfortpflanzung gefunden wurde:
-$$\Delta T = $$
-Der experimentell bestimmte Mittelwert für 30 einzelne Perioden ist $1.59$\,s mit der Standardabweichung $s_T = 0.05$\,s.
-Der expreimentell bestimmte Wert für eine Messung von 30 Perioden ist $1.594\,$s mit der Unsicherheit $\frac{s_T}{\sqrt{n}} = 0.001$ 
+mit $|g|=9.802\dots$\,$\nicefrac{\textrm{m}}{\textrm{s}^2}$\footnote{Dieser Wert wurde in einem anderen Versuch (Einleitungsversuch) bestimmt.} ist der theoretische Wert $T_0 = 1.593(5)$\,s wobei die Unsicherheit $\Delta T = 0.005$\,s mit der Gaußschen Fehlerfortpflanzung gefunden wurde:
+$$\Delta T = \sqrt{ \bigp{\pard{T}{r}\Delta r}^2 + \bigp{\pard{T}{l}\Delta l}^2 + \bigp{\pard{T}{d}\Delta d}^2 }$$
+
+Der experimentell bestimmte Mittelwert für 30 einzelne Perioden ist $T_1 = 1.591$\,s mit der Standardabweichung $s_T = 0.05$\,s und der Standardabweichung des Mittelwerts $s_{\bar T} = 0.01$\,s. 
+
+Der exprerimentell bestimmte Wert für eine Messung von 30 Perioden ist $T_2 = 1.594\,$s mit der Unsicherheit von der Gesamtzeit $u_T = \pm0.3$\,s woraus die Unsicherheit $\frac{u_T}{\sqrt{n}} = 0.05$\,s der einzelnen Perioden kommt.
+
+Also sind die drei Werte für die Schwingungsdauer:
+$$T_0 = 1.593(5)\,\textrm{s} \qquad T_1 = 1.59(1)\,\textrm{s} \qquad T_2 = 1.59(5)\,\textrm{s}$$
 
 \pagebreak
 

@@ -88,8 +88,7 @@ Dieser Versuch hat drei Teile. Im ersten Teil wird mit Hilfe von einer Herleitun
 In dem zweiten Teil wird dann der theoretisch berechnete Wert verglichen mit dem experimentell bestimmten Wert. 
 
 In dem dritten Teil wird mit einem Drehpendel der Zusammenhang von der Schwingungsdauer und dem Abstand von einer Zusatzmasse zum Mittelpunkt untersucht.
-\section{Teil 1 - Trägheitsmomente}
-\subsection{Herleitung der Schwingungsgelichung}
+\section{Teil 1 - Herleitung der Schwingungsgelichung}
 
 Der unterschied von einem mathematischen Pendel und einem physikalischen Pendels ist, dass es sich beim Physikalischen nicht um eine punktförmige Masse handelt, sondern der Schwerpunkt von einem starren Körper zur Rechnung verwendet wird, wobei das Trägheitsmoment berücksichtigt werden muss. Mit der rücktreibenden Kraft $F_r = -mg\sin\varphi$ und dem Abstand vom Aufhängepunkt zu Schwerpunkt $d$ können wir das Drehmoment ausdrücken als:
 $$\vec{M} = -\vec{F_r} \times \vec{d} = dm\vec{g}\sin(\varphi)$$
@@ -115,7 +114,7 @@ Für die Drehscheibe dessen Rotationsachse parallel zur $z$-Achse ist, wird $\ve
 $$I_{\textrm{Scheibe}} = \rho \int\displaylimits_{0}^{2\pi} \int\displaylimits_{0}^{l}\int\displaylimits_{0}^{r} r^3 \dif r \dif z \dif\phi = \frac{1}{2}mr^2$$
 ergibt.
 
-
+\section{Teil 2 - Physikalisches Pendel}
 \subsection{Aufbau}
 \begin{wrapfigure}[14]{h}{0.4\textwidth}
 \includegraphics[width=0.4\textwidth]{Spend}
@@ -133,7 +132,7 @@ Um diesen Versuchsteil zu durchzuführen wird ein zylindrischer Stab der an eine
 
 Zuerst wurde die Länge des Stabes mittels Bandmass gemessen. Daraufhin wurde mit dem Messschieber den Durchmesser des Stabes gemessen. Dann wurde der Stab an das Stativ gehängt und per hand zum Pendeln gebracht. Es wurde mit der Stoppuhr 30 mal eine Periode zeitlich gemessen. Danach wurde einmal 30 Perioden gemessen, um zu schauen welches verfahren ein kleineren Fehler hat. Der Fehler war etwas kleiner bei dem einmal messen von 30 Perioden.
 
-\subsubsection{Auswertung}
+\subsection{Auswertung}
 
 \begin{table}[ht]
 \caption{Bestimmte Werte (Teil 2)}
@@ -157,14 +156,33 @@ $$\Delta T = \sqrt{ \bigp{\pard{T}{r}\Delta r}^2 + \bigp{\pard{T}{l}\Delta l}^2 
 
 Der experimentell bestimmte Mittelwert für 30 einzelne Perioden ist $T_1 = 1.591$\,s mit der Standardabweichung $s_T = 0.05$\,s und der Standardabweichung des Mittelwerts $s_{\bar T} = 0.01$\,s. 
 
-Der exprerimentell bestimmte Wert für eine Messung von 30 Perioden ist $T_2 = 1.594\,$s mit der Unsicherheit von der Gesamtzeit $u_T = \pm0.3$\,s woraus die Unsicherheit $\frac{u_T}{\sqrt{n}} = 0.05$\,s der einzelnen Perioden kommt.
+Der experimentell bestimmte Wert für eine Messung von 30 Perioden ist $T_2 = 1.594\,$s mit der Unsicherheit von der Gesamtzeit $u_T = \pm0.3$\,s woraus die Unsicherheit $\frac{u_T}{\sqrt{n}} = 0.05$\,s der einzelnen Perioden kommt.
 
 Also sind die drei Werte für die Schwingungsdauer:
 $$T_0 = 1.593(5)\,\textrm{s} \qquad T_1 = 1.59(1)\,\textrm{s} \qquad T_2 = 1.59(5)\,\textrm{s}$$
 
+\subsection{Diskussion}
+\subsubsection{Fehleranalyse}
+
+In diesem Versuchsteil wurde Hauptsächlich die Stoppuhr für die Periodendauer verwendet. Diese hat eine Unsicherheit von $\pm0.3$\,s da es von einem Menschen bedient wird und dessen Reaktionszeit einberechnet werden muss. Zusätzlich wurde ein Massband verwendet dessen Unsicherheit bei $\pm0.03\,$cm liegt da der Ansatz und Ablesepunkt sehr genau angelegt werden müssen. Ein Messschieber wurde auch verwendet um den Durchmesser des Stabes zu bestimmen, dies hat dank des Nonius eine sehr kleine Unsicherheit von $\pm0.1\,$mm. 
+
+Ein systematischer Fehler ist der Energieverlust der durch die Reibung am Aufhängepunkt entsteht. Da die Reibung nur an einer sehr kleinen Fläche auftritt ist dieser Energieverlust verhältnismäßig klein. Andererseits sollte die Luftreibung größer sein da die zur Bewegung senkrechte Fläche wesentlich größer ist, jedoch bewegt sich der Stab nur langsam und sollte die Werte nicht all zu stark beeinflußen.
+
+\subsubsection{Werte Vergleich}
+ 
+\begin{align*}
+	\textrm{Theoretische Wert} \quad & T_0 = 1.593(5)\,\textrm{s}\\
+	\textrm{30 Einzelmessungen} \quad & T_1 = 1.59(1)\,\textrm{s}\\
+	\textrm{Eine Messreihe} \quad & T_2 = 1.59(5)\,\textrm{s}
+\end{align*}
+
+Mit der Formel 
+$$t = \frac{|T_a-T_b|}{\sqrt{\Delta T_a^2 + \Delta T_b^2}}$$
+wird die Verträglichkeit der Werte berechnet. Wird der theoretische Wert mit den 30 Einzelmessungen verglichen bekommt man $t \approx 0.27$. und für den Vergleich von dem theoretischen Wert mit der Messreihe von 30 Perioden bekommt man $t \approx 0.06$. Diese Werte sind offensichtlich sehr verträglich. Obwohl der Fehler der 30 Einzelmeinungen kleiner ist liegt dieser Wert (minimal) weiter von dem theoretischen Wert, aus diesem Grund haben wir uns in Teil 3 für eine Messreihe von 30 Perioden entschieden. 
+
 \pagebreak
 
-\section{Teil 2 - Steinersche Satz}
+\section{Teil 3 - Drehpendel}
 
 \subsection{Aufbau}
 
@@ -183,7 +201,7 @@ Es wurden Breite und Durchmesser der Zusatzmasse mit dem Messschieber gemessen. 
 \subsection{Auswertung}
 
 \begin{table}[ht]
-\caption{Relevante Werte (Teil 2)}
+\caption{Relevante Werte (Teil 3)}
 $$
 \begin{array}{ll}
 	\multicolumn{1}{l}{\textrm{Zu Bestimmende Werte}} \\
@@ -200,20 +218,71 @@ $$
 $$
 \end{table}
 
-Der theoretische Wert für das Trägheitsmoment der Drehscheibe ist mit der Formel \ref{pop}:
-$$I_{\textrm{Scheibe}} = 0.001960(9)\textrm{kg}\,\textrm{m}^2$$
-Die Unsicherheit wurde mit $\Delta I = \frac{I}{2}\sqrt{\bigg(\frac{\Delta m}{m}\bigg)^2 + \bigg(2\frac{\Delta r}{r}\bigg)^2}$ berechnet. 
-Um das Trägheitsmoment ohne Zusatzmasse zu berechnen wird mit $\vec M = -D\cdot \varphi$:
+Der theoretische Wert für das Trägheitsmoment der Drehscheibe ist mit der Formel $I_{\textrm{Scheibe}} = \frac{1}{2}mr^2$:
+$$I_{\textrm{Scheibe}} = 1.960(9)\times 10^{-3}\,\textrm{kg}\,\textrm{m}^2$$
+Die Unsicherheit wurde mit $$\Delta I = I\sqrt{\bigg(\frac{\Delta m}{m}\bigg)^2 + \bigg(2\frac{\Delta r}{r}\bigg)^2}$$ berechnet. 
+Um das Trägheitsmoment des Drehpendels zu berechnen wird mit dem Drehmoment $\vec M = -D\cdot \varphi$:
 $$T = 2\pi \sqrt{\frac{I}{D}}\quad \Rightarrow \quad I = \frac{T^2}{4\pi^2}D$$
-Der Satz von Steiner lautet:
-$$I_0 = I_a + ma^2$$
-Daraus folgt:
-$$\frac{T_0^2}{4\pi^2}D = \frac{T_a^2}{4\pi^2}D + ma^2 \quad \Rightarrow \quad T_0^2 = T_a^2 + 4\pi^2 \frac{m}{D}a^2$$
-Eine lineare regression wurde in \ref{t17} mit Mathematica durchgeführt. Die Steigung dieser Funktion ist: $4.19(4) + 0.00050(2) x$ 
+Verwendung von dem Steinerschen Satz $I_a = I_0 + ma^2$ ergibt:
+$$\frac{T^2}{4\pi^2}D = I_0 + ma^2$$ 
+\begin{equation}\label{req}
+	\Rightarrow \quad T^2 = 4\pi^2 \frac{I_0}{D} + 4\pi^2 \frac{m}{D}a^2
+\end{equation}
 
+Eine lineare Regression aus den Messwerten $T^2$ und unterschiedlichen Abständen $a^2$ wurde in Abbildung \ref{t17} mit Mathematica durchgeführt. Die Gleichung der Ausgleichsgerade ist: $c+bx=4.19(4) + 500(20) x$ welches mit Gleichung \eqref{req} verglichen werden kann, woraus sich $b = 4\pi^2 \frac{m}{D} = 500(20)$ ergibt. Hiermit kann die Federkonstante berechnet werden: $D = 0.087(4)$\,$\nicefrac{\textrm{N}}{\textrm{m}}$. Der Fehler auf $D$ wurde mit der Gaußschen Fehlerfortpflanzung für den Spezialfall der division berechnet:
+$$\Delta D = D\cdot \sqrt{\bigg(\frac{\Delta b}{b}\bigg)^2+\bigg(\frac{\Delta m}{m}\bigg)^2}$$
+Mit diesem Wert kann zunächst das Trägheitsmoment des Drehpendels ohne Zusatzmasse berechnet werden. 
+$$I_{\textrm{Drehpendel}} = \frac{T^2D}{4\pi^2} = 7.3(4)\times 10^{-3}\,\textrm{kg\,m}^2$$
+Wobei $T^2$ der Mittelwert der Schwingung ohne Zusatzmasse ist. Die Unsicherheit wird mit: 
+$$\Delta I = \sqrt{\bigg(\frac{T^2}{4\pi^2}\cdot \Delta D\bigg)^2 + \bigg( \frac{TD}{2\pi^2}\Delta T\bigg)^2}$$
+berechnet.
+Addiert man dies mit dem Trägheitsmoment der Zusatzmasse bekommt man das Trägheitsmoment des gesamten Aufbaus:
+$$I_1 = 9.3(4) \times 10^{-3}\,\textrm{kg\,m}^2$$
+Als nächstes wird für $T^2$ der Mittelwert mit der Masse im Mittelpunkt verwendet:
+$$I_2 = 9.2(5) \times 10^{-3}\,\textrm{kg\,m}^2$$
+Zuletzt wird für $T^2$ der Achsenabschnitt der Ausgleichsgerade verwendet:
+$$I_3 = 9.3(4) \times 10^{-3}\,\textrm{kg\,m}^2$$
 
+Als nächstes wird noch der mit dem Steinerschen Satz berechnete Wert mit den Messwerten verglichen.
 
-\section{Diskussion}
+\begin{table}[h]
+\caption{Berechnete und Gemessene Trägheitsmomente}
+$$
+\begin{array}{crr}
+	\toprule 
+	\textrm{Abstand} & \textrm{Berechnet} & \textrm{Gemessen}\\
+	\textrm{[mm]} & \multicolumn{1}{c}{\textrm{[g\,m}^2]} & \multicolumn{1}{c}{\textrm{[g\,m}^2]}\\
+	\midrule
+	15.0 & 9.6(4) & 9.5(4)\\
+	30.0 & 10.1(6) & 10.3(4)\\
+	45.0 & 11.6(5) & 11.5(4)\\
+	60.0 & 13.3(9) & 13.3(4) \\
+	\bottomrule 
+\end{array}
+$$
+\end{table}
+
+\subsection{Diskussion}
+\subsubsection{Fehleranalyse}
+Bei diesem Versuch wurden wieder Stoppuhr, Messschieber und Massband verwendet, dessen statistische Fehler genau wie in Teil 2 sind. Das Gewicht der Zusatzmasse wurde vorgegeben und wir haben uns entschlossen eine Unsicherheit von $0.005\,$kg anzugeben, da wir nicht wissen wie sie gemessen wurde. 
+
+Für diesen Teil haben wir uns für eine Messreihe von 30 Perioden entschieden. Wir haben eine weitere Messreihe von 10 Perioden gemessen da das Drehpendel wesentlich schneller as das Pendel verlangsamte. Für die jeweiligen Schwingungsdauern haben aus diesen zwei Messreihen den Mittelwert samt Fehler des Mittelwerts berechnet. 
+
+Systematische Fehler wie in Teil 2 sind die Reibungskräfte. Die innere Reibung des Drehpendels schien wesentlich grösser zu sein als bei dem physikalischen Pendel, da es schneller verlangsamte. Die Luftreibung sollte kleiner sein da weniger Fläche senkrecht zur Bewegung ist, aber es drehte sich etwas schneller was Luftreibung stark beeinflusst. 
+
+\subsubsection{Werte Vergleich}
+
+\begin{align*}
+	\textrm{Addition von Pendel und Masse} \quad & I_1 = 9.3(4) \times 10^{-3}\,\textrm{kg\,m}^2\\
+	\textrm{Direkte Messung von Pendel mit Masse} \quad & I_2 = 9.2(5) \times 10^{-3}\,\textrm{kg\,m}^2\\
+	\textrm{Graphisch bestimmte Wert} \quad & I_3 = 9.3(4) \times 10^{-3}\,\textrm{kg\,m}^2
+\end{align*}
+
+Die Addition von dem Trägheitsmoment mit dem der Masse ergibt genau den gleichen Wert wie die mit dem Achsenabschnitt berechnete Wert, und mit der gleichen Unsicherheit, also sind diese werte offensichtlich kompatibel. Der Vergleich wird wieder mit 
+$$t = \frac{|I_a-I_b|}{\sqrt{\Delta I_a^2 + \Delta I_b^2}}$$
+berechnet. Die direkte Messung von dem gesamten Aufbau und den anderen Werten ergibt $t \approx 0.16$ also sind alle drei Werte sehr kompatibel. 
+
+Die mit dem Steinerschen Satz berechneten Trägheitsmoment, und den gemessenen Trägheitsmomenten bei Verschiebung der Masse, sind auch sehr kompatibel zueinander. Dies erfüllt unsere Erwartungen von dem Steinerschen Satz. Ein Verbesserungsvorschlag wäre eine Pendel mit einem noch grösseren Durchmesser zu nehmen, um mehr abstände Messen zu können, dies würde eine Stärkere aussage über die Linearität des Steinerschen Satzes haben.
 
 \vfill
 
@@ -229,7 +298,7 @@ Eine lineare regression wurde in \ref{t17} mit Mathematica durchgeführt. Die St
 \begin{table}[h]
 \caption{Messwerte (Teil 2)}
 $$
-\begin{array}{cccc}	
+\begin{array}{cccc}
 	\toprule 
 	\textrm{Abstand/mm} & \textrm{10 Perioden/s} & \textrm{30 Perioden/s} & \textrm{Mittelwert/s}\\ 
 	\midrule

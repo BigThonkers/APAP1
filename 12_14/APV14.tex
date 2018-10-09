@@ -89,12 +89,10 @@ Au\ss erdem k\"onnen wir unser $\theta$ folgenderma\ss en ausdr\"ucken:
 
 \section{Aufbau}
 
-% describe set up
-% insert pic name, designation, toc caption, caption, label
-%\halftime{5}{5}{In diesem Versuch sind ein Streuapparat mit Plexiglasdeckel, eine Rolle druckempfindliches Papier, eine Schahtel mit Kugeln und ein Bandma\ss\ vorhanden.}{\fbox{\includegraphics[width=0.5\textwidth]{NAME}}
-%   \renewcommand\thefigure{BX}
-%\caption[XXXX]{XXXX \cite{Anleitung}}
-%\label{Pic:X}}
+\halftime{5}{5}{In diesem Versuch sind ein Streuapparat mit Plexi\-glasdeckel, eine Rolle druckempfindliches Papier, eine Schachtel mit Metallkugeln und ein Bandma\ss\ vorhanden. Der Streuapparat besteht aus einem Zylinder mit einer dran befestigten Schu\ss\-apparatur, welche mit Luftdruck funktioniert.}{\fbox{\includegraphics[width=0.5\textwidth]{aufbau.png}}
+   \renewcommand\thefigure{2}
+\caption{Versuchsaufbau. \cite{Anleitung}}
+\label{Pic:2}}
 
 \section{Durchführung}
 
@@ -184,7 +182,7 @@ Wir erhalten als Werte:
 \label{Tab:2}
 \end{table}
 
-Wir k\"onnen jetzt also unsere Werte von $b$ gegen $\cos\left(frac{\theta}{2}\right)$ auftragen. Wir f\"uhren aber zuerst noch eine lineare Regression durch. Da unsere zehnte Messung stark von den anderen Messungen dieser Messreihe abweicht, lassen wir diese raus. Aus unseren Formeln,
+Wir k\"onnen jetzt also unsere Werte von $b$ gegen $\cos\left(\frac{\theta}{2}\right)$ auftragen. Wir f\"uhren aber zuerst noch eine lineare Regression durch. Da unsere zehnte Messung stark von den anderen Messungen dieser Messreihe abweicht, lassen wir diese raus. Aus unseren Formeln f\"ur die lineare Regression f\"ur ein Polynom der Form $y=ax+b$,
 
 \begin{equation}
 a=\frac{n\sum x_iy_i-\sum x_i\sum y_i}{n\sum x_i^2-(\sum x_i)^2}
@@ -199,19 +197,19 @@ b=\frac{\sum x_i^2\sum y_i-\sum x_i\sum x_iy_i}{n\sum x_i^2-(\sum x_i)^2}
 \Delta b=s\sqrt{\frac{\sum x_i^2}{n\sum x_i^2-(\sum x_i)^2}}
 \end{equation}
 \begin{equation}
-s=\sqrt{\frac{1}{n-2}\sum^n_{i=1}[y_i-(a+bx_i)]^2}
+s=\sqrt{\frac{1}{n-2}\sum^n_{i=1}[y_i-(a+bx_i)]^2},
 \end{equation}
 interessiert uns eigentlich nur die Steigung $a$. Wir erhalten mit unserer Rechnung
-\[a_{links}=-0.35\pm??\]
-\[a_{rechts}=0.32\pm??\]
+\[a_{links}=-0.35\pm0.01\]
+\[a_{rechts}=0.32\pm0.07\]
 
 Das resultierende Bild sieht dann folgenderma\ss en aus:
 
-\begin{figure}[p]
+\begin{figure}[h]
 \centering
 \fbox{\includegraphics[width=0.8\textwidth]{graph.png}}
 \renewcommand\thefigure{1}
-\caption{Auftragung der Messwerte und lineare Regression}
+\caption{Auftragung der Messwerte und lineare Regression. Der linke bzw. rechte Teil entspricht den Teil links bzw. rechts der Schu\ss apparatur.}
 \label{Abb:1}
 \end{figure}
 
@@ -238,53 +236,78 @@ Da wir einen Fehler auf $a$ haben m\"ussen wir wieder gau\ss sche Fehlerfortpfla
 \]
 
 Mit unseren beiden Steigungen und dem vorgegebenen Radius der Kugeln, $2r=4.35\,\mathrm{mm}$, erhalten wir als Werte f\"ur den Radius unseres Targets:
-\[r_1=2.66\pm??\]
-\[r_2=2.91\pm??\]
+\[r_1=2.66\pm0.09\]
+\[r_2=2.9\pm0.7\]
 
 Der Mittelwert hiervon mit (\ref{mean}) und (\ref{meanstd}) ist dann:
 
-\[\bar{r}=2.78\pm??\]
+\[\bar{r}=2.8\pm0.4\]
 
 \section{Diskussion}
 
-XXXX
+Wollen wir die Korrektheit unserer Werte \"uberpr\"ufen, so ist leider kein Literaturwert vorhanden. Wir k\"onnen jedoch mit dem experimentell selbst gemessen Durchmesser vergleichen. Dieser Wert entspricht:
+\[
+d_r=(5.2\pm0.2)\,\mathrm{cm}
+\]
 
-\pagebreak
+Zum Vergleich verwenden wir folgende Formel:
 
-\section{Anhang: Tabellen und Diagramme}
+\begin{equation}
+t=\frac{\vert x_n-y_n\vert}{\sqrt{x_s^2+y_s^2}}\label{eq:6}
+\end{equation}
 
-\begin{table}[h]
-\centering
-\caption{XXXX} \vspace{11pt}
-$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{XXXX: } \pm XX \textrm{XX}\\
-\end{array}$
-\begin{tabular}{ccc}
-\toprule
-\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
-\midrule 
-2 & 0.26 & 0.23\\
-\hline
-4 & 0.33 & 0.25\\
-\hline 
-5 & & 0.3\\
-\hline 
-6 & 1.25 & 0.83\\
-\hline 
-8 & 3.9 & 0.83\\ 
-\hline
-9 & 4.75 & 4.6\\ 
-\hline
-10 & 4.7 &\\ 
-\bottomrule
-\end{tabular}
-\phantom{$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{XXXX: } \pm XX \textrm{XX}\\
-\end{array}$}
-\label{Tab:X}
-\end{table}
+Mit dieser Formel erhalten wir $t=0.005$. Dies impliziert, da es innerhalb des $t<2$ Bereichs ist, starke Vertr\"aglichkeit des Wertes. Jedoch haben wir einen sehr gro\ss en Fehler auf unser $\bar{r}$, n\"ahmlich entspricht dieser ca 14\%. Die Signifikanz des Wertes ist also nicht sehr hoch.
+
+Ignorieren wir jedoch unseren Wert f\"ur $r_2$ und vergleichen einfach unser $r_1$ mittels (\ref{eq:6}), so erhalten wir
+\[
+t=0.006
+\]
+Zwar steigt unser $t$-Wert also leicht, jedoch haben wir eine wesentlich h\"ohere Signifikanz, da der Fehler nur noch 3\% des Ergebnisses ist.
+
+Laut der guten \"Ubereinstimmung der gemessenen Ergebnisse k\"onnen wir also davon ausgehen, dass die theoretischen \"Uberlegungen sinnvoll sind.
+
+Jedoch m\"ussen wir auch davon ausgehen, dass unser Experiment von systematischen Fehlern beeinflusst wurde. Ein Beispiel hierf\"ur ist, dass durchaus die M\"oglichkeit existiert, dass unsere Kugeln nicht alle mit der selben Geschwindigkeit und Ausrichtung gescho\ss en wurden. Die Apparatur k\"onnte sich w\"ahrend dem Nachladen leicht verschoben haben, da hierf\"ur der Bolzen rausgenommen werden musste und dann losgelassen wurde. Mit einer Feder hat sich der Bolzen dann zur\"uck bewegt. Der Einfluss dessen wird aber wohl nicht sehr gro\ss\ gewesen sein, da die $t$-Werte nicht sehr gro\ss\ sind.
+
+Zur Verbesserung des Versuchs sollte eine gut Ablesbare Skala angebracht werden, damit $b$ leichter bestimmt werden kann. Au\ss erdem sollte man das Papier besser reinlegen, befestigen und den Mittelpunkt finden k\"onnen. Der Einfluss dieser Verbesserungen sollte aber nicht zu hoch sein, da diese eigentlich nur dazu dienen, dem Durchzuf\"uhrenden das Messen zu erleichtern.
+
+Was jedoch einen gr\"o\ss eren Unterschied machen k\"onnte w\"are, wenn man eine Apparatur h\"atte, welche automatisch die Auftreffpunkte alle bestimmen w\"urde und deren Punkte einem geben w\"urde. Nat\"urlich ist dies aber zu zeitaufwendig zu erstellen, jedoch w\"aren dann die Mittelwerte der Auftreffpunkte genauer bestimmbar.
+
+%\pagebreak
+%
+%\section{Anhang: Tabellen und Diagramme}
+%
+%\begin{table}[h]
+%\centering
+%\caption{XXXX} \vspace{11pt}
+%$\begin{array}{l}
+%\textrm{Unsicherheiten:}\\
+%\textrm{XXXX: } \pm XX \textrm{XX}\\
+%\end{array}$
+%\begin{tabular}{ccc}
+%\toprule
+%\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
+%\midrule 
+%2 & 0.26 & 0.23\\
+%\hline
+%4 & 0.33 & 0.25\\
+%\hline 
+%5 & & 0.3\\
+%\hline 
+%6 & 1.25 & 0.83\\
+%\hline 
+%8 & 3.9 & 0.83\\ 
+%\hline
+%9 & 4.75 & 4.6\\ 
+%\hline
+%10 & 4.7 &\\ 
+%\bottomrule
+%\end{tabular}
+%\phantom{$\begin{array}{l}
+%\textrm{Unsicherheiten:}\\
+%\textrm{XXXX: } \pm XX \textrm{XX}\\
+%\end{array}$}
+%\label{Tab:X}
+%\end{table}
 
 %\begin{figure}[p]
 %\centering
@@ -295,7 +318,7 @@ $\begin{array}{l}
 %\end{figure}
 
 \begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+%\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
 \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
 \end{thebibliography}
 

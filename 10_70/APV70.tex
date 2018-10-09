@@ -7,6 +7,7 @@
 \usepackage[german]{babel}
 \usepackage{amsmath} 
 \usepackage{graphicx} 
+\usepackage{cancel}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{tikz}
@@ -36,10 +37,10 @@
 \end{figure}}
 \renewcommand{\vec}{\boldsymbol}
 \newcommand\mean{\begin{equation}
-\frac{\sum_{i=1}^n x_{i}}{n}\label{mean}
+\bar{x}=\frac{\sum_{i=1}^n x_{i}}{n}\label{mean}
 \end{equation}}
 \newcommand\meanstd{\begin{equation}
-s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{meanstd}
+s_{\bar{x}}=\frac{s_x}{\sqrt{n}}\label{meanstd}
 \end{equation}}
 \newcommand\prodquo{\begin{equation}\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots\end{equation}}
 \newcommand\tfunc{\begin{equation}
@@ -74,13 +75,28 @@ Andréz Gockel, Patrick M\"unnich\\
 
 \section{Ziel des Versuchs}
 
-
+Das Ziel dieses Versuchs ist es, Einzellinsen und Linsenkombinationen zu untersuchen. Genauer schaut man, wann mit welchen Linsen scharfe Abbildungen von Gegenst\"anden vorhanden sind.
 
 \section{Teil 1}
 
 \subsection{Theorie}
 
-XXXX
+F\"ur das Verst\"andnis dieses Teils ben\"otigt man die Abbildungsgleichung f\"ur d\"unne Linsen,
+\begin{equation}
+\frac{1}{f}=\frac{1}{g}+\frac{1}{b},\label{eq:1}
+\end{equation}
+
+und die entsprechende Gleichung f\"ur Linsensysteme mit zwei Linsen,
+\begin{equation}
+\frac{1}{f}=\frac{1}{f_1}+\frac{1}{f_2}-\frac{d}{f_1f_2}.\label{eq:2}
+\end{equation}
+
+Dieses l\"asst sich f\"ur kleine Abst\"ande $d$ zwischen den Linsen zu
+\[
+\frac{1}{f}\approx\frac{1}{f_1}+\frac{1}{f_2}
+\]
+vereinfachen.
+
 
 \subsection{Aufbau}
 
@@ -113,7 +129,24 @@ bestimmt. Die resultierende Graphik kann im Anhang als Abbildung \ref{Abb:1} gef
 
 \subsection{Theorie}
 
-XXXX
+F\"ur diesen Teil f\"uhren wir neue Variablen ein:
+\begin{itemize}
+\item Abstand $s=g+b$ zwischen Gegenstand und Bild
+\item Differenz $e=|g-b|$ zwischen den Linsenpositionen.
+\end{itemize}
+
+Diese Variablen setzen wir in (\ref{eq:1}) ein und erhalten:
+
+\[
+\frac{1}{f}=\frac{2}{s+e}+\frac{2}{s-e}
+\]
+\[
+=\frac{2s-\bcancel{2e}+2s+\bcancel{2e}}{s^2-e^2}
+\]
+\[=\frac{4s}{s^2-e^2}\]
+\begin{equation}
+f=\frac{s^2-e^2}{4s}\label{eq:3}
+\end{equation}
 
 \subsection{Aufbau}
 
@@ -132,28 +165,42 @@ XXXX
 
 \subsection{Auswertung}
 
-In diesem Teil wollen wir einfach mit unseren Messwerten und der Formel (\ref{eq:X}) zuerst unsere Werte f\"ur $(s,e)$:
-\begin{itemize}
-\item $e(80\,\mathrm{mm}):  [35.0+/-0.4242640687119285 23.3+/-0.4242640687119285
- 18.9+/-0.4242640687119285 54.39999999999999+/-0.4242640687119285
- 44.50000000000001+/-0.4242640687119285]$
-\item $s(80\,\mathrm{mm}):  [55.0+/-0.5196152422706632 44.599999999999994+/-0.5196152422706632
- 41.2+/-0.5196152422706632 73.2+/-0.5196152422706632
- 63.8+/-0.5196152422706632]$
-\item $e(80,150\,\mathrm{mm}):  [51.0+/-0.4242640687119285 43.3+/-0.4242640687119285
- 40.849999999999994+/-0.4242640687119285 46.6+/-0.4242640687119285
- 54.3+/-0.4242640687119285]$
-\item $s(80,150\,\mathrm{mm}):  [63.8+/-0.5196152422706632 56.5+/-0.5196152422706632
- 54.2+/-0.5196152422706632 59.599999999999994+/-0.5196152422706632
- 67.1+/-0.5196152422706632]$
-\item $e(80,-200\,\mathrm{mm}):  [32.400000000000006+/-0.4242640687119285
- 23.700000000000003+/-0.4242640687119285
- 26.799999999999997+/-0.4242640687119285
- 43.49999999999999+/-0.4242640687119285 22.5+/-0.4242640687119285]$
-\item $s(80,-200\,\mathrm{mm}):  [63.8+/-0.5196152422706632 57.3+/-0.5196152422706632
- 67.5+/-0.5196152422706632 73.3+/-0.5196152422706632
- 56.3+/-0.5196152422706632]$
-\end{itemize}
+In diesem Teil wollen wir einfach mit unseren Messwerten und der Formel (\ref{eq:3}) zuerst unsere Werte f\"ur $(s,e)$:
+
+\begin{table}[h]
+\centering
+\caption{XXXX} \vspace{11pt}
+$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{s: } \pm 0.4 \textrm{cm}\\
+\textrm{e: } \pm 0.5 \textrm{cm}\\
+\end{array}$
+\begin{tabular}{ccc}
+\toprule
+\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
+\midrule 
+2 & 0.26 & 0.23\\
+\hline
+4 & 0.33 & 0.25\\
+\hline 
+5 & & 0.3\\
+\hline 
+6 & 1.25 & 0.83\\
+\hline 
+8 & 3.9 & 0.83\\ 
+\hline
+9 & 4.75 & 4.6\\ 
+\hline
+10 & 4.7 &\\ 
+\bottomrule
+\end{tabular}
+\phantom{$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{s: } \pm 0.4 \textrm{cm}\\
+\textrm{e: } \pm 0.5 \textrm{cm}\\
+\end{array}$}
+\label{Tab:X}
+\end{table}
 
 Wir k\"onnen hier die Rechnungen per Hand mit Gau\ss scher Fehlerfortpflanzung durchf\"uhren. Hierzu m\"ussen wir unsere Gleichung einfach nach jeweils $e$ und $s$ partiell ableiten:
 
@@ -186,7 +233,19 @@ Wir erhalten daraus f\"ur die Linse mit $f=80\,$mm $\bar{f}=82\pm1.7\,$mm, f\"ur
 
 \subsection{Theorie}
 
-XXXX
+F\"ur das Abbe-Verfahren f\"uhren wir den Abbildungsma\ss stab ein:
+\begin{equation}
+\beta=\frac{B}{G}=\frac{b}{g}\label{eq:4}
+\end{equation}
+Dies machen wir, da wir $b$ und $g$ nicht direkt bestimmen k\"onnen, jedoch die Bildgr\"o\ss e $B$ und Gegenstandsgr\"o\ss e $G$ problemlos bestimmen k\"onnen.
+
+Die Hauptebenen befinden sich dann um $h_{1/2}$ vor bzw. hinter diesem Punkt. Mit unserer messbaren scheinbaren Gegenstandsgr\"o\ss e $g'$ und scheinbare Bildweite $b'$ haben wir also
+\begin{equation}
+g'=\left(1+\nicefrac{1}{\beta}\right)f_1+h_1\label{eq:5}
+\end{equation}
+\begin{equation}
+b'=\left(1+\beta\right)f_2+h_2\label{eq:6}
+\end{equation}
 
 \subsection{Aufbau}
 
@@ -205,9 +264,9 @@ XXXX
 
 \subsection{Auswertung}
 
-In diesem Teil wollen wir zuerst mit den Formeln (\ref{eq:beta}), (\ref{eq:g}) und (\ref{eq:b}) $g'$, $b'$, $\beta$ und $\Delta \beta$ bestimmen. Wir erhalten aus unseren Messreihen:
+In diesem Teil wollen wir zuerst mit den Formeln (\ref{eq:4}), (\ref{eq:5}) und (\ref{eq:6}) $g'$, $b'$, $\beta$ und $\Delta \beta$ bestimmen. Wir erhalten aus unseren Messreihen:
 
-Um dies visuell darzustellen, tragen wir $1+\nicefrac{1}{\beta}$ gegen $g'$ und $1+\beta$ gegen $b'$ dar:
+Um dies visuell darzustellen, tragen wir $1+\nicefrac{1}{\beta}$ gegen $g'$ und $1+\beta$ gegen $b'$ auf.
 
 \begin{figure}[h]
 \centering
@@ -225,16 +284,56 @@ Um dies visuell darzustellen, tragen wir $1+\nicefrac{1}{\beta}$ gegen $g'$ und 
 \label{Abb:b}
 \end{figure}
 
-Aus der linearen Regression k\"onnen wir $f_1$, $f_2$, $h_1$ und $h_2$ bestimmen. Wir erhalten als Werte:
-$f_1 80 200 0.5762491658548258
-h_1 80 200 11.03475419102985
-f_2 80 200 1.9531933609241
-h_2 80 200 11.639603091057374
-f_1 200 80 -3.913845161813182
-h_1 200 80 11.49900273595246
-f_2 200 80 3.2411227934990583
-h_2 200 80 11.930724229182056
-$
+Aus der linearen Regression k\"onnen wir $f_1$, $f_2$, $h_1$ und $h_2$ bestimmen. 
+
+Zur Bestimmung der linearen Regression wenden folgende Formeln an:
+
+\begin{equation}
+a=\frac{n\sum x_iy_i-\sum x_i\sum y_i}{n\sum x_i^2-(\sum x_i)^2}
+\end{equation}
+\begin{equation}
+\Delta a=s\sqrt{\frac{n}{n\sum x_i^2-(\sum x_i)^2}},
+\end{equation}
+\begin{equation}
+b=\frac{\sum x_i^2\sum y_i-\sum x_i\sum x_iy_i}{n\sum x_i^2-(\sum x_i)^2}
+\end{equation}
+\begin{equation}
+\Delta b=s\sqrt{\frac{\sum x_i^2}{n\sum x_i^2-(\sum x_i)^2}}
+\end{equation}
+\begin{equation}
+s=\sqrt{\frac{1}{n-2}\sum^n_{i=1}[y_i-(a+bx_i)]^2},
+\end{equation}
+
+Wir erhalten als Werte:
+
+\begin{table}[h]
+\centering
+\caption{XXXX} \vspace{11pt}
+$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{XXXX: } \pm XX \textrm{XX}\\
+\end{array}$
+\begin{tabular}{cccc}
+\toprule
+\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
+\midrule 
+$f_1$ & 80 & -200 & 0.5762491658548258\\
+$h_1$ & 80 & -200 & 11.03475419102985\\
+$f_2$ & 80 & -200 & 1.9531933609241\\
+$h_2$ & 80 & -200 & 11.639603091057374\\
+$f_1$ & -200 & 80 & -3.913845161813182\\
+$h_1$ & -200 & 80 & 11.49900273595246\\
+$f_2$ & -200 & 80 & 3.2411227934990583\\
+$h_2$ & -200 & 80 & 11.930724229182056\\
+\bottomrule
+\end{tabular}
+\phantom{$\begin{array}{l}
+\textrm{Unsicherheiten:}\\
+\textrm{XXXX: } \pm XX \textrm{XX}\\
+\end{array}$}
+\label{Tab:X}
+\end{table}
+
 
 Zur Klarifizierung fertigen wir noch eine (au\ss er der Linsen) ma\ss stabsgetreue Skizze an:\\
 \\
@@ -362,7 +461,7 @@ Zur Klarifizierung fertigen wir noch eine (au\ss er der Linsen) ma\ss stabsgetre
 
 \subsection{Theorie}
 
-XXXX
+
 
 \subsection{Aufbau}
 

@@ -70,11 +70,37 @@ Andréz Gockel, Patrick M\"unnich\\
 \item \textbf{bonus} Beobachtung von Linsenfehlern, Vergleich mit kommerziellen Mikroskopen
 \end{enumerate}
 
+
+\section{Physikalische Zusammenh"ange}
+
+Die wahrgenommene Gr"o\ss e eines Gegenstands h"angt von der Gr"o\ss e des Bilds $B$ und der Bildweite $b$ ab:
+\begin{equation}
+\epsilon_0=\arctan\left(\frac{B}{b}\right)\label{eq:1}
+\end{equation}
+Wird ein Objekt durch eine Lupe betrachtet, so h"angt die Vergr"o\ss erung des Gegenstands $G$ von dem Abstand $f$ dessen zur Lupe und der als 250\,mm definierten Bezugssehweite ab:
+\begin{equation}
+V_{Lupe}\approx\frac{\tan\epsilon}{\tan\epsilon_0}=\frac{\nicefrac{G}{f}}{\nicefrac{G}{s_0}}=\frac{s_0}{f}\label{eq:3}
+\end{equation}
+Das ganze wird komplizierter, wenn wie statt einer Lupe ein Lichtmikroskop verwenden. Wir gehen von einem aus zwei Sammellinsen bestehendes Mikroskop aus. Das hei\ss t, dass zuerst durch ein Objektiv ein vergr"o\ss erndes Zwischenbild erzeugt wird und dann durch ein Okular das Resultat angeschaut wird. Das Zwischenbild hat die Gr"o\ss e $B$ und wird mit dem Abbildungsma\ss stab
+\begin{equation}
+\beta=\frac{B}{G}=\frac{b}{g}\label{eq:4}
+\end{equation}
+erzeugt. Im Okular wird dies unter dem Sehwinkel $\epsilon\approx\tan\left(\frac{B}{f_{Ok}}\right)$ betrachtet. Unsere Gesamtvergr"o\ss erung sieht dann folgenderma\ss en aus:
+\begin{equation}
+V_M=\frac{\epsilon}{\epsilon_0}=\frac{\nicefrac{B}{f_2}}{\nicefrac{G}{s_0}}=\frac{b}{g}\frac{s_0}{f_2}=\beta_{Obj}V_{Ok}\label{eq:5}
+\end{equation}
+
+Wichtig ist auch zu verstehen, dass es immer eine Aufl"osebegrenzung gibt, d.h. man kann nicht unendlich klein sehen. Um dies zu berechnen, f"uhren wir erstmal die numerische Apertur NA ein. Dieser Wert h"angt sowohl von de halben "Offnungswinkel des Objektivs $\alpha$ als auch von der Brechzahl der Immersionsfl"ussigkeit $n$ ab:
+\begin{equation}
+\mathrm{NA}=n\sin\alpha\label{eq:7}
+\end{equation}
+Ohne Immersionsfl"ussigkeit ist immer NA$<1$, mit einer ist NA$\geq1.4$.
+Um daraus unser Abbe-Kriterium f"ur den kleinsten noch aufl"osbaren Abstand zu finden rechnen wir dann
+\begin{equation}
+\delta=\frac{1.22\lambda}{2\mathrm{NA}}=\frac{1.22\lambda}{2n\sin\alpha}\label{eq:8}
+\end{equation}
+
 \section{Teil XX}
-
-\subsection{Theorie}
-
-XXXX
 
 \subsection{Aufbau}
 
@@ -90,50 +116,119 @@ XXXX
 % describe exp.
 XXXX
 
-\subsection{Auswertung}
+\section{Auswertung}
 
-XXXX
+Um die Vergr"o\ss erung des Mikroskops, die Korrektheit des Aufbaus und die Theorie zu "uberpr"ufen, berechnen wir zuerst den gemessen Abbildungsma\ss stab des Objektivs $\beta$ mittels (\ref{eq:4}). Mit den bestimmten $B=(98\pm0.2)\,$mm und $G=5\,$mm erhalten wir:
+\[\beta=19.60\pm0.04\]
+F"ur den Fehler k"onnen wir hier einfach
+\[
+\frac{\Delta\beta}{\beta}=\sqrt{\left(\frac{\Delta B}{B}\right)^2+\left(\frac{\Delta G}{G}\right)^2}
+\]
+bestimmen.\\
+Dann berechnen wir die Vergr"o\ss erung des Mikroskops. Wir rechnen
+\[V_\textrm{M}=\frac{B}{G}\frac{d_1}{d_2}\]
+mit $d_1$ als die am Referenzma\ss stab gemessene L"ange und $d_2$ die Gr"o\ss e des Bilds. Als Werte haben wir $d_1=(10.00\pm0.03)\,$mm und $d_2=(3.00\pm0.03)\,$mm. Wir erhalten:
+\[V_\textrm{M}=(65.3\pm0.7)\]
+Zur Fehlerberechnung kann man hier die vereinfachte Form der gau\ss schen Fehlerfortpflanzung verwenden:
+\[
+\frac{\Delta V}{V}=\sqrt{\left(\frac{\Delta d_1}{d_1}\right)^2+\left(\frac{\Delta d_2}{d_2}\right)^2}
+\]
+Um dann zum Vergleich den theoretischen Wert zu finden, rechnen wir laut (\ref{eq:5}) einfach
+\[V_\mathrm{M}=\frac{b}{g}\frac{s_0}{f_2}\]
+Unsere Messwerte lauten
+\begin{itemize}
+\item $b=(826\pm1)\,$mm
+\item $g=(42.036\pm0.004\,$mm
+\end{itemize}
+mit $s_0=250\,$mm und $f_2=80\,$mm. Zur Berechnung von $g$ rechnen wir
+\[
+g=\left(\frac{1}{f_1}-\frac{1}{s_{\mathrm{Ok}}-f_4-s_{\mathrm{Obj}}}\right)^{-1}.
+\]
+Dies folgt aus
+\[\frac{1}{f}=\frac{1}{g}+\frac{1}{b},\]
+also
+\[g=\left(\frac{1}{f}-\frac{1}{b}\right)^{-1}.\]
+Partielle Ableitungen lauten dann:
+\[
+\frac{\partial g}{\partial f}=\frac{b^2}{(b-f)^2}
+\]
+\[
+\frac{\partial g}{\partial b}=-\frac{b^2}{(b-f)^2}
+\]
+\[
+\Delta g=\sqrt{\left(\frac{\partial g}{\partial b}\Delta b\right)^2+\left(\frac{\partial g}{\partial f}\Delta f\right)^2}
+\]
+Wir erhalten also
+\[V_\mathrm{M}=61.4\pm0.1\]
+
+
+Zudem wollen wir noch mittels des zuvor erw"ahnten Abbe-Kriteriums den kleinsten noch aufl"osbaren Abstand $\delta$ bestimmen und mi dem Strichabstand auf dem Objektmikrometer vergleichen.
+
+Bestimmt haben wir $\beta=20.38\pm0.03$ und $B=(9.8\pm0.2)\,$mm. F"ur den Fehler finden wir dann mit
+\[\Delta s=s\sqrt{\left(\frac{\Delta B}{B}\right)^2+\left(\frac{\Delta\beta}{\beta}\right)^2}\]
+unseren Fehler auf $s$. Den Wert von $s$ selbst berechnen wir mit
+\[s=\frac{B}{\beta}\]
+und erhalten
+\[s=(0.471\pm0.001)\,\mathrm{mm}.\]
+Dazu wollen wir noch unser $\alpha$ berechnen. Wir nutzen eine geometrische Absch"atzung und rechnen
+\[\alpha\approx\arctan\left(\frac{s}{f}\right)\approx\frac{s}{f}\]
+Wir erhalten $\alpha=(0.01178\pm0.00003)$\,rad. Fehler wird hier analog zu vorherigen mit gau\ss scher Fehlerforpflanzung berechnet.
+
+Wir rechnen jetzt mit (\ref{eq:8}), $n=1$ und $\lambda=540\,$nm $\delta$ aus, wieder mit Fehlerfortpflanzung f"ur die Fehlerberechnung. Unser Ergebnis lautet dann:
+\[\delta\approx(2.796\pm0.007)\times10^{-5}\,\mathrm{m}\]
 
 \section{Diskussion}
 
-XXXX
+Um unsere Messwerte auf Vertr"aglichkeit zu "uberpr"ufen, nutzen wir die bekannte $t$-Funktion
+\begin{equation}
+t=\frac{\vert x_n-y_n\vert}{\sqrt{x_s^2+y_s^2}}\label{eq:6}
+\end{equation}
+Wir erhalten f"ur unsere oben bestimmten Werte $t=5.58$. Dies ist au\ss erhalb des erw"unschten Bereichs von $t<2$, was Unvertr"aglichkeit impliziert.
+
+Erstaunlich ist dieses Resultat jedoch nicht. Es ist durchaus m"oglich, dass aufgrund von mangelnder Erfahrung die Gr"o\ss en schlecht abgelesen wurden. Eventuell sollten also Fehler gr"o\ss er abgesch"atzt werden.
+
+Systematische Fehler sind hier erstmal, dass nicht klar ist, ob unsere $f$-Werte korrekt sind, da diese vorgegeben wurden. Au\ss erdem ist es durchaus m"oglich, dass die Angaben auf dem Referenzma\ss stab und dem Objekt nicht richtig sind. 
+
+Zur Verbesserung k"onnte man hier in den Halterungen Schlitze einbauen, durch welche man die genaue Position der einzelnen Ger"ate identifizieren k"onnte. Auch w"urde helfen, wenn die Halterung f"ur die Objekte d"unner w"are, sodass die Objekte nicht nach links und rechts rutschen k"onnten, da dies auch die Sch"arfe beeinflusst.
+
+Um noch unseren Wert f"ur die Aufl"osungsbegrenzung zu "uberpr"ufen vergleichen wir diesen mittels (\ref{eq:6}) mit dem Strichabstand $x=5\times10^{-5}\,$m und erhalten $t=315$. Dies impliziert starke Unvertr"aglichkeit. Es ist also wahrscheinlich, dass hier gr"o\ss ere Fehler stattfanden. Wie zuvor ist es aber am wahrscheinlichsten, dass schlecht bzw. falsch abgelesen wurde.
 
 \pagebreak
 
-\section{Anhang: Tabellen und Diagramme}
-
-\begin{table}[h]
-\centering
-\caption{XXXX} \vspace{11pt}
-$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{XXXX: } \pm XX \textrm{XX}\\
-\end{array}$
-\begin{tabular}{ccc}
-\toprule
-\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
-\midrule 
-2 & 0.26 & 0.23\\
-\hline
-4 & 0.33 & 0.25\\
-\hline 
-5 & & 0.3\\
-\hline 
-6 & 1.25 & 0.83\\
-\hline 
-8 & 3.9 & 0.83\\ 
-\hline
-9 & 4.75 & 4.6\\ 
-\hline
-10 & 4.7 &\\ 
-\bottomrule
-\end{tabular}
-\phantom{$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{XXXX: } \pm XX \textrm{XX}\\
-\end{array}$}
-\label{Tab:X}
-\end{table}
+%\section{Anhang: Tabellen und Diagramme}
+%
+%\begin{table}[h]
+%\centering
+%\caption{XXXX} \vspace{11pt}
+%$\begin{array}{l}
+%\textrm{Unsicherheiten:}\\
+%\textrm{XXXX: } \pm XX \textrm{XX}\\
+%\end{array}$
+%\begin{tabular}{ccc}
+%\toprule
+%\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
+%\midrule 
+%2 & 0.26 & 0.23\\
+%\hline
+%4 & 0.33 & 0.25\\
+%\hline 
+%5 & & 0.3\\
+%\hline 
+%6 & 1.25 & 0.83\\
+%\hline 
+%8 & 3.9 & 0.83\\ 
+%\hline
+%9 & 4.75 & 4.6\\ 
+%\hline
+%10 & 4.7 &\\ 
+%\bottomrule
+%\end{tabular}
+%\phantom{$\begin{array}{l}
+%\textrm{Unsicherheiten:}\\
+%\textrm{XXXX: } \pm XX \textrm{XX}\\
+%\end{array}$}
+%\label{Tab:X}
+%\end{table}
 
 %\begin{figure}[p]
 %\centering
@@ -144,7 +239,7 @@ $\begin{array}{l}
 %\end{figure}
 
 \begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
+%\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - https://pythonhosted.org/uncertainties/
 \bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
 \end{thebibliography}
 

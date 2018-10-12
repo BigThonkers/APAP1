@@ -18,6 +18,7 @@
 \usepackage{nicefrac}
 \usepackage[table]{xcolor}
 \usepackage{tocloft}
+\usepackage[section]{placeins}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
@@ -47,16 +48,14 @@ Ferienpraktikum im Sommersemester 2018 \\[4mm]
 Versuch 75: Lichtmikroskop
 } \\[3mm]
 (durchgef\"uhrt am 01.10.2018 bei Daniel Bartel) \\
-Andréz Gockel, Patrick M\"unnich\\
+Gruppe 14: Andréz Gockel, Patrick M\"unnich\\
 \today \\[10mm]
 }
 
 \vspace{50pt}
 \tableofcontents
 \vspace{22pt}
-\listoftables
-\vspace{22pt}
-\listoffigures
+
 \pagebreak
 
 \section{Ziel des Versuchs}
@@ -100,21 +99,75 @@ Um daraus unser Abbe-Kriterium f"ur den kleinsten noch aufl"osbaren Abstand zu f
 \delta=\frac{1.22\lambda}{2\mathrm{NA}}=\frac{1.22\lambda}{2n\sin\alpha}\label{eq:8}
 \end{equation}
 
-\section{Teil XX}
+\section{Aufbau}
 
-\subsection{Aufbau}
+Für diesen Versuch wird eine optische Bank mit austauschbaren und verschiebbaren optischen Komponenten verwendet. Es stehen sämtliche Komponente zur verfügung:
+\begin{itemize}
+	\item LED Leuchte
+	\item 4 Linsen
+	\begin{itemize}
+		\item Kollektorlinse ($f_1$ = 40\,mm)
+		\item Kondensorlinse ($f_2$ = 40\,mm)
+		\item Objektiv ($f_3$ = 40\,mm)
+		\item Okular ($f_4$ = 80\,mm)
+	\end{itemize}
+	\item 2 Blenden
+	\begin{itemize}
+		\item Leuchtfeldblende
+		\item Aperaturblende
+	\end{itemize}
+	\item 2 Objekte
+	\begin{itemize}
+	\item Dia mit einem Gitter
+	\item Dia mit einer Mikrometerskala
+	\end{itemize}
+	\item 2 Bildschirme
+	\begin{itemize}
+	\item Eine weiße Mattscheibe mit aufgedruckter Mikrometerskala auf einer Seite
+	\item Eine semi-transparente Mattscheibe  
+	\end{itemize}
+	\item Verstellbarere Spalt
+	\item Strahlteiler
+	\item Beleuchteter Referenzmaßstab
+\end{itemize}
+Zusätzlich werden ein Massband, und ein Geodreieck für die Messungen verwendet. 
 
-% describe set up
-% insert pic name, designation, toc caption, caption, label
-%\halftime{5}{5}{TEXT}{\fbox{\includegraphics[width=0.5\textwidth]{NAME}}
-%   \renewcommand\thefigure{BX}
-%\caption[XXXX]{XXXX \cite{Anleitung}}
-%\label{Pic:X}}
+Das Objektiv ist in diesem Versuch mit einem flachen Stab mit der Bildschirmhalterung verbunden, sodass dieser abstand immer gleich ist (wie bei einem kommerziellen Mikroskop). Die Lichtquelle ist am linken Ende der Bank fixiert und der beleuchtete Referenzmaßstab an dem rechten Ende. Zu begin wird das Objektiv mit dem weißen Schirm in der Halterung so verschoben, dass die Lichtquelle gut auf dem Schirm abgebildet wird. 
 
-\subsection{Durchführung}
+Für den letzten Teil steht steht auch ein kommerzielles Mikroskop mit diversen Preperaten zur verfügung.
 
-% describe exp.
-XXXX
+
+\begin{figure}
+\centering
+{\fbox{\includegraphics[width=0.8\textwidth]{pork}}
+\caption{Versuchsaufbau \cite{Anleitung}}
+\label{Pic:X}}
+\end{figure}
+
+
+\section{Durchführung}
+
+\subsection{Aufgabe 1}
+
+Zuerst wurde als Objekt das Dia mit dem Gittermuster vor dem Objektiv gestellt, bei der Position 25.0\,cm. Zunächst wird nach der Lichtquelle eine Kollektorlinse platziert, welches so verschoben wird, dass das Objekt gut ausgeleuchtet wird und keine sphärischen oder chromatischen Abberationen auftreten. Dies war bei der Position 10.9\,cm Als nächstes wird die Aperaturblende eingesetzt, diese verändert die Helligkeit der Beleuchtung am Objekt. Die Aperaturblende muss dafür vor dem Objekt platziert werden and der Position 19.1\,cm. Abschliessend wird die Leuchtfeldblende so nah wie möglich an die Kollektorlinse platziert (Position 12.9\,cm), dies ermöglicht es den ausgeleuchteten Bereich am Objekt zu ändern, ohne die Helligkeit zu beeinflussen. 
+
+\subsection{Aufgabe 2}
+
+In diesem Teil wird die Beleuchtung durch Abstimmung des Beleuchtungsstrahlengangs und des Abbildungsstrahlengangs optimiert. Unsere optischen Komponenten waren schon aus dem ersten Teil gut platziert, sodass nur noch die Kondensorlinse genau eine Brennweite also 4\,cm hinter der Aperaturblende gesetzt werden musste.
+
+\subsection{Aufgabe 3}
+
+Zuerst wird das Objekt ausgetauscht mit der Mikrometerskala bedrucktem Dia. Dann wird mit einem Massband die Bildweite ($b$) und Gegenstandweite ($g$) gemessen. Dann wird die Bildgröße ($B$) und Gegenstandgröße ($G$) mit dem Geodreieck gemessen. 
+
+Zunächst wird der Schirm entfernt und das Okular 5\,cm hinter der Halterung platziert, dann wird der Strahlenteiler direkt neben dem Okular eingesetzt. Mit diesem Aufbau wird zunächst die Vergrösserung des Okular gemessen. Hierfür werden drei Verfahren verglichen. Ein mal durch einsetzen des semi-transparenten Schirms auf dem ein reelles Zwischenbild der Mikrometerskala erscheint. Durch den Strahlenteiler wird dieses Zwischenbild mit der Referenzskala überlagert. Die Vergrößerung wird notiert und der Schirm wird mit der Mattscheibe ersetzt. Die Skala auf der Rückseite des Schirms wird beleuchtet und wieder mit der Referenzskala verglichen. In dem dritten Verfahren wird der Schirm entfernt und das Bild direkt mit der Referenzskala verglichen. 
+
+\subsection{Aufgabe 4}
+
+Um die räumliche Auflösung des Mikroskops zu bestimmen wird zunächst das Abbe-Kriterium verwendet. Hierfür wird ein verstellbarer vertikaler Spalt hinter dem Objektiv gesetzt. Die Mattscheibe wird wieder eingebaut. Dann wird der Spalt so lange verringert bis die Striche and der abgebildeten Skala gerade nicht mehr getrennt wahrgenommen werden können. Um die Spalt breite dann zu bestimmen wird das Objekt entfernt und mit dem Spalt ersetzt. Der Spalt wird dann an dem Schirm abgebildet und kann gemessen werden wobei die im Teil 3 bestimmte Vergrösserung verwendet wird. 
+
+\subsection{Aufgabe 5}
+
+Zuletzt wurde das Objekt wieder eingesetzt und der Spalt entfernt. Dann wurde das Dia mit dem Gitter wieder eingebaut und Abbildungsfehler betrachtet. Hier traten leichte sphärische und chromatische Abberationen auf. Dann wurde die Vergrößerung unseres Aufbaus mit der des kommerziellen Mikroskops verglichen. 
 
 \section{Auswertung}
 
@@ -193,7 +246,7 @@ Zur Verbesserung k"onnte man hier in den Halterungen Schlitze einbauen, durch we
 
 Um noch unseren Wert f"ur die Aufl"osungsbegrenzung zu "uberpr"ufen vergleichen wir diesen mittels (\ref{eq:6}) mit dem Strichabstand $x=5\times10^{-5}\,$m und erhalten $t=315$. Dies impliziert starke Unvertr"aglichkeit. Es ist also wahrscheinlich, dass hier gr"o\ss ere Fehler stattfanden. Wie zuvor ist es aber am wahrscheinlichsten, dass schlecht bzw. falsch abgelesen wurde.
 
-\pagebreak
+\vfill
 
 %\section{Anhang: Tabellen und Diagramme}
 %

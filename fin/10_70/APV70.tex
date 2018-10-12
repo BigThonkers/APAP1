@@ -153,40 +153,7 @@ Wir k\"onnen in diesem Teil den selben Versuchsaufbau und die selben Messwerte w
 
 In diesem Teil wollen wir einfach mit unseren Messwerten und der Formel (\ref{eq:3}) zuerst unsere Werte f\"ur $(s,e)$:
 
-\begin{table}[h]
-\centering
-\caption{XXXX} \vspace{11pt}
-$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{s: } \pm 0.4 \textrm{cm}\\
-\textrm{e: } \pm 0.5 \textrm{cm}\\
-\end{array}$
-\begin{tabular}{ccc}
-\toprule
-\textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} & \textrm{XXXX}/\textrm{XX} \\
-\midrule 
-2 & 0.26 & 0.23\\
-\hline
-4 & 0.33 & 0.25\\
-\hline 
-5 & & 0.3\\
-\hline 
-6 & 1.25 & 0.83\\
-\hline 
-8 & 3.9 & 0.83\\ 
-\hline
-9 & 4.75 & 4.6\\ 
-\hline
-10 & 4.7 &\\ 
-\bottomrule
-\end{tabular}
-\phantom{$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{s: } \pm 0.4 \textrm{cm}\\
-\textrm{e: } \pm 0.5 \textrm{cm}\\
-\end{array}$}
-\label{Tab:X}
-\end{table}
+
 
 Wir k\"onnen hier die Rechnungen per Hand mit Gau\ss scher Fehlerfortpflanzung durchf\"uhren. Hierzu m\"ussen wir unsere Gleichung einfach nach jeweils $e$ und $s$ partiell ableiten:
 
@@ -376,10 +343,6 @@ Mit unseren Messdaten kommen wir mittels (\ref{eq:7}) und (\ref{eq:2}) auf folge
 \begin{table}[h]
 \centering
 \caption{Berechneten und gemessenen Brennweiten f\"ur verschiedene Linsensysteme} \vspace{11pt}
-$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
-\textrm{Gemessene Brennweite: } \pm 0.3 \textrm{mm}\\
-\end{array}$
 \begin{tabular}{cccc}
 \toprule
 \textrm{Erste Linse}/\textrm{mm} & \textrm{Zweite Linse}/\textrm{mm} & \textrm{Berechnet}/\textrm{mm} & \textrm{Gemessen}/\textrm{mm} \\
@@ -391,10 +354,10 @@ $\begin{array}{l}
 -200 & 80 & 11.4 & 10.7 \\
 \bottomrule
 \end{tabular}
-\phantom{$\begin{array}{l}
-\textrm{Unsicherheiten:}\\
+$\begin{array}{l}
+\textrm{Unsicherheiten:}\quad
 \textrm{Gemessene Brennweite: } \pm 0.3 \textrm{mm}\\
-\end{array}$}
+\end{array}$
 \label{Tab:X}
 \end{table}
 
@@ -438,6 +401,12 @@ Dies impliziert, dass bei den vorherigen Messreihen eventuell schlecht abgelesen
 Als Vorschlag gibt es zu diesem Teil nur, dass man eventuell noch selbst die Distanz zwischen den Linsen berechnen sollte.
 
 F"ur den zweiten Teil ist eigentlich auch klar, dass die Werte vertr"aglich sind, da der gemessene Unterschied $\nicefrac{1}{2}\sigma$ von dem berechneten entfernt ist. Dies impliziert wieder, dass die Messung auf diese Weise besser funktioniert als die vorherige. Die Farbfilter scheinen auch gut auf die erw"unschten Wellenl"angen eingeschr"ankt zu haben. Dies ist ansonsten als systematischer Fehler zu behandeln. Vorschl"age gibt es hier keine.
+
+
+\begin{thebibliography}{9}
+\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
+\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
+\end{thebibliography}
 
 \section{Anhang: Abbildungen}% Tabellen und Diagramme}
 
@@ -596,9 +565,5 @@ F"ur den zweiten Teil ist eigentlich auch klar, dass die Werte vertr"aglich sind
 \caption[Ma\ss stabsgetrue Skizze des dritten Versuchs]{Au\ss erhalb von Linsen Ma\ss stabsgetreue Skizze des dritten Versuchs}\end{center}\end{figure}
 
 
-\begin{thebibliography}{9}
-\bibitem{Uncertainties}''Correlations between variables are automatically handled, which sets this module apart from many existing error propagation codes.'' - \url{https://pythonhosted.org/uncertainties/}
-\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
-\end{thebibliography}
 
 \end{document}

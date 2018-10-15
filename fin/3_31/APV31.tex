@@ -1,0 +1,443 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage[german]{babel}
+\usepackage{array}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage{booktabs}
+\usepackage[colorlinks]{hyperref}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{tcolorbox}
+\usepackage[section]{placeins}
+\usepackage{rotating}
+\usepackage{tikz}
+
+\hbadness=99999
+
+\newenvironment{supbox}{\begin{tcolorbox}[colback=white,colframe=black,sharp corners,boxrule=.5pt]}{\end{tcolorbox}}
+
+\newcommand\dif{\mathop{}\!\mathrm{d}}
+
+\begin{document}
+
+{
+\centering 
+\large 
+Physiklabor für Anf\"anger*innen \\
+Ferienpraktikum im Sommersemester 2018 \\[4mm]
+\textbf{\LARGE 
+Versuch 31: Mischungsmethode in der Kalorimetrie
+} \\[3mm]
+(durchgef\"uhrt am 12.09.2018 bei Nico Strauß) \\
+Andréz Gockel, Patrick M\"unnich\\
+\today \\[10mm]
+}
+
+\tableofcontents
+
+\pagebreak
+
+\section{Ziel des Versuchs}
+
+
+Der Versuch ist in drei Teile geteilt, welche dazu dienen, mit Hilfe einer geeigneten Wärmeenergiebilanz die Wärmekapazität zu bestimmen. Im Teil A kalibriert man das Messgerät und stellt das Programm, LabVIEW, ein. Im Teil B wird mittels Extrapolationsverfahren die Wärmekapazität des Kalorimeters bestimmt. Für die Messungen wurde ein Temperaturmessfühler, der durch einen DAQ zu einem Komputer verbunden wurde verwendet, dadurch konnten die Messdaten mittels dem Programm LabVIEW gespeichert werden. Im Teil C wurde die Wärmekapazität von zwei Festkörpern bestimmt. 
+
+\section{Aufbau}
+
+Der Messf\"uhler ist per Kabel an den PC gebunden, an dem LabVIEW l\"auft. Zwei mit Wasser gef\"ullte Beh\"alter sind vorhanden. Eins davon ist auf einer Heizplatte, das andere ist gef\"ullt mit Eiswasser. Im zweiten und dritten Teil f\"ullt man das zweite Gef\"a\ss\ mit Leitungswasser, da nicht genug Eiswasser vorhanden ist.\\
+F\"ur den dritten Teil ist ein metallischer Festk\"orper zur Verf\"ugung gestellt, welcher oben eine Halterung hat, damit man mit einem Haken den Festk\"orper leicht in und aus dem Wasser bzw. dem Kalorimeter nehmen kann.
+
+\begin{figure}[ht!]
+	\centering
+	\fbox{\includegraphics[width=0.7\textwidth]{Aufbaoo}}
+  	\renewcommand\thefigure{B1}
+	\caption[Der Aufbau]{Der Aufbau \cite{Anleitung}}
+	\label{Bild:1}
+\end{figure}
+
+
+\section{Auswertung und Fehleranalyse}
+
+\subsection{Teil A - Kalibrierung des Messf\"uhlers}
+
+\subsubsection{Durchf\"uhrung}
+Zuerst vervollst\"andigt man LabVIEW, sodass die Temperatur und die Zeit nach der Messung in eine Datei abgespeichert wird.\\
+Zur Kalibrierung wird das Ende des Messf\"uhlers, an dem gemessen wird, in das behitzte Wasserbad gesteckt und die Temperatur in LabVIEW an 100\celsius\ angepasst. Ist dies geschehen, so steckt man den Messf\"uhler in das Eiswasser und stellt dies auf 0\celsius\ ein.
+\pagebreak
+\subsubsection{Ergebnisse}
+Bei der Kalibrierung wurden Schwankungen festgestellt. Bei dem kochenden Wasser lagen diese bei etwa 0.5\celsius, bei dem Eiswasser jedoch circa 2\celsius.\\
+Dies liegt vermutlich aufgrund der kleinen Menge an Eiswasser, welche genutzt wurde, sowie auch daran, dass der Messf\"uhler nicht st\"andig im Wasser bzw. am Eis war, dar beides vorhanden ist. Ansonsten sind leichte Schwankungen nicht erstaunlich.
+
+%Zur kalibrierung haben wir die Temperatur von Eiswasser und kochendem Wasser gemessen.
+%
+%Nach der vervollst\"andigung des Programms wurden die Temperaturen von kochendem Wasser und Eiswasser gemessen. Diese wurden so angepasst, dass sie jeweils circa $100\celsius$ und $0\celsius$ waren. Gro\ss e Schwankungen waren jedoch auff\"allig. Bei dem kochenden Wasser waren diese eher klein, bei etwa $0.5\celsius$. Bei dem Eiswasser waren Schwankungen von $2\celsius$ zu beobachten, vermutlich aufgrund dem Aufw\"armen des Wassers. Man sollte also bei den folgenden Messungen die Temperaturen kurz vor dem Mischen messen, da diese sich leicht \"andern k\"onnen.
+
+\subsection{Teil B - Bestimmung von der Wärmekapazität des Kalorimeters: $C_{kal}$}
+
+\subsubsection{Durchf\"uhrung}
+
+Da genug Eiswasser nicht vorhanden ist, muss hier lauwarmes Wasser verwendet werden. Zuerst misst man die Temperaturen der beiden Wassermengen und wiegt sie, dann werden sie nacheinander in das Kalorimeter gef\"ullt und der Temperaturverlauf wird gemessen. Es ist wichtig, dass das Wasser ständig gerührt wird. Dies notiert man dann in ein Diagramm und eine Ausgleichskurve wird erstellt, mit der man die ware Mischtemperatur berechnet.
+
+\subsubsection{Theorie}
+
+Da das Kalorimeter und das Mischverfahren nicht vollkommen adiabatisch sind, also zur gleichen Zeit auch ein zus\"atzlicher Energieaustausch stattfindet und das Kalorimeter auch W\"arme aufnimmt, ist die Temperatur, die am Ende gemessen wird, nicht die wahre Mischtemperatur.\\
+Zum Finden der wahren Mischtemperatur sucht man den Punkt, an dem man eine vertikale Gerade ziehen k\"onnte, welche die Fl\"achen zwischen der Kurve und den Geraden von jeweils der warmen und der kalten Wassermenge in zwei gleich gro\ss e Fl\"achen teilt.\\
+Da unsere Werte einer $e$-Funktion \"ahneln, aber die Temperatur\"anderung linear verlaufen sollte, teilen wir unsere Ausgleichskurve in zwei Geraden auf, welche linear verlaufen.
+Zum Berechnen dieses Punktes wird die folgende Gleichung genutzt:
+
+\begin{equation}\tag{1}
+\int\displaylimits_{t_{0}}^{t_2} f_M\ \mathrm{d}t - \int\displaylimits_{t_{0}}^{t_2} f_K\ \mathrm{d}t + f_{Add}= \int\displaylimits_{t_1}^{t_{0}} f_H\ \mathrm{d}t - \int\displaylimits_{t_1}^{t_{0}} f_M\ \mathrm{d}t.\label{bigint1}
+\end{equation}
+
+$f_K$ steht f\"ur die Gerade der Temperatur des kalten Wassers, $f_H$ f\"ur die Gerade der Temperatur des hei\ss en Wassers, $f_M$ f\"ur die Gerade der Mischung, welche $f_H$ schneidet, und $f_Add$ ist das Integral von der unteren Ausgleichsgerade der Mischung, welche $f_K$ schneidet. Die Integralgrenzen sind Zeiten, $t_0$ die gesuchte halbierende Zeit, $t_1$ der Schnittpunkt von $f_M$ mit $f_H$ und $t_2$ der Schnittpunkt von $f_M$ mit $f_K$. Da $f_{Add}$ wesentlich kleiner ist als die rechte Seite, wenn $f_{Add}$ bei $t_0$ w\"are, nehmen wir $f_{Add}$ als konstant an. Dies erleichtet uns sp\"ater das Aufl\"osen des Integrals. Alle Geraden sind in Form eines Polynoms ersten Grades:
+%\begin{equation}
+%f_M=a_Mx^2+b_Mx+c_M
+%\end{equation}
+\begin{equation}
+f_{}=a_{}x+b_{}\label{poly1deg}
+\end{equation}
+$f_{Add}$ sieht folgenderma\ss en aus:
+\begin{equation}
+f_{Add}=\int\displaylimits_{t_{3}}^{t_4}f_A\mathrm{d}t-\int\displaylimits_{t_{3}}^{t_4}f_K\mathrm{d}t,
+\end{equation}
+wobei $t_3$ und $t_4$ in diesem Fall 5\,s und 10\,s sind.
+
+Integrieren wir und bringen die Gleichung in Form einer quadratischen Gleichung bez\"uglich dem gesuchten $t_0$, so k\"onnen wir folgenderma\ss en nach $t_0$ aufl\"osen:
+\begin{equation}
+t_{0_{1/2}}=\frac{-B\pm\sqrt{B^2-4AC}}{2A},\label{abc1}
+\end{equation}
+Hier sind unsere Variablen
+
+\[
+A=\frac{a_K}{2}-\frac{a_H}{2}
+\]
+
+\[
+B=b_K-b_H
+\]
+
+\[
+C=a_M\frac{t_2^2}{2}+b_Mt_2-a_K\frac{t_2^2}{2}-b_Kt_2+f_{Add}+a_H\frac{t_1^2}{2}+b_Ht_1-\frac{a_m}{2}t_1^2-b_mt_1.
+\]
+
+Die wahre Mischungstemperatur $T_M$ kann dann einfach von den Werten von $f_M$ abgelesen werden.
+
+Um hieraus die W\"armekapazit\"at $C_{Kal}$ des Kalorimeters zu bestimmen wird
+\begin{equation}
+C_{Kal}=c_w(m_K\beta-m_H)\label{ck1}
+\end{equation}
+
+mit 
+\[
+\beta=\frac{T_M-T_K}{T_H-T_M}
+\]
+verwendet. Die Variablen stehen f\"ur folgende Werte:
+\begin{itemize}
+\item{$c_w$ die W\"armekapazit\"at von Wasser}
+\item{$m_K$ die Masse des kalten Wassers}
+\item{$m_H$ die Masse des warmen Wassers}
+\item{$T_M$ die Mischungstemperatur}
+\item{$T_K$ die Temperatur des kalten Wassers}
+\item{$T_H$ die Temperatur des warmen Wassers}
+\end{itemize}
+
+
+
+\subsubsection{Auswertung}
+
+Aufgrund eines Messfehlers, aufgrund dessen die Messung zwischen der Temperaturmessung des warmen Wassers und des Kalorimeters unterbrochen wurde, wurde angenommen, dass ein 15\,s Zeitraum zwischen den Messungen lag.
+
+Mithilfe von (\ref{abc1}) bekommen wir zwei Ergebnisse f\"ur $t_0$. Das gr\"o\ss ere Ergebnisse ist klar das sinnvollere, da das kleinere keine gleich gro\ss en Fl\"achen liefert.
+
+Unser $T_M$ liegt also bei ($59\pm2$)\celsius. Der Graph hierzu ist im Anhang zu finden.
+
+Die Temperatur des kalten Wassers vor dem Eintauchen betrag $(22\pm1)$\celsius \ und die des warmen Wassers $(80\pm1)$\celsius. Die Masse des warmen Wassers war $(339.84\pm0.05)$\,g und die des kalten Wassers $(221.80\pm0.05)$\,g. Mit (\ref{ck1}) bekommen wir als Wert f\"ur $C_{Kal}$ $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$.
+
+Zur Berechnung des Fehlers von $C_{Kal}$ nutzen wir die Gau\ss 'sche Fehlerfortpflanzung auf (\ref{ck1}) aus.
+
+Unsere Einzelnen Ableitungen sehen dann folgenderma\ss en aus:
+
+\begin{itemize}
+\item $ \frac{\partial C_{Kal}}{\partial m_K} = c_W\frac{T_M-T_K}{T_H-T_M}$
+\item $ \frac{\partial C_{Kal}}{\partial m_H} = c_W$
+\item $ \frac{\partial C_{Kal}}{\partial T_H} = -c_W m_K \frac{T_M - T_K}{(T_K-T_M)^2} $
+\item $ \frac{\partial C_{Kal}}{\partial T_K} = \frac{-c_W m_K}{T_K-T_M} $
+\item $ \frac{\partial C_{Kal}}{\partial T_M} = c_W m_K \frac{T_H-T_K}{(T_M-T_K)^2} $
+\end{itemize}
+
+Da  $\frac{\partial C_{Kal}}{\partial T_M} \Delta T_M$, $\frac{\partial C_{Kal}}{\partial T_H} 
+\Delta T_H$ und $\frac{\partial C_{Kal}}{\partial T_K} \Delta T_K$ wesentlich gr\"o\ss er sind als der Rest, k\"onnen wir uns auf diese Beschr\"anken:
+\begin{equation}\Delta C_\textrm{Kal} = \sqrt{\left({\frac{\partial f}{\partial T_M} \Delta T_M}\right)^2+\left({\frac{\partial f}{\partial T_H} \Delta T_H}\right)^2+\left({\frac{\partial f}{\partial T_K} \Delta T_K}\right)^2 }
+\end{equation}
+
+
+
+%Die Berechnung des Fehlers des Mittelwerts wird durchgef\"uhrt mit:
+%
+%\begin{equation}
+%s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{uncertainty1}
+%\end{equation}
+
+%UPDATE THIS
+
+
+
+\subsubsection{Diskussion}
+
+Aufgrund des in der Auswertung angesprochenen Messfehlers ist die Temperatur des warmen Wassers geraten, was die wahre Mischtemperatur stark beeinflusst. Ist der Zeitraum zu gro\ss z\"ugig angenommen, so liegt die wahre Mischtemperatur h\"oher, andersrum wenn der Zeitraum zu klein angenommen ist. Der Grund f\"ur den starken Einfluss ist, dass in (\ref{abc1}) der Wert f\"ur $t_1$ sich dadurch \"andert, welcher in $C$ enthalten ist. Schaut man sich das Integral (\ref{bigint1}) an, so ist offensichtlich, dass $t_2$ als Integralgrenze bei beiden Integralen auf der linken Seite einen gro\ss en Einfluss hat.
+
+Durch das Eingie\ss en des Wassers passt sich dieses an die Au\ss entemperatur an. Dies k\"uhlt das Wasser ab bzw. w\"armt es auf. Au\ss erdem wird bei diesem Vorgang die Isolierung des Kalorimeters unterbrochen. Dies sind beides statistische Fehler.
+
+Da unser $C_{Kal}$ mit $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$ einen sehr gro\ss en Fehler von 47\% hat, ist unser Wert offensichtlich nicht sehr genau. Es ist kein Literaturwert zum Vergleich vorhanden. Man muss also mit diesem offensichtlich ungenauen Wert weiterrechnen.
+
+Zur Verbesserung der Werte k\"onnte man au\ss erhalb von besserem Messen destilliertes Wasser verwenden, was genauere Siede- und Schmelztemperaturen aufweisen w\"urde. Dazu k\"onnte man auch zwei Messapparate verwenden und ein extra Kalorimeter, damit man das dann isolierte Eiswasser sowie auch das warme Wasser messen k\"onnte.
+
+\pagebreak
+
+\subsection{Teil C - Bestimmung von der Spezifischen W\"armekapazit\"at von Festk\"orpern}
+
+\subsubsection{Durchf\"uhrung}
+
+Ein Festk\"orper wird im Wasserbad erhitzt, die Temperatur gemessen, und dann ins mit kalten Wasser gef\"ulltes Kalorimeter gef\"ullt. Dort wird wieder die Temperatur gemessen. Wie beim vorherigen Versuch wird hier wieder ein Diagram aufgezeichnet und mit einer Ausgleichskurve die Mischtemperatur gefunden. 
+
+\subsubsection{Theorie}
+
+In diesem Teil ist es aufgrund der unterschiedlichen verwendeten Stoffe nicht mehr n\"otig, vollkommen linear das Problem anzugehen.
+
+Zur Bestimmung der Mischtemperatur wird dadurch einfach folgende Gleichung nach $t_m$ aufgel\"ost und dann die Temperatur daraus abgelesen:
+
+\begin{equation}
+\int\displaylimits_{t_H}^{t_m}f_H\dif t-\int\displaylimits_{t_H}^{t_m}f_M\dif t=\int\displaylimits_{t_m}^{t_K}f_M\dif t-\int\displaylimits_{t_m}^{t_K}f_K\dif t\label{bigint2}
+\end{equation}
+
+Gleich wie im vorherigen Teil sind $f_H$ und $f_K$ wieder einfach lineare Funktionen (\ref{poly1deg}). Der Unterschied liegt bei $f_M$, welches an eine exponentielle Funktion gefittet wird:
+
+\begin{equation}
+f_M=a_M+b_M\exp({-c_Mt})+d_Mt\label{efunc1}
+\end{equation}
+
+Um aus der Mischtemperatur die spezifische W\"armekapazit\"at des K\"orpers zu bestimmen, wird die Formel (\ref{ck2}) verwendet.
+
+\begin{equation}
+c_K=\frac{m_Fc_F+C_{Kal}}{m_K}\beta\label{ck2}
+\end{equation}
+
+Hier ist $\beta$ definiert als
+\[
+\beta=\frac{T_M-T_F}{T_K-T_M}
+\]
+mit $T_M$ die Mischungstemperatur, $T_F$ die Temperatur der Fl\"ussigkeit und $T_K$ die Temperatur des Festk\"orpers. $m_F$ ist die Masse der Fl\"ussigkeit, $c_F$ die W\"armekapazit\"at der Fl\"ussigkeit, $C_{Kal}$ die W\"armekapazit\"at des Kalorimeters und $m_K$ die Masse des K\"orpers.
+
+\subsubsection{Auswertung}
+
+Die W\"armekapazit\"at unseres Kalorimeters haben wir im ersten Teil berechnet, also ist sie $(190\pm90)\,\nicefrac{\mathrm{J}}{\mathrm{K}}$. Die Masse der sich im Kalorimeter befindende Fl\"ussigkeit betr\"agt $(219.3\pm0.05)$\,g. Die spezifische W\"armekapazit\"at des Wassers betr\"agt $4182\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Die Temperatur des kalten Wassers innerhalb des Kalorimeters liegt bei $(20\pm0.4)$\celsius\ und die des Festk\"orpers vor dem Mischen $(71.97\pm0.4)$\celsius.
+
+Laut unser aus (\ref{bigint2}) berechnetes $t_m$, welches bei $(29\pm0.5)$\,s liegt, ist unsere wahre Mischtemperatur $(44.4\pm0.4)$\celsius. Der hierzu geh\"orige Graph befindet sich wieder im Anhang.
+
+Mit (\ref{ck2}) bekommen wir dann als Wert f\"ur unser $c_K$ $(1.37\pm0.12)\times10^4\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$. Der Fehler hier wird wieder mit dem Gau\ss 'schen Fortpflanzungsgesetz durchgef\"uhrt:
+
+\begin{align*}
+ 	u_{c_K} = &\sqrt{\bigg(\frac{c_F}{m_K} \beta \Delta m_F\bigg)^2 + \bigg( \frac{m_F}{m_K} \beta \Delta c_F\bigg)^2 + \bigg( \frac{1}{m_K} \beta \Delta C_{kal}\bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K} \beta \Delta m_k\bigg)^2}\\
+ 	& + \overline{\bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta T_M \bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta m_k\bigg)^2 + \bigg( \frac{c_F m_F + C_{kal}}{m_K (T_K - T_M)} \beta \Delta T_K \bigg)^2}
+\end{align*}
+
+\subsubsection{Diskussion}
+
+Bei diesem Teil war die Messproblematik des vorherigen Versuchsteils nicht mehr vorhanden. Jedoch gibt es immer noch einen Einfluss dessen aufgrund der Inklusion von $C_{Kal}$ in (\ref{ck2}).
+
+%Der Literaturwert der spezifischen W\"armekapazit\"at von dem n\"achsten Metal an unserem Wert, METAL ist VALUE. Mit der Formel
+
+Die Literaturwerte der spezifischen W\"armekapazit\"atet von Metallen liegen tendenziell zwischen $100\frac{\mathrm{J}}{\mathrm{kgK}}$ und $1000\,\frac{\mathrm{J}}{\mathrm{kgK}}$.(\cite{litval}) Betrachten wir Aluminium, welches eine gro\ss e W\"armekapazit\"at, $921\,\frac{\mathrm{J}}{\mathrm{kgK}}$, besitzt, und auch im Vergleich zu anderen Metallen eine kleine Dichte hat, so bekommen wir mit der Gleichung
+
+\begin{equation}
+t=\frac{|x_0-y|}{u_x}\label{abw}
+\end{equation}
+
+eine Abweichung von $t=10.4$ mit unserem gemessenen Wert. Dies liegt deutlich au\ss erhalb von dem Bereich von $t<2$, was Unvertr\"aglichkeit der Werte impliziert. Unser berechneter Wert stimmt also klar nicht mit dem Litaturwert \"ueberein. Dies impliziert, dass unser Festk\"orper nicht aus Aluminium besteht. Da f\"ur andere Metalle \"ahnliche Werte entstehen, scheint es erstmals, als w\"are unser Festk\"orper nicht aus Metall.
+
+Die Oberfl\"ache des Festk\"orpers w\"urde jedoch darauf hinweisen, dass es aus Metall besteht.
+
+Nehmen wir an, ein Fehler bei der Rechnung verzehnfacht das Ergebnis, und versuchen wir dies zu beheben, so erhalten wir immer noch ein $t$ von 3.68. Dies liegt immer noch au\ss erhalb des $t<2$ Bereichs. Auch mit einem anderen leichten Metall mit einer hohen W\"armekapazit\"at, Magnesium, welches eine spezifische W\"armekapazit\"at von $1047\,\nicefrac{\mathrm{J}}{\mathrm{kgK}}$ besitzt, l\"agen wir mit der Annahme, dass unser Wert eigentlich ein Zehnfaches zu gro\ss\ ist, immer noch mit $t=2.65$ au\ss erhalb des gew\"unschten $t<2$ Bereichs.  Es ist also sinnvoll anzunehmen, dass diese Werte ganz falsch liegen.
+
+Die Fehler und Verbesserungsvorschl\"age sind hier sehr \"ahnlich zu denen vom ersten Teil. Hier gilt auch beim Festk\"orper, dass er wahrscheinlich nicht vollst\"andig aus dem gleichen Material besteht. Beim Messen der Temperatur des Festk\"orpers beim Eintauchen in das Kalorimeter wird er abgek\"uhlt. Da Metalle niedrigere W\"armekapazit\"aten besitzen als Wasser, wird dies in diesem Fall einen gr\"o\ss eren Einfluss haben. Die Messung w\"urde auch von mehreren Messapparaturen profitieren, da  gleichzeitig das Wasser in dem Kalorimeter und der Festk\"orper gemessen werden k\"onnten.
+
+\vfill
+\begin{thebibliography}{9}
+\bibitem{litval} \url{https://www.engineersedge.com/materials/specific_heat_capacity_of_metals_13259.htm} (\today)
+\bibitem{Anleitung} Physikalisches Institut der Albert-Ludwigs-Universität Freiburg (Hrsg.) (08/2018): Versuchsanleitungen zum Physiklabor für Anfänger*innen, Teil 1, Ferienpraktikum im Sommersemester 2018.
+\end{thebibliography}
+
+\vspace{55pt}
+\section{Anhang}
+Link zum herunterladen der Messdaten: \url{https://files.catbox.moe/p05mhv.zip}
+\vspace{22pt}
+%\listoffigures
+
+
+\begin{sidewaysfigure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Kalimix}
+\renewcommand\thefigure{B2}
+%\vspace{-22pt}
+\caption{Extrapolation und wahre Mischtemperatur f\"ur den ersten Versuchsteil}
+\label{Abb:2}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Glob}
+\renewcommand\thefigure{B3} 
+\vspace{-22pt}
+\caption{Extrapolation und wahre Mischtemperatur f\"ur den zweiten Versuchsteil}
+\label{Abb:3}
+\end{sidewaysfigure} 
+
+
+%\begin{figure}[p]
+%\centering
+%\fbox{\includegraphics[width=0.7\textwidth]{extrapDia}}
+%   \renewcommand\thefigure{A1}
+%\caption{Extrapolation 2. Messreihe}
+%\label{Dia:1}
+%\end{figure}
+%
+%
+%\begin{table}[p]
+%	\centering
+%	\rowcolors{2}{gray!10}{white}
+%	\begin{tabular}{|r|l|}
+%		\multicolumn{2}{c}{\textrm{Messreihe 1}} \\
+%		\noalign{\global\arrayrulewidth=0.4mm}
+%		\hline
+%		\noalign{\global\arrayrulewidth=0.2mm}
+%		\textrm{Rotationen }$n \pm 0.3$ & \textrm{Temperatur }$T \pm 0.05\celsius$\\
+%		\hline
+%		0 & 24 \\
+%		10 & 24.1 \\
+%		20 & 24.3 \\
+%		30 & 24.5 \\
+%		40 & 24.6 \\
+%		50 & 24.8 \\
+%		\hline
+%	\end{tabular}
+%	\renewcommand\thetable{T1}
+%	\caption{Messreihe 1 für den ersten Versuchsteil}
+%	\label{table:m1}
+%\end{table}
+%
+%\begin{table}[p]
+%	\centering
+%	\rowcolors{2}{gray!10}{white}
+%	\begin{tabular}{|r|l|}
+%		\multicolumn{2}{c}{\textrm{Messreihe 2}} \\
+%		\noalign{\global\arrayrulewidth=0.4mm}
+%		\hline
+%		\noalign{\global\arrayrulewidth=0.2mm}
+%		\textrm{Rotationen }$n \pm 0.3$ & \textrm{Temperatur }$T \pm 0.05\celsius$\\
+%		\hline
+%		0 & 24.3 \\
+%		5 & 24.3 \\
+%		10 & 24.4 \\
+%		15 & 24.5 \\
+%		20 & 24.6 \\
+%		25 & 24.7 \\
+%		30 & 24.8 \\
+%		35 & 24.9 \\
+%		40 & 25 \\
+%		45 & 25.1 \\
+%		50 & 25.2 \\
+%		55 & 25.2 \\
+%		60 & 25.4 \\
+%		65 & 25.5 \\
+%		70 & 25.5 \\
+%		75 & 25.6 \\
+%		80 & 25.6 \\
+%		85 & 25.7 \\
+%		90 & 25.8 \\
+%		95 & 26 \\
+%		100 & 26 \\
+%		\hline
+%	\end{tabular}
+%	\renewcommand\thetable{T2}
+%	\caption{Messreihe 2 für den ersten Versuchsteil}
+%	\label{table:m2}
+%\end{table}
+%
+%\begin{table}[p]
+%\centering
+%$\begin{array}{rl}
+%\multicolumn{2}{c}{\textrm{\underline{Unsicherheiten:}}}\\
+%\textrm{Zeit: } & \pm 0.03 \textrm{s}\\
+%\textrm{Temperatur: } & \pm 0.02 \textrm{\celsius}\\
+%\textrm{Strom: } & \pm 0.03 \textrm{A}\\
+%\textrm{Spannung: } & \pm 0.02 \textrm{V}
+%\end{array}$
+%\rowcolors{2}{gray!10}{white}
+%\begin{tabular}{|c|c|c|c|}
+%\multicolumn{4}{l}{Wasser 116.94(3)\,g}\\
+%\hline
+%$t$ in s & $T$ in $^\circ\textrm{C}$ & $I$ in A & $U$ in V \\
+%\hline 
+%0   & 22   & 1.5 & 14.9 \\
+%60  & 22   & 1.5 & 14.9 \\
+%120 & 23   & 1.5 & 14.9 \\
+%180 & 24.5 & 0   & 0    \\
+%240 & 26.3 & 0   & 0    \\ 
+%300 & 26.5 & 0   & 0    \\ 
+%360 & 26.5 & 0   & 0	\\ 
+%$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
+%2280 & 26.4 & 0 & 0 \\
+%\hline
+%\end{tabular}
+%\phantom{$\begin{array}{rl}
+%\multicolumn{2}{l}{\textrm{\underline{Unsicherheiten:}}}\\
+%\textrm{Zeit: } & \pm 0.03 \textrm{s}\\
+%\textrm{Temperatur: } & \pm 0.02 \textrm{\celsius}\\
+%\textrm{Strom: } & \pm 0.03 \textrm{A}\\
+%\textrm{Spannung: } & \pm 0.02 \textrm{V}
+%\end{array}$
+%}
+%\renewcommand\thetable{T4}
+%\caption{1. Messwerte für Teil B}
+%\label{tab:B1}
+%\end{table}
+%
+%\begin{table}[p]
+%\centering
+%$\begin{array}{rl}
+%\multicolumn{2}{l}{\textrm{\underline{Unsicherheiten:}}}\\
+%\textrm{Zeit: } & \pm 0.03 \textrm{s}\\
+%\textrm{Temperatur: } & \pm 0.02 \textrm{\celsius}\\
+%\textrm{Strom: } & \pm 0.03 \textrm{A}\\
+%\textrm{Spannung: } & \pm 0.02 \textrm{V}
+%\end{array}$
+%\rowcolors{2}{gray!10}{white}
+%\begin{tabular}{|c|c|}
+%\multicolumn{2}{l}{Wasser 113.42(3)\,g}\\
+%\hline 
+%9229.720 & 74.184\\ 9230.720 & 74.074\\ 9231.721 & 73.598\\ 9232.721 & 73.818\\ 9233.720 & 73.744\\ 9234.720 & 73.231\\ 9235.720 & 72.974\\ 9236.720 & 73.084\\ 9237.720 & 72.241\\ 9238.720 & 72.388\\ 9239.720 & 72.278\\ 9240.721 & 72.314\\ 9241.721 & 70.371\\ 9242.721 & 66.850\\ 9243.721 & 63.729\\ 9244.721 & 59.871\\ 9245.721 & 58.068\\ 9246.722 & 56.043\\ 9247.723 & 54.347\\ 9248.723 & 52.871\\ 9249.724 & 51.801\\ 9250.725 & 50.101\\ 9251.724 & 49.731\\ 9252.724 & 48.103\\ 9253.725 & 46.732\\ 9254.725 & 46.213\\ 9255.726 & 45.286\\ 9256.727 & 43.987\\ 9257.728 & 43.615\\ 9258.728 & 43.020\\ 9259.728 & 42.388\\ 9260.729 & 42.054\\ 9261.729 & 41.011\\ 9262.730 & 40.639\\ 9263.730 & 39.894\\ 9264.731 & 39.223\\ 9265.732 & 38.775\\ 9266.733 & 38.626\\ 9267.733 & 38.178\\ 9268.732 & 37.319\\ 9269.732 & 37.357\\ 9270.733 & 36.460\\ 9271.733 & 36.310\\ 9272.734 & 36.534\\ 9273.735 & 35.562\\ 9274.735 & 35.450\\ 9275.736 & 35.075\\ 9276.737 & 34.626\\ 9277.737 & 34.327\\ 9278.737 & 33.914\\ 9279.737 & 34.027\\ 9280.738 & 33.502\\ 9281.739 & 33.764\\ 9282.740 & 33.315\\ 9283.740 & 33.127\\ 9284.740 & 32.752\\ 9285.739 & 33.090\\ 9286.739 & 32.377\\ 9287.740 & 32.264\\ 9288.740 & 31.701\\ 9289.741 & 32.414\\ 9290.741 & 31.814\\ 9291.742 & 31.588\\ 9292.743 & 31.401\\ 9293.744 & 31.025\\ 9294.745 & 30.875\\ 9295.746 & 30.987\\ 9296.746 & 30.724\\ 9297.747 & 31.062\\ 9298.747 & 30.611\\ 9299.749 & 30.348\\ 9300.749 & 30.123\\ 9301.750 & 29.859\\ 9302.750 & 29.897\\ 9303.749 & 30.461\\ 9304.750 & 30.085\\ 9305.751 & 29.709\\ 9306.751 & 30.386\\ 9307.751 & 29.596\\ 9308.751 & 29.483\\ 9309.752 & 29.483\\ 9310.753 & 29.446\\ 9311.754 & 29.446\\ 9312.755 & 30.198\\ 9313.756 & 28.994\\ 9314.757 & 28.617\\ 9315.758 & 28.843\\ 9316.760 & 28.806\\ 9317.760 & 28.467\\ 9318.760 & 28.730\\ 9319.761 & 28.429\\ 9320.760 & 28.504\\ 9321.760 & 28.316\\ 9322.761 & 28.354\\ 9323.762 & 28.354\\ 9324.762 & 28.919\\ 9325.762 & 28.128\\ 9326.763 & 28.580\\ 9327.763 & 28.203\\ 9328.764 & 28.429\\ 9329.765 & 28.203\\ 9330.765 & 27.901\\ 9331.765 & 28.014\\ 9332.766 & 28.128\\ 9333.767 & 28.391\\ 9334.768 & 27.600\\ 9335.768 & 28.128\\ 9336.768 & 27.939\\ 9337.767 & 27.977\\ 9338.768 & 27.864\\ 9339.768 & 27.826\\ 9340.768 & 27.826\\ 9341.768 & 27.524\\ 9342.769 & 27.562\\ 9343.769 & 27.977\\ 9344.769 & 27.298\\ 9345.769 & 27.826\\ 9346.770 & 27.939\\ 9347.770 & 27.751\\ 9348.770 & 27.901\\ 9349.770 & 27.638\\ 9350.770 & 27.147\\ 9351.772 & 27.034\\ 9352.772 & 28.241\\ 9353.772 & 27.600\\ 9354.772 & 27.524\\ 9355.771 & 27.374\\ 9356.772 & 27.901\\ 9357.773 & 27.072\\ 9358.774 & 28.128\\ 9359.774 & 27.600\\ 9360.774 & 27.336\\ 9361.774 & 27.788\\ 9362.774 & 26.959\\ 9363.774 & 27.751\\ 9364.774 & 27.298\\ 9365.775 & 27.147\\ 9366.776 & 26.997\\ 9367.777 & 27.524\\ 9368.778 & 27.223\\ 9369.778 & 27.449\\ 9370.778 & 27.374\\ 9371.778 & 27.600\\ 9372.777 & 26.921\\ 9373.777 & 27.110\\ 9374.777 & 27.261\\ 9375.778 & 27.185\\ 9376.778 & 27.185\\ 9377.778 & 27.411\\ 9378.779 & 27.713\\ 9379.779 & 27.411\\ 9380.780 & 27.939\\ 9381.780 & 26.959\\ 9382.781 & 27.449\\ 9383.781 & 26.732\\ 9384.782 & 27.034\\ 
+%\hline
+%\end{tabular}
+%\phantom{$\begin{array}{rl}
+%\multicolumn{2}{l}{\textrm{\underline{Unsicherheiten:}}}\\
+%\textrm{Zeit: } & \pm 0.03 \textrm{s}\\
+%\textrm{Temperatur: } & \pm 0.02 \textrm{\celsius}\\
+%\textrm{Strom: } & \pm 0.03 \textrm{A}\\
+%\textrm{Spannung: } & \pm 0.02 \textrm{V}
+%\end{array}$
+%}
+%\renewcommand\thetable{T5}
+%\caption{2. Messwerte für Teil B}
+%\label{tab:B2}
+%\end{table}
+
+
+\end{document}
